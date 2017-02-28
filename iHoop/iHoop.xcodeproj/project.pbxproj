@@ -8,12 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		84B5EE9D1E65313400311B63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5EE9C1E65313400311B63 /* AppDelegate.swift */; };
-		84B5EE9F1E65313400311B63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5EE9E1E65313400311B63 /* ViewController.swift */; };
+		84B5EE9F1E65313400311B63 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5EE9E1E65313400311B63 /* HomeViewController.swift */; };
 		84B5EEA21E65313400311B63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEA01E65313400311B63 /* Main.storyboard */; };
 		84B5EEA41E65313400311B63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEA31E65313400311B63 /* Assets.xcassets */; };
 		84B5EEA71E65313400311B63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEA51E65313400311B63 /* LaunchScreen.storyboard */; };
 		84B5EEB21E65313400311B63 /* iHoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5EEB11E65313400311B63 /* iHoopTests.swift */; };
 		84B5EEBD1E65313400311B63 /* iHoopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5EEBC1E65313400311B63 /* iHoopUITests.swift */; };
+		84B5EED41E65393000311B63 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED21E65393000311B63 /* bg.png */; };
+		84B5EED51E65393000311B63 /* LaunchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED31E65393000311B63 /* LaunchScreen.png */; };
+		84B5EEDE1E65393A00311B63 /* cancelBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED61E65393A00311B63 /* cancelBtn.png */; };
+		84B5EEDF1E65393A00311B63 /* forgotPasswordBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED71E65393A00311B63 /* forgotPasswordBtn.png */; };
+		84B5EEE01E65393A00311B63 /* forgotUsernameBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED81E65393A00311B63 /* forgotUsernameBtn.png */; };
+		84B5EEE11E65393A00311B63 /* loginBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED91E65393A00311B63 /* loginBtn.png */; };
+		84B5EEE21E65393A00311B63 /* menuBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEDA1E65393A00311B63 /* menuBtn.png */; };
+		84B5EEE31E65393A00311B63 /* securityQuetionArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEDB1E65393A00311B63 /* securityQuetionArrow.png */; };
+		84B5EEE41E65393A00311B63 /* signUpBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEDC1E65393A00311B63 /* signUpBtn.png */; };
+		84B5EEE51E65393A00311B63 /* submitBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEDD1E65393A00311B63 /* submitBtn.png */; };
+		84B5EEE91E65394200311B63 /* iHoopTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEE61E65394200311B63 /* iHoopTitle.png */; };
+		84B5EEEA1E65394200311B63 /* loginTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEE71E65394200311B63 /* loginTitle.png */; };
+		84B5EEEB1E65394200311B63 /* signUpTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEE81E65394200311B63 /* signUpTitle.png */; };
+		84B5EEED1E653A9D00311B63 /* bgHome.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEEC1E653A9D00311B63 /* bgHome.png */; };
+		84B5EEEF1E653C2700311B63 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5EEEE1E653C2700311B63 /* LoginViewController.swift */; };
+		84B5EEF21E653C3C00311B63 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5EEF11E653C3C00311B63 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +52,7 @@
 /* Begin PBXFileReference section */
 		84B5EE991E65313400311B63 /* iHoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B5EE9C1E65313400311B63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84B5EE9E1E65313400311B63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84B5EE9E1E65313400311B63 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		84B5EEA11E65313400311B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84B5EEA31E65313400311B63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84B5EEA61E65313400311B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +63,25 @@
 		84B5EEB81E65313400311B63 /* iHoopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iHoopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B5EEBC1E65313400311B63 /* iHoopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iHoopUITests.swift; sourceTree = "<group>"; };
 		84B5EEBE1E65313400311B63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84B5EECF1E6532C200311B63 /* Carrington.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Carrington.ttf; path = Fonts/Carrington.ttf; sourceTree = "<group>"; };
+		84B5EED01E6532C200311B63 /* DrSugiyama-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DrSugiyama-Regular.ttf"; path = "Fonts/DrSugiyama-Regular.ttf"; sourceTree = "<group>"; };
+		84B5EED11E6532C200311B63 /* FNL_DEMO-KCFonts.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FNL_DEMO-KCFonts.ttf"; path = "Fonts/FNL_DEMO-KCFonts.ttf"; sourceTree = "<group>"; };
+		84B5EED21E65393000311B63 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg.png; path = Images/Backgrounds/bg.png; sourceTree = "<group>"; };
+		84B5EED31E65393000311B63 /* LaunchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LaunchScreen.png; path = Images/Backgrounds/LaunchScreen.png; sourceTree = "<group>"; };
+		84B5EED61E65393A00311B63 /* cancelBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cancelBtn.png; path = Images/Buttons/cancelBtn.png; sourceTree = "<group>"; };
+		84B5EED71E65393A00311B63 /* forgotPasswordBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = forgotPasswordBtn.png; path = Images/Buttons/forgotPasswordBtn.png; sourceTree = "<group>"; };
+		84B5EED81E65393A00311B63 /* forgotUsernameBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = forgotUsernameBtn.png; path = Images/Buttons/forgotUsernameBtn.png; sourceTree = "<group>"; };
+		84B5EED91E65393A00311B63 /* loginBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loginBtn.png; path = Images/Buttons/loginBtn.png; sourceTree = "<group>"; };
+		84B5EEDA1E65393A00311B63 /* menuBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menuBtn.png; path = Images/Buttons/menuBtn.png; sourceTree = "<group>"; };
+		84B5EEDB1E65393A00311B63 /* securityQuetionArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = securityQuetionArrow.png; path = Images/Buttons/securityQuetionArrow.png; sourceTree = "<group>"; };
+		84B5EEDC1E65393A00311B63 /* signUpBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = signUpBtn.png; path = Images/Buttons/signUpBtn.png; sourceTree = "<group>"; };
+		84B5EEDD1E65393A00311B63 /* submitBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = submitBtn.png; path = Images/Buttons/submitBtn.png; sourceTree = "<group>"; };
+		84B5EEE61E65394200311B63 /* iHoopTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iHoopTitle.png; path = Images/Titles/iHoopTitle.png; sourceTree = "<group>"; };
+		84B5EEE71E65394200311B63 /* loginTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loginTitle.png; path = Images/Titles/loginTitle.png; sourceTree = "<group>"; };
+		84B5EEE81E65394200311B63 /* signUpTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = signUpTitle.png; path = Images/Titles/signUpTitle.png; sourceTree = "<group>"; };
+		84B5EEEC1E653A9D00311B63 /* bgHome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bgHome.png; path = Images/Backgrounds/bgHome.png; sourceTree = "<group>"; };
+		84B5EEEE1E653C2700311B63 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		84B5EEF11E653C3C00311B63 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +133,15 @@
 			isa = PBXGroup;
 			children = (
 				84B5EE9C1E65313400311B63 /* AppDelegate.swift */,
-				84B5EE9E1E65313400311B63 /* ViewController.swift */,
+				84B5EE9E1E65313400311B63 /* HomeViewController.swift */,
+				84B5EEEE1E653C2700311B63 /* LoginViewController.swift */,
+				84B5EEF11E653C3C00311B63 /* SignUpViewController.swift */,
 				84B5EEA01E65313400311B63 /* Main.storyboard */,
 				84B5EEA31E65313400311B63 /* Assets.xcassets */,
 				84B5EEA51E65313400311B63 /* LaunchScreen.storyboard */,
 				84B5EEA81E65313400311B63 /* Info.plist */,
+				84B5EECB1E65323200311B63 /* Fonts */,
+				84B5EECA1E65322C00311B63 /* Images */,
 			);
 			path = iHoop;
 			sourceTree = "<group>";
@@ -123,6 +162,61 @@
 				84B5EEBE1E65313400311B63 /* Info.plist */,
 			);
 			path = iHoopUITests;
+			sourceTree = "<group>";
+		};
+		84B5EECA1E65322C00311B63 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				84B5EECE1E65324900311B63 /* Backgrounds */,
+				84B5EECD1E65323F00311B63 /* Buttons */,
+				84B5EECC1E65323900311B63 /* Titles */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		84B5EECB1E65323200311B63 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				84B5EECF1E6532C200311B63 /* Carrington.ttf */,
+				84B5EED01E6532C200311B63 /* DrSugiyama-Regular.ttf */,
+				84B5EED11E6532C200311B63 /* FNL_DEMO-KCFonts.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		84B5EECC1E65323900311B63 /* Titles */ = {
+			isa = PBXGroup;
+			children = (
+				84B5EEE61E65394200311B63 /* iHoopTitle.png */,
+				84B5EEE71E65394200311B63 /* loginTitle.png */,
+				84B5EEE81E65394200311B63 /* signUpTitle.png */,
+			);
+			name = Titles;
+			sourceTree = "<group>";
+		};
+		84B5EECD1E65323F00311B63 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				84B5EED61E65393A00311B63 /* cancelBtn.png */,
+				84B5EED71E65393A00311B63 /* forgotPasswordBtn.png */,
+				84B5EED81E65393A00311B63 /* forgotUsernameBtn.png */,
+				84B5EED91E65393A00311B63 /* loginBtn.png */,
+				84B5EEDA1E65393A00311B63 /* menuBtn.png */,
+				84B5EEDB1E65393A00311B63 /* securityQuetionArrow.png */,
+				84B5EEDC1E65393A00311B63 /* signUpBtn.png */,
+				84B5EEDD1E65393A00311B63 /* submitBtn.png */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
+		84B5EECE1E65324900311B63 /* Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				84B5EEEC1E653A9D00311B63 /* bgHome.png */,
+				84B5EED21E65393000311B63 /* bg.png */,
+				84B5EED31E65393000311B63 /* LaunchScreen.png */,
+			);
+			name = Backgrounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,8 +327,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B5EEA71E65313400311B63 /* LaunchScreen.storyboard in Resources */,
+				84B5EEDF1E65393A00311B63 /* forgotPasswordBtn.png in Resources */,
+				84B5EEEA1E65394200311B63 /* loginTitle.png in Resources */,
+				84B5EEE41E65393A00311B63 /* signUpBtn.png in Resources */,
+				84B5EED51E65393000311B63 /* LaunchScreen.png in Resources */,
 				84B5EEA41E65313400311B63 /* Assets.xcassets in Resources */,
+				84B5EED41E65393000311B63 /* bg.png in Resources */,
+				84B5EEE01E65393A00311B63 /* forgotUsernameBtn.png in Resources */,
+				84B5EEED1E653A9D00311B63 /* bgHome.png in Resources */,
+				84B5EEE31E65393A00311B63 /* securityQuetionArrow.png in Resources */,
+				84B5EEDE1E65393A00311B63 /* cancelBtn.png in Resources */,
+				84B5EEEB1E65394200311B63 /* signUpTitle.png in Resources */,
+				84B5EEE21E65393A00311B63 /* menuBtn.png in Resources */,
 				84B5EEA21E65313400311B63 /* Main.storyboard in Resources */,
+				84B5EEE11E65393A00311B63 /* loginBtn.png in Resources */,
+				84B5EEE91E65394200311B63 /* iHoopTitle.png in Resources */,
+				84B5EEE51E65393A00311B63 /* submitBtn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +367,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84B5EE9F1E65313400311B63 /* ViewController.swift in Sources */,
+				84B5EEEF1E653C2700311B63 /* LoginViewController.swift in Sources */,
+				84B5EE9F1E65313400311B63 /* HomeViewController.swift in Sources */,
+				84B5EEF21E653C3C00311B63 /* SignUpViewController.swift in Sources */,
 				84B5EE9D1E65313400311B63 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
