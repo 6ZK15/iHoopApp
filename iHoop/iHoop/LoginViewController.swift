@@ -14,9 +14,22 @@ class LoginViewController: UIViewController {
     @IBOutlet var emailText: UITextField!
     @IBOutlet var passwordText: UITextField!
     @IBOutlet var errorLbl: UILabel!
+    @IBOutlet var backBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        backBtn .addTarget(self, action:#selector(backBtnPressed), for: UIControlEvents.touchUpInside)
+        let backButton:UIBarButtonItem = UIBarButtonItem.init(customView: backBtn)
+        self.navigationItem.leftBarButtonItem = backButton
+        
+        emailText.layer.cornerRadius = 8.0
+        emailText.layer.borderWidth = 4.0
+        emailText.layer.borderColor = UIColor.black.cgColor
+        passwordText.layer.cornerRadius = 8.0
+        passwordText.layer.borderWidth = 4.0
+        passwordText.layer.borderColor = UIColor.black.cgColor
+        
 
         // Do any additional setup after loading the view.
     }
@@ -41,29 +54,29 @@ class LoginViewController: UIViewController {
                                 self.errorLbl.text = "Please enter email and password"
                                 self.emailText.layer.cornerRadius = 8.0
                                 self.emailText.layer.borderWidth = 4.0
-                                self.emailText.layer.borderColor = UIColor.black.cgColor
-//                                self.emailText.layer.borderColor = UIColor.init(red: 0.000, green: 0.682, blue: 0.937, alpha: 1.000).cgColor
+                                self.emailText.layer.borderColor = UIColor.init(red: 0.000, green: 0.682, blue: 0.937, alpha: 1.000).cgColor
                                 self.passwordText.layer.cornerRadius = 8.0
                                 self.passwordText.layer.borderWidth = 4.0
-                                self.passwordText.layer.borderColor = UIColor.black.cgColor
-//                                self.passwordText.layer.borderColor = UIColor.init(red: 0.000, green: 0.682, blue: 0.937, alpha: 1.000).cgColor
+                                self.passwordText.layer.borderColor = UIColor.init(red: 0.000, green: 0.682, blue: 0.937, alpha: 1.000).cgColor
                             } else if (self.emailText.text?.isEmpty)! , !(self.passwordText.text?.isEmpty)! {
                                 self.errorLbl.isHidden = false
                                 self.errorLbl.text = "Please enter email"
                                 self.emailText.layer.cornerRadius = 8.0
                                 self.emailText.layer.borderWidth = 4.0
-                                self.emailText.layer.borderColor = UIColor.black.cgColor
-//                                self.emailText.layer.borderColor = UIColor.init(red: 0.000, green: 0.682, blue: 0.937, alpha: 1.000).cgColor
+                                self.emailText.layer.borderColor = UIColor.init(red: 0.000, green: 0.682, blue: 0.937, alpha: 1.000).cgColor
+                                self.passwordText.layer.borderColor = UIColor.black.cgColor
                             } else if !(self.emailText.text?.isEmpty)! , (self.passwordText.text?.isEmpty)! {
                                 self.errorLbl.isHidden = false
                                 self.errorLbl.text = "Please enter password"
                                 self.passwordText.layer.cornerRadius = 8.0
                                 self.passwordText.layer.borderWidth = 4.0
-                                self.passwordText.layer.borderColor = UIColor.black.cgColor
-//                                self.passwordText.layer.borderColor = UIColor.init(red: 0.000, green: 0.682, blue: 0.937, alpha: 1.000).cgColor
+                                self.passwordText.layer.borderColor = UIColor.init(red: 0.000, green: 0.682, blue: 0.937, alpha: 1.000).cgColor
+                                self.emailText.layer.borderColor = UIColor.black.cgColor
                             } else {
                                 self.errorLbl.isHidden = false
                                 self.errorLbl.text = "Incorrect email and password"
+                                self.emailText.layer.borderColor = UIColor.black.cgColor
+                                self.passwordText.layer.borderColor = UIColor.black.cgColor
                             }
                             
                         } else {
@@ -75,6 +88,10 @@ class LoginViewController: UIViewController {
             
         }
 
+    }
+    
+    func backBtnPressed() {
+        _ = self.navigationController?.popViewController(animated: true)
     }
 
     /*
