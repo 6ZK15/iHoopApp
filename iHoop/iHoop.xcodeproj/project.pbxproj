@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84B44EDD1E67B6B400AABF92 /* Carrington.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EECF1E6532C200311B63 /* Carrington.ttf */; };
+		84B44EDE1E67B6B400AABF92 /* DrSugiyama-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED01E6532C200311B63 /* DrSugiyama-Regular.ttf */; };
+		84B44EDF1E67B6B400AABF92 /* FNL_DEMO-KCFonts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED11E6532C200311B63 /* FNL_DEMO-KCFonts.ttf */; };
 		84B5EE9D1E65313400311B63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5EE9C1E65313400311B63 /* AppDelegate.swift */; };
 		84B5EE9F1E65313400311B63 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5EE9E1E65313400311B63 /* HomeViewController.swift */; };
 		84B5EEA21E65313400311B63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEA01E65313400311B63 /* Main.storyboard */; };
@@ -380,6 +383,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B44EDD1E67B6B400AABF92 /* Carrington.ttf in Resources */,
+				84B44EDE1E67B6B400AABF92 /* DrSugiyama-Regular.ttf in Resources */,
+				84B44EDF1E67B6B400AABF92 /* FNL_DEMO-KCFonts.ttf in Resources */,
 				84B5EEA71E65313400311B63 /* LaunchScreen.storyboard in Resources */,
 				963A653B1E67AAC700A9447C /* GoogleService-Info.plist in Resources */,
 				84B5EEDF1E65393A00311B63 /* forgotPasswordBtn.png in Resources */,
