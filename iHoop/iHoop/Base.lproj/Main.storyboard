@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="892" y="-545.57721139430294"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="Qsw-Pj-5Gi">
             <objects>
-                <viewController id="peH-8G-Ylp" sceneMemberID="viewController">
+                <viewController id="peH-8G-Ylp" customClass="LoginViewController" customModule="iHoop" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eia-LI-Bxz"/>
                         <viewControllerLayoutGuide type="bottom" id="aDc-2R-oSo"/>
@@ -140,6 +140,9 @@
                                     <constraint firstAttribute="width" secondItem="DAy-gj-z1p" secondAttribute="height" multiplier="15:4" id="7f6-py-A98"/>
                                 </constraints>
                                 <state key="normal" image="submitBtn.png"/>
+                                <connections>
+                                    <action selector="signInButton:" destination="peH-8G-Ylp" eventType="touchUpInside" id="wo8-r6-1rn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -177,6 +180,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="n9z-7M-UfR"/>
+                    <connections>
+                        <outlet property="emailText" destination="cHt-lW-JDv" id="jLh-zm-MgW"/>
+                        <outlet property="passwordText" destination="rzz-65-pR3" id="pwS-jX-6ON"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F1b-Bc-psd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

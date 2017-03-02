@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
+    @IBOutlet var emailText: UITextField!
+    @IBOutlet var passwordText: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +25,26 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func signInButton(_ sender: Any) {
+        if let email = emailText.text, let pwd = passwordText.text
+        {
+            FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user,error) in
+                if error == nil {
+                    print("User Authenticated successfully")
+                }else {
+                    FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user,error) in
+                        if error != nil {
+                            print("Unable to authenticate using Email with Firebase")
+                        }else {
+                            print("Successfully authenticated with Firebase")
+                        }
+                    })
+                }
+            })
+            
+        }
+
+    }
 
     /*
     // MARK: - Navigation
