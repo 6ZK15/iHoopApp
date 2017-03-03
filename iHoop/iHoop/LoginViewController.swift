@@ -33,6 +33,8 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+  
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -81,12 +83,17 @@ class LoginViewController: UIViewController {
                             
                         } else {
                             print("Successfully authenticated with Firebase")
+                            
+                          
+                            
                         }
                     })
                 }
             })
             
         }
+        
+        
 
     }
     

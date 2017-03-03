@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+
 
 class SignUpViewController: UIViewController {
+    
+    let ref = FIRDatabase.database().reference()
 
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var fnTextField: UITextField!
@@ -20,6 +25,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet var sqTextField: UITextField!
     @IBOutlet var saTextField: UITextField!
     @IBOutlet var backBtn: UIButton!
+    @IBOutlet var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +64,64 @@ class SignUpViewController: UIViewController {
         _ = self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func signUpButton(_ sender: Any) {
+        if (fnTextField.text?.isEmpty)!{
+            self.label.isHidden = false
+            self.label.text = "Please enter a first name."
+        }else if(lnTextField.text?.isEmpty)!{
+            self.label.isHidden = false
+            self.label.text = "Please enter a last name"
+        }
+        else if(emailTextField.text?.isEmpty)!{
+            self.label.isHidden = false
+            self.label.text = "Please enter an email"
+        }
+        else if(usrnmTextField.text?.isEmpty)!{
+            self.label.text = "Please enter an username"
+        }
+        else if(pswdTextField.text?.isEmpty)!{
+            self.label.text = "Please enter a password"
+        }
+        else if (pswdTextField.text != vpswdTextField.text){
+            self.label.text = "Passwords are not identical"
+            }
+        else{
+        
+        
+        FIRAuth.auth()?.createUser(withEmail: emailTextField.text!, password: pswdTextField.text!, completion: {user,error
+            in
+            if let error = error {
+                print(error)
+            }else{
+                self.ref.child("users").child(user!.uid).setValue([
+                    "firstname":self.fnTextField.text,
+                    "lastname:":self.lnTextField.text,
+                    "email":self.emailTextField.text,
+                    "username":self.usrnmTextField.text,
+                    "password":self.pswdTextField.text
+                ])
+            }
+        })
+            let alertController = UIAlertController(title: "Sign Up", message: "User added successfully", preferredStyle: .alert)
+            let defaultaction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            alertController.addAction(defaultaction)
+        self.present(alertController,animated:true,completion:nil)
+            
+            
+    }
+      
+
+        
+    }//end func
+        
+    
+
+
+
+
+}//End Classs
+
+
 
     /*
     // MARK: - Navigation
@@ -69,4 +133,4 @@ class SignUpViewController: UIViewController {
     }
     */
 
-}
+

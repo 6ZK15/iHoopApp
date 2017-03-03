@@ -393,6 +393,7 @@
                                 </constraints>
                                 <state key="normal" image="submitBtn.png"/>
                                 <connections>
+                                    <action selector="forgotPasswordSubmit:" destination="1Yg-Ry-Wxj" eventType="touchUpInside" id="mZn-bG-Xmp"/>
                                     <action selector="signInButton:" destination="peH-8G-Ylp" eventType="touchUpInside" id="Equ-9Y-BBB"/>
                                 </connections>
                             </button>
@@ -619,6 +620,7 @@
                                 <state key="normal" image="submitBtn.png"/>
                                 <connections>
                                     <action selector="signInButton:" destination="peH-8G-Ylp" eventType="touchUpInside" id="UFp-uf-iYK"/>
+                                    <action selector="signUpButton:" destination="KLm-gJ-cF9" eventType="touchUpInside" id="0UW-oo-7Ig"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -654,6 +656,7 @@
                         <outlet property="backBtn" destination="W6A-Kk-nEj" id="hFh-ll-lGg"/>
                         <outlet property="emailTextField" destination="dcV-ID-QHP" id="5cM-ra-sD1"/>
                         <outlet property="fnTextField" destination="pGx-Dl-aRF" id="VuK-0B-CeJ"/>
+                        <outlet property="label" destination="1fE-j2-dfx" id="Dob-Pf-JLN"/>
                         <outlet property="lnTextField" destination="NAu-y0-XJX" id="ZhJ-6p-iVj"/>
                         <outlet property="pswdTextField" destination="bWQ-R2-d8B" id="pG1-Wx-QNo"/>
                         <outlet property="saTextField" destination="d0l-5W-eDf" id="XOT-1A-4GC"/>

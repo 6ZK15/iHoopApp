@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class ForgotPasswordViewController: UIViewController {
 
@@ -43,6 +45,29 @@ class ForgotPasswordViewController: UIViewController {
         _ = self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func forgotPasswordSubmit(_ sender: Any) {
+        FIRAuth.auth()?.sendPasswordReset(withEmail: self.emailTextField.text!, completion: {(error) in
+            
+            var title = ""
+            var message = ""
+            if error != nil
+            {
+                title = "Welp"
+                message = (error?.localizedDescription)!
+            }else{
+                title = "Success"
+                message = "Password reset has been sent"
+            }
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            
+            let defaultaction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            alertController.addAction(defaultaction)
+            
+            self.present(alertController,animated:true,completion:nil)
+            
+            
+        })
+    }
 
     /*
     // MARK: - Navigation
