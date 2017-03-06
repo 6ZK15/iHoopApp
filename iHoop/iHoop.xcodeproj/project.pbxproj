@@ -11,6 +11,7 @@
 		845AA7161E6DCC7E006E8DAB /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845AA7151E6DCC7E006E8DAB /* MenuCell.swift */; };
 		845AA7181E6DCD04006E8DAB /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845AA7171E6DCD04006E8DAB /* MenuViewController.swift */; };
 		845AA71A1E6DCDEC006E8DAB /* ProfileHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845AA7191E6DCDEC006E8DAB /* ProfileHomeViewController.swift */; };
+		845AA7211E6DFC39006E8DAB /* profileImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 845AA7201E6DFC39006E8DAB /* profileImg.png */; };
 		84B44EDD1E67B6B400AABF92 /* Carrington.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EECF1E6532C200311B63 /* Carrington.ttf */; };
 		84B44EDE1E67B6B400AABF92 /* DrSugiyama-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED01E6532C200311B63 /* DrSugiyama-Regular.ttf */; };
 		84B44EDF1E67B6B400AABF92 /* FNL_DEMO-KCFonts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED11E6532C200311B63 /* FNL_DEMO-KCFonts.ttf */; };
@@ -76,6 +77,7 @@
 		845AA7171E6DCD04006E8DAB /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = SWRevealViewController/MenuViewController.swift; sourceTree = "<group>"; };
 		845AA7191E6DCDEC006E8DAB /* ProfileHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileHomeViewController.swift; path = ProfileViewControllers/ProfileHomeViewController.swift; sourceTree = "<group>"; };
 		845AA71F1E6DD370006E8DAB /* iHoop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iHoop-Bridging-Header.h"; sourceTree = "<group>"; };
+		845AA7201E6DFC39006E8DAB /* profileImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profileImg.png; path = Images/profileImg.png; sourceTree = "<group>"; };
 		84B44EE01E687E4500AABF92 /* ForgotUsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotUsernameViewController.swift; sourceTree = "<group>"; };
 		84B44EE21E687E6500AABF92 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		84B5EE991E65313400311B63 /* iHoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -248,6 +250,7 @@
 		84B5EECA1E65322C00311B63 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				845AA7201E6DFC39006E8DAB /* profileImg.png */,
 				84B5EECE1E65324900311B63 /* Backgrounds */,
 				84B5EECD1E65323F00311B63 /* Buttons */,
 				84B5EECC1E65323900311B63 /* Titles */,
@@ -433,6 +436,7 @@
 				84B44EDD1E67B6B400AABF92 /* Carrington.ttf in Resources */,
 				84B44EDE1E67B6B400AABF92 /* DrSugiyama-Regular.ttf in Resources */,
 				84B44EDF1E67B6B400AABF92 /* FNL_DEMO-KCFonts.ttf in Resources */,
+				845AA7211E6DFC39006E8DAB /* profileImg.png in Resources */,
 				84B5EEA71E65313400311B63 /* LaunchScreen.storyboard in Resources */,
 				963A653B1E67AAC700A9447C /* GoogleService-Info.plist in Resources */,
 				84B5EEDF1E65393A00311B63 /* forgotPasswordBtn.png in Resources */,
