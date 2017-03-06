@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		845AA7141E6DCBC8006E8DAB /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845AA7131E6DCBC8006E8DAB /* SWRevealViewController.m */; };
+		845AA7161E6DCC7E006E8DAB /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845AA7151E6DCC7E006E8DAB /* MenuCell.swift */; };
+		845AA7181E6DCD04006E8DAB /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845AA7171E6DCD04006E8DAB /* MenuViewController.swift */; };
+		845AA71A1E6DCDEC006E8DAB /* ProfileHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845AA7191E6DCDEC006E8DAB /* ProfileHomeViewController.swift */; };
 		84B44EDD1E67B6B400AABF92 /* Carrington.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EECF1E6532C200311B63 /* Carrington.ttf */; };
 		84B44EDE1E67B6B400AABF92 /* DrSugiyama-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED01E6532C200311B63 /* DrSugiyama-Regular.ttf */; };
 		84B44EDF1E67B6B400AABF92 /* FNL_DEMO-KCFonts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED11E6532C200311B63 /* FNL_DEMO-KCFonts.ttf */; };
@@ -66,6 +70,12 @@
 		56CA6631D6767A06E04B5714 /* Pods_iHoop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHoop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7886AA4E4529624A643E0891 /* Pods_iHoopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHoopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		843FCCF3C60FAEC7D17147AD /* Pods_iHoopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHoopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		845AA7121E6DCBC8006E8DAB /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
+		845AA7131E6DCBC8006E8DAB /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
+		845AA7151E6DCC7E006E8DAB /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCell.swift; path = SWRevealViewController/MenuCell.swift; sourceTree = "<group>"; };
+		845AA7171E6DCD04006E8DAB /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = SWRevealViewController/MenuViewController.swift; sourceTree = "<group>"; };
+		845AA7191E6DCDEC006E8DAB /* ProfileHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileHomeViewController.swift; path = ProfileViewControllers/ProfileHomeViewController.swift; sourceTree = "<group>"; };
+		845AA71F1E6DD370006E8DAB /* iHoop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iHoop-Bridging-Header.h"; sourceTree = "<group>"; };
 		84B44EE01E687E4500AABF92 /* ForgotUsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotUsernameViewController.swift; sourceTree = "<group>"; };
 		84B44EE21E687E6500AABF92 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		84B5EE991E65313400311B63 /* iHoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +155,39 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		845AA70D1E6DBFC7006E8DAB /* LoginViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				84B5EE9E1E65313400311B63 /* HomeViewController.swift */,
+				84B5EEEE1E653C2700311B63 /* LoginViewController.swift */,
+				84B5EEF11E653C3C00311B63 /* SignUpViewController.swift */,
+				84B44EE01E687E4500AABF92 /* ForgotUsernameViewController.swift */,
+				84B44EE21E687E6500AABF92 /* ForgotPasswordViewController.swift */,
+			);
+			name = LoginViewControllers;
+			sourceTree = "<group>";
+		};
+		845AA70E1E6DBFEC006E8DAB /* ProfileViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				845AA70F1E6DCB96006E8DAB /* SWRevealViewController */,
+				845AA7191E6DCDEC006E8DAB /* ProfileHomeViewController.swift */,
+			);
+			name = ProfileViewControllers;
+			sourceTree = "<group>";
+		};
+		845AA70F1E6DCB96006E8DAB /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				845AA7121E6DCBC8006E8DAB /* SWRevealViewController.h */,
+				845AA7131E6DCBC8006E8DAB /* SWRevealViewController.m */,
+				845AA71F1E6DD370006E8DAB /* iHoop-Bridging-Header.h */,
+				845AA7151E6DCC7E006E8DAB /* MenuCell.swift */,
+				845AA7171E6DCD04006E8DAB /* MenuViewController.swift */,
+			);
+			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
 		84B5EE901E65313400311B63 = {
 			isa = PBXGroup;
 			children = (
@@ -171,11 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				84B5EE9C1E65313400311B63 /* AppDelegate.swift */,
-				84B5EE9E1E65313400311B63 /* HomeViewController.swift */,
-				84B5EEEE1E653C2700311B63 /* LoginViewController.swift */,
-				84B5EEF11E653C3C00311B63 /* SignUpViewController.swift */,
-				84B44EE01E687E4500AABF92 /* ForgotUsernameViewController.swift */,
-				84B44EE21E687E6500AABF92 /* ForgotPasswordViewController.swift */,
+				845AA70D1E6DBFC7006E8DAB /* LoginViewControllers */,
+				845AA70E1E6DBFEC006E8DAB /* ProfileViewControllers */,
 				84B5EEA01E65313400311B63 /* Main.storyboard */,
 				84B5EEA31E65313400311B63 /* Assets.xcassets */,
 				84B5EEA51E65313400311B63 /* LaunchScreen.storyboard */,
@@ -350,6 +390,7 @@
 				TargetAttributes = {
 					84B5EE981E65313400311B63 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					84B5EEAC1E65313400311B63 = {
@@ -574,11 +615,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845AA7141E6DCBC8006E8DAB /* SWRevealViewController.m in Sources */,
+				845AA71A1E6DCDEC006E8DAB /* ProfileHomeViewController.swift in Sources */,
 				84B5EEEF1E653C2700311B63 /* LoginViewController.swift in Sources */,
 				84B44EE11E687E4500AABF92 /* ForgotUsernameViewController.swift in Sources */,
 				84B44EE31E687E6500AABF92 /* ForgotPasswordViewController.swift in Sources */,
+				845AA7181E6DCD04006E8DAB /* MenuViewController.swift in Sources */,
 				84B5EE9F1E65313400311B63 /* HomeViewController.swift in Sources */,
 				84B5EEF21E653C3C00311B63 /* SignUpViewController.swift in Sources */,
+				845AA7161E6DCC7E006E8DAB /* MenuCell.swift in Sources */,
 				84B5EE9D1E65313400311B63 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -730,10 +775,13 @@
 			baseConfigurationReference = BF73FE929EA8B39847648C7B /* Pods-iHoop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = iHoop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MrHorace.iHoop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iHoop/iHoop-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -743,10 +791,12 @@
 			baseConfigurationReference = B970F1F16A3300875E4BFBE4 /* Pods-iHoop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = iHoop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MrHorace.iHoop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iHoop/iHoop-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

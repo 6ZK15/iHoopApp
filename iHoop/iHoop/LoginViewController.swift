@@ -23,14 +23,8 @@ class LoginViewController: UIViewController {
         let backButton:UIBarButtonItem = UIBarButtonItem.init(customView: backBtn)
         self.navigationItem.leftBarButtonItem = backButton
         
-        emailText.layer.cornerRadius = 8.0
-        emailText.layer.borderWidth = 4.0
-        emailText.layer.borderColor = UIColor.black.cgColor
-        passwordText.layer.cornerRadius = 8.0
-        passwordText.layer.borderWidth = 4.0
-        passwordText.layer.borderColor = UIColor.black.cgColor
+        self .clearLogin()
         
-
         // Do any additional setup after loading the view.
     }
     
@@ -83,7 +77,7 @@ class LoginViewController: UIViewController {
                             
                         } else {
                             print("Successfully authenticated with Firebase")
-                            
+                            self .clearLogin()
                           
                             
                         }
@@ -95,6 +89,15 @@ class LoginViewController: UIViewController {
         
         
 
+    }
+    
+    func clearLogin() {
+        emailText.layer.cornerRadius = 8.0
+        emailText.layer.borderWidth = 4.0
+        emailText.layer.borderColor = UIColor.black.cgColor
+        passwordText.layer.cornerRadius = 8.0
+        passwordText.layer.borderWidth = 4.0
+        passwordText.layer.borderColor = UIColor.black.cgColor
     }
     
     func backBtnPressed() {
