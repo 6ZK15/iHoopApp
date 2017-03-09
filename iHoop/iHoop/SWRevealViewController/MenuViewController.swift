@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class MenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate,UIImagePickerControllerDelegate {
     
     @IBOutlet weak var tblTableView: UITableView!
     @IBOutlet weak var imgProfile: UIImageView!
@@ -17,7 +17,7 @@ class MenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var iconArray:Array = [UIImage]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        MenuNameArray = ["Home","My Groups","Find A Gym","Setting","Privacy","Sign Out"]
+        MenuNameArray = ["Home","My Groups","Find A Gym","Settings","Privacy","Sign Out"]
 //        iconArray = [UIImage(named:"home")!,UIImage(named:"message")!,UIImage(named:"map")!,UIImage(named:"setting")!]
         
         imgProfile.layer.borderWidth = 4
@@ -33,6 +33,7 @@ class MenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MenuNameArray.count
         
@@ -52,8 +53,7 @@ class MenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         let cell:MenuCell = tableView.cellForRow(at: indexPath) as! MenuCell
         print(cell.lblMenuname.text!)
-        if cell.lblMenuname.text! == "Home"
-        {
+        if cell.lblMenuname.text! == "Home" {
             print("Home Tapped")
             let mainstoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "ProfileHomeViewController") as! ProfileHomeViewController
@@ -72,8 +72,13 @@ class MenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 //            
 //            revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
 //        }
-        if cell.lblMenuname.text! == "Map" {
+        if cell.lblMenuname.text! == "Settings" {
             print("Map Tapped")
+            let mainstoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
+            let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
+            
+            revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
         }
         if cell.lblMenuname.text! == "Sign Out" {
             print("setting Tapped")

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8433F0CF1E6ED7C1003F9E9A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433F0CE1E6ED7C1003F9E9A /* SettingsViewController.swift */; };
+		8433F0D11E6EDBCC003F9E9A /* PagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433F0D01E6EDBCC003F9E9A /* PagingViewController.swift */; };
+		8433F0D71E70EC8E003F9E9A /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433F0D61E70EC8E003F9E9A /* NewsFeedViewController.swift */; };
+		8433F0D91E70F3BF003F9E9A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433F0D81E70F3BF003F9E9A /* SearchViewController.swift */; };
 		845AA7141E6DCBC8006E8DAB /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845AA7131E6DCBC8006E8DAB /* SWRevealViewController.m */; };
 		845AA7161E6DCC7E006E8DAB /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845AA7151E6DCC7E006E8DAB /* MenuCell.swift */; };
 		845AA7181E6DCD04006E8DAB /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845AA7171E6DCD04006E8DAB /* MenuViewController.swift */; };
@@ -70,6 +74,10 @@
 		207B5FBD0B3245C67C60F638 /* Pods-iHoopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoopUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHoopUITests/Pods-iHoopUITests.release.xcconfig"; sourceTree = "<group>"; };
 		56CA6631D6767A06E04B5714 /* Pods_iHoop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHoop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7886AA4E4529624A643E0891 /* Pods_iHoopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHoopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8433F0CE1E6ED7C1003F9E9A /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ProfileViewControllers/SettingsViewController.swift; sourceTree = "<group>"; };
+		8433F0D01E6EDBCC003F9E9A /* PagingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PagingViewController.swift; path = ProfileViewControllers/PagingViewController.swift; sourceTree = "<group>"; };
+		8433F0D61E70EC8E003F9E9A /* NewsFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsFeedViewController.swift; path = ProfileViewControllers/NewsFeedViewController.swift; sourceTree = "<group>"; };
+		8433F0D81E70F3BF003F9E9A /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = ProfileViewControllers/SearchViewController.swift; sourceTree = "<group>"; };
 		843FCCF3C60FAEC7D17147AD /* Pods_iHoopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHoopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		845AA7121E6DCBC8006E8DAB /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
 		845AA7131E6DCBC8006E8DAB /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
@@ -173,7 +181,11 @@
 			isa = PBXGroup;
 			children = (
 				845AA70F1E6DCB96006E8DAB /* SWRevealViewController */,
+				8433F0D01E6EDBCC003F9E9A /* PagingViewController.swift */,
 				845AA7191E6DCDEC006E8DAB /* ProfileHomeViewController.swift */,
+				8433F0D61E70EC8E003F9E9A /* NewsFeedViewController.swift */,
+				8433F0D81E70F3BF003F9E9A /* SearchViewController.swift */,
+				8433F0CE1E6ED7C1003F9E9A /* SettingsViewController.swift */,
 			);
 			name = ProfileViewControllers;
 			sourceTree = "<group>";
@@ -621,14 +633,18 @@
 			files = (
 				845AA7141E6DCBC8006E8DAB /* SWRevealViewController.m in Sources */,
 				845AA71A1E6DCDEC006E8DAB /* ProfileHomeViewController.swift in Sources */,
+				8433F0CF1E6ED7C1003F9E9A /* SettingsViewController.swift in Sources */,
 				84B5EEEF1E653C2700311B63 /* LoginViewController.swift in Sources */,
 				84B44EE11E687E4500AABF92 /* ForgotUsernameViewController.swift in Sources */,
 				84B44EE31E687E6500AABF92 /* ForgotPasswordViewController.swift in Sources */,
+				8433F0D11E6EDBCC003F9E9A /* PagingViewController.swift in Sources */,
 				845AA7181E6DCD04006E8DAB /* MenuViewController.swift in Sources */,
+				8433F0D91E70F3BF003F9E9A /* SearchViewController.swift in Sources */,
 				84B5EE9F1E65313400311B63 /* HomeViewController.swift in Sources */,
 				84B5EEF21E653C3C00311B63 /* SignUpViewController.swift in Sources */,
 				845AA7161E6DCC7E006E8DAB /* MenuCell.swift in Sources */,
 				84B5EE9D1E65313400311B63 /* AppDelegate.swift in Sources */,
+				8433F0D71E70EC8E003F9E9A /* NewsFeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

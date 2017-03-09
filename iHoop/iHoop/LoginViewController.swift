@@ -78,7 +78,8 @@ class LoginViewController: UIViewController {
                         } else {
                             print("Successfully authenticated with Firebase")
                             self .clearLogin()
-                          
+                            let SWRevealViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
+                            self.navigationController?.pushViewController(SWRevealViewController, animated: true)
                             
                         }
                     })
