@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import AVFoundation
 import Firebase
-import FirebaseAuth
+import SwiftKeychainWrapper
 
 class LoginViewController: UIViewController {
     @IBOutlet var emailText: UITextField!
     @IBOutlet var passwordText: UITextField!
     @IBOutlet var errorLbl: UILabel!
     @IBOutlet var backBtn: UIButton!
+  
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +25,14 @@ class LoginViewController: UIViewController {
         backBtn .addTarget(self, action:#selector(backBtnPressed), for: UIControlEvents.touchUpInside)
         let backButton:UIBarButtonItem = UIBarButtonItem.init(customView: backBtn)
         self.navigationItem.leftBarButtonItem = backButton
-        
         self .clearLogin()
+     
+        
+        
+        
+       // if let _ = KeychainWrapper.string(KEY_UID){
+           // performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+        //}
         
         // Do any additional setup after loading the view.
     }
@@ -39,7 +48,11 @@ class LoginViewController: UIViewController {
         if let email = emailText.text, let pwd = passwordText.text {
             FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user,error) in
                 if error == nil {
-                    print("User Authenticated successfully")
+                    print("User email Authenticated successfully")
+                    if let user = user{
+                        self.completeSignIn(id: user.uid)
+                    }
+                    self.performSegue(withIdentifier:"ProfileHomeViewController", sender: nil)
                 } else {
                     FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user,error) in
                         if error != nil {
@@ -76,10 +89,19 @@ class LoginViewController: UIViewController {
                             }
                             
                         } else {
+<<<<<<< HEAD
                             print("Successfully authenticated with Firebase")
                             self .clearLogin()
                             let SWRevealViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
                             self.navigationController?.pushViewController(SWRevealViewController, animated: true)
+=======
+                            print("Successfully created authenticated user with Firebase")
+                            if let user = user{
+                                self.completeSignIn(id: user.uid)
+                            }
+                            self.performSegue(withIdentifier:"ProfileHomeViewController", sender: nil)
+                       
+>>>>>>> 7824b5e73aa6c1465c7a65c8878c6212744d26de
                             
                         }
                     })
@@ -92,6 +114,21 @@ class LoginViewController: UIViewController {
 
     }
     
+    func firebaseAuth(_ credential:FIRAuthCredential){
+        FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
+            if error != nil {
+                print("Unable to authenticate using Email with Firebase - \(error)")
+            }else{
+                print("User authenticated with Firebase Successfully ")
+                if let user = user {
+                    self.completeSignIn(id: user.uid)
+                }
+            }
+                
+
+        })
+    }
+    
     func clearLogin() {
         emailText.layer.cornerRadius = 8.0
         emailText.layer.borderWidth = 4.0
@@ -99,6 +136,11 @@ class LoginViewController: UIViewController {
         passwordText.layer.cornerRadius = 8.0
         passwordText.layer.borderWidth = 4.0
         passwordText.layer.borderColor = UIColor.black.cgColor
+    }
+    
+    func completeSignIn(id:String){
+        let keychainResult = KeychainWrapper.standard.string(forKey: KEY_UID)
+        print("Data saved to keychain \(keychainResult)")
     }
     
     func backBtnPressed() {
