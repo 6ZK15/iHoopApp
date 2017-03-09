@@ -45,6 +45,12 @@
 		963A653B1E67AAC700A9447C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963A653A1E67AAC700A9447C /* GoogleService-Info.plist */; };
 		963A653C1E67AAC700A9447C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963A653A1E67AAC700A9447C /* GoogleService-Info.plist */; };
 		963A653D1E67AAC700A9447C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963A653A1E67AAC700A9447C /* GoogleService-Info.plist */; };
+		968DF3701E70E22200256EE2 /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968DF36F1E70E22200256EE2 /* DataServices.swift */; };
+		968DF3731E70F41200256EE2 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968DF3721E70F41200256EE2 /* Constraints.swift */; };
+		968DF3751E71099900256EE2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 968DF3741E71099900256EE2 /* AVFoundation.framework */; };
+		968DF3771E710AD200256EE2 /* spider.gif in Resources */ = {isa = PBXBuildFile; fileRef = 968DF3761E710AD200256EE2 /* spider.gif */; };
+		968DF37B1E71139D00256EE2 /* eric.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 968DF37A1E71139D00256EE2 /* eric.mp4 */; };
+		968DF37D1E71173900256EE2 /* basketball.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 968DF37C1E71173900256EE2 /* basketball.mp4 */; };
 		E1FC6081A5573DBE6308E082 /* Pods_iHoopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843FCCF3C60FAEC7D17147AD /* Pods_iHoopTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +120,12 @@
 		84B5EEF11E653C3C00311B63 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8AF0C5F8FF1333F195A7875D /* Pods-iHoopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoopTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHoopTests/Pods-iHoopTests.release.xcconfig"; sourceTree = "<group>"; };
 		963A653A1E67AAC700A9447C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		968DF36F1E70E22200256EE2 /* DataServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
+		968DF3721E70F41200256EE2 /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		968DF3741E71099900256EE2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		968DF3761E710AD200256EE2 /* spider.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = spider.gif; path = ../../../Downloads/spider.gif; sourceTree = "<group>"; };
+		968DF37A1E71139D00256EE2 /* eric.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = eric.mp4; path = "../../../Documents/HC Stepshow/eric.mp4"; sourceTree = "<group>"; };
+		968DF37C1E71173900256EE2 /* basketball.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = basketball.mp4; path = ../../../Downloads/basketball.mp4; sourceTree = "<group>"; };
 		B3FFE4916276F6D558EA1EE3 /* Pods-iHoopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoopUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iHoopUITests/Pods-iHoopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B970F1F16A3300875E4BFBE4 /* Pods-iHoop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoop.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHoop/Pods-iHoop.release.xcconfig"; sourceTree = "<group>"; };
 		BF73FE929EA8B39847648C7B /* Pods-iHoop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iHoop/Pods-iHoop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				968DF3751E71099900256EE2 /* AVFoundation.framework in Frameworks */,
 				8F776294E56F607355097E28 /* Pods_iHoop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,6 +163,7 @@
 		202F2E585C3E66CB2C57A632 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				968DF3741E71099900256EE2 /* AVFoundation.framework */,
 				56CA6631D6767A06E04B5714 /* Pods_iHoop.framework */,
 				843FCCF3C60FAEC7D17147AD /* Pods_iHoopTests.framework */,
 				7886AA4E4529624A643E0891 /* Pods_iHoopUITests.framework */,
@@ -160,11 +174,7 @@
 		845AA70D1E6DBFC7006E8DAB /* LoginViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				84B5EE9E1E65313400311B63 /* HomeViewController.swift */,
 				84B5EEEE1E653C2700311B63 /* LoginViewController.swift */,
-				84B5EEF11E653C3C00311B63 /* SignUpViewController.swift */,
-				84B44EE01E687E4500AABF92 /* ForgotUsernameViewController.swift */,
-				84B44EE21E687E6500AABF92 /* ForgotPasswordViewController.swift */,
 			);
 			name = LoginViewControllers;
 			sourceTree = "<group>";
@@ -172,7 +182,6 @@
 		845AA70E1E6DBFEC006E8DAB /* ProfileViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				845AA70F1E6DCB96006E8DAB /* SWRevealViewController */,
 				845AA7191E6DCDEC006E8DAB /* ProfileHomeViewController.swift */,
 			);
 			name = ProfileViewControllers;
@@ -181,6 +190,8 @@
 		845AA70F1E6DCB96006E8DAB /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
+				845AA70D1E6DBFC7006E8DAB /* LoginViewControllers */,
+				845AA70E1E6DBFEC006E8DAB /* ProfileViewControllers */,
 				845AA7121E6DCBC8006E8DAB /* SWRevealViewController.h */,
 				845AA7131E6DCBC8006E8DAB /* SWRevealViewController.m */,
 				845AA71F1E6DD370006E8DAB /* iHoop-Bridging-Header.h */,
@@ -215,11 +226,17 @@
 		84B5EE9B1E65313400311B63 /* iHoop */ = {
 			isa = PBXGroup;
 			children = (
+				968DF3711E70F3FD00256EE2 /* Util */,
+				968DF36C1E70DE0600256EE2 /* Services */,
+				968DF3691E70413D00256EE2 /* Model */,
+				968DF36A1E70414600256EE2 /* View */,
 				84B5EE9C1E65313400311B63 /* AppDelegate.swift */,
-				845AA70D1E6DBFC7006E8DAB /* LoginViewControllers */,
-				845AA70E1E6DBFEC006E8DAB /* ProfileViewControllers */,
+				968DF36B1E70416D00256EE2 /* Contoller */,
 				84B5EEA01E65313400311B63 /* Main.storyboard */,
 				84B5EEA31E65313400311B63 /* Assets.xcassets */,
+				968DF3761E710AD200256EE2 /* spider.gif */,
+				968DF37C1E71173900256EE2 /* basketball.mp4 */,
+				968DF37A1E71139D00256EE2 /* eric.mp4 */,
 				84B5EEA51E65313400311B63 /* LaunchScreen.storyboard */,
 				84B5EEA81E65313400311B63 /* Info.plist */,
 				963A653A1E67AAC700A9447C /* GoogleService-Info.plist */,
@@ -301,6 +318,48 @@
 				84B5EED31E65393000311B63 /* LaunchScreen.png */,
 			);
 			name = Backgrounds;
+			sourceTree = "<group>";
+		};
+		968DF3691E70413D00256EE2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		968DF36A1E70414600256EE2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		968DF36B1E70416D00256EE2 /* Contoller */ = {
+			isa = PBXGroup;
+			children = (
+				845AA70F1E6DCB96006E8DAB /* SWRevealViewController */,
+				84B5EE9E1E65313400311B63 /* HomeViewController.swift */,
+				84B5EEF11E653C3C00311B63 /* SignUpViewController.swift */,
+				84B44EE01E687E4500AABF92 /* ForgotUsernameViewController.swift */,
+				84B44EE21E687E6500AABF92 /* ForgotPasswordViewController.swift */,
+			);
+			name = Contoller;
+			sourceTree = "<group>";
+		};
+		968DF36C1E70DE0600256EE2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				968DF36F1E70E22200256EE2 /* DataServices.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		968DF3711E70F3FD00256EE2 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				968DF3721E70F41200256EE2 /* Constraints.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		C2349C1A3773A3D27E89CA39 /* Pods */ = {
@@ -435,6 +494,7 @@
 			files = (
 				84B44EDD1E67B6B400AABF92 /* Carrington.ttf in Resources */,
 				84B44EDE1E67B6B400AABF92 /* DrSugiyama-Regular.ttf in Resources */,
+				968DF3771E710AD200256EE2 /* spider.gif in Resources */,
 				84B44EDF1E67B6B400AABF92 /* FNL_DEMO-KCFonts.ttf in Resources */,
 				845AA7211E6DFC39006E8DAB /* profileImg.png in Resources */,
 				84B5EEA71E65313400311B63 /* LaunchScreen.storyboard in Resources */,
@@ -442,6 +502,7 @@
 				84B5EEDF1E65393A00311B63 /* forgotPasswordBtn.png in Resources */,
 				84B5EEEA1E65394200311B63 /* loginTitle.png in Resources */,
 				84B5EEE41E65393A00311B63 /* signUpBtn.png in Resources */,
+				968DF37B1E71139D00256EE2 /* eric.mp4 in Resources */,
 				84B5EED51E65393000311B63 /* LaunchScreen.png in Resources */,
 				84B5EEA41E65313400311B63 /* Assets.xcassets in Resources */,
 				84B5EED41E65393000311B63 /* bg.png in Resources */,
@@ -455,6 +516,7 @@
 				84B5EEE11E65393A00311B63 /* loginBtn.png in Resources */,
 				84B5EEE91E65394200311B63 /* iHoopTitle.png in Resources */,
 				84B5EEE51E65393A00311B63 /* submitBtn.png in Resources */,
+				968DF37D1E71173900256EE2 /* basketball.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,7 +685,9 @@
 				845AA71A1E6DCDEC006E8DAB /* ProfileHomeViewController.swift in Sources */,
 				84B5EEEF1E653C2700311B63 /* LoginViewController.swift in Sources */,
 				84B44EE11E687E4500AABF92 /* ForgotUsernameViewController.swift in Sources */,
+				968DF3731E70F41200256EE2 /* Constraints.swift in Sources */,
 				84B44EE31E687E6500AABF92 /* ForgotPasswordViewController.swift in Sources */,
+				968DF3701E70E22200256EE2 /* DataServices.swift in Sources */,
 				845AA7181E6DCD04006E8DAB /* MenuViewController.swift in Sources */,
 				84B5EE9F1E65313400311B63 /* HomeViewController.swift in Sources */,
 				84B5EEF21E653C3C00311B63 /* SignUpViewController.swift in Sources */,
