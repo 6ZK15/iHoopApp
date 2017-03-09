@@ -219,7 +219,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "135"
             endingLineNumber = "135"
-            landmarkName = "completeSignIn(id:)"
+            landmarkName = "clearLogin()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
