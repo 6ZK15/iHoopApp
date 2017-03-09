@@ -190,11 +190,8 @@
 		845AA70E1E6DBFEC006E8DAB /* ProfileViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				845AA70F1E6DCB96006E8DAB /* SWRevealViewController */,
 				8433F0D01E6EDBCC003F9E9A /* PagingViewController.swift */,
-=======
->>>>>>> 7824b5e73aa6c1465c7a65c8878c6212744d26de
 				845AA7191E6DCDEC006E8DAB /* ProfileHomeViewController.swift */,
 				8433F0D61E70EC8E003F9E9A /* NewsFeedViewController.swift */,
 				8433F0D81E70F3BF003F9E9A /* SearchViewController.swift */,
@@ -704,11 +701,8 @@
 				84B44EE11E687E4500AABF92 /* ForgotUsernameViewController.swift in Sources */,
 				968DF3731E70F41200256EE2 /* Constraints.swift in Sources */,
 				84B44EE31E687E6500AABF92 /* ForgotPasswordViewController.swift in Sources */,
-<<<<<<< HEAD
 				8433F0D11E6EDBCC003F9E9A /* PagingViewController.swift in Sources */,
-=======
 				968DF3701E70E22200256EE2 /* DataServices.swift in Sources */,
->>>>>>> 7824b5e73aa6c1465c7a65c8878c6212744d26de
 				845AA7181E6DCD04006E8DAB /* MenuViewController.swift in Sources */,
 				8433F0D91E70F3BF003F9E9A /* SearchViewController.swift in Sources */,
 				84B5EE9F1E65313400311B63 /* HomeViewController.swift in Sources */,
