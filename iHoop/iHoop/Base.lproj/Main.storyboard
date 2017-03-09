@@ -39,7 +39,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vao-wh-oID" secondAttribute="height" multiplier="3:1" id="5Vc-Oc-U9Y"/>
                                 </constraints>
-                                <state key="normal" image="2A54F856-A6A6-4B33-B4EC-A5FC51ACA27C"/>
+                                <state key="normal" image="190A1768-CF27-4CF6-9EA8-C22C9434117F"/>
                                 <connections>
                                     <segue destination="peH-8G-Ylp" kind="push" id="BuL-ob-8rW"/>
                                 </connections>
@@ -49,7 +49,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0Oo-IN-Bc1" secondAttribute="height" multiplier="4:1" id="BQ6-vp-T07"/>
                                 </constraints>
-                                <state key="normal" image="ED845729-BCB4-4FAF-83FD-E70A23C3DD86"/>
+                                <state key="normal" image="3CC38B67-982D-4855-9D95-BE304396AF98"/>
                                 <connections>
                                     <segue destination="KLm-gJ-cF9" kind="push" id="X0a-py-58v"/>
                                 </connections>
@@ -285,11 +285,7 @@
                                 <state key="normal" image="submitBtn.png"/>
                                 <connections>
                                     <action selector="signInButton:" destination="peH-8G-Ylp" eventType="touchUpInside" id="wo8-r6-1rn"/>
-<<<<<<< HEAD
-                                    <segue destination="Avs-Tt-M1P" kind="push" id="czN-H3-tRE"/>
-=======
                                     <segue destination="Moa-ud-57g" kind="push" id="1mF-fJ-7nl"/>
->>>>>>> 7824b5e73aa6c1465c7a65c8878c6212744d26de
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyL-o1-GA8">
@@ -348,7 +344,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F1b-Bc-psd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2663.768115942029" y="208.69565217391306"/>
+            <point key="canvasLocation" x="1596" y="-545"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="uiz-To-D5W">
@@ -673,7 +669,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xPe-hc-JJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2565" y="-545"/>
+            <point key="canvasLocation" x="2299" y="-545"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="bgz-yx-4pL">
@@ -1021,7 +1017,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="2A54F856-A6A6-4B33-B4EC-A5FC51ACA27C" width="234" height="82">
+        <image name="190A1768-CF27-4CF6-9EA8-C22C9434117F" width="234" height="82">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -2372,7 +2368,7 @@ JwABOjQAATo5AAE6OwABOj0AATpCAAE6SgABOk0AATpSAAE6WgABOl0AATpvAAE6cgABOncAAAAAAAAE
 AQAAAAAAAAA+AAAAAAAAAAAAAAAAAAE6eQ
 </mutableData>
         </image>
-        <image name="ED845729-BCB4-4FAF-83FD-E70A23C3DD86" width="304" height="82">
+        <image name="3CC38B67-982D-4855-9D95-BE304396AF98" width="304" height="82">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA

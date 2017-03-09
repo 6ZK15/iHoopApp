@@ -190,7 +190,6 @@
 		845AA70E1E6DBFEC006E8DAB /* ProfileViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				845AA70F1E6DCB96006E8DAB /* SWRevealViewController */,
 				8433F0D01E6EDBCC003F9E9A /* PagingViewController.swift */,
 				845AA7191E6DCDEC006E8DAB /* ProfileHomeViewController.swift */,
 				8433F0D61E70EC8E003F9E9A /* NewsFeedViewController.swift */,
@@ -244,7 +243,7 @@
 				968DF3691E70413D00256EE2 /* Model */,
 				968DF36A1E70414600256EE2 /* View */,
 				84B5EE9C1E65313400311B63 /* AppDelegate.swift */,
-				968DF36B1E70416D00256EE2 /* Contoller */,
+				968DF36B1E70416D00256EE2 /* ViewControllers */,
 				84B5EEA01E65313400311B63 /* Main.storyboard */,
 				84B5EEA31E65313400311B63 /* Assets.xcassets */,
 				968DF3761E710AD200256EE2 /* spider.gif */,
@@ -347,7 +346,7 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		968DF36B1E70416D00256EE2 /* Contoller */ = {
+		968DF36B1E70416D00256EE2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				845AA70F1E6DCB96006E8DAB /* SWRevealViewController */,
@@ -356,7 +355,7 @@
 				84B44EE01E687E4500AABF92 /* ForgotUsernameViewController.swift */,
 				84B44EE21E687E6500AABF92 /* ForgotPasswordViewController.swift */,
 			);
-			name = Contoller;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		968DF36C1E70DE0600256EE2 /* Services */ = {

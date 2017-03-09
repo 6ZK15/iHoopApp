@@ -89,19 +89,15 @@ class LoginViewController: UIViewController {
                             }
                             
                         } else {
-<<<<<<< HEAD
                             print("Successfully authenticated with Firebase")
                             self .clearLogin()
                             let SWRevealViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
                             self.navigationController?.pushViewController(SWRevealViewController, animated: true)
-=======
                             print("Successfully created authenticated user with Firebase")
                             if let user = user{
                                 self.completeSignIn(id: user.uid)
                             }
                             self.performSegue(withIdentifier:"ProfileHomeViewController", sender: nil)
-                       
->>>>>>> 7824b5e73aa6c1465c7a65c8878c6212744d26de
                             
                         }
                     })
