@@ -7,32 +7,13 @@
 //
 
 import UIKit
-import AVFoundation
+import Firebase
 
 class HomeViewController: UIViewController {
-    
-    var player: AVPlayer!
-    var playerLayer: AVPlayerLayer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let URL = Bundle.main.url(forResource: "basketball", withExtension: "mp4")
-        player = AVPlayer.init(url: URL!)
-        
-        playerLayer = AVPlayerLayer(player: player)
-        playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-        playerLayer.frame = view.layer.frame
-        
-        player.actionAtItemEnd = AVPlayerActionAtItemEnd.none
-        player.play()
-        view.layer.insertSublayer(playerLayer, at: 0)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(playerItemReachEnd(notification:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem)
-        
-    }
-    func playerItemReachEnd(notification: NSNotification){
-        player.seek(to: kCMTimeZero)
+        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +21,7 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+  
 
 }
 
