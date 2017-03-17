@@ -83,13 +83,16 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
                 self.arrowBtn.alpha = 0
                 self.arrowBtnB.alpha = 1
                 self.arrowBtnB.transform = CGAffineTransform.init(rotationAngle: self.radians(180))
+                self.usernameTextField.alpha = 0
+                self.passwordTextField.alpha = 0
             })
         } else {
             UIView.animate(withDuration: 1, animations: {
                 self.arrowBtn.transform = .identity
                 self.arrowBtn.alpha = 1
                 self.arrowBtnB.alpha = 0
-                
+                self.usernameTextField.alpha = 1
+                self.passwordTextField.alpha = 1
             })
         }
     }
@@ -154,11 +157,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     @IBAction func dropMenu(_ sender: Any) {
         showHideMenuView()
     }
-    
-    @IBAction func closeDropMenu(_ sender: Any) {
-        
-    }
-    
     
     func radians(_ degrees: Double) -> CGFloat {
         return CGFloat(degrees * .pi / degrees)
