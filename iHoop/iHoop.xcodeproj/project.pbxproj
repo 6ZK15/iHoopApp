@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841585321E7A7A8000B263BE /* downArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 841585301E7A7A7F00B263BE /* downArrow.png */; };
+		841585331E7A7A8000B263BE /* upArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 841585311E7A7A8000B263BE /* upArrow.png */; };
+		841585351E7A7C8700B263BE /* Playball.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 841585341E7A7C6900B263BE /* Playball.ttf */; };
 		84B44EDD1E67B6B400AABF92 /* Carrington.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EECF1E6532C200311B63 /* Carrington.ttf */; };
 		84B44EDE1E67B6B400AABF92 /* DrSugiyama-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED01E6532C200311B63 /* DrSugiyama-Regular.ttf */; };
 		84B44EDF1E67B6B400AABF92 /* FNL_DEMO-KCFonts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED11E6532C200311B63 /* FNL_DEMO-KCFonts.ttf */; };
@@ -65,6 +68,10 @@
 		207B5FBD0B3245C67C60F638 /* Pods-iHoopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoopUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHoopUITests/Pods-iHoopUITests.release.xcconfig"; sourceTree = "<group>"; };
 		56CA6631D6767A06E04B5714 /* Pods_iHoop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHoop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7886AA4E4529624A643E0891 /* Pods_iHoopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHoopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8415852F1E792B6E00B263BE /* basketball.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = basketball.mp4; path = Videos/basketball.mp4; sourceTree = "<group>"; };
+		841585301E7A7A7F00B263BE /* downArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = downArrow.png; path = Images/Buttons/downArrow.png; sourceTree = "<group>"; };
+		841585311E7A7A8000B263BE /* upArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = upArrow.png; path = Images/Buttons/upArrow.png; sourceTree = "<group>"; };
+		841585341E7A7C6900B263BE /* Playball.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Playball.ttf; path = Fonts/Playball.ttf; sourceTree = "<group>"; };
 		843FCCF3C60FAEC7D17147AD /* Pods_iHoopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHoopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B44EE01E687E4500AABF92 /* ForgotUsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotUsernameViewController.swift; sourceTree = "<group>"; };
 		84B44EE21E687E6500AABF92 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +152,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8415852E1E792B5B00B263BE /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				8415852F1E792B6E00B263BE /* basketball.mp4 */,
+			);
+			name = Video;
+			sourceTree = "<group>";
+		};
 		84B5EE901E65313400311B63 = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +198,7 @@
 				963A653A1E67AAC700A9447C /* GoogleService-Info.plist */,
 				84B5EECB1E65323200311B63 /* Fonts */,
 				84B5EECA1E65322C00311B63 /* Images */,
+				8415852E1E792B5B00B263BE /* Video */,
 			);
 			path = iHoop;
 			sourceTree = "<group>";
@@ -218,6 +234,7 @@
 		84B5EECB1E65323200311B63 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				841585341E7A7C6900B263BE /* Playball.ttf */,
 				84B5EECF1E6532C200311B63 /* Carrington.ttf */,
 				84B5EED01E6532C200311B63 /* DrSugiyama-Regular.ttf */,
 				84B5EED11E6532C200311B63 /* FNL_DEMO-KCFonts.ttf */,
@@ -238,6 +255,8 @@
 		84B5EECD1E65323F00311B63 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				841585301E7A7A7F00B263BE /* downArrow.png */,
+				841585311E7A7A8000B263BE /* upArrow.png */,
 				84B5EED61E65393A00311B63 /* cancelBtn.png */,
 				84B5EED71E65393A00311B63 /* forgotPasswordBtn.png */,
 				84B5EED81E65393A00311B63 /* forgotUsernameBtn.png */,
@@ -389,6 +408,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841585351E7A7C8700B263BE /* Playball.ttf in Resources */,
 				84B44EDD1E67B6B400AABF92 /* Carrington.ttf in Resources */,
 				84B44EDE1E67B6B400AABF92 /* DrSugiyama-Regular.ttf in Resources */,
 				84B44EDF1E67B6B400AABF92 /* FNL_DEMO-KCFonts.ttf in Resources */,
@@ -402,8 +422,10 @@
 				84B5EED41E65393000311B63 /* bg.png in Resources */,
 				84B5EEE01E65393A00311B63 /* forgotUsernameBtn.png in Resources */,
 				84B5EEED1E653A9D00311B63 /* bgHome.png in Resources */,
+				841585331E7A7A8000B263BE /* upArrow.png in Resources */,
 				84B5EEE31E65393A00311B63 /* securityQuetionArrow.png in Resources */,
 				84B5EEDE1E65393A00311B63 /* cancelBtn.png in Resources */,
+				841585321E7A7A8000B263BE /* downArrow.png in Resources */,
 				84B5EEEB1E65394200311B63 /* signUpTitle.png in Resources */,
 				84B5EEE21E65393A00311B63 /* menuBtn.png in Resources */,
 				84B5EEA21E65313400311B63 /* Main.storyboard in Resources */,

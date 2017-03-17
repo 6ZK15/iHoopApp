@@ -30,6 +30,7 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Playball.ttf</string>
 		<string>Carrington.ttf</string>
 		<string>DrSugiyama-Regular.ttf</string>
 		<string>FNL_DEMO_KCFonts.ttf</string>
