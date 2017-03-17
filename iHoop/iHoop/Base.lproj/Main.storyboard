@@ -185,6 +185,8 @@
                         <outlet property="errorLabel" destination="jlF-7M-7Qg" id="wt2-Z9-ALt"/>
                         <outlet property="errorMessageView" destination="wam-24-Vzo" id="hur-iu-332"/>
                         <outlet property="passwordTextField" destination="etf-wL-dNQ" id="CPN-8f-qkv"/>
+                        <outlet property="rememberLabel" destination="p7H-ak-Zno" id="Mb0-yL-oZk"/>
+                        <outlet property="rememberSwitch" destination="hII-GP-x9A" id="A7w-WR-LYH"/>
                         <outlet property="submitBtn" destination="lIw-68-HBs" id="Fu1-bj-HQH"/>
                         <outlet property="usernameTextField" destination="uVD-Q6-k3p" id="dsM-Qz-Zh6"/>
                     </connections>
@@ -726,7 +728,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="2JF-Sv-J85" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aae-hQ-kLa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aae-hQ-kLa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -20,6 +20,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var arrowBtn: UIButton!
     @IBOutlet weak var arrowBtnB: UIButton!
     @IBOutlet weak var disableView: UIView!
+    @IBOutlet weak var rememberLabel: UILabel!
+    @IBOutlet weak var rememberSwitch: UISwitch!
     
     let orangeColor = UIColor.init(red: 0.796, green: 0.345, blue: 0.090, alpha: 1.000)
     
