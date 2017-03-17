@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class HomeViewController: UIViewController, UITextFieldDelegate {
+class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -22,8 +22,10 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var disableView: UIView!
     @IBOutlet weak var rememberLabel: UILabel!
     @IBOutlet weak var rememberSwitch: UISwitch!
-    @IBOutlet weak var menuOptionView: MenuOptionView!
+    @IBOutlet weak var menuOptionView: UIView!
+    @IBOutlet weak var signUpScrollView: UIScrollView!
     
+    var signUpView: SignUpView?
     let orangeColor = UIColor.init(red: 0.796, green: 0.345, blue: 0.090, alpha: 1.000)
     
     override func viewDidLoad() {
@@ -92,6 +94,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
                 self.rememberLabel.alpha = 0
                 self.rememberSwitch.alpha = 0
                 self.submitBtn.alpha = 0
+                self.signUpScrollView.alpha = 0
             })
         } else {
             UIView.animate(withDuration: 1, animations: {
@@ -189,6 +192,18 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func showSignUpView(_ sender: Any) {
+        UIView.animate(withDuration: 1, animations: {
+            self.arrowBtn.transform = .identity
+            self.arrowBtnB.alpha = 0
+            self.arrowBtn.alpha = 1
+            self.menuOptionView.alpha = 0
+        }) { (true) in
+            UIView.animate(withDuration: 1, animations: {
+                self.signUpScrollView.alpha = 1
+            })
+        }
+    }
     
     /*
      * CGFloat: Degrees to Radians

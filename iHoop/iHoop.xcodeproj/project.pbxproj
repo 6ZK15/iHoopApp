@@ -10,8 +10,8 @@
 		841585321E7A7A8000B263BE /* downArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 841585301E7A7A7F00B263BE /* downArrow.png */; };
 		841585331E7A7A8000B263BE /* upArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 841585311E7A7A8000B263BE /* upArrow.png */; };
 		841585351E7A7C8700B263BE /* Playball.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 841585341E7A7C6900B263BE /* Playball.ttf */; };
-		841585391E7BB0D800B263BE /* MenuOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841585381E7BB0D800B263BE /* MenuOptionView.swift */; };
 		8415853B1E7BB8FB00B263BE /* facebookBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8415853A1E7BB8FB00B263BE /* facebookBtn.png */; };
+		8415853D1E7BDBE300B263BE /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415853C1E7BDBE300B263BE /* SignUpView.swift */; };
 		84B44EDD1E67B6B400AABF92 /* Carrington.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EECF1E6532C200311B63 /* Carrington.ttf */; };
 		84B44EDE1E67B6B400AABF92 /* DrSugiyama-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED01E6532C200311B63 /* DrSugiyama-Regular.ttf */; };
 		84B44EDF1E67B6B400AABF92 /* FNL_DEMO-KCFonts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED11E6532C200311B63 /* FNL_DEMO-KCFonts.ttf */; };
@@ -73,8 +73,8 @@
 		841585301E7A7A7F00B263BE /* downArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = downArrow.png; path = Images/Buttons/downArrow.png; sourceTree = "<group>"; };
 		841585311E7A7A8000B263BE /* upArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = upArrow.png; path = Images/Buttons/upArrow.png; sourceTree = "<group>"; };
 		841585341E7A7C6900B263BE /* Playball.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Playball.ttf; path = Fonts/Playball.ttf; sourceTree = "<group>"; };
-		841585381E7BB0D800B263BE /* MenuOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuOptionView.swift; path = UIViews/MenuOptionView.swift; sourceTree = "<group>"; };
 		8415853A1E7BB8FB00B263BE /* facebookBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebookBtn.png; path = Images/Buttons/facebookBtn.png; sourceTree = "<group>"; };
+		8415853C1E7BDBE300B263BE /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpView.swift; path = UIViews/SignUpView.swift; sourceTree = "<group>"; };
 		843FCCF3C60FAEC7D17147AD /* Pods_iHoopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHoopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B44EE01E687E4500AABF92 /* ForgotUsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotUsernameViewController.swift; sourceTree = "<group>"; };
 		84B44EE21E687E6500AABF92 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 		841585371E7BB08600B263BE /* UIViews */ = {
 			isa = PBXGroup;
 			children = (
-				841585381E7BB0D800B263BE /* MenuOptionView.swift */,
+				8415853C1E7BDBE300B263BE /* SignUpView.swift */,
 			);
 			name = UIViews;
 			sourceTree = "<group>";
@@ -612,9 +612,9 @@
 				84B5EEEF1E653C2700311B63 /* LoginViewController.swift in Sources */,
 				84B44EE11E687E4500AABF92 /* ForgotUsernameViewController.swift in Sources */,
 				84B44EE31E687E6500AABF92 /* ForgotPasswordViewController.swift in Sources */,
+				8415853D1E7BDBE300B263BE /* SignUpView.swift in Sources */,
 				84B5EE9F1E65313400311B63 /* HomeViewController.swift in Sources */,
 				84B5EEF21E653C3C00311B63 /* SignUpViewController.swift in Sources */,
-				841585391E7BB0D800B263BE /* MenuOptionView.swift in Sources */,
 				84B5EE9D1E65313400311B63 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -72,7 +72,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.7969396710395813" green="0.3445398211479187" blue="0.090358667075634003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Playball-Regular" family="Playball" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="7f8-RM-IV3"/>
                                 </connections>
@@ -91,12 +91,12 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="DIe-H1-Bbq"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7H-ak-Zno">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7H-ak-Zno">
                                 <rect key="frame" x="70" y="348" width="189" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="p7H-ak-Zno" secondAttribute="height" multiplier="21:5" id="GHY-Jb-1pk"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -126,7 +126,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlF-7M-7Qg" userLabel="errrorLabel">
                                         <rect key="frame" x="20" y="10" width="374" height="88"/>
-                                        <fontDescription key="fontDescription" name="Playball-Regular" family="Playball" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="30"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -138,7 +138,7 @@
                                     <constraint firstAttribute="trailingMargin" secondItem="jlF-7M-7Qg" secondAttribute="trailing" constant="12" id="jxw-P7-jGf"/>
                                 </constraints>
                             </view>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLJ-s7-Fgp" customClass="MenuOptionView" customModule="iHoop" customModuleProvider="target">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLJ-s7-Fgp" userLabel="menuOptionView">
                                 <rect key="frame" x="0.0" y="120" width="414" height="80"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="QdL-Lm-vjo">
@@ -170,6 +170,9 @@
                                                     <constraint firstAttribute="height" constant="44" id="aD1-3q-47Z"/>
                                                 </constraints>
                                                 <state key="normal" image="signUpBtn.png"/>
+                                                <connections>
+                                                    <action selector="showSignUpView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zEL-5v-w4I"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dc-Je-exP" userLabel="forgotPasswordBtn">
                                                 <rect key="frame" x="237" y="0.0" width="44" height="44"/>
@@ -200,6 +203,199 @@
                                     <constraint firstAttribute="width" secondItem="oLJ-s7-Fgp" secondAttribute="height" multiplier="207:40" id="mID-G0-vkG"/>
                                 </constraints>
                             </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8P-sg-o6q" userLabel="signUpScrollView">
+                                <rect key="frame" x="0.0" y="168" width="414" height="400"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fjw-JB-S5A" userLabel="signUpView" customClass="SignUpView" customModule="iHoop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="660"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xtk-sk-HEc">
+                                                <rect key="frame" x="152" y="8" width="110" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Xtk-sk-HEc" secondAttribute="height" multiplier="5:2" id="h5Q-9Q-fYh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="32"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qx4-q1-cKl" userLabel="firstNameTextField">
+                                                <rect key="frame" x="70" y="60" width="274" height="44"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="qx4-q1-cKl" secondAttribute="height" multiplier="137:22" id="eRL-Yd-k4n"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="24"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="fjw-JB-S5A" id="gru-sS-GHK"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.30000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OAg-cQ-FhH" userLabel="lasttNameTextField">
+                                                <rect key="frame" x="70" y="124" width="274" height="44"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="OAg-cQ-FhH" secondAttribute="height" multiplier="137:22" id="QRN-mk-sjk"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="24"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="fjw-JB-S5A" id="pYw-zV-kHX"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.30000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uWd-qH-Ulw" userLabel="emailTextField">
+                                                <rect key="frame" x="70" y="188" width="274" height="44"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="uWd-qH-Ulw" secondAttribute="height" multiplier="137:22" id="zEv-5f-VYp"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="24"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="fjw-JB-S5A" id="eEn-aa-hQt"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.30000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LdV-ab-Gg8" userLabel="usernameTextField">
+                                                <rect key="frame" x="70" y="252" width="274" height="44"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="LdV-ab-Gg8" secondAttribute="height" multiplier="137:22" id="7hE-R9-aqe"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="24"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="fjw-JB-S5A" id="NSe-aL-HzZ"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.30000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YcS-jt-syz" userLabel="passwordTextField">
+                                                <rect key="frame" x="70" y="316" width="274" height="44"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="YcS-jt-syz" secondAttribute="height" multiplier="137:22" id="8RR-xj-wK2"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="24"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="fjw-JB-S5A" id="GLu-rk-mxW"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.30000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Verify Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y91-2S-Odo" userLabel="verifyPasswordTextField">
+                                                <rect key="frame" x="70" y="380" width="274" height="44"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Y91-2S-Odo" secondAttribute="height" multiplier="137:22" id="bFj-Vd-LQj"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="24"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="fjw-JB-S5A" id="hfM-4a-vlt"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.30000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Security Question" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uPm-z7-ZBn" userLabel="securityQuestionTextField">
+                                                <rect key="frame" x="70" y="444" width="274" height="44"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="uPm-z7-ZBn" secondAttribute="height" multiplier="137:22" id="LeI-DB-1T3"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="24"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="fjw-JB-S5A" id="YGm-b7-9zp"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.30000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Security Answer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Thp-Ig-UTA" userLabel="securityAnswerTextField">
+                                                <rect key="frame" x="70" y="508" width="274" height="44"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Thp-Ig-UTA" secondAttribute="height" multiplier="137:22" id="kBg-uO-C3j"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="24"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="fjw-JB-S5A" id="i55-xu-RhY"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jp-QE-l7c">
+                                                <rect key="frame" x="167" y="572" width="80" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="7jp-QE-l7c" secondAttribute="height" multiplier="4:3" id="5yC-qC-iOR"/>
+                                                </constraints>
+                                                <state key="normal" image="submitBtn.png"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="Xtk-sk-HEc" firstAttribute="top" secondItem="fjw-JB-S5A" secondAttribute="top" constant="8" id="26T-im-Jh3"/>
+                                            <constraint firstItem="OAg-cQ-FhH" firstAttribute="top" secondItem="qx4-q1-cKl" secondAttribute="bottom" constant="20" id="2OB-3u-hWz"/>
+                                            <constraint firstItem="YcS-jt-syz" firstAttribute="leading" secondItem="fjw-JB-S5A" secondAttribute="leading" constant="70" id="2iM-6T-hNz"/>
+                                            <constraint firstItem="Y91-2S-Odo" firstAttribute="top" secondItem="YcS-jt-syz" secondAttribute="bottom" constant="20" id="4xi-vx-j5G"/>
+                                            <constraint firstAttribute="trailing" secondItem="qx4-q1-cKl" secondAttribute="trailing" constant="70" id="67Q-6R-w46"/>
+                                            <constraint firstAttribute="trailing" secondItem="7jp-QE-l7c" secondAttribute="trailing" constant="167" id="6fz-cY-moC"/>
+                                            <constraint firstItem="LdV-ab-Gg8" firstAttribute="leading" secondItem="fjw-JB-S5A" secondAttribute="leading" constant="70" id="70f-R3-We8"/>
+                                            <constraint firstItem="uWd-qH-Ulw" firstAttribute="top" secondItem="OAg-cQ-FhH" secondAttribute="bottom" constant="20" id="DW6-Ha-Itv"/>
+                                            <constraint firstAttribute="trailing" secondItem="YcS-jt-syz" secondAttribute="trailing" constant="70" id="DfP-33-2k3"/>
+                                            <constraint firstItem="Thp-Ig-UTA" firstAttribute="top" secondItem="uPm-z7-ZBn" secondAttribute="bottom" constant="20" id="EEk-lE-ZHI"/>
+                                            <constraint firstItem="Y91-2S-Odo" firstAttribute="leading" secondItem="fjw-JB-S5A" secondAttribute="leading" constant="70" id="GVl-vs-bxt"/>
+                                            <constraint firstAttribute="trailing" secondItem="Thp-Ig-UTA" secondAttribute="trailing" constant="70" id="Ggy-23-qBf"/>
+                                            <constraint firstAttribute="trailing" secondItem="Xtk-sk-HEc" secondAttribute="trailing" constant="152" id="IeN-CY-Ycg"/>
+                                            <constraint firstAttribute="trailing" secondItem="Y91-2S-Odo" secondAttribute="trailing" constant="70" id="Jo0-SI-wDy"/>
+                                            <constraint firstItem="7jp-QE-l7c" firstAttribute="leading" secondItem="fjw-JB-S5A" secondAttribute="leading" constant="167" id="NqN-mf-ha6"/>
+                                            <constraint firstItem="qx4-q1-cKl" firstAttribute="top" secondItem="Xtk-sk-HEc" secondAttribute="bottom" constant="8" id="OnQ-2y-0TA"/>
+                                            <constraint firstItem="uPm-z7-ZBn" firstAttribute="leading" secondItem="fjw-JB-S5A" secondAttribute="leading" constant="70" id="Szt-5U-NDJ"/>
+                                            <constraint firstItem="OAg-cQ-FhH" firstAttribute="leading" secondItem="fjw-JB-S5A" secondAttribute="leading" constant="70" id="Wf5-6d-s1f"/>
+                                            <constraint firstItem="qx4-q1-cKl" firstAttribute="leading" secondItem="fjw-JB-S5A" secondAttribute="leading" constant="70" id="ZpB-ay-Iys"/>
+                                            <constraint firstItem="uPm-z7-ZBn" firstAttribute="top" secondItem="Y91-2S-Odo" secondAttribute="bottom" constant="20" id="bmQ-uh-q2N"/>
+                                            <constraint firstItem="uWd-qH-Ulw" firstAttribute="leading" secondItem="fjw-JB-S5A" secondAttribute="leading" constant="70" id="bnZ-lm-4MM"/>
+                                            <constraint firstAttribute="trailing" secondItem="OAg-cQ-FhH" secondAttribute="trailing" constant="70" id="i3a-ER-Lr1"/>
+                                            <constraint firstAttribute="trailing" secondItem="LdV-ab-Gg8" secondAttribute="trailing" constant="70" id="iqF-sG-Ufk"/>
+                                            <constraint firstAttribute="trailing" secondItem="uWd-qH-Ulw" secondAttribute="trailing" constant="70" id="kMc-fj-uiS"/>
+                                            <constraint firstItem="Thp-Ig-UTA" firstAttribute="leading" secondItem="fjw-JB-S5A" secondAttribute="leading" constant="70" id="ljT-ct-qow"/>
+                                            <constraint firstAttribute="trailing" secondItem="uPm-z7-ZBn" secondAttribute="trailing" constant="70" id="nL0-9p-nzO"/>
+                                            <constraint firstItem="YcS-jt-syz" firstAttribute="top" secondItem="LdV-ab-Gg8" secondAttribute="bottom" constant="20" id="nxA-i8-l9N"/>
+                                            <constraint firstItem="7jp-QE-l7c" firstAttribute="top" secondItem="Thp-Ig-UTA" secondAttribute="bottom" constant="20" id="nyU-Lg-hcf"/>
+                                            <constraint firstItem="LdV-ab-Gg8" firstAttribute="top" secondItem="uWd-qH-Ulw" secondAttribute="bottom" constant="20" id="xhC-Po-FpC"/>
+                                            <constraint firstItem="Xtk-sk-HEc" firstAttribute="leading" secondItem="fjw-JB-S5A" secondAttribute="leading" constant="152" id="zev-Wh-HaK"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="emailTextField" destination="uWd-qH-Ulw" id="1vL-WK-A2F"/>
+                                            <outlet property="firstNameTextField" destination="qx4-q1-cKl" id="FfX-Qz-Q3S"/>
+                                            <outlet property="lastNameTextField" destination="OAg-cQ-FhH" id="cXi-JN-1bL"/>
+                                            <outlet property="passwordTextField" destination="YcS-jt-syz" id="3xf-oe-V6z"/>
+                                            <outlet property="securityAniswerTextField" destination="Thp-Ig-UTA" id="bfs-Kp-pr5"/>
+                                            <outlet property="securityQuestionTextField" destination="uPm-z7-ZBn" id="SWt-Qm-vZO"/>
+                                            <outlet property="usernameTextField" destination="LdV-ab-Gg8" id="08e-lH-MvX"/>
+                                            <outlet property="verifyPasswordTextField" destination="Y91-2S-Odo" id="Ury-us-TpJ"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fjw-JB-S5A" secondAttribute="trailing" id="55D-5f-b9Z"/>
+                                    <constraint firstAttribute="bottom" secondItem="fjw-JB-S5A" secondAttribute="bottom" constant="-260" id="NPj-VR-l99"/>
+                                    <constraint firstItem="fjw-JB-S5A" firstAttribute="top" secondItem="S8P-sg-o6q" secondAttribute="top" id="SZG-wh-n5y"/>
+                                    <constraint firstItem="fjw-JB-S5A" firstAttribute="centerY" secondItem="S8P-sg-o6q" secondAttribute="centerY" constant="130" id="dLW-jy-85a"/>
+                                    <constraint firstItem="fjw-JB-S5A" firstAttribute="leading" secondItem="S8P-sg-o6q" secondAttribute="leading" id="tZb-4a-8JA"/>
+                                    <constraint firstItem="fjw-JB-S5A" firstAttribute="centerX" secondItem="S8P-sg-o6q" secondAttribute="centerX" id="ynp-jE-dNY"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="pUB-NL-cuz"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -210,6 +406,7 @@
                             <constraint firstItem="dOV-wj-1KI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="5rI-pu-6zt"/>
                             <constraint firstItem="O9z-Fh-MQm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="87" id="CSV-Yz-HwK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dOV-wj-1KI" secondAttribute="trailing" constant="-20" id="Ccd-fx-aVZ"/>
+                            <constraint firstItem="S8P-sg-o6q" firstAttribute="top" secondItem="AMI-po-oc7" secondAttribute="bottom" constant="8" symbolic="YES" id="Cp2-ny-hEg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BCm-wy-1k7" secondAttribute="trailing" constant="165" id="IZz-YS-Y0N"/>
                             <constraint firstItem="p7H-ak-Zno" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="Ifb-I4-A9f"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AMI-po-oc7" secondAttribute="trailing" constant="165" id="Iui-f0-fcd"/>
@@ -218,6 +415,7 @@
                             <constraint firstItem="O9z-Fh-MQm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="OEz-fQ-ydX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="O9z-Fh-MQm" secondAttribute="trailing" constant="87" id="OGR-M8-ayu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oLJ-s7-Fgp" secondAttribute="trailing" constant="-20" id="Pzg-Ac-yzU"/>
+                            <constraint firstItem="S8P-sg-o6q" firstAttribute="centerY" secondItem="dOV-wj-1KI" secondAttribute="centerY" id="QFZ-ct-FRA"/>
                             <constraint firstItem="dOV-wj-1KI" firstAttribute="top" secondItem="wam-24-Vzo" secondAttribute="bottom" id="Tag-EC-zTQ"/>
                             <constraint firstItem="BCm-wy-1k7" firstAttribute="top" secondItem="lIw-68-HBs" secondAttribute="bottom" constant="20" id="VXZ-Ac-6Mq"/>
                             <constraint firstItem="UBW-BY-qMw" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="WIH-7u-vS5"/>
@@ -225,6 +423,7 @@
                             <constraint firstItem="hII-GP-x9A" firstAttribute="top" secondItem="etf-wL-dNQ" secondAttribute="bottom" constant="27" id="YbS-Qc-SQH"/>
                             <constraint firstItem="dOV-wj-1KI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="a4f-E5-SvF"/>
                             <constraint firstItem="oLJ-s7-Fgp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="bCi-uR-GcE"/>
+                            <constraint firstItem="S8P-sg-o6q" firstAttribute="leading" secondItem="oLJ-s7-Fgp" secondAttribute="leading" id="bNg-mi-vJK"/>
                             <constraint firstItem="oLJ-s7-Fgp" firstAttribute="top" secondItem="AMI-po-oc7" secondAttribute="bottom" constant="-40" id="bph-Ge-sVS"/>
                             <constraint firstItem="AMI-po-oc7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="165" id="cR7-nr-6wo"/>
                             <constraint firstItem="lIw-68-HBs" firstAttribute="top" secondItem="p7H-ak-Zno" secondAttribute="bottom" constant="20" id="cW4-ma-yPY"/>
@@ -233,6 +432,7 @@
                             <constraint firstAttribute="trailing" secondItem="wam-24-Vzo" secondAttribute="trailing" id="esU-0g-hM1"/>
                             <constraint firstItem="uVD-Q6-k3p" firstAttribute="top" secondItem="AMI-po-oc7" secondAttribute="bottom" constant="60" id="fPd-7D-XIG"/>
                             <constraint firstItem="etf-wL-dNQ" firstAttribute="top" secondItem="uVD-Q6-k3p" secondAttribute="bottom" constant="20" id="gO1-kR-NlL"/>
+                            <constraint firstItem="S8P-sg-o6q" firstAttribute="trailing" secondItem="oLJ-s7-Fgp" secondAttribute="trailing" id="kHo-HC-qCc"/>
                             <constraint firstItem="UBW-BY-qMw" firstAttribute="trailing" secondItem="oLJ-s7-Fgp" secondAttribute="trailing" id="leQ-Vv-H0O"/>
                             <constraint firstItem="dOV-wj-1KI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mZc-1X-vL4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uVD-Q6-k3p" secondAttribute="trailing" constant="50" id="ng3-lh-KrY"/>
@@ -252,10 +452,11 @@
                         <outlet property="disableView" destination="UBW-BY-qMw" id="LYW-hz-b6p"/>
                         <outlet property="errorLabel" destination="jlF-7M-7Qg" id="wt2-Z9-ALt"/>
                         <outlet property="errorMessageView" destination="wam-24-Vzo" id="hur-iu-332"/>
-                        <outlet property="menuOptionView" destination="oLJ-s7-Fgp" id="6eL-KX-t4e"/>
+                        <outlet property="menuOptionView" destination="oLJ-s7-Fgp" id="vfP-nw-tS9"/>
                         <outlet property="passwordTextField" destination="etf-wL-dNQ" id="CPN-8f-qkv"/>
                         <outlet property="rememberLabel" destination="p7H-ak-Zno" id="Mb0-yL-oZk"/>
                         <outlet property="rememberSwitch" destination="hII-GP-x9A" id="A7w-WR-LYH"/>
+                        <outlet property="signUpScrollView" destination="S8P-sg-o6q" id="Oeb-YV-4SS"/>
                         <outlet property="submitBtn" destination="lIw-68-HBs" id="Fu1-bj-HQH"/>
                         <outlet property="usernameTextField" destination="uVD-Q6-k3p" id="dsM-Qz-Zh6"/>
                     </connections>
@@ -615,6 +816,16 @@
                                                 <fontDescription key="fontDescription" name="Carrington" family="Carrington" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NAu-y0-XJX">
+                                                <rect key="frame" x="0.0" y="42" width="271" height="34"/>
+                                                <color key="backgroundColor" red="0.7969396710395813" green="0.3445398211479187" blue="0.090358667075634003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="2ff-wC-tnR"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="Carrington" family="Carrington" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dcV-ID-QHP">
                                                 <rect key="frame" x="0.0" y="84" width="271" height="34"/>
                                                 <color key="backgroundColor" red="0.7969396710395813" green="0.3445398211479187" blue="0.090358667075634003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -674,16 +885,6 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Carrington" family="Carrington" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NAu-y0-XJX">
-                                                <rect key="frame" x="0.0" y="42" width="271" height="34"/>
-                                                <color key="backgroundColor" red="0.7969396710395813" green="0.3445398211479187" blue="0.090358667075634003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="34" id="2ff-wC-tnR"/>
-                                                </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" name="Carrington" family="Carrington" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
