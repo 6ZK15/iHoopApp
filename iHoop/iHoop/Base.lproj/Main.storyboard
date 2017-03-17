@@ -91,12 +91,12 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="DIe-H1-Bbq"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7H-ak-Zno">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7H-ak-Zno">
                                 <rect key="frame" x="70" y="348" width="189" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="p7H-ak-Zno" secondAttribute="height" multiplier="21:5" id="GHY-Jb-1pk"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Playball-Regular" family="Playball" pointSize="36"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -117,9 +117,8 @@
                                     <action selector="submitBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5XZ-zg-Bqa"/>
                                 </connections>
                             </button>
-                            <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UBW-BY-qMw" userLabel="disableView">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UBW-BY-qMw" userLabel="disableView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wam-24-Vzo" userLabel="messageView">
@@ -139,10 +138,73 @@
                                     <constraint firstAttribute="trailingMargin" secondItem="jlF-7M-7Qg" secondAttribute="trailing" constant="12" id="jxw-P7-jGf"/>
                                 </constraints>
                             </view>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLJ-s7-Fgp" customClass="MenuOptionView" customModule="iHoop" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="120" width="414" height="80"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="QdL-Lm-vjo">
+                                        <rect key="frame" x="27" y="20" width="360" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xoj-kr-1j5" userLabel="loginBtn">
+                                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="Vsj-eW-VWm"/>
+                                                    <constraint firstAttribute="width" constant="44" id="aVf-ep-P38"/>
+                                                </constraints>
+                                                <state key="normal" image="loginBtn.png"/>
+                                                <connections>
+                                                    <action selector="showLoginView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8QH-1e-Wxn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1r-oq-OUl" userLabel="facebookBtn">
+                                                <rect key="frame" x="79" y="0.0" width="44" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="SLi-2o-021"/>
+                                                    <constraint firstAttribute="width" constant="44" id="c0w-fe-3R1"/>
+                                                </constraints>
+                                                <state key="normal" image="facebookBtn.png"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsi-ib-Oj3" userLabel="signUpBtn">
+                                                <rect key="frame" x="158" y="0.0" width="44" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="44" id="Ucl-6X-tji"/>
+                                                    <constraint firstAttribute="height" constant="44" id="aD1-3q-47Z"/>
+                                                </constraints>
+                                                <state key="normal" image="signUpBtn.png"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dc-Je-exP" userLabel="forgotPasswordBtn">
+                                                <rect key="frame" x="237" y="0.0" width="44" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="O8b-80-h7B"/>
+                                                    <constraint firstAttribute="width" constant="44" id="kBX-s7-d4F"/>
+                                                </constraints>
+                                                <state key="normal" image="forgotPasswordBtn.png"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KG1-HZ-NbX" userLabel="forgotUsernameBtn">
+                                                <rect key="frame" x="316" y="0.0" width="44" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="9E3-mE-aJn"/>
+                                                    <constraint firstAttribute="width" constant="44" id="LAM-9J-3Rc"/>
+                                                </constraints>
+                                                <state key="normal" image="forgotUsernameBtn.png"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="360" id="iaL-K8-cYj"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="QdL-Lm-vjo" firstAttribute="top" secondItem="oLJ-s7-Fgp" secondAttribute="top" constant="20" id="EFi-Ow-EzF"/>
+                                    <constraint firstItem="QdL-Lm-vjo" firstAttribute="centerX" secondItem="oLJ-s7-Fgp" secondAttribute="centerX" id="GY3-Wo-ZOh"/>
+                                    <constraint firstAttribute="width" secondItem="oLJ-s7-Fgp" secondAttribute="height" multiplier="207:40" id="mID-G0-vkG"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="lIw-68-HBs" secondAttribute="trailing" constant="147" id="0VD-HN-FOj"/>
+                            <constraint firstItem="UBW-BY-qMw" firstAttribute="top" secondItem="dOV-wj-1KI" secondAttribute="top" id="1DC-G4-HKq"/>
                             <constraint firstItem="etf-wL-dNQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="1qW-ah-9hz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dOV-wj-1KI" secondAttribute="bottom" id="4wr-cD-dfy"/>
                             <constraint firstItem="dOV-wj-1KI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="5rI-pu-6zt"/>
@@ -155,11 +217,15 @@
                             <constraint firstItem="AMI-po-oc7" firstAttribute="top" secondItem="O9z-Fh-MQm" secondAttribute="bottom" constant="8" id="KXj-Ru-NgY"/>
                             <constraint firstItem="O9z-Fh-MQm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="OEz-fQ-ydX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="O9z-Fh-MQm" secondAttribute="trailing" constant="87" id="OGR-M8-ayu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oLJ-s7-Fgp" secondAttribute="trailing" constant="-20" id="Pzg-Ac-yzU"/>
                             <constraint firstItem="dOV-wj-1KI" firstAttribute="top" secondItem="wam-24-Vzo" secondAttribute="bottom" id="Tag-EC-zTQ"/>
                             <constraint firstItem="BCm-wy-1k7" firstAttribute="top" secondItem="lIw-68-HBs" secondAttribute="bottom" constant="20" id="VXZ-Ac-6Mq"/>
+                            <constraint firstItem="UBW-BY-qMw" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="WIH-7u-vS5"/>
                             <constraint firstItem="uVD-Q6-k3p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="Y6Q-dN-OCS"/>
                             <constraint firstItem="hII-GP-x9A" firstAttribute="top" secondItem="etf-wL-dNQ" secondAttribute="bottom" constant="27" id="YbS-Qc-SQH"/>
                             <constraint firstItem="dOV-wj-1KI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="a4f-E5-SvF"/>
+                            <constraint firstItem="oLJ-s7-Fgp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="bCi-uR-GcE"/>
+                            <constraint firstItem="oLJ-s7-Fgp" firstAttribute="top" secondItem="AMI-po-oc7" secondAttribute="bottom" constant="-40" id="bph-Ge-sVS"/>
                             <constraint firstItem="AMI-po-oc7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="165" id="cR7-nr-6wo"/>
                             <constraint firstItem="lIw-68-HBs" firstAttribute="top" secondItem="p7H-ak-Zno" secondAttribute="bottom" constant="20" id="cW4-ma-yPY"/>
                             <constraint firstItem="p7H-ak-Zno" firstAttribute="top" secondItem="etf-wL-dNQ" secondAttribute="bottom" constant="20" id="dUb-FM-1iN"/>
@@ -167,11 +233,13 @@
                             <constraint firstAttribute="trailing" secondItem="wam-24-Vzo" secondAttribute="trailing" id="esU-0g-hM1"/>
                             <constraint firstItem="uVD-Q6-k3p" firstAttribute="top" secondItem="AMI-po-oc7" secondAttribute="bottom" constant="60" id="fPd-7D-XIG"/>
                             <constraint firstItem="etf-wL-dNQ" firstAttribute="top" secondItem="uVD-Q6-k3p" secondAttribute="bottom" constant="20" id="gO1-kR-NlL"/>
+                            <constraint firstItem="UBW-BY-qMw" firstAttribute="trailing" secondItem="oLJ-s7-Fgp" secondAttribute="trailing" id="leQ-Vv-H0O"/>
                             <constraint firstItem="dOV-wj-1KI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mZc-1X-vL4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uVD-Q6-k3p" secondAttribute="trailing" constant="50" id="ng3-lh-KrY"/>
                             <constraint firstItem="hII-GP-x9A" firstAttribute="leading" secondItem="p7H-ak-Zno" secondAttribute="trailing" constant="36" id="phT-Jt-Mhg"/>
                             <constraint firstItem="wam-24-Vzo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ubV-bt-ZhT"/>
                             <constraint firstItem="dOV-wj-1KI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wTU-57-vep"/>
+                            <constraint firstItem="UBW-BY-qMw" firstAttribute="leading" secondItem="oLJ-s7-Fgp" secondAttribute="leading" id="zF2-Dv-Byp"/>
                             <constraint firstItem="lIw-68-HBs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="147" id="zaA-jK-3yN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="etf-wL-dNQ" secondAttribute="trailing" constant="50" id="zrF-pj-DEZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hII-GP-x9A" secondAttribute="trailing" constant="50" id="zzt-0k-Qu1"/>
@@ -184,6 +252,7 @@
                         <outlet property="disableView" destination="UBW-BY-qMw" id="LYW-hz-b6p"/>
                         <outlet property="errorLabel" destination="jlF-7M-7Qg" id="wt2-Z9-ALt"/>
                         <outlet property="errorMessageView" destination="wam-24-Vzo" id="hur-iu-332"/>
+                        <outlet property="menuOptionView" destination="oLJ-s7-Fgp" id="6eL-KX-t4e"/>
                         <outlet property="passwordTextField" destination="etf-wL-dNQ" id="CPN-8f-qkv"/>
                         <outlet property="rememberLabel" destination="p7H-ak-Zno" id="Mb0-yL-oZk"/>
                         <outlet property="rememberSwitch" destination="hII-GP-x9A" id="A7w-WR-LYH"/>
@@ -747,7 +816,12 @@
         <image name="bgHome.png" width="752" height="1336"/>
         <image name="cancelBtn.png" width="81" height="81"/>
         <image name="downArrow.png" width="72" height="72"/>
+        <image name="facebookBtn.png" width="72" height="72"/>
+        <image name="forgotPasswordBtn.png" width="72" height="72"/>
+        <image name="forgotUsernameBtn.png" width="72" height="72"/>
         <image name="iHoopTitle.png" width="358" height="153"/>
+        <image name="loginBtn.png" width="72" height="72"/>
+        <image name="signUpBtn.png" width="72" height="72"/>
         <image name="signUpTitle.png" width="304" height="82"/>
         <image name="submitBtn.png" width="144" height="87"/>
     </resources>

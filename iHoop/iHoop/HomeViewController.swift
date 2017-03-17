@@ -22,6 +22,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var disableView: UIView!
     @IBOutlet weak var rememberLabel: UILabel!
     @IBOutlet weak var rememberSwitch: UISwitch!
+    @IBOutlet weak var menuOptionView: MenuOptionView!
     
     let orangeColor = UIColor.init(red: 0.796, green: 0.345, blue: 0.090, alpha: 1.000)
     
@@ -42,7 +43,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
      * UITextField: Style
      */
     func setTextFieldDesign() {
-        let font = UIFont(name: "Playball", size: 24)!
+        let font = UIFont(name: "Bodoni 72 Smallcaps", size: 24)!
         let attributes = [
             NSForegroundColorAttributeName: orangeColor,
             NSFontAttributeName : font
@@ -85,17 +86,28 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
                 self.arrowBtn.alpha = 0
                 self.arrowBtnB.alpha = 1
                 self.arrowBtnB.transform = CGAffineTransform.init(rotationAngle: self.radians(180))
+                self.menuOptionView.alpha = 1
                 self.usernameTextField.alpha = 0
                 self.passwordTextField.alpha = 0
+                self.rememberLabel.alpha = 0
+                self.rememberSwitch.alpha = 0
+                self.submitBtn.alpha = 0
             })
         } else {
             UIView.animate(withDuration: 1, animations: {
                 self.arrowBtn.transform = .identity
-                self.arrowBtn.alpha = 1
                 self.arrowBtnB.alpha = 0
-                self.usernameTextField.alpha = 1
-                self.passwordTextField.alpha = 1
-            })
+                self.arrowBtn.alpha = 1
+                self.menuOptionView.alpha = 0
+            }) { (true) in
+                UIView.animate(withDuration: 1, animations: {
+                    self.usernameTextField.alpha = 1
+                    self.passwordTextField.alpha = 1
+                    self.rememberLabel.alpha = 1
+                    self.rememberSwitch.alpha = 1
+                    self.submitBtn.alpha = 1
+                })
+            }
         }
     }
     
@@ -160,6 +172,27 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         showHideMenuView()
     }
     
+    @IBAction func showLoginView(_ sender: Any) {
+        UIView.animate(withDuration: 1, animations: {
+            self.arrowBtn.transform = .identity
+            self.arrowBtnB.alpha = 0
+            self.arrowBtn.alpha = 1
+            self.menuOptionView.alpha = 0
+        }) { (true) in
+            UIView.animate(withDuration: 1, animations: {
+                self.usernameTextField.alpha = 1
+                self.passwordTextField.alpha = 1
+                self.rememberLabel.alpha = 1
+                self.rememberSwitch.alpha = 1
+                self.submitBtn.alpha = 1
+            })
+        }
+    }
+    
+    
+    /*
+     * CGFloat: Degrees to Radians
+     */
     func radians(_ degrees: Double) -> CGFloat {
         return CGFloat(degrees * .pi / degrees)
     }
