@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
-class SignUpView: UIView, UITextViewDelegate {
+class SignUpView: UIView, UITextFieldDelegate {
     
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -19,9 +21,14 @@ class SignUpView: UIView, UITextViewDelegate {
     @IBOutlet weak var securityQuestionTextField: UITextField!
     @IBOutlet weak var securityAniswerTextField: UITextField!
     
+    let databaseReference = FIRDatabase.database().reference()
     let orangeColor = UIColor.init(red: 0.796, green: 0.345, blue: 0.090, alpha: 1.000)
     
-    func setTextFieldDesign(textField: UITextField) {
+    override func didMoveToWindow() {
+        setTextFieldDesign()
+    }
+    
+    func setTextFieldDesign() {
         let font = UIFont(name: "Bodoni 72 Smallcaps", size: 24)!
         let attributes = [
             NSForegroundColorAttributeName: orangeColor,
@@ -68,7 +75,24 @@ class SignUpView: UIView, UITextViewDelegate {
         securityAniswerTextField.font = font
         securityAniswerTextField.attributedPlaceholder = NSAttributedString(string: "Security Answer", attributes: attributes)
     }
-
+    
+    func submitSignUp() {
+        FIRAuth.auth()?.createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: {user,error
+            in
+            if let error = error {
+                print(error)
+            } else {
+                self.databaseReference.child("users").child(user!.uid).setValue([
+                    "firstname":self.firstNameTextField.text,
+                    "lastname:":self.lastNameTextField.text,
+                    "email":self.emailTextField.text,
+                    "username":self.usernameTextField.text,
+                    "password":self.passwordTextField.text
+                ])
+            }
+        })
+    }
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
