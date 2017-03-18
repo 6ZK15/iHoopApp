@@ -9,7 +9,11 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+<<<<<<< HEAD
+import FirebaseDatabase
+=======
 import FBSDKLoginKit
+>>>>>>> f0b8bb17c03a6dfb1fa1a4b79b2f42160b686d7d
 
 class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate{
     
@@ -26,8 +30,11 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     @IBOutlet weak var menuOptionView: UIView!
     @IBOutlet weak var signUpScrollView: UIScrollView!
     
+<<<<<<< HEAD
+=======
     var signUpView: SignUpView?
     let facebookLogin = FacebookLogin()
+>>>>>>> f0b8bb17c03a6dfb1fa1a4b79b2f42160b686d7d
     let orangeColor = UIColor.init(red: 0.796, green: 0.345, blue: 0.090, alpha: 1.000)
     
     override func viewDidLoad() {
@@ -36,6 +43,11 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
         
         setTextFieldDesign()
         
+    }
+    
+    override func viewDidLayoutSubviews() {
+        signUpScrollView.isScrollEnabled = true
+        signUpScrollView.contentSize = CGSize.init(width: view.frame.size.width, height: 660)
     }
 
     override func didReceiveMemoryWarning() {
@@ -168,6 +180,14 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
             })
         }
     }
+    
+    @IBAction func submitSignUp(_ sender: Any) {
+        let signUpView = SignUpView()
+        showHideErrorMessageView()
+        errorLabel.text = "User succesfully signed up"
+        signUpView.submitSignUp()
+    }
+    
     
     /*
      * UIButton: Action associated with arrowBtn

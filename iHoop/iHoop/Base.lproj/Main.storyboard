@@ -63,7 +63,7 @@
                                     <action selector="dropMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="11w-xe-Cka"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uVD-Q6-k3p">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uVD-Q6-k3p">
                                 <rect key="frame" x="70" y="220" width="274" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.7969396710395813" green="0.3445398211479187" blue="0.090358667075634003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -77,7 +77,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="7f8-RM-IV3"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="etf-wL-dNQ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="etf-wL-dNQ">
                                 <rect key="frame" x="70" y="284" width="274" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.7969396710395813" green="0.3445398211479187" blue="0.090358667075634003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -207,7 +207,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8P-sg-o6q" userLabel="signUpScrollView">
-                                <rect key="frame" x="0.0" y="168" width="414" height="400"/>
+                                <rect key="frame" x="0.0" y="160" width="414" height="400"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fjw-JB-S5A" userLabel="signUpView" customClass="SignUpView" customModule="iHoop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="660"/>
@@ -221,7 +221,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qx4-q1-cKl" userLabel="firstNameTextField">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qx4-q1-cKl" userLabel="firstNameTextField">
                                                 <rect key="frame" x="70" y="60" width="274" height="44"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -235,7 +235,7 @@
                                                     <outlet property="delegate" destination="fjw-JB-S5A" id="gru-sS-GHK"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.30000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OAg-cQ-FhH" userLabel="lasttNameTextField">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OAg-cQ-FhH" userLabel="lasttNameTextField">
                                                 <rect key="frame" x="70" y="124" width="274" height="44"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -249,7 +249,7 @@
                                                     <outlet property="delegate" destination="fjw-JB-S5A" id="pYw-zV-kHX"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.30000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uWd-qH-Ulw" userLabel="emailTextField">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uWd-qH-Ulw" userLabel="emailTextField">
                                                 <rect key="frame" x="70" y="188" width="274" height="44"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -263,7 +263,7 @@
                                                     <outlet property="delegate" destination="fjw-JB-S5A" id="eEn-aa-hQt"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.30000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LdV-ab-Gg8" userLabel="usernameTextField">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LdV-ab-Gg8" userLabel="usernameTextField">
                                                 <rect key="frame" x="70" y="252" width="274" height="44"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -277,7 +277,7 @@
                                                     <outlet property="delegate" destination="fjw-JB-S5A" id="NSe-aL-HzZ"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.30000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YcS-jt-syz" userLabel="passwordTextField">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YcS-jt-syz" userLabel="passwordTextField">
                                                 <rect key="frame" x="70" y="316" width="274" height="44"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -291,7 +291,7 @@
                                                     <outlet property="delegate" destination="fjw-JB-S5A" id="GLu-rk-mxW"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.30000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Verify Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y91-2S-Odo" userLabel="verifyPasswordTextField">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Verify Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y91-2S-Odo" userLabel="verifyPasswordTextField">
                                                 <rect key="frame" x="70" y="380" width="274" height="44"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -305,7 +305,7 @@
                                                     <outlet property="delegate" destination="fjw-JB-S5A" id="hfM-4a-vlt"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.30000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Security Question" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uPm-z7-ZBn" userLabel="securityQuestionTextField">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Security Question" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uPm-z7-ZBn" userLabel="securityQuestionTextField">
                                                 <rect key="frame" x="70" y="444" width="274" height="44"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -319,7 +319,7 @@
                                                     <outlet property="delegate" destination="fjw-JB-S5A" id="YGm-b7-9zp"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.30000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Security Answer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Thp-Ig-UTA" userLabel="securityAnswerTextField">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Security Answer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Thp-Ig-UTA" userLabel="securityAnswerTextField">
                                                 <rect key="frame" x="70" y="508" width="274" height="44"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -333,12 +333,15 @@
                                                     <outlet property="delegate" destination="fjw-JB-S5A" id="i55-xu-RhY"/>
                                                 </connections>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jp-QE-l7c">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jp-QE-l7c" userLabel="submitSignUpBtn">
                                                 <rect key="frame" x="167" y="572" width="80" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="7jp-QE-l7c" secondAttribute="height" multiplier="4:3" id="5yC-qC-iOR"/>
                                                 </constraints>
                                                 <state key="normal" image="submitBtn.png"/>
+                                                <connections>
+                                                    <action selector="submitSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5VP-ta-T7E"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -409,7 +412,7 @@
                             <constraint firstItem="dOV-wj-1KI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="5rI-pu-6zt"/>
                             <constraint firstItem="O9z-Fh-MQm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="87" id="CSV-Yz-HwK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dOV-wj-1KI" secondAttribute="trailing" constant="-20" id="Ccd-fx-aVZ"/>
-                            <constraint firstItem="S8P-sg-o6q" firstAttribute="top" secondItem="AMI-po-oc7" secondAttribute="bottom" constant="8" symbolic="YES" id="Cp2-ny-hEg"/>
+                            <constraint firstItem="S8P-sg-o6q" firstAttribute="top" secondItem="AMI-po-oc7" secondAttribute="bottom" id="Cp2-ny-hEg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BCm-wy-1k7" secondAttribute="trailing" constant="165" id="IZz-YS-Y0N"/>
                             <constraint firstItem="p7H-ak-Zno" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="Ifb-I4-A9f"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AMI-po-oc7" secondAttribute="trailing" constant="165" id="Iui-f0-fcd"/>
@@ -418,7 +421,7 @@
                             <constraint firstItem="O9z-Fh-MQm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="OEz-fQ-ydX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="O9z-Fh-MQm" secondAttribute="trailing" constant="87" id="OGR-M8-ayu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oLJ-s7-Fgp" secondAttribute="trailing" constant="-20" id="Pzg-Ac-yzU"/>
-                            <constraint firstItem="S8P-sg-o6q" firstAttribute="centerY" secondItem="dOV-wj-1KI" secondAttribute="centerY" id="QFZ-ct-FRA"/>
+                            <constraint firstItem="S8P-sg-o6q" firstAttribute="centerY" secondItem="dOV-wj-1KI" secondAttribute="centerY" constant="-8" id="QFZ-ct-FRA"/>
                             <constraint firstItem="dOV-wj-1KI" firstAttribute="top" secondItem="wam-24-Vzo" secondAttribute="bottom" id="Tag-EC-zTQ"/>
                             <constraint firstItem="BCm-wy-1k7" firstAttribute="top" secondItem="lIw-68-HBs" secondAttribute="bottom" constant="20" id="VXZ-Ac-6Mq"/>
                             <constraint firstItem="UBW-BY-qMw" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="WIH-7u-vS5"/>
@@ -789,13 +792,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="413" height="736"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signUpTitle.png" translatesAutoresizingMaskIntoConstraints="NO" id="hTM-On-OPU">
-                                <rect key="frame" x="125" y="203" width="163" height="49.333333333333343"/>
+                                <rect key="frame" x="125" y="203" width="163" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hTM-On-OPU" secondAttribute="height" multiplier="33:10" id="bKh-oq-Ce2"/>
                                 </constraints>
                             </imageView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1fE-j2-dfx">
-                                <rect key="frame" x="71" y="260.33333333333326" width="271" height="49.666666666666686"/>
+                                <rect key="frame" x="71" y="260" width="271" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1fE-j2-dfx" secondAttribute="height" multiplier="60:11" id="8h8-7h-ygT"/>
                                 </constraints>
@@ -933,14 +936,14 @@
                                 </connections>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6A-Kk-nEj">
-                                <rect key="frame" x="175" y="570.66666666666663" width="63" height="63"/>
+                                <rect key="frame" x="175" y="571" width="63" height="63"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="W6A-Kk-nEj" secondAttribute="height" multiplier="1:1" id="S2f-8l-gBB"/>
                                 </constraints>
                                 <state key="normal" image="cancelBtn.png"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tud-nP-77T">
-                                <rect key="frame" x="101" y="641.66666666666652" width="211" height="56.333333333333371"/>
+                                <rect key="frame" x="101" y="642" width="211" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="tud-nP-77T" secondAttribute="height" multiplier="15:4" id="kVX-N0-G9p"/>
                                 </constraints>
@@ -1001,7 +1004,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="2JF-Sv-J85" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aae-hQ-kLa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aae-hQ-kLa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
