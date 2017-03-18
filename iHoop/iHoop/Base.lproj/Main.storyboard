@@ -162,6 +162,9 @@
                                                     <constraint firstAttribute="width" constant="44" id="c0w-fe-3R1"/>
                                                 </constraints>
                                                 <state key="normal" image="facebookBtn.png"/>
+                                                <connections>
+                                                    <action selector="loginWithFacebbok:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HDd-A2-ASp"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsi-ib-Oj3" userLabel="signUpBtn">
                                                 <rect key="frame" x="158" y="0.0" width="44" height="44"/>
