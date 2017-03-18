@@ -42,6 +42,7 @@
 		84B5EEF21E653C3C00311B63 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5EEF11E653C3C00311B63 /* SignUpViewController.swift */; };
 		8F776294E56F607355097E28 /* Pods_iHoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56CA6631D6767A06E04B5714 /* Pods_iHoop.framework */; };
 		90BE9E005F0A430597EA1B6A /* Pods_iHoopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7886AA4E4529624A643E0891 /* Pods_iHoopUITests.framework */; };
+		96362C351E7D1A31006C585E /* FacebookLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96362C341E7D1A31006C585E /* FacebookLogin.swift */; };
 		963A653B1E67AAC700A9447C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963A653A1E67AAC700A9447C /* GoogleService-Info.plist */; };
 		963A653C1E67AAC700A9447C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963A653A1E67AAC700A9447C /* GoogleService-Info.plist */; };
 		963A653D1E67AAC700A9447C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963A653A1E67AAC700A9447C /* GoogleService-Info.plist */; };
@@ -111,6 +112,8 @@
 		84B5EEEE1E653C2700311B63 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		84B5EEF11E653C3C00311B63 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8AF0C5F8FF1333F195A7875D /* Pods-iHoopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoopTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHoopTests/Pods-iHoopTests.release.xcconfig"; sourceTree = "<group>"; };
+		96362C341E7D1A31006C585E /* FacebookLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookLogin.swift; sourceTree = "<group>"; };
+		96362C361E7D25F5006C585E /* iHoop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iHoop.entitlements; sourceTree = "<group>"; };
 		963A653A1E67AAC700A9447C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B3FFE4916276F6D558EA1EE3 /* Pods-iHoopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoopUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iHoopUITests/Pods-iHoopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B970F1F16A3300875E4BFBE4 /* Pods-iHoop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoop.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHoop/Pods-iHoop.release.xcconfig"; sourceTree = "<group>"; };
@@ -179,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				84B5EE9B1E65313400311B63 /* iHoop */,
+				96362C331E7D1999006C585E /* Utilities */,
 				84B5EEB01E65313400311B63 /* iHoopTests */,
 				84B5EEBB1E65313400311B63 /* iHoopUITests */,
 				84B5EE9A1E65313400311B63 /* Products */,
@@ -200,6 +204,7 @@
 		84B5EE9B1E65313400311B63 /* iHoop */ = {
 			isa = PBXGroup;
 			children = (
+				96362C361E7D25F5006C585E /* iHoop.entitlements */,
 				84B5EE9C1E65313400311B63 /* AppDelegate.swift */,
 				841585371E7BB08600B263BE /* UIViews */,
 				841585361E7BB07700B263BE /* UIViewControllers */,
@@ -289,6 +294,15 @@
 				84B5EED31E65393000311B63 /* LaunchScreen.png */,
 			);
 			name = Backgrounds;
+			sourceTree = "<group>";
+		};
+		96362C331E7D1999006C585E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				96362C341E7D1A31006C585E /* FacebookLogin.swift */,
+			);
+			name = Utilities;
+			path = iHoop;
 			sourceTree = "<group>";
 		};
 		C2349C1A3773A3D27E89CA39 /* Pods */ = {
@@ -381,7 +395,13 @@
 				TargetAttributes = {
 					84B5EE981E65313400311B63 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = WAHTQEJFLW;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					84B5EEAC1E65313400311B63 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -610,6 +630,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B5EEEF1E653C2700311B63 /* LoginViewController.swift in Sources */,
+				96362C351E7D1A31006C585E /* FacebookLogin.swift in Sources */,
 				84B44EE11E687E4500AABF92 /* ForgotUsernameViewController.swift in Sources */,
 				84B44EE31E687E6500AABF92 /* ForgotPasswordViewController.swift in Sources */,
 				8415853D1E7BDBE300B263BE /* SignUpView.swift in Sources */,
@@ -766,6 +787,8 @@
 			baseConfigurationReference = BF73FE929EA8B39847648C7B /* Pods-iHoop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iHoop/iHoop.entitlements;
+				DEVELOPMENT_TEAM = WAHTQEJFLW;
 				INFOPLIST_FILE = iHoop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MrHorace.iHoop;
@@ -779,6 +802,8 @@
 			baseConfigurationReference = B970F1F16A3300875E4BFBE4 /* Pods-iHoop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iHoop/iHoop.entitlements;
+				DEVELOPMENT_TEAM = WAHTQEJFLW;
 				INFOPLIST_FILE = iHoop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MrHorace.iHoop;

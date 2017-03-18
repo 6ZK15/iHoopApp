@@ -9,8 +9,9 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FBSDKLoginKit
 
-class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
+class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate{
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -26,6 +27,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     @IBOutlet weak var signUpScrollView: UIScrollView!
     
     var signUpView: SignUpView?
+    let facebookLogin = FacebookLogin()
     let orangeColor = UIColor.init(red: 0.796, green: 0.345, blue: 0.090, alpha: 1.000)
     
     override func viewDidLoad() {
@@ -203,6 +205,34 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
                 self.signUpScrollView.alpha = 1
             })
         }
+    }
+    @IBAction func loginWithFacebbok(_ sender: UIButton) {
+        facebookSignIn()
+    }
+    
+    func facebookSignIn(){
+        let facebookLogin = FBSDKLoginManager()
+        facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result,error) in
+            if error != nil {
+                print("Unable to authenticate with Facebook - \(error)")
+            }else if result?.isCancelled == true{
+                    print("User cancelled authentication with Facebook")
+            }else{
+                print("Successfully authenticaed with Facebook - \(error)")
+                let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                self.firebaseAuth(credential)
+            }
+        }
+    }
+    
+    func firebaseAuth(_ credential: FIRAuthCredential) {
+        FIRAuth.auth()?.signIn(with: credential, completion: { (user,error) in
+            if error != nil {
+                print("Unable to authenticate with firebase - \(error)")
+            } else {
+                print("Successfully authenticated with firebase")
+            }
+        })
     }
     
     /*
