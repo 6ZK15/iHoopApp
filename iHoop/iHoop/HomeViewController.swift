@@ -14,6 +14,16 @@ import FBSDKLoginKit
 
 class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate{
     
+    //Sign Up Outlets
+    @IBOutlet weak var sufirstNameTextField: UITextField!
+    @IBOutlet weak var sulastNameTextField: UITextField!
+    @IBOutlet weak var suemailTextField: UITextField!
+    @IBOutlet weak var suusernameTextField: UITextField!
+    @IBOutlet weak var supasswordTextField: UITextField!
+    @IBOutlet weak var suverifyPasswordTextField: UITextField!
+    @IBOutlet weak var susecurityQuestionTextField: UITextField!
+    @IBOutlet weak var susecurityAnswerTextField: UITextField!
+    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var submitBtn: UIButton!
@@ -27,15 +37,17 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     @IBOutlet weak var menuOptionView: UIView!
     @IBOutlet weak var signUpScrollView: UIScrollView!
     
-
+    var databaseReference = FIRDatabaseReference.init()
     let facebookLogin = FacebookLogin()
+    let loginTextField = LoginTextField()
     let orangeColor = UIColor.init(red: 0.796, green: 0.345, blue: 0.090, alpha: 1.000)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        setTextFieldDesign()
+        loginTextField.setTextFieldDesign(textField: usernameTextField, placeHolderString: "Username")
+        loginTextField.setTextFieldDesign(textField: passwordTextField, placeHolderString: "Password")
         
     }
     
@@ -47,27 +59,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    /*
-     * UITextField: Style
-     */
-    func setTextFieldDesign() {
-        let font = UIFont(name: "Bodoni 72 Smallcaps", size: 24)!
-        let attributes = [
-            NSForegroundColorAttributeName: orangeColor,
-            NSFontAttributeName : font
-        ]
-        usernameTextField.layer.cornerRadius = 8
-        usernameTextField.borderStyle = UITextBorderStyle.roundedRect
-        usernameTextField.textColor = orangeColor
-        usernameTextField.font = font
-        usernameTextField.attributedPlaceholder = NSAttributedString(string: "Username", attributes: attributes)
-        passwordTextField.layer.cornerRadius = 8
-        passwordTextField.borderStyle = UITextBorderStyle.roundedRect
-        passwordTextField.textColor = orangeColor
-        passwordTextField.font = font
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: attributes)
     }
     
     /*
@@ -103,7 +94,12 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
                 self.rememberSwitch.alpha = 0
                 self.submitBtn.alpha = 0
                 self.signUpScrollView.alpha = 0
-            })
+            }) { (true) in
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.loginTextField.resetTextField(textField: self.usernameTextField)
+                    self.loginTextField.resetTextField(textField: self.passwordTextField)
+                })
+            }
         } else {
             UIView.animate(withDuration: 1, animations: {
                 self.arrowBtn.transform = .identity
@@ -127,7 +123,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
      * Check user login credentials (email and login)
      */
     @IBAction func submitBtn(_ sender: Any) {
-        
         if let email = usernameTextField.text, let pwd = passwordTextField.text {
             FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: {
                 (user, error) in
@@ -143,29 +138,23 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
                             print("Unable to authenticate using Email with Firebase")
                             if self.usernameTextField.text == "", self.passwordTextField.text == "" {
                                 self.errorLabel.text = "Please fill out the required fields."
-                                self.usernameTextField.layer.borderWidth = 2
-                                self.usernameTextField.layer.borderColor = self.orangeColor.cgColor
-                                self.passwordTextField.layer.borderWidth = 2
-                                self.passwordTextField.layer.borderColor = self.orangeColor.cgColor
+                                self.loginTextField.setErrorTextField(textField: self.usernameTextField, borderWidth: 2)
+                                self.loginTextField.setErrorTextField(textField: self.passwordTextField, borderWidth: 2)
                                 self.showHideErrorMessageView()
                             } else if self.usernameTextField.text == "" {
                                 self.errorLabel.text = "Please enter username."
-                                self.usernameTextField.layer.borderWidth = 2
-                                self.usernameTextField.layer.borderColor = self.orangeColor.cgColor
+                                self.loginTextField.setErrorTextField(textField: self.usernameTextField, borderWidth: 2)
                                 self.passwordTextField.layer.borderWidth = 0
                                 self.showHideErrorMessageView()
                             } else if self.passwordTextField.text == "" {
                                 self.errorLabel.text = "Please enter password."
                                 self.usernameTextField.layer.borderWidth = 0
-                                self.passwordTextField.layer.borderWidth = 2
-                                self.passwordTextField.layer.borderColor = self.orangeColor.cgColor
+                                self.loginTextField.setErrorTextField(textField: self.passwordTextField, borderWidth: 2)
                                 self.showHideErrorMessageView()
                             } else {
                                 self.errorLabel.text = "Incorrect username and password. Please try again."
-                                self.usernameTextField.layer.borderWidth = 2
-                                self.usernameTextField.layer.borderColor = self.orangeColor.cgColor
-                                self.passwordTextField.layer.borderWidth = 2
-                                self.passwordTextField.layer.borderColor = self.orangeColor.cgColor
+                                self.loginTextField.setErrorTextField(textField: self.usernameTextField, borderWidth: 2)
+                                self.loginTextField.setErrorTextField(textField: self.passwordTextField, borderWidth: 2)
                                 self.showHideErrorMessageView()
                             }
                         }
@@ -176,10 +165,33 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     }
     
     @IBAction func submitSignUp(_ sender: Any) {
-        let signUpView = SignUpView()
+        databaseReference = FIRDatabase.database().reference()
+        FIRAuth.auth()?.createUser(withEmail: suemailTextField.text!, password: supasswordTextField.text!, completion: {user,error
+            in
+            if let error = error {
+                self.signUpValidation()
+//                self.errorLabel.text = error.localizedDescription
+                print(error)
+            } else {
+                self.databaseReference.child("users").child(user!.uid).setValue([
+                    "firstname":self.sufirstNameTextField.text,
+                    "lastname:":self.sulastNameTextField.text,
+                    "email":self.suemailTextField.text,
+                    "username":self.suusernameTextField.text,
+                    "password":self.supasswordTextField.text,
+                    "security question":self.susecurityQuestionTextField.text,
+                    "security aniswer":self.susecurityAnswerTextField.text
+                ])
+                self.errorLabel.text = "User succesfully signed up"
+            }
+        })
         showHideErrorMessageView()
-        errorLabel.text = "User succesfully signed up"
-        signUpView.submitSignUp()
+    }
+    
+    func signUpValidation() {
+        if self.sufirstNameTextField.text == "" {
+            errorLabel.text = "Please fill out required fields"
+        }
     }
     
     
@@ -220,6 +232,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
             })
         }
     }
+    
     @IBAction func loginWithFacebbok(_ sender: UIButton) {
         facebookSignIn()
     }
