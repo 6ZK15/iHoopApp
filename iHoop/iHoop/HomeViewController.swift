@@ -194,6 +194,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
                     "security aniswer":self.susecurityAnswerTextField.text
                 ])
                 self.errorLabel.text = "User succesfully signed up"
+                self.showLoginView(#imageLiteral(resourceName: "submitBtn.png"))
             }
         })
         showHideErrorMessageView()
@@ -206,7 +207,9 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
                 self.textField.setErrorTextField(textField: self.fpemailTextField, borderWidth: 2)
             } else {
                 self.errorLabel.text = "Password reset has been sent"
+                self.fpemailTextField.text = ""
                 self.fpemailTextField.layer.borderColor = UIColor.clear.cgColor
+                self.showLoginView(#imageLiteral(resourceName: "submitBtn.png"))
             }
             self.showHideErrorMessageView();
         })
@@ -276,6 +279,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
             self.arrowBtnB.alpha = 0
             self.arrowBtn.alpha = 1
             self.menuOptionView.alpha = 0
+            self.signUpScrollView.alpha = 0
+            self.forgotPasswordView.alpha = 0
         }) { (true) in
             UIView.animate(withDuration: 1, animations: {
                 self.usernameTextField.alpha = 1
