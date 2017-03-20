@@ -48,16 +48,16 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     
     var databaseReference = FIRDatabaseReference.init()
     let facebookLogin = FacebookLogin()
-    let loginTextField = LoginTextField()
+    let textField = TextField()
     let orangeColor = UIColor.init(red: 0.796, green: 0.345, blue: 0.090, alpha: 1.000)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        loginTextField.setTextFieldDesign(textField: usernameTextField, placeHolderString: "Email")
-        loginTextField.setTextFieldDesign(textField: passwordTextField, placeHolderString: "Password")
-        loginTextField.setTextFieldDesign(textField: fpemailTextField, placeHolderString: "Email")
+        textField.setTextFieldDesign(textField: usernameTextField, placeHolderString: "Email")
+        textField.setTextFieldDesign(textField: passwordTextField, placeHolderString: "Password")
+        textField.setTextFieldDesign(textField: fpemailTextField, placeHolderString: "Email")
         
     }
     
@@ -107,8 +107,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
                 self.forgotPasswordView.alpha = 0
             }) { (true) in
                 UIView.animate(withDuration: 0.5, animations: {
-                    self.loginTextField.resetTextField(textField: self.usernameTextField)
-                    self.loginTextField.resetTextField(textField: self.passwordTextField)
+                    self.textField.resetTextField(textField: self.usernameTextField)
+                    self.textField.resetTextField(textField: self.passwordTextField)
                 })
             }
         } else {
@@ -149,23 +149,23 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
                             print("Unable to authenticate using Email with Firebase")
                             if self.usernameTextField.text == "", self.passwordTextField.text == "" {
                                 self.errorLabel.text = "Please fill out the required fields."
-                                self.loginTextField.setErrorTextField(textField: self.usernameTextField, borderWidth: 2)
-                                self.loginTextField.setErrorTextField(textField: self.passwordTextField, borderWidth: 2)
+                                self.textField.setErrorTextField(textField: self.usernameTextField, borderWidth: 2)
+                                self.textField.setErrorTextField(textField: self.passwordTextField, borderWidth: 2)
                                 self.showHideErrorMessageView()
                             } else if self.usernameTextField.text == "" {
                                 self.errorLabel.text = "Please enter username."
-                                self.loginTextField.setErrorTextField(textField: self.usernameTextField, borderWidth: 2)
+                                self.textField.setErrorTextField(textField: self.usernameTextField, borderWidth: 2)
                                 self.passwordTextField.layer.borderWidth = 0
                                 self.showHideErrorMessageView()
                             } else if self.passwordTextField.text == "" {
                                 self.errorLabel.text = "Please enter password."
                                 self.usernameTextField.layer.borderWidth = 0
-                                self.loginTextField.setErrorTextField(textField: self.passwordTextField, borderWidth: 2)
+                                self.textField.setErrorTextField(textField: self.passwordTextField, borderWidth: 2)
                                 self.showHideErrorMessageView()
                             } else {
                                 self.errorLabel.text = "Incorrect username and password. Please try again."
-                                self.loginTextField.setErrorTextField(textField: self.usernameTextField, borderWidth: 2)
-                                self.loginTextField.setErrorTextField(textField: self.passwordTextField, borderWidth: 2)
+                                self.textField.setErrorTextField(textField: self.usernameTextField, borderWidth: 2)
+                                self.textField.setErrorTextField(textField: self.passwordTextField, borderWidth: 2)
                                 self.showHideErrorMessageView()
                             }
                         }
@@ -203,7 +203,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
         FIRAuth.auth()?.sendPasswordReset(withEmail: self.fpemailTextField.text!, completion: {(error) in
             if error != nil {
                 self.errorLabel.text = (error?.localizedDescription)!
-                self.loginTextField.setErrorTextField(textField: self.fpemailTextField, borderWidth: 2)
+                self.textField.setErrorTextField(textField: self.fpemailTextField, borderWidth: 2)
             } else {
                 self.errorLabel.text = "Password reset has been sent"
                 self.fpemailTextField.layer.borderColor = UIColor.clear.cgColor
@@ -214,49 +214,49 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     
     func signUpValidation() {
         if sufirstNameTextField.text == "" {
-            loginTextField.setErrorTextField(textField: sufirstNameTextField, borderWidth: 2)
+            textField.setErrorTextField(textField: sufirstNameTextField, borderWidth: 2)
         } else {
             sufirstNameTextField.layer.borderColor = UIColor.clear.cgColor
         }
         
         if sulastNameTextField.text == "" {
-            loginTextField.setErrorTextField(textField: sulastNameTextField, borderWidth: 2)
+            textField.setErrorTextField(textField: sulastNameTextField, borderWidth: 2)
         } else {
             sulastNameTextField.layer.borderColor = UIColor.clear.cgColor
         }
         
         if suemailTextField.text == "" {
-            loginTextField.setErrorTextField(textField: suemailTextField, borderWidth: 2)
+            textField.setErrorTextField(textField: suemailTextField, borderWidth: 2)
         } else {
             suemailTextField.layer.borderColor = UIColor.clear.cgColor
         }
         
         if suusernameTextField.text == "" {
-            loginTextField.setErrorTextField(textField: suusernameTextField, borderWidth: 2)
+            textField.setErrorTextField(textField: suusernameTextField, borderWidth: 2)
         } else {
             suusernameTextField.layer.borderColor = UIColor.clear.cgColor
         }
         
         if supasswordTextField.text == "" {
-            loginTextField.setErrorTextField(textField: supasswordTextField, borderWidth: 2)
+            textField.setErrorTextField(textField: supasswordTextField, borderWidth: 2)
         } else {
             supasswordTextField.layer.borderColor = UIColor.clear.cgColor
         }
         
         if suverifyPasswordTextField.text == "" {
-            loginTextField.setErrorTextField(textField: suverifyPasswordTextField, borderWidth: 2)
+            textField.setErrorTextField(textField: suverifyPasswordTextField, borderWidth: 2)
         } else {
             suverifyPasswordTextField.layer.borderColor = UIColor.clear.cgColor
         }
         
         if susecurityQuestionTextField.text == "" {
-            loginTextField.setErrorTextField(textField: susecurityQuestionTextField, borderWidth: 2)
+            textField.setErrorTextField(textField: susecurityQuestionTextField, borderWidth: 2)
         } else {
             susecurityQuestionTextField.layer.borderColor = UIColor.clear.cgColor
         }
         
         if susecurityAnswerTextField.text == "" {
-            loginTextField.setErrorTextField(textField: susecurityAnswerTextField, borderWidth: 2)
+            textField.setErrorTextField(textField: susecurityAnswerTextField, borderWidth: 2)
         } else {
             susecurityAnswerTextField.layer.borderColor = UIColor.clear.cgColor
         }

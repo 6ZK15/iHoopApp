@@ -1,5 +1,5 @@
 //
-//  LoginTextField.swift
+//  TextField.swift
 //  iHoop
 //
 //  Created by Nehemiah Horace on 3/19/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginTextField: UITextField {
+class TextField: UITextField {
     
     let orangeColor = UIColor.init(red: 0.796, green: 0.345, blue: 0.090, alpha: 1.000)
     

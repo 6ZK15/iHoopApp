@@ -12,7 +12,7 @@
 		841585351E7A7C8700B263BE /* Playball.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 841585341E7A7C6900B263BE /* Playball.ttf */; };
 		8415853B1E7BB8FB00B263BE /* facebookBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8415853A1E7BB8FB00B263BE /* facebookBtn.png */; };
 		845D3D4F1E7F3BD800955A44 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D4E1E7F3BD800955A44 /* SignUpView.swift */; };
-		845D3D511E7F3C2F00955A44 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D501E7F3C2F00955A44 /* LoginTextField.swift */; };
+		845D3D511E7F3C2F00955A44 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D501E7F3C2F00955A44 /* TextField.swift */; };
 		845D3D541E7FA06700955A44 /* bball.png in Resources */ = {isa = PBXBuildFile; fileRef = 845D3D521E7FA06700955A44 /* bball.png */; };
 		845D3D551E7FA06700955A44 /* bballShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 845D3D531E7FA06700955A44 /* bballShadow.png */; };
 		845D3D591E7FA56700955A44 /* bg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 845D3D581E7FA56700955A44 /* bg2.png */; };
@@ -79,7 +79,7 @@
 		8415853A1E7BB8FB00B263BE /* facebookBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebookBtn.png; path = Images/Buttons/facebookBtn.png; sourceTree = "<group>"; };
 		843FCCF3C60FAEC7D17147AD /* Pods_iHoopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHoopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		845D3D4E1E7F3BD800955A44 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpView.swift; path = Modals/SignUpView.swift; sourceTree = "<group>"; };
-		845D3D501E7F3C2F00955A44 /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginTextField.swift; path = Modals/LoginTextField.swift; sourceTree = "<group>"; };
+		845D3D501E7F3C2F00955A44 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextField.swift; path = Modals/TextField.swift; sourceTree = "<group>"; };
 		845D3D521E7FA06700955A44 /* bball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bball.png; path = Images/bball.png; sourceTree = "<group>"; };
 		845D3D531E7FA06700955A44 /* bballShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bballShadow.png; path = Images/bballShadow.png; sourceTree = "<group>"; };
 		845D3D581E7FA56700955A44 /* bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg2.png; path = Images/Backgrounds/bg2.png; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				845D3D4E1E7F3BD800955A44 /* SignUpView.swift */,
-				845D3D501E7F3C2F00955A44 /* LoginTextField.swift */,
+				845D3D501E7F3C2F00955A44 /* TextField.swift */,
 			);
 			name = Modals;
 			sourceTree = "<group>";
@@ -638,7 +638,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				845D3D511E7F3C2F00955A44 /* LoginTextField.swift in Sources */,
+				845D3D511E7F3C2F00955A44 /* TextField.swift in Sources */,
 				84B5EEEF1E653C2700311B63 /* LoginViewController.swift in Sources */,
 				96362C351E7D1A31006C585E /* FacebookLogin.swift in Sources */,
 				84B44EE11E687E4500AABF92 /* ForgotUsernameViewController.swift in Sources */,

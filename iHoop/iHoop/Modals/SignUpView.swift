@@ -30,16 +30,16 @@ class SignUpView: UIView, UITextFieldDelegate {
     
     func setTextFieldDesign() {
         
-        let loginTextField = LoginTextField()
+        let textField = TextField()
         
-        loginTextField.setTextFieldDesign(textField: firstNameTextField, placeHolderString: "First Name")
-        loginTextField.setTextFieldDesign(textField: lastNameTextField, placeHolderString: "Last Name")
-        loginTextField.setTextFieldDesign(textField: emailTextField, placeHolderString: "Email")
-        loginTextField.setTextFieldDesign(textField: usernameTextField, placeHolderString: "Username")
-        loginTextField.setTextFieldDesign(textField: passwordTextField, placeHolderString: "Password")
-        loginTextField.setTextFieldDesign(textField: verifyPasswordTextField, placeHolderString: "Verify Password")
-        loginTextField.setTextFieldDesign(textField: securityQuestionTextField, placeHolderString: "Security Question")
-        loginTextField.setTextFieldDesign(textField: securityAnswerTextField, placeHolderString: "Security Answer")
+        textField.setTextFieldDesign(textField: firstNameTextField, placeHolderString: "First Name")
+        textField.setTextFieldDesign(textField: lastNameTextField, placeHolderString: "Last Name")
+        textField.setTextFieldDesign(textField: emailTextField, placeHolderString: "Email")
+        textField.setTextFieldDesign(textField: usernameTextField, placeHolderString: "Username")
+        textField.setTextFieldDesign(textField: passwordTextField, placeHolderString: "Password")
+        textField.setTextFieldDesign(textField: verifyPasswordTextField, placeHolderString: "Verify Password")
+        textField.setTextFieldDesign(textField: securityQuestionTextField, placeHolderString: "Security Question")
+        textField.setTextFieldDesign(textField: securityAnswerTextField, placeHolderString: "Security Answer")
         
     }
     
