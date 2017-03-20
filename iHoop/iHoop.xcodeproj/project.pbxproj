@@ -13,11 +13,13 @@
 		8415853B1E7BB8FB00B263BE /* facebookBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8415853A1E7BB8FB00B263BE /* facebookBtn.png */; };
 		845D3D4F1E7F3BD800955A44 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D4E1E7F3BD800955A44 /* SignUpView.swift */; };
 		845D3D511E7F3C2F00955A44 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D501E7F3C2F00955A44 /* LoginTextField.swift */; };
+		845D3D541E7FA06700955A44 /* bball.png in Resources */ = {isa = PBXBuildFile; fileRef = 845D3D521E7FA06700955A44 /* bball.png */; };
+		845D3D551E7FA06700955A44 /* bballShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 845D3D531E7FA06700955A44 /* bballShadow.png */; };
+		845D3D591E7FA56700955A44 /* bg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 845D3D581E7FA56700955A44 /* bg2.png */; };
 		84B44EDD1E67B6B400AABF92 /* Carrington.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EECF1E6532C200311B63 /* Carrington.ttf */; };
 		84B44EDE1E67B6B400AABF92 /* DrSugiyama-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED01E6532C200311B63 /* DrSugiyama-Regular.ttf */; };
 		84B44EDF1E67B6B400AABF92 /* FNL_DEMO-KCFonts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED11E6532C200311B63 /* FNL_DEMO-KCFonts.ttf */; };
 		84B44EE11E687E4500AABF92 /* ForgotUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B44EE01E687E4500AABF92 /* ForgotUsernameViewController.swift */; };
-		84B44EE31E687E6500AABF92 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B44EE21E687E6500AABF92 /* ForgotPasswordViewController.swift */; };
 		84B5EE9D1E65313400311B63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5EE9C1E65313400311B63 /* AppDelegate.swift */; };
 		84B5EE9F1E65313400311B63 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5EE9E1E65313400311B63 /* HomeViewController.swift */; };
 		84B5EEA21E65313400311B63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEA01E65313400311B63 /* Main.storyboard */; };
@@ -78,8 +80,10 @@
 		843FCCF3C60FAEC7D17147AD /* Pods_iHoopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHoopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		845D3D4E1E7F3BD800955A44 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpView.swift; path = Modals/SignUpView.swift; sourceTree = "<group>"; };
 		845D3D501E7F3C2F00955A44 /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginTextField.swift; path = Modals/LoginTextField.swift; sourceTree = "<group>"; };
+		845D3D521E7FA06700955A44 /* bball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bball.png; path = Images/bball.png; sourceTree = "<group>"; };
+		845D3D531E7FA06700955A44 /* bballShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bballShadow.png; path = Images/bballShadow.png; sourceTree = "<group>"; };
+		845D3D581E7FA56700955A44 /* bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg2.png; path = Images/Backgrounds/bg2.png; sourceTree = "<group>"; };
 		84B44EE01E687E4500AABF92 /* ForgotUsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotUsernameViewController.swift; sourceTree = "<group>"; };
-		84B44EE21E687E6500AABF92 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		84B5EE991E65313400311B63 /* iHoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B5EE9C1E65313400311B63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84B5EE9E1E65313400311B63 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -164,7 +168,6 @@
 				84B5EE9E1E65313400311B63 /* HomeViewController.swift */,
 				84B5EEEE1E653C2700311B63 /* LoginViewController.swift */,
 				84B44EE01E687E4500AABF92 /* ForgotUsernameViewController.swift */,
-				84B44EE21E687E6500AABF92 /* ForgotPasswordViewController.swift */,
 			);
 			name = UIViewControllers;
 			sourceTree = "<group>";
@@ -240,6 +243,8 @@
 		84B5EECA1E65322C00311B63 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				845D3D521E7FA06700955A44 /* bball.png */,
+				845D3D531E7FA06700955A44 /* bballShadow.png */,
 				84B5EECE1E65324900311B63 /* Backgrounds */,
 				84B5EECD1E65323F00311B63 /* Buttons */,
 				84B5EECC1E65323900311B63 /* Titles */,
@@ -291,6 +296,7 @@
 			children = (
 				84B5EEEC1E653A9D00311B63 /* bgHome.png */,
 				84B5EED21E65393000311B63 /* bg.png */,
+				845D3D581E7FA56700955A44 /* bg2.png */,
 				84B5EED31E65393000311B63 /* LaunchScreen.png */,
 			);
 			name = Backgrounds;
@@ -395,7 +401,7 @@
 				TargetAttributes = {
 					84B5EE981E65313400311B63 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = WAHTQEJFLW;
+						DevelopmentTeam = 8V783DP7TW;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -449,6 +455,7 @@
 				84B5EEDF1E65393A00311B63 /* forgotPasswordBtn.png in Resources */,
 				84B5EEEA1E65394200311B63 /* loginTitle.png in Resources */,
 				84B5EEE41E65393A00311B63 /* signUpBtn.png in Resources */,
+				845D3D541E7FA06700955A44 /* bball.png in Resources */,
 				84B5EED51E65393000311B63 /* LaunchScreen.png in Resources */,
 				84B5EEA41E65313400311B63 /* Assets.xcassets in Resources */,
 				84B5EED41E65393000311B63 /* bg.png in Resources */,
@@ -456,10 +463,12 @@
 				84B5EEED1E653A9D00311B63 /* bgHome.png in Resources */,
 				841585331E7A7A8000B263BE /* upArrow.png in Resources */,
 				84B5EEE31E65393A00311B63 /* securityQuetionArrow.png in Resources */,
+				845D3D591E7FA56700955A44 /* bg2.png in Resources */,
 				84B5EEDE1E65393A00311B63 /* cancelBtn.png in Resources */,
 				841585321E7A7A8000B263BE /* downArrow.png in Resources */,
 				84B5EEEB1E65394200311B63 /* signUpTitle.png in Resources */,
 				84B5EEE21E65393A00311B63 /* menuBtn.png in Resources */,
+				845D3D551E7FA06700955A44 /* bballShadow.png in Resources */,
 				84B5EEA21E65313400311B63 /* Main.storyboard in Resources */,
 				84B5EEE11E65393A00311B63 /* loginBtn.png in Resources */,
 				84B5EEE91E65394200311B63 /* iHoopTitle.png in Resources */,
@@ -633,7 +642,6 @@
 				84B5EEEF1E653C2700311B63 /* LoginViewController.swift in Sources */,
 				96362C351E7D1A31006C585E /* FacebookLogin.swift in Sources */,
 				84B44EE11E687E4500AABF92 /* ForgotUsernameViewController.swift in Sources */,
-				84B44EE31E687E6500AABF92 /* ForgotPasswordViewController.swift in Sources */,
 				84B5EE9F1E65313400311B63 /* HomeViewController.swift in Sources */,
 				845D3D4F1E7F3BD800955A44 /* SignUpView.swift in Sources */,
 				84B5EE9D1E65313400311B63 /* AppDelegate.swift in Sources */,
@@ -788,7 +796,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iHoop/iHoop.entitlements;
-				DEVELOPMENT_TEAM = WAHTQEJFLW;
+				DEVELOPMENT_TEAM = 8V783DP7TW;
 				INFOPLIST_FILE = iHoop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MrHorace.iHoop;
@@ -803,7 +811,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iHoop/iHoop.entitlements;
-				DEVELOPMENT_TEAM = WAHTQEJFLW;
+				DEVELOPMENT_TEAM = 8V783DP7TW;
 				INFOPLIST_FILE = iHoop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MrHorace.iHoop;

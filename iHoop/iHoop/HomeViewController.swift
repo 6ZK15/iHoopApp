@@ -15,6 +15,7 @@ import FBSDKLoginKit
 class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate{
     
     //Sign Up Outlets
+    @IBOutlet weak var signUpScrollView: UIScrollView!
     @IBOutlet weak var sufirstNameTextField: UITextField!
     @IBOutlet weak var sulastNameTextField: UITextField!
     @IBOutlet weak var suemailTextField: UITextField!
@@ -24,8 +25,16 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     @IBOutlet weak var susecurityQuestionTextField: UITextField!
     @IBOutlet weak var susecurityAnswerTextField: UITextField!
     
+    //Forgot Password Outlets
+    @IBOutlet weak var forgotPasswordView: UIView!
+    @IBOutlet weak var fpemailTextField: UITextField!
+    
+    //Forgot Username Outlets
+    
+    //Login Outlets
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
     @IBOutlet weak var submitBtn: UIButton!
     @IBOutlet weak var errorMessageView: UIView!
     @IBOutlet weak var errorLabel: UILabel!
@@ -35,7 +44,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     @IBOutlet weak var rememberLabel: UILabel!
     @IBOutlet weak var rememberSwitch: UISwitch!
     @IBOutlet weak var menuOptionView: UIView!
-    @IBOutlet weak var signUpScrollView: UIScrollView!
+    
     
     var databaseReference = FIRDatabaseReference.init()
     let facebookLogin = FacebookLogin()
@@ -46,8 +55,9 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        loginTextField.setTextFieldDesign(textField: usernameTextField, placeHolderString: "Username")
+        loginTextField.setTextFieldDesign(textField: usernameTextField, placeHolderString: "Email")
         loginTextField.setTextFieldDesign(textField: passwordTextField, placeHolderString: "Password")
+        loginTextField.setTextFieldDesign(textField: fpemailTextField, placeHolderString: "Email")
         
     }
     
@@ -94,6 +104,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
                 self.rememberSwitch.alpha = 0
                 self.submitBtn.alpha = 0
                 self.signUpScrollView.alpha = 0
+                self.forgotPasswordView.alpha = 0
             }) { (true) in
                 UIView.animate(withDuration: 0.5, animations: {
                     self.loginTextField.resetTextField(textField: self.usernameTextField)
@@ -170,6 +181,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
             in
             if let error = error {
                 self.signUpValidation()
+                self.errorLabel.text = error.localizedDescription
                 print(error)
             } else {
                 self.databaseReference.child("users").child(user!.uid).setValue([
@@ -187,68 +199,68 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
         showHideErrorMessageView()
     }
     
+    @IBAction func submitForgotPassword(_ sender: Any) {
+        FIRAuth.auth()?.sendPasswordReset(withEmail: self.fpemailTextField.text!, completion: {(error) in
+            if error != nil {
+                self.errorLabel.text = (error?.localizedDescription)!
+                self.loginTextField.setErrorTextField(textField: self.fpemailTextField, borderWidth: 2)
+            } else {
+                self.errorLabel.text = "Password reset has been sent"
+                self.fpemailTextField.layer.borderColor = UIColor.clear.cgColor
+            }
+            self.showHideErrorMessageView();
+        })
+    }
+    
     func signUpValidation() {
         if sufirstNameTextField.text == "" {
             loginTextField.setErrorTextField(textField: sufirstNameTextField, borderWidth: 2)
-            errorLabel.text = "Please fill out required fields"
         } else {
             sufirstNameTextField.layer.borderColor = UIColor.clear.cgColor
         }
         
         if sulastNameTextField.text == "" {
             loginTextField.setErrorTextField(textField: sulastNameTextField, borderWidth: 2)
-            errorLabel.text = "Please fill out required fields"
         } else {
             sulastNameTextField.layer.borderColor = UIColor.clear.cgColor
         }
         
         if suemailTextField.text == "" {
             loginTextField.setErrorTextField(textField: suemailTextField, borderWidth: 2)
-            errorLabel.text = "Please fill out required fields"
         } else {
             suemailTextField.layer.borderColor = UIColor.clear.cgColor
         }
         
         if suusernameTextField.text == "" {
             loginTextField.setErrorTextField(textField: suusernameTextField, borderWidth: 2)
-            errorLabel.text = "Please fill out required fields"
         } else {
             suusernameTextField.layer.borderColor = UIColor.clear.cgColor
         }
         
         if supasswordTextField.text == "" {
             loginTextField.setErrorTextField(textField: supasswordTextField, borderWidth: 2)
-            errorLabel.text = "Please fill out required fields"
         } else {
             supasswordTextField.layer.borderColor = UIColor.clear.cgColor
         }
         
         if suverifyPasswordTextField.text == "" {
             loginTextField.setErrorTextField(textField: suverifyPasswordTextField, borderWidth: 2)
-            errorLabel.text = "Please fill out required fields"
         } else {
             suverifyPasswordTextField.layer.borderColor = UIColor.clear.cgColor
         }
         
         if susecurityQuestionTextField.text == "" {
             loginTextField.setErrorTextField(textField: susecurityQuestionTextField, borderWidth: 2)
-            errorLabel.text = "Please fill out required fields"
         } else {
             susecurityQuestionTextField.layer.borderColor = UIColor.clear.cgColor
         }
         
         if susecurityAnswerTextField.text == "" {
             loginTextField.setErrorTextField(textField: susecurityAnswerTextField, borderWidth: 2)
-            errorLabel.text = "Please fill out required fields"
         } else {
             susecurityAnswerTextField.layer.borderColor = UIColor.clear.cgColor
         }
-        
-        if (supasswordTextField.text != suverifyPasswordTextField.text) && supasswordTextField.text != "" {
-            errorLabel.text = "Passwords do not match"
-        }
     }
-    
     
     /*
      * UIButton: Action associated with arrowBtn
@@ -288,6 +300,19 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
         }
     }
     
+    @IBAction func showForgotPasswordView(_ sender: Any) {
+        UIView.animate(withDuration: 1, animations: {
+            self.arrowBtn.transform = .identity
+            self.arrowBtnB.alpha = 0
+            self.arrowBtn.alpha = 1
+            self.menuOptionView.alpha = 0
+        }) { (true) in
+            UIView.animate(withDuration: 1, animations: {
+                self.forgotPasswordView.alpha = 1
+            })
+        }
+    }
+    
     @IBAction func loginWithFacebbok(_ sender: UIButton) {
         facebookSignIn()
     }
@@ -297,9 +322,9 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
         facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result,error) in
             if error != nil {
                 print("Unable to authenticate with Facebook - \(error)")
-            }else if result?.isCancelled == true{
+            } else if result?.isCancelled == true {
                     print("User cancelled authentication with Facebook")
-            }else{
+            } else {
                 print("Successfully authenticaed with Facebook - \(error)")
                 let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 self.firebaseAuth(credential)
