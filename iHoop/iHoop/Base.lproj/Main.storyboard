@@ -471,7 +471,7 @@
                         <outlet property="susecurityAnswerTextField" destination="Thp-Ig-UTA" id="5er-G6-2ae"/>
                         <outlet property="susecurityQuestionTextField" destination="uPm-z7-ZBn" id="98N-oU-jiZ"/>
                         <outlet property="suusernameTextField" destination="LdV-ab-Gg8" id="q8N-MT-OnR"/>
-                        <outlet property="suverifyPasswordTextField" destination="YcS-jt-syz" id="8gh-rf-i55"/>
+                        <outlet property="suverifyPasswordTextField" destination="Y91-2S-Odo" id="xm8-IY-0xR"/>
                         <outlet property="usernameTextField" destination="uVD-Q6-k3p" id="dsM-Qz-Zh6"/>
                     </connections>
                 </viewController>
@@ -789,7 +789,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="2JF-Sv-J85" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aae-hQ-kLa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aae-hQ-kLa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

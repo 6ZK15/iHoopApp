@@ -170,7 +170,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
             in
             if let error = error {
                 self.signUpValidation()
-//                self.errorLabel.text = error.localizedDescription
                 print(error)
             } else {
                 self.databaseReference.child("users").child(user!.uid).setValue([
@@ -189,8 +188,64 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     }
     
     func signUpValidation() {
-        if self.sufirstNameTextField.text == "" {
+        if sufirstNameTextField.text == "" {
+            loginTextField.setErrorTextField(textField: sufirstNameTextField, borderWidth: 2)
             errorLabel.text = "Please fill out required fields"
+        } else {
+            sufirstNameTextField.layer.borderColor = UIColor.clear.cgColor
+        }
+        
+        if sulastNameTextField.text == "" {
+            loginTextField.setErrorTextField(textField: sulastNameTextField, borderWidth: 2)
+            errorLabel.text = "Please fill out required fields"
+        } else {
+            sulastNameTextField.layer.borderColor = UIColor.clear.cgColor
+        }
+        
+        if suemailTextField.text == "" {
+            loginTextField.setErrorTextField(textField: suemailTextField, borderWidth: 2)
+            errorLabel.text = "Please fill out required fields"
+        } else {
+            suemailTextField.layer.borderColor = UIColor.clear.cgColor
+        }
+        
+        if suusernameTextField.text == "" {
+            loginTextField.setErrorTextField(textField: suusernameTextField, borderWidth: 2)
+            errorLabel.text = "Please fill out required fields"
+        } else {
+            suusernameTextField.layer.borderColor = UIColor.clear.cgColor
+        }
+        
+        if supasswordTextField.text == "" {
+            loginTextField.setErrorTextField(textField: supasswordTextField, borderWidth: 2)
+            errorLabel.text = "Please fill out required fields"
+        } else {
+            supasswordTextField.layer.borderColor = UIColor.clear.cgColor
+        }
+        
+        if suverifyPasswordTextField.text == "" {
+            loginTextField.setErrorTextField(textField: suverifyPasswordTextField, borderWidth: 2)
+            errorLabel.text = "Please fill out required fields"
+        } else {
+            suverifyPasswordTextField.layer.borderColor = UIColor.clear.cgColor
+        }
+        
+        if susecurityQuestionTextField.text == "" {
+            loginTextField.setErrorTextField(textField: susecurityQuestionTextField, borderWidth: 2)
+            errorLabel.text = "Please fill out required fields"
+        } else {
+            susecurityQuestionTextField.layer.borderColor = UIColor.clear.cgColor
+        }
+        
+        if susecurityAnswerTextField.text == "" {
+            loginTextField.setErrorTextField(textField: susecurityAnswerTextField, borderWidth: 2)
+            errorLabel.text = "Please fill out required fields"
+        } else {
+            susecurityAnswerTextField.layer.borderColor = UIColor.clear.cgColor
+        }
+        
+        if (supasswordTextField.text != suverifyPasswordTextField.text) && supasswordTextField.text != "" {
+            errorLabel.text = "Passwords do not match"
         }
     }
     
