@@ -201,6 +201,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
                 print(error)
             } else if (self.supasswordTextField.text! != self.suverifyPasswordTextField.text!) {
                 self.signUpValidation()
+                self.textField.setErrorTextField(textField: self.supasswordTextField, borderWidth: 2)
+                self.textField.setErrorTextField(textField: self.suverifyPasswordTextField, borderWidth: 2)
                 self.errorLabel.text = "Passwords do not match"
             } else {
                 self.databaseReference.child("users").child(user!.uid).setValue([
@@ -210,6 +212,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
                     "username":self.suusernameTextField.text,
                     "password":self.supasswordTextField.text,
                 ])
+                self.supasswordTextField.layer.borderColor = UIColor.clear.cgColor
+                self.suverifyPasswordTextField.layer.borderColor = UIColor.clear.cgColor
                 self.errorLabel.text = error?.localizedDescription
                 self.showLoginView(#imageLiteral(resourceName: "submitBtn.png"))
             }
