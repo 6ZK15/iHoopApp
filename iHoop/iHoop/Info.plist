@@ -30,6 +30,7 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Playball.ttf</string>
 		<string>Carrington.ttf</string>
 		<string>DrSugiyama-Regular.ttf</string>
 		<string>FNL_DEMO_KCFonts.ttf</string>
@@ -40,7 +41,30 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+<<<<<<< HEAD
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Load images</string>
+=======
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1315916415158018</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>1315916415158018</string>
+	<key>FacebookDisplayName</key>
+	<string>iHoop</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fb-messenger-api</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
+    </array>
+>>>>>>> master
 </dict>
 </plist>

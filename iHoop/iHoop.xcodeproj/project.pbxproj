@@ -7,11 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841585321E7A7A8000B263BE /* downArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 841585301E7A7A7F00B263BE /* downArrow.png */; };
+		841585331E7A7A8000B263BE /* upArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 841585311E7A7A8000B263BE /* upArrow.png */; };
+		841585351E7A7C8700B263BE /* Playball.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 841585341E7A7C6900B263BE /* Playball.ttf */; };
+		8415853B1E7BB8FB00B263BE /* facebookBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8415853A1E7BB8FB00B263BE /* facebookBtn.png */; };
+		845D3D4F1E7F3BD800955A44 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D4E1E7F3BD800955A44 /* SignUpView.swift */; };
+		845D3D511E7F3C2F00955A44 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D501E7F3C2F00955A44 /* TextField.swift */; };
+		845D3D541E7FA06700955A44 /* bball.png in Resources */ = {isa = PBXBuildFile; fileRef = 845D3D521E7FA06700955A44 /* bball.png */; };
+		845D3D551E7FA06700955A44 /* bballShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 845D3D531E7FA06700955A44 /* bballShadow.png */; };
+		845D3D591E7FA56700955A44 /* bg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 845D3D581E7FA56700955A44 /* bg2.png */; };
 		84B44EDD1E67B6B400AABF92 /* Carrington.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EECF1E6532C200311B63 /* Carrington.ttf */; };
 		84B44EDE1E67B6B400AABF92 /* DrSugiyama-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED01E6532C200311B63 /* DrSugiyama-Regular.ttf */; };
 		84B44EDF1E67B6B400AABF92 /* FNL_DEMO-KCFonts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED11E6532C200311B63 /* FNL_DEMO-KCFonts.ttf */; };
+<<<<<<< HEAD
 		84B44EE11E687E4500AABF92 /* ForgotUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B44EE01E687E4500AABF92 /* ForgotUsernameViewController.swift */; };
 		84B44EE31E687E6500AABF92 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B44EE21E687E6500AABF92 /* ForgotPasswordViewController.swift */; };
+=======
+		84B5EE9D1E65313400311B63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5EE9C1E65313400311B63 /* AppDelegate.swift */; };
+>>>>>>> master
 		84B5EE9F1E65313400311B63 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5EE9E1E65313400311B63 /* HomeViewController.swift */; };
 		84B5EEA21E65313400311B63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEA01E65313400311B63 /* Main.storyboard */; };
 		84B5EEA41E65313400311B63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEA31E65313400311B63 /* Assets.xcassets */; };
@@ -32,10 +45,9 @@
 		84B5EEEA1E65394200311B63 /* loginTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEE71E65394200311B63 /* loginTitle.png */; };
 		84B5EEEB1E65394200311B63 /* signUpTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEE81E65394200311B63 /* signUpTitle.png */; };
 		84B5EEED1E653A9D00311B63 /* bgHome.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEEC1E653A9D00311B63 /* bgHome.png */; };
-		84B5EEEF1E653C2700311B63 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5EEEE1E653C2700311B63 /* LoginViewController.swift */; };
-		84B5EEF21E653C3C00311B63 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5EEF11E653C3C00311B63 /* SignUpViewController.swift */; };
 		8F776294E56F607355097E28 /* Pods_iHoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56CA6631D6767A06E04B5714 /* Pods_iHoop.framework */; };
 		90BE9E005F0A430597EA1B6A /* Pods_iHoopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7886AA4E4529624A643E0891 /* Pods_iHoopUITests.framework */; };
+		96362C351E7D1A31006C585E /* FacebookLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96362C341E7D1A31006C585E /* FacebookLogin.swift */; };
 		963A653B1E67AAC700A9447C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963A653A1E67AAC700A9447C /* GoogleService-Info.plist */; };
 		963A653C1E67AAC700A9447C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963A653A1E67AAC700A9447C /* GoogleService-Info.plist */; };
 		963A653D1E67AAC700A9447C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963A653A1E67AAC700A9447C /* GoogleService-Info.plist */; };
@@ -65,9 +77,16 @@
 		207B5FBD0B3245C67C60F638 /* Pods-iHoopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoopUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHoopUITests/Pods-iHoopUITests.release.xcconfig"; sourceTree = "<group>"; };
 		56CA6631D6767A06E04B5714 /* Pods_iHoop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHoop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7886AA4E4529624A643E0891 /* Pods_iHoopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHoopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		841585301E7A7A7F00B263BE /* downArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = downArrow.png; path = Images/Buttons/downArrow.png; sourceTree = "<group>"; };
+		841585311E7A7A8000B263BE /* upArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = upArrow.png; path = Images/Buttons/upArrow.png; sourceTree = "<group>"; };
+		841585341E7A7C6900B263BE /* Playball.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Playball.ttf; path = Fonts/Playball.ttf; sourceTree = "<group>"; };
+		8415853A1E7BB8FB00B263BE /* facebookBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebookBtn.png; path = Images/Buttons/facebookBtn.png; sourceTree = "<group>"; };
 		843FCCF3C60FAEC7D17147AD /* Pods_iHoopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHoopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		84B44EE01E687E4500AABF92 /* ForgotUsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotUsernameViewController.swift; sourceTree = "<group>"; };
-		84B44EE21E687E6500AABF92 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		845D3D4E1E7F3BD800955A44 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpView.swift; path = Modals/SignUpView.swift; sourceTree = "<group>"; };
+		845D3D501E7F3C2F00955A44 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextField.swift; path = Modals/TextField.swift; sourceTree = "<group>"; };
+		845D3D521E7FA06700955A44 /* bball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bball.png; path = Images/bball.png; sourceTree = "<group>"; };
+		845D3D531E7FA06700955A44 /* bballShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bballShadow.png; path = Images/bballShadow.png; sourceTree = "<group>"; };
+		845D3D581E7FA56700955A44 /* bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg2.png; path = Images/Backgrounds/bg2.png; sourceTree = "<group>"; };
 		84B5EE991E65313400311B63 /* iHoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B5EE9E1E65313400311B63 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		84B5EEA11E65313400311B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -97,9 +116,9 @@
 		84B5EEE71E65394200311B63 /* loginTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loginTitle.png; path = Images/Titles/loginTitle.png; sourceTree = "<group>"; };
 		84B5EEE81E65394200311B63 /* signUpTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = signUpTitle.png; path = Images/Titles/signUpTitle.png; sourceTree = "<group>"; };
 		84B5EEEC1E653A9D00311B63 /* bgHome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bgHome.png; path = Images/Backgrounds/bgHome.png; sourceTree = "<group>"; };
-		84B5EEEE1E653C2700311B63 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		84B5EEF11E653C3C00311B63 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8AF0C5F8FF1333F195A7875D /* Pods-iHoopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoopTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHoopTests/Pods-iHoopTests.release.xcconfig"; sourceTree = "<group>"; };
+		96362C341E7D1A31006C585E /* FacebookLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookLogin.swift; sourceTree = "<group>"; };
+		96362C361E7D25F5006C585E /* iHoop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iHoop.entitlements; sourceTree = "<group>"; };
 		963A653A1E67AAC700A9447C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		96CED2441E74DF0600EEFE70 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3FFE4916276F6D558EA1EE3 /* Pods-iHoopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoopUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iHoopUITests/Pods-iHoopUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,10 +164,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		841585361E7BB07700B263BE /* UIViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				84B5EE9E1E65313400311B63 /* HomeViewController.swift */,
+			);
+			name = UIViewControllers;
+			sourceTree = "<group>";
+		};
+		841585371E7BB08600B263BE /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				845D3D4E1E7F3BD800955A44 /* SignUpView.swift */,
+				845D3D501E7F3C2F00955A44 /* TextField.swift */,
+			);
+			name = Modals;
+			sourceTree = "<group>";
+		};
+		8420991E1E81CDC300D18290 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
 		84B5EE901E65313400311B63 = {
 			isa = PBXGroup;
 			children = (
 				84B5EE9B1E65313400311B63 /* iHoop */,
+				96362C331E7D1999006C585E /* Utilities */,
 				84B5EEB01E65313400311B63 /* iHoopTests */,
 				84B5EEBB1E65313400311B63 /* iHoopUITests */,
 				84B5EE9A1E65313400311B63 /* Products */,
@@ -170,11 +214,19 @@
 		84B5EE9B1E65313400311B63 /* iHoop */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				84B5EE9E1E65313400311B63 /* HomeViewController.swift */,
 				84B5EEEE1E653C2700311B63 /* LoginViewController.swift */,
 				84B5EEF11E653C3C00311B63 /* SignUpViewController.swift */,
 				84B44EE01E687E4500AABF92 /* ForgotUsernameViewController.swift */,
 				84B44EE21E687E6500AABF92 /* ForgotPasswordViewController.swift */,
+=======
+				96362C361E7D25F5006C585E /* iHoop.entitlements */,
+				84B5EE9C1E65313400311B63 /* AppDelegate.swift */,
+				841585371E7BB08600B263BE /* Modals */,
+				8420991E1E81CDC300D18290 /* Operations */,
+				841585361E7BB07700B263BE /* UIViewControllers */,
+>>>>>>> master
 				84B5EEA01E65313400311B63 /* Main.storyboard */,
 				96CED2441E74DF0600EEFE70 /* AppDelegate.swift */,
 				84B5EEA31E65313400311B63 /* Assets.xcassets */,
@@ -208,6 +260,8 @@
 		84B5EECA1E65322C00311B63 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				845D3D521E7FA06700955A44 /* bball.png */,
+				845D3D531E7FA06700955A44 /* bballShadow.png */,
 				84B5EECE1E65324900311B63 /* Backgrounds */,
 				84B5EECD1E65323F00311B63 /* Buttons */,
 				84B5EECC1E65323900311B63 /* Titles */,
@@ -218,6 +272,7 @@
 		84B5EECB1E65323200311B63 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				841585341E7A7C6900B263BE /* Playball.ttf */,
 				84B5EECF1E6532C200311B63 /* Carrington.ttf */,
 				84B5EED01E6532C200311B63 /* DrSugiyama-Regular.ttf */,
 				84B5EED11E6532C200311B63 /* FNL_DEMO-KCFonts.ttf */,
@@ -238,6 +293,9 @@
 		84B5EECD1E65323F00311B63 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				8415853A1E7BB8FB00B263BE /* facebookBtn.png */,
+				841585301E7A7A7F00B263BE /* downArrow.png */,
+				841585311E7A7A8000B263BE /* upArrow.png */,
 				84B5EED61E65393A00311B63 /* cancelBtn.png */,
 				84B5EED71E65393A00311B63 /* forgotPasswordBtn.png */,
 				84B5EED81E65393A00311B63 /* forgotUsernameBtn.png */,
@@ -255,9 +313,19 @@
 			children = (
 				84B5EEEC1E653A9D00311B63 /* bgHome.png */,
 				84B5EED21E65393000311B63 /* bg.png */,
+				845D3D581E7FA56700955A44 /* bg2.png */,
 				84B5EED31E65393000311B63 /* LaunchScreen.png */,
 			);
 			name = Backgrounds;
+			sourceTree = "<group>";
+		};
+		96362C331E7D1999006C585E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				96362C341E7D1A31006C585E /* FacebookLogin.swift */,
+			);
+			name = Utilities;
+			path = iHoop;
 			sourceTree = "<group>";
 		};
 		C2349C1A3773A3D27E89CA39 /* Pods */ = {
@@ -350,8 +418,17 @@
 				TargetAttributes = {
 					84B5EE981E65313400311B63 = {
 						CreatedOnToolsVersion = 8.2.1;
+<<<<<<< HEAD
 						DevelopmentTeam = WAHTQEJFLW;
+=======
+						DevelopmentTeam = 8V783DP7TW;
+>>>>>>> master
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					84B5EEAC1E65313400311B63 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -390,6 +467,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841585351E7A7C8700B263BE /* Playball.ttf in Resources */,
 				84B44EDD1E67B6B400AABF92 /* Carrington.ttf in Resources */,
 				84B44EDE1E67B6B400AABF92 /* DrSugiyama-Regular.ttf in Resources */,
 				84B44EDF1E67B6B400AABF92 /* FNL_DEMO-KCFonts.ttf in Resources */,
@@ -398,19 +476,25 @@
 				84B5EEDF1E65393A00311B63 /* forgotPasswordBtn.png in Resources */,
 				84B5EEEA1E65394200311B63 /* loginTitle.png in Resources */,
 				84B5EEE41E65393A00311B63 /* signUpBtn.png in Resources */,
+				845D3D541E7FA06700955A44 /* bball.png in Resources */,
 				84B5EED51E65393000311B63 /* LaunchScreen.png in Resources */,
 				84B5EEA41E65313400311B63 /* Assets.xcassets in Resources */,
 				84B5EED41E65393000311B63 /* bg.png in Resources */,
 				84B5EEE01E65393A00311B63 /* forgotUsernameBtn.png in Resources */,
 				84B5EEED1E653A9D00311B63 /* bgHome.png in Resources */,
+				841585331E7A7A8000B263BE /* upArrow.png in Resources */,
 				84B5EEE31E65393A00311B63 /* securityQuetionArrow.png in Resources */,
+				845D3D591E7FA56700955A44 /* bg2.png in Resources */,
 				84B5EEDE1E65393A00311B63 /* cancelBtn.png in Resources */,
+				841585321E7A7A8000B263BE /* downArrow.png in Resources */,
 				84B5EEEB1E65394200311B63 /* signUpTitle.png in Resources */,
 				84B5EEE21E65393A00311B63 /* menuBtn.png in Resources */,
+				845D3D551E7FA06700955A44 /* bballShadow.png in Resources */,
 				84B5EEA21E65313400311B63 /* Main.storyboard in Resources */,
 				84B5EEE11E65393A00311B63 /* loginBtn.png in Resources */,
 				84B5EEE91E65394200311B63 /* iHoopTitle.png in Resources */,
 				84B5EEE51E65393A00311B63 /* submitBtn.png in Resources */,
+				8415853B1E7BB8FB00B263BE /* facebookBtn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,12 +659,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				96CED2451E74DF0600EEFE70 /* AppDelegate.swift in Sources */,
 				84B5EEEF1E653C2700311B63 /* LoginViewController.swift in Sources */,
 				84B44EE11E687E4500AABF92 /* ForgotUsernameViewController.swift in Sources */,
 				84B44EE31E687E6500AABF92 /* ForgotPasswordViewController.swift in Sources */,
 				84B5EE9F1E65313400311B63 /* HomeViewController.swift in Sources */,
 				84B5EEF21E653C3C00311B63 /* SignUpViewController.swift in Sources */,
+=======
+				845D3D511E7F3C2F00955A44 /* TextField.swift in Sources */,
+				96362C351E7D1A31006C585E /* FacebookLogin.swift in Sources */,
+				84B5EE9F1E65313400311B63 /* HomeViewController.swift in Sources */,
+				845D3D4F1E7F3BD800955A44 /* SignUpView.swift in Sources */,
+				84B5EE9D1E65313400311B63 /* AppDelegate.swift in Sources */,
+>>>>>>> master
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,7 +823,12 @@
 			baseConfigurationReference = BF73FE929EA8B39847648C7B /* Pods-iHoop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = WAHTQEJFLW;
+=======
+				CODE_SIGN_ENTITLEMENTS = iHoop/iHoop.entitlements;
+				DEVELOPMENT_TEAM = 8V783DP7TW;
+>>>>>>> master
 				INFOPLIST_FILE = iHoop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MrHorace.iHoop;
@@ -745,7 +842,12 @@
 			baseConfigurationReference = B970F1F16A3300875E4BFBE4 /* Pods-iHoop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = WAHTQEJFLW;
+=======
+				CODE_SIGN_ENTITLEMENTS = iHoop/iHoop.entitlements;
+				DEVELOPMENT_TEAM = 8V783DP7TW;
+>>>>>>> master
 				INFOPLIST_FILE = iHoop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MrHorace.iHoop;
