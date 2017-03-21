@@ -22,14 +22,16 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     @IBOutlet weak var suusernameTextField: UITextField!
     @IBOutlet weak var supasswordTextField: UITextField!
     @IBOutlet weak var suverifyPasswordTextField: UITextField!
-    @IBOutlet weak var susecurityQuestionTextField: UITextField!
-    @IBOutlet weak var susecurityAnswerTextField: UITextField!
     
     //Forgot Password Outlets
     @IBOutlet weak var forgotPasswordView: UIView!
     @IBOutlet weak var fpemailTextField: UITextField!
     
     //Forgot Username Outlets
+    @IBOutlet weak var forgotEmailView: UIView!
+    @IBOutlet weak var fefirstNameTextField: UITextField!
+    @IBOutlet weak var felastNameTextField: UITextField!
+    @IBOutlet weak var feusernameTextField: UITextField!
     
     //Login Outlets
     @IBOutlet weak var usernameTextField: UITextField!
@@ -55,15 +57,18 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        textField.setTextFieldDesign(textField: usernameTextField, placeHolderString: "Email")
+        textField.setTextFieldDesign(textField: usernameTextField, placeHolderString: "Username (Email)")
         textField.setTextFieldDesign(textField: passwordTextField, placeHolderString: "Password")
         textField.setTextFieldDesign(textField: fpemailTextField, placeHolderString: "Email")
+        textField.setTextFieldDesign(textField: fefirstNameTextField, placeHolderString: "First Name")
+        textField.setTextFieldDesign(textField: felastNameTextField, placeHolderString: "Last Name")
+        textField.setTextFieldDesign(textField: feusernameTextField, placeHolderString: "Username")
         
     }
     
     override func viewDidLayoutSubviews() {
         signUpScrollView.isScrollEnabled = true
-        signUpScrollView.contentSize = CGSize.init(width: view.frame.size.width, height: 660)
+        signUpScrollView.contentSize = CGSize.init(width: view.frame.size.width, height: 524)
     }
 
     override func didReceiveMemoryWarning() {
@@ -105,10 +110,21 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
                 self.submitBtn.alpha = 0
                 self.signUpScrollView.alpha = 0
                 self.forgotPasswordView.alpha = 0
+                self.forgotEmailView.alpha = 0
             }) { (true) in
                 UIView.animate(withDuration: 0.5, animations: {
                     self.textField.resetTextField(textField: self.usernameTextField)
                     self.textField.resetTextField(textField: self.passwordTextField)
+                    self.textField.resetTextField(textField: self.sufirstNameTextField)
+                    self.textField.resetTextField(textField: self.sulastNameTextField)
+                    self.textField.resetTextField(textField: self.suemailTextField)
+                    self.textField.resetTextField(textField: self.suusernameTextField)
+                    self.textField.resetTextField(textField: self.supasswordTextField)
+                    self.textField.resetTextField(textField: self.suverifyPasswordTextField)
+                    self.textField.resetTextField(textField: self.fpemailTextField)
+                    self.textField.resetTextField(textField: self.fefirstNameTextField)
+                    self.textField.resetTextField(textField: self.felastNameTextField)
+                    self.textField.resetTextField(textField: self.feusernameTextField)
                 })
             }
         } else {
@@ -183,6 +199,9 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
                 self.signUpValidation()
                 self.errorLabel.text = error.localizedDescription
                 print(error)
+            } else if (self.supasswordTextField.text! != self.suverifyPasswordTextField.text!) {
+                self.signUpValidation()
+                self.errorLabel.text = "Passwords do not match"
             } else {
                 self.databaseReference.child("users").child(user!.uid).setValue([
                     "firstname":self.sufirstNameTextField.text,
@@ -190,10 +209,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
                     "email":self.suemailTextField.text,
                     "username":self.suusernameTextField.text,
                     "password":self.supasswordTextField.text,
-                    "security question":self.susecurityQuestionTextField.text,
-                    "security aniswer":self.susecurityAnswerTextField.text
                 ])
-                self.errorLabel.text = "User succesfully signed up"
+                self.errorLabel.text = error?.localizedDescription
                 self.showLoginView(#imageLiteral(resourceName: "submitBtn.png"))
             }
         })
@@ -213,6 +230,10 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
             }
             self.showHideErrorMessageView();
         })
+    }
+    
+    @IBAction func submitForgotEmail(_ sender: Any) {
+        
     }
     
     func signUpValidation() {
@@ -251,18 +272,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
         } else {
             suverifyPasswordTextField.layer.borderColor = UIColor.clear.cgColor
         }
-        
-        if susecurityQuestionTextField.text == "" {
-            textField.setErrorTextField(textField: susecurityQuestionTextField, borderWidth: 2)
-        } else {
-            susecurityQuestionTextField.layer.borderColor = UIColor.clear.cgColor
-        }
-        
-        if susecurityAnswerTextField.text == "" {
-            textField.setErrorTextField(textField: susecurityAnswerTextField, borderWidth: 2)
-        } else {
-            susecurityAnswerTextField.layer.borderColor = UIColor.clear.cgColor
-        }
     }
     
     /*
@@ -281,6 +290,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
             self.menuOptionView.alpha = 0
             self.signUpScrollView.alpha = 0
             self.forgotPasswordView.alpha = 0
+            self.forgotEmailView.alpha = 0
         }) { (true) in
             UIView.animate(withDuration: 1, animations: {
                 self.usernameTextField.alpha = 1
@@ -314,6 +324,20 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
         }) { (true) in
             UIView.animate(withDuration: 1, animations: {
                 self.forgotPasswordView.alpha = 1
+            })
+        }
+    }
+    
+    
+    @IBAction func showForgotEmailView(_ sender: Any) {
+        UIView.animate(withDuration: 1, animations: {
+            self.arrowBtn.transform = .identity
+            self.arrowBtnB.alpha = 0
+            self.arrowBtn.alpha = 1
+            self.menuOptionView.alpha = 0
+        }) { (true) in
+            UIView.animate(withDuration: 1, animations: {
+                self.forgotEmailView.alpha = 1
             })
         }
     }

@@ -18,8 +18,6 @@ class SignUpView: UIView, UITextFieldDelegate {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var verifyPasswordTextField: UITextField!
-    @IBOutlet weak var securityQuestionTextField: UITextField!
-    @IBOutlet weak var securityAnswerTextField: UITextField!
     
     let databaseReference = FIRDatabase.database().reference()
     let orangeColor = UIColor.init(red: 0.796, green: 0.345, blue: 0.090, alpha: 1.000)
@@ -38,8 +36,6 @@ class SignUpView: UIView, UITextFieldDelegate {
         textField.setTextFieldDesign(textField: usernameTextField, placeHolderString: "Username")
         textField.setTextFieldDesign(textField: passwordTextField, placeHolderString: "Password")
         textField.setTextFieldDesign(textField: verifyPasswordTextField, placeHolderString: "Verify Password")
-        textField.setTextFieldDesign(textField: securityQuestionTextField, placeHolderString: "Security Question")
-        textField.setTextFieldDesign(textField: securityAnswerTextField, placeHolderString: "Security Answer")
         
     }
     
