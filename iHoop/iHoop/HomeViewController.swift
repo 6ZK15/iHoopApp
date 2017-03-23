@@ -63,6 +63,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        adjustMenuButtonSize()
+        
         textField.setTextFieldDesign(textField: usernameTextField, placeHolderString: "Username (Email)")
         textField.setTextFieldDesign(textField: passwordTextField, placeHolderString: "Password")
         textField.setTextFieldDesign(textField: fpemailTextField, placeHolderString: "Email")
@@ -422,6 +424,35 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
      */
     func radians(_ degrees: Double) -> CGFloat {
         return CGFloat(degrees * .pi / degrees)
+    }
+    
+    func adjustMenuButtonSize() {
+        let mainScreenHeight = UIScreen.main.bounds.size.height
+        let mainScreenWidth = UIScreen.main.bounds.size.width
+        
+        if ((mainScreenHeight == 736) && (mainScreenWidth == 414)) {
+            print("iPhone 6/7 Plus")
+        } else if ((mainScreenHeight == 667) && (mainScreenWidth == 375)) {
+            print("iPhone 6/7")
+            
+            arrowBtn.frame.origin = CGPoint.init(x: 161, y: 116)
+            arrowBtn.translatesAutoresizingMaskIntoConstraints = true
+            arrowBtn.updateConstraints()
+            arrowBtnB.frame.origin = CGPoint.init(x: 161, y: 449)
+            arrowBtnB.translatesAutoresizingMaskIntoConstraints = true
+            arrowBtnB.updateConstraints()
+        } else if ((mainScreenHeight == 568) && (mainScreenWidth == 320)) {
+            print("iPhone 5/SE")
+            arrowBtn.frame.origin = CGPoint.init(x: 141, y: 116)
+            arrowBtn.translatesAutoresizingMaskIntoConstraints = true
+            arrowBtn.updateConstraints()
+            arrowBtnB.frame.origin = CGPoint.init(x: 141, y: 441)
+            arrowBtnB.translatesAutoresizingMaskIntoConstraints = true
+            arrowBtnB.updateConstraints()
+            submitBtn.frame.origin = CGPoint.init(x: 121, y: 369)
+            submitBtn.translatesAutoresizingMaskIntoConstraints = true
+            submitBtn.updateConstraints()
+        }
     }
     
     
