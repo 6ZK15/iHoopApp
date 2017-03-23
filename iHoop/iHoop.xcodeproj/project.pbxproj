@@ -11,6 +11,7 @@
 		841585331E7A7A8000B263BE /* upArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 841585311E7A7A8000B263BE /* upArrow.png */; };
 		841585351E7A7C8700B263BE /* Playball.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 841585341E7A7C6900B263BE /* Playball.ttf */; };
 		8415853B1E7BB8FB00B263BE /* facebookBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8415853A1E7BB8FB00B263BE /* facebookBtn.png */; };
+		842E3C5B1E84746B00B5E5A5 /* Constaints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E3C5A1E84746B00B5E5A5 /* Constaints.swift */; };
 		845D3D4F1E7F3BD800955A44 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D4E1E7F3BD800955A44 /* SignUpView.swift */; };
 		845D3D511E7F3C2F00955A44 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D501E7F3C2F00955A44 /* TextField.swift */; };
 		845D3D541E7FA06700955A44 /* bball.png in Resources */ = {isa = PBXBuildFile; fileRef = 845D3D521E7FA06700955A44 /* bball.png */; };
@@ -76,6 +77,7 @@
 		841585311E7A7A8000B263BE /* upArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = upArrow.png; path = Images/Buttons/upArrow.png; sourceTree = "<group>"; };
 		841585341E7A7C6900B263BE /* Playball.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Playball.ttf; path = Fonts/Playball.ttf; sourceTree = "<group>"; };
 		8415853A1E7BB8FB00B263BE /* facebookBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebookBtn.png; path = Images/Buttons/facebookBtn.png; sourceTree = "<group>"; };
+		842E3C5A1E84746B00B5E5A5 /* Constaints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constaints.swift; path = Modals/Constaints.swift; sourceTree = "<group>"; };
 		843FCCF3C60FAEC7D17147AD /* Pods_iHoopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHoopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		845D3D4E1E7F3BD800955A44 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpView.swift; path = Modals/SignUpView.swift; sourceTree = "<group>"; };
 		845D3D501E7F3C2F00955A44 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextField.swift; path = Modals/TextField.swift; sourceTree = "<group>"; };
@@ -168,13 +170,14 @@
 			name = UIViewControllers;
 			sourceTree = "<group>";
 		};
-		841585371E7BB08600B263BE /* Modals */ = {
+		841585371E7BB08600B263BE /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				845D3D4E1E7F3BD800955A44 /* SignUpView.swift */,
 				845D3D501E7F3C2F00955A44 /* TextField.swift */,
+				842E3C5A1E84746B00B5E5A5 /* Constaints.swift */,
 			);
-			name = Modals;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		8420991E1E81CDC300D18290 /* Operations */ = {
@@ -212,7 +215,7 @@
 			children = (
 				96362C361E7D25F5006C585E /* iHoop.entitlements */,
 				84B5EE9C1E65313400311B63 /* AppDelegate.swift */,
-				841585371E7BB08600B263BE /* Modals */,
+				841585371E7BB08600B263BE /* Models */,
 				8420991E1E81CDC300D18290 /* Operations */,
 				841585361E7BB07700B263BE /* UIViewControllers */,
 				84B5EEA01E65313400311B63 /* Main.storyboard */,
@@ -647,6 +650,7 @@
 				845D3D511E7F3C2F00955A44 /* TextField.swift in Sources */,
 				96362C351E7D1A31006C585E /* FacebookLogin.swift in Sources */,
 				84B5EE9F1E65313400311B63 /* HomeViewController.swift in Sources */,
+				842E3C5B1E84746B00B5E5A5 /* Constaints.swift in Sources */,
 				845D3D4F1E7F3BD800955A44 /* SignUpView.swift in Sources */,
 				84B5EE9D1E65313400311B63 /* AppDelegate.swift in Sources */,
 			);
