@@ -415,7 +415,7 @@
 				TargetAttributes = {
 					84B5EE981E65313400311B63 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 8V783DP7TW;
+						DevelopmentTeam = WAHTQEJFLW;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -812,7 +812,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iHoop/iHoop.entitlements;
-				DEVELOPMENT_TEAM = 8V783DP7TW;
+				DEVELOPMENT_TEAM = WAHTQEJFLW;
 				INFOPLIST_FILE = iHoop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MrHorace.iHoop;
@@ -827,7 +827,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iHoop/iHoop.entitlements;
-				DEVELOPMENT_TEAM = 8V783DP7TW;
+				DEVELOPMENT_TEAM = WAHTQEJFLW;
 				INFOPLIST_FILE = iHoop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MrHorace.iHoop;

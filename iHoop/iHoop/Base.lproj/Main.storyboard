@@ -616,42 +616,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="S3I-EN-bhN">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="S3I-EN-bhN">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iHoopTitle.png" translatesAutoresizingMaskIntoConstraints="NO" id="pc6-Pd-Kp2">
                                 <rect key="frame" x="132" y="20" width="150" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="pc6-Pd-Kp2" secondAttribute="height" multiplier="5:2" id="HGt-Gn-nGH"/>
-                                </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ema-3C-csI">
-                                <rect key="frame" x="20" y="186" width="374" height="501"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Ema-3C-csI" secondAttribute="height" multiplier="374:501" id="4GQ-w4-ZWi"/>
-                                </constraints>
-                                <color key="separatorColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" rowHeight="72" id="a2p-Yz-o5X">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="72"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a2p-Yz-o5X" id="sJn-KT-Hqx">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="71"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
-                                </prototypes>
-                                <sections/>
-                                <connections>
-                                    <outlet property="dataSource" destination="dD8-zl-ewt" id="C6g-qc-zow"/>
-                                    <outlet property="delegate" destination="dD8-zl-ewt" id="jiJ-Cy-oHA"/>
-                                </connections>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83W-wF-XIj" userLabel="menuBtn">
                                 <rect key="frame" x="20" y="20" width="44" height="44"/>
                                 <constraints>
@@ -682,6 +652,9 @@
                                     <constraint firstAttribute="width" secondItem="Ul4-6L-B2C" secondAttribute="height" multiplier="16:19" id="UeT-ZT-cwQ"/>
                                 </constraints>
                                 <state key="normal" image="ltbButton.png"/>
+                                <connections>
+                                    <action selector="letsTalkBballBtn:" destination="dD8-zl-ewt" eventType="touchUpInside" id="8VA-el-pNF"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Talk Basketball" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wJi-TO-JSA">
                                 <rect key="frame" x="134" y="140" width="220" height="38"/>
@@ -693,34 +666,107 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ema-3C-csI">
+                                <rect key="frame" x="20" y="186" width="374" height="501"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ema-3C-csI" secondAttribute="height" multiplier="374:501" id="4GQ-w4-ZWi"/>
+                                </constraints>
+                                <color key="separatorColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" rowHeight="72" id="a2p-Yz-o5X">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="72"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a2p-Yz-o5X" id="sJn-KT-Hqx">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="71.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="dD8-zl-ewt" id="C6g-qc-zow"/>
+                                    <outlet property="delegate" destination="dD8-zl-ewt" id="jiJ-Cy-oHA"/>
+                                </connections>
+                            </tableView>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZU-2b-vid" userLabel="msgView">
+                                <rect key="frame" x="0.0" y="82" width="414" height="96"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" placeholder="Enter Message" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xdY-hE-jkM" userLabel="msgTextField">
+                                        <rect key="frame" x="20" y="8" width="374" height="80"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="xdY-hE-jkM" secondAttribute="height" multiplier="187:40" id="BF6-nw-WPd"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="24"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnW-aA-bBf" userLabel="submitMessage">
+                                        <rect key="frame" x="354" y="58" width="40" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="2oH-vC-SSi"/>
+                                            <constraint firstAttribute="width" secondItem="nnW-aA-bBf" secondAttribute="height" multiplier="4:3" id="6dd-OI-BAq"/>
+                                        </constraints>
+                                        <state key="normal" image="submitBtn.png"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="nnW-aA-bBf" firstAttribute="top" secondItem="EZU-2b-vid" secondAttribute="top" constant="58" id="0U5-RL-rzS"/>
+                                    <constraint firstAttribute="width" secondItem="EZU-2b-vid" secondAttribute="height" multiplier="69:16" id="7op-VP-jIA"/>
+                                    <constraint firstAttribute="trailing" secondItem="xdY-hE-jkM" secondAttribute="trailing" constant="20" id="G1e-Th-WNs"/>
+                                    <constraint firstItem="xdY-hE-jkM" firstAttribute="leading" secondItem="EZU-2b-vid" secondAttribute="leading" constant="20" id="XNj-WD-blP"/>
+                                    <constraint firstAttribute="bottom" secondItem="xdY-hE-jkM" secondAttribute="bottom" constant="8" id="eA8-e8-bL9"/>
+                                    <constraint firstItem="xdY-hE-jkM" firstAttribute="top" secondItem="EZU-2b-vid" secondAttribute="top" constant="8" id="iKn-9s-UIT"/>
+                                    <constraint firstAttribute="bottom" secondItem="nnW-aA-bBf" secondAttribute="bottom" constant="8" id="osl-DV-KaU"/>
+                                    <constraint firstAttribute="trailing" secondItem="nnW-aA-bBf" secondAttribute="trailing" constant="20" id="tnu-Sz-ki9"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wJi-TO-JSA" firstAttribute="leading" secondItem="ePB-pR-tl6" secondAttribute="trailing" constant="24" id="1Dj-V4-cX3"/>
                             <constraint firstItem="Ul4-6L-B2C" firstAttribute="top" secondItem="WZP-w9-CUb" secondAttribute="bottom" constant="8" id="3QB-LT-Du4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="83W-wF-XIj" secondAttribute="trailing" constant="330" id="85T-z5-hDf"/>
-                            <constraint firstItem="pc6-Pd-Kp2" firstAttribute="leading" secondItem="aec-be-WRW" secondAttribute="leadingMargin" constant="112" id="Blr-83-QtI"/>
+                            <constraint firstItem="WZP-w9-CUb" firstAttribute="top" secondItem="pc6-Pd-Kp2" secondAttribute="bottom" constant="8" symbolic="YES" id="CLb-6a-zwm"/>
                             <constraint firstItem="83W-wF-XIj" firstAttribute="leading" secondItem="aec-be-WRW" secondAttribute="leadingMargin" id="CZ2-V3-szI"/>
                             <constraint firstItem="WZP-w9-CUb" firstAttribute="trailing" secondItem="aec-be-WRW" secondAttribute="trailingMargin" id="DAF-uD-yPg"/>
                             <constraint firstItem="Ul4-6L-B2C" firstAttribute="leading" secondItem="wJi-TO-JSA" secondAttribute="trailing" constant="8" id="Ew2-by-vFi"/>
+                            <constraint firstItem="pc6-Pd-Kp2" firstAttribute="top" secondItem="83W-wF-XIj" secondAttribute="top" id="GED-qI-1PB"/>
+                            <constraint firstItem="S3I-EN-bhN" firstAttribute="top" secondItem="aec-be-WRW" secondAttribute="top" id="H3b-Vb-p6H"/>
+                            <constraint firstItem="EZU-2b-vid" firstAttribute="leading" secondItem="aec-be-WRW" secondAttribute="leading" id="IfA-2d-Am9"/>
                             <constraint firstItem="Ul4-6L-B2C" firstAttribute="trailing" secondItem="aec-be-WRW" secondAttribute="trailingMargin" id="Mqo-Mr-X9n"/>
+                            <constraint firstAttribute="trailing" secondItem="EZU-2b-vid" secondAttribute="trailing" id="Q4s-pW-7O0"/>
+                            <constraint firstItem="pc6-Pd-Kp2" firstAttribute="centerX" secondItem="S3I-EN-bhN" secondAttribute="centerX" id="R3g-vb-bgQ"/>
+                            <constraint firstAttribute="bottom" secondItem="S3I-EN-bhN" secondAttribute="bottom" id="R4o-Ys-1OO"/>
                             <constraint firstItem="dPw-H2-wg8" firstAttribute="top" secondItem="Ema-3C-csI" secondAttribute="bottom" id="RxN-ih-ysD"/>
+                            <constraint firstItem="EZU-2b-vid" firstAttribute="top" secondItem="pc6-Pd-Kp2" secondAttribute="bottom" constant="2" id="U4O-wL-avv"/>
                             <constraint firstItem="83W-wF-XIj" firstAttribute="top" secondItem="1fF-SD-iJQ" secondAttribute="bottom" id="UH4-Pj-fGr"/>
-                            <constraint firstItem="WZP-w9-CUb" firstAttribute="top" secondItem="pc6-Pd-Kp2" secondAttribute="bottom" constant="8" id="VDe-Pn-RRl"/>
                             <constraint firstItem="Ema-3C-csI" firstAttribute="leading" secondItem="aec-be-WRW" secondAttribute="leadingMargin" id="ahY-vf-xSc"/>
+                            <constraint firstItem="pc6-Pd-Kp2" firstAttribute="leading" secondItem="83W-wF-XIj" secondAttribute="trailing" constant="68" id="beE-Li-JGY"/>
                             <constraint firstItem="wJi-TO-JSA" firstAttribute="top" secondItem="WZP-w9-CUb" secondAttribute="bottom" constant="8" id="bz2-2s-KAo"/>
                             <constraint firstItem="WZP-w9-CUb" firstAttribute="leading" secondItem="ePB-pR-tl6" secondAttribute="trailing" constant="24" id="drS-LJ-Mjq"/>
                             <constraint firstItem="Ema-3C-csI" firstAttribute="top" secondItem="ePB-pR-tl6" secondAttribute="bottom" constant="8" symbolic="YES" id="hsw-Zb-ccP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pc6-Pd-Kp2" secondAttribute="trailing" constant="112" id="lRE-Py-6Q7"/>
+                            <constraint firstItem="S3I-EN-bhN" firstAttribute="leading" secondItem="EZU-2b-vid" secondAttribute="leading" id="isM-lA-yGZ"/>
                             <constraint firstItem="Ema-3C-csI" firstAttribute="trailing" secondItem="aec-be-WRW" secondAttribute="trailingMargin" id="m3M-CG-FyX"/>
                             <constraint firstItem="ePB-pR-tl6" firstAttribute="leading" secondItem="aec-be-WRW" secondAttribute="leadingMargin" id="mLa-S5-McW"/>
+                            <constraint firstItem="pc6-Pd-Kp2" firstAttribute="centerX" secondItem="EZU-2b-vid" secondAttribute="centerX" id="pHP-lU-nNB"/>
                             <constraint firstItem="ePB-pR-tl6" firstAttribute="top" secondItem="WZP-w9-CUb" secondAttribute="top" id="pY2-F1-RAz"/>
-                            <constraint firstItem="pc6-Pd-Kp2" firstAttribute="top" secondItem="1fF-SD-iJQ" secondAttribute="bottom" id="uga-b4-viF"/>
+                            <constraint firstItem="Ema-3C-csI" firstAttribute="top" secondItem="EZU-2b-vid" secondAttribute="bottom" constant="8" id="qer-au-4Ai"/>
                             <constraint firstItem="Ema-3C-csI" firstAttribute="top" secondItem="Ul4-6L-B2C" secondAttribute="bottom" constant="8" id="xxh-Z7-E31"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="W5h-uV-aVa"/>
                     <connections>
+                        <outlet property="ltbButton" destination="Ul4-6L-B2C" id="wLN-Bc-h50"/>
+                        <outlet property="ltbSubmitButton" destination="nnW-aA-bBf" id="Sxw-VT-HAn"/>
+                        <outlet property="ltbTableView" destination="Ema-3C-csI" id="xME-hk-HyT"/>
+                        <outlet property="messageView" destination="EZU-2b-vid" id="GnP-e1-UHQ"/>
+                        <outlet property="msgTextField" destination="xdY-hE-jkM" id="TV6-nc-bUO"/>
                         <outlet property="profileImage" destination="ePB-pR-tl6" id="Fu2-MU-Ijn"/>
                     </connections>
                 </viewController>

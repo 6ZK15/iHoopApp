@@ -38,6 +38,17 @@ class TextField: UITextField {
         textField.layer.borderColor = orangeColor.cgColor
     }
     
+    func setProfileTextField(textField: UITextField) {
+        let attributes = [
+            NSForegroundColorAttributeName: UIColor.white
+        ]
+        textField.layer.cornerRadius = 8
+        textField.layer.borderWidth = 2
+        textField.layer.borderColor = orangeColor.cgColor
+        textField.backgroundColor = UIColor.black
+        textField.attributedPlaceholder = NSAttributedString(string: "Enter Message", attributes: attributes)
+    }
+    
     func resetTextField(textField: UITextField) {
         textField.text = ""
     }

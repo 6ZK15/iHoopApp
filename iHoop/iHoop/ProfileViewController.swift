@@ -11,13 +11,21 @@ import UIKit
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var profileImage: ProfileImageView!
+    @IBOutlet weak var ltbTableView: UITableView!
+    @IBOutlet weak var ltbButton: UIButton!
+    @IBOutlet weak var ltbSubmitButton: UIButton!
+    @IBOutlet weak var messageView: UIView!
+    @IBOutlet weak var msgTextField: UITextField!
     
     let profileImageClass = ProfileImageView()
+    let textFieldClass = TextField()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         profileImageClass.setProfileImageDesign(profileImage)
+        
+        textFieldClass.setProfileTextField(textField: msgTextField)
 
         // Do any additional setup after loading the view.
     }
@@ -38,6 +46,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
+    @IBAction func letsTalkBballBtn(_ sender: Any) {
+        UIView.animate(withDuration: 1, animations: {
+            self.ltbTableView.transform = CGAffineTransform.init(translationX: 0, y: self.messageView.frame.height)
+            self.messageView.transform = CGAffineTransform.init(translationX: 0, y: self.messageView.frame.height)
+            self.ltbButton.alpha = 0
+            self.messageView.alpha = 1
+        })
+    }
 
     /*
     // MARK: - Navigation
