@@ -70,6 +70,10 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
         textField.setTextFieldDesign(textField: felastNameTextField, placeHolderString: "Last Name")
         textField.setTextFieldDesign(textField: feusernameTextField, placeHolderString: "Username")
         
+        profileImageView.layer.cornerRadius = profileImageView.frame.width/2
+        profileImageView.layer.borderWidth = 2
+        profileImageView.layer.borderColor = orangeColor.cgColor
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -115,6 +119,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
                 self.rememberSwitch.alpha = 0
                 self.submitBtn.alpha = 0
                 self.signUpScrollView.alpha = 0
+                self.setProfileImageView.alpha = 0
                 self.forgotPasswordView.alpha = 0
                 self.forgotEmailView.alpha = 0
             }) { (true) in
@@ -149,6 +154,15 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
                 })
             }
         }
+    }
+    
+    func showProfileImageView() {
+        UIView.animate(withDuration: 1, animations: {
+            self.arrowBtn.alpha = 0
+            self.setProfileImageView.alpha = 1
+            self.signUpScrollView.transform = CGAffineTransform.init(translationX: 0 - self.signUpScrollView.frame.width, y: 0)
+            self.setProfileImageView.transform = CGAffineTransform.init(translationX: 0 - self.setProfileImageView.frame.width, y: 0)
+        })
     }
     
     /*
@@ -204,12 +218,14 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
             if let error = error {
                 self.signUpValidation()
                 self.errorLabel.text = error.localizedDescription
+                self.showHideErrorMessageView()
                 print(error)
             } else if (self.supasswordTextField.text! != self.suverifyPasswordTextField.text!) {
                 self.signUpValidation()
                 self.textField.setErrorTextField(textField: self.supasswordTextField, borderWidth: 2)
                 self.textField.setErrorTextField(textField: self.suverifyPasswordTextField, borderWidth: 2)
                 self.errorLabel.text = "Passwords do not match"
+                self.showHideErrorMessageView()
             } else {
                 self.databaseReference.child("users").child(user!.uid).setValue([
                     "firstname":self.sufirstNameTextField.text,
@@ -220,11 +236,16 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
                 ])
                 self.supasswordTextField.layer.borderColor = UIColor.clear.cgColor
                 self.suverifyPasswordTextField.layer.borderColor = UIColor.clear.cgColor
-                self.errorLabel.text = error?.localizedDescription
-                self.showLoginView(#imageLiteral(resourceName: "submitBtn.png"))
+                self.errorLabel.text = "User Successfully Signed Up"
+                self.showHideErrorMessageView()
+                self.showProfileImageView()
+//                self.showLoginView(#imageLiteral(resourceName: "submitBtn.png"))
             }
         })
-        showHideErrorMessageView()
+    }
+    
+    @IBAction func submitProfileImage(_ sender: Any) {
+        showLoginView(#imageLiteral(resourceName: "submitBtn.png"))
     }
     
     @IBAction func submitForgotPassword(_ sender: Any) {
@@ -299,6 +320,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
             self.arrowBtn.alpha = 1
             self.menuOptionView.alpha = 0
             self.signUpScrollView.alpha = 0
+            self.setProfileImageView.alpha = 0
             self.forgotPasswordView.alpha = 0
             self.forgotEmailView.alpha = 0
         }) { (true) in
@@ -313,15 +335,30 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     }
     
     @IBAction func showSignUpView(_ sender: Any) {
-        UIView.animate(withDuration: 1, animations: {
-            self.arrowBtn.transform = .identity
-            self.arrowBtnB.alpha = 0
-            self.arrowBtn.alpha = 1
-            self.menuOptionView.alpha = 0
-        }) { (true) in
+        if signUpScrollView.transform == .identity && setProfileImageView.transform == .identity {
             UIView.animate(withDuration: 1, animations: {
-                self.signUpScrollView.alpha = 1
-            })
+                self.arrowBtn.transform = .identity
+                self.arrowBtnB.alpha = 0
+                self.arrowBtn.alpha = 1
+                self.menuOptionView.alpha = 0
+            }) { (true) in
+                UIView.animate(withDuration: 1, animations: {
+                    self.signUpScrollView.alpha = 1
+                })
+            }
+        } else {
+            UIView.animate(withDuration: 1, animations: {
+                self.arrowBtn.transform = .identity
+                self.arrowBtnB.alpha = 0
+                self.arrowBtn.alpha = 1
+                self.menuOptionView.alpha = 0
+                self.signUpScrollView.transform = .identity
+                self.setProfileImageView.transform = .identity
+            }) { (true) in
+                UIView.animate(withDuration: 1, animations: {
+                    self.signUpScrollView.alpha = 1
+                })
+            }
         }
     }
     
@@ -337,7 +374,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
             })
         }
     }
-    
     
     @IBAction func showForgotEmailView(_ sender: Any) {
         UIView.animate(withDuration: 1, animations: {
