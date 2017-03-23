@@ -112,7 +112,7 @@
 		84B5EEE71E65394200311B63 /* loginTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loginTitle.png; path = Images/Titles/loginTitle.png; sourceTree = "<group>"; };
 		84B5EEE81E65394200311B63 /* signUpTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = signUpTitle.png; path = Images/Titles/signUpTitle.png; sourceTree = "<group>"; };
 		84B5EEEC1E653A9D00311B63 /* bgHome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bgHome.png; path = Images/Backgrounds/bgHome.png; sourceTree = "<group>"; };
-		84C805371E838E1B000F9BE2 /* nextBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nextBtn.png; path = ../../../../../Desktop/iHoop/nextBtn.png; sourceTree = "<group>"; };
+		84C805371E838E1B000F9BE2 /* nextBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nextBtn.png; path = Images/Buttons/nextBtn.png; sourceTree = "<group>"; };
 		8AF0C5F8FF1333F195A7875D /* Pods-iHoopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoopTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHoopTests/Pods-iHoopTests.release.xcconfig"; sourceTree = "<group>"; };
 		96362C341E7D1A31006C585E /* FacebookLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookLogin.swift; sourceTree = "<group>"; };
 		96362C361E7D25F5006C585E /* iHoop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iHoop.entitlements; sourceTree = "<group>"; };
