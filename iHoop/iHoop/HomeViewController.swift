@@ -22,6 +22,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     @IBOutlet weak var suusernameTextField: UITextField!
     @IBOutlet weak var supasswordTextField: UITextField!
     @IBOutlet weak var suverifyPasswordTextField: UITextField!
+    @IBOutlet weak var submitSignUpBtn: UIButton!
     
     //Profile Image Outlet
     @IBOutlet weak var setProfileImageView: UIView!
@@ -33,11 +34,12 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     @IBOutlet weak var forgotPasswordView: UIView!
     @IBOutlet weak var fpemailTextField: UITextField!
     
-    //Forgot Username Outlets
+    //Forgot Email Outlets
     @IBOutlet weak var forgotEmailView: UIView!
     @IBOutlet weak var fefirstNameTextField: UITextField!
     @IBOutlet weak var felastNameTextField: UITextField!
     @IBOutlet weak var feusernameTextField: UITextField!
+    @IBOutlet weak var submitForgotEmailBtn: UIButton!
     
     //Login Outlets
     @IBOutlet weak var usernameTextField: UITextField!
@@ -74,6 +76,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
         constraintsClass.adjustLoginTopMenuButton(arrowBtn)
         constraintsClass.adjustLoginBottomMenuButton(arrowBtnB)
         constraintsClass.adjustSubmitButton(submitBtn)
+        constraintsClass.adjustSignUpSumbitButton(submitSignUpBtn)
         
         profileImageView.layer.cornerRadius = profileImageView.frame.width/2
         profileImageView.layer.borderWidth = 2

@@ -21,7 +21,6 @@
 		84B44EDE1E67B6B400AABF92 /* DrSugiyama-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED01E6532C200311B63 /* DrSugiyama-Regular.ttf */; };
 		84B44EDF1E67B6B400AABF92 /* FNL_DEMO-KCFonts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED11E6532C200311B63 /* FNL_DEMO-KCFonts.ttf */; };
 		84B5EE9D1E65313400311B63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5EE9C1E65313400311B63 /* AppDelegate.swift */; };
-		84B5EE9F1E65313400311B63 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5EE9E1E65313400311B63 /* HomeViewController.swift */; };
 		84B5EEA21E65313400311B63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEA01E65313400311B63 /* Main.storyboard */; };
 		84B5EEA41E65313400311B63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEA31E65313400311B63 /* Assets.xcassets */; };
 		84B5EEA71E65313400311B63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEA51E65313400311B63 /* LaunchScreen.storyboard */; };
@@ -41,6 +40,8 @@
 		84B5EEEA1E65394200311B63 /* loginTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEE71E65394200311B63 /* loginTitle.png */; };
 		84B5EEEB1E65394200311B63 /* signUpTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEE81E65394200311B63 /* signUpTitle.png */; };
 		84B5EEED1E653A9D00311B63 /* bgHome.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEEC1E653A9D00311B63 /* bgHome.png */; };
+		84B66CF11E8481EF00CBDB7D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B66CF01E8481EF00CBDB7D /* HomeViewController.swift */; };
+		84B66CF31E848BA500CBDB7D /* defaultProfilePic.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B66CF21E848BA500CBDB7D /* defaultProfilePic.png */; };
 		84C805381E838E1B000F9BE2 /* nextBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C805371E838E1B000F9BE2 /* nextBtn.png */; };
 		8F776294E56F607355097E28 /* Pods_iHoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56CA6631D6767A06E04B5714 /* Pods_iHoop.framework */; };
 		90BE9E005F0A430597EA1B6A /* Pods_iHoopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7886AA4E4529624A643E0891 /* Pods_iHoopUITests.framework */; };
@@ -86,7 +87,6 @@
 		845D3D581E7FA56700955A44 /* bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg2.png; path = Images/Backgrounds/bg2.png; sourceTree = "<group>"; };
 		84B5EE991E65313400311B63 /* iHoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B5EE9C1E65313400311B63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84B5EE9E1E65313400311B63 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		84B5EEA11E65313400311B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84B5EEA31E65313400311B63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84B5EEA61E65313400311B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -114,6 +114,8 @@
 		84B5EEE71E65394200311B63 /* loginTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loginTitle.png; path = Images/Titles/loginTitle.png; sourceTree = "<group>"; };
 		84B5EEE81E65394200311B63 /* signUpTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = signUpTitle.png; path = Images/Titles/signUpTitle.png; sourceTree = "<group>"; };
 		84B5EEEC1E653A9D00311B63 /* bgHome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bgHome.png; path = Images/Backgrounds/bgHome.png; sourceTree = "<group>"; };
+		84B66CF01E8481EF00CBDB7D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		84B66CF21E848BA500CBDB7D /* defaultProfilePic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = defaultProfilePic.png; path = Images/defaultProfilePic.png; sourceTree = "<group>"; };
 		84C805371E838E1B000F9BE2 /* nextBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nextBtn.png; path = Images/Buttons/nextBtn.png; sourceTree = "<group>"; };
 		8AF0C5F8FF1333F195A7875D /* Pods-iHoopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoopTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHoopTests/Pods-iHoopTests.release.xcconfig"; sourceTree = "<group>"; };
 		96362C341E7D1A31006C585E /* FacebookLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookLogin.swift; sourceTree = "<group>"; };
@@ -165,7 +167,7 @@
 		841585361E7BB07700B263BE /* UIViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				84B5EE9E1E65313400311B63 /* HomeViewController.swift */,
+				84B66CF01E8481EF00CBDB7D /* HomeViewController.swift */,
 			);
 			name = UIViewControllers;
 			sourceTree = "<group>";
@@ -250,6 +252,7 @@
 		84B5EECA1E65322C00311B63 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				84B66CF21E848BA500CBDB7D /* defaultProfilePic.png */,
 				845D3D521E7FA06700955A44 /* bball.png */,
 				845D3D531E7FA06700955A44 /* bballShadow.png */,
 				84B5EECE1E65324900311B63 /* Backgrounds */,
@@ -470,6 +473,7 @@
 				84B5EED41E65393000311B63 /* bg.png in Resources */,
 				84B5EEE01E65393A00311B63 /* forgotUsernameBtn.png in Resources */,
 				84B5EEED1E653A9D00311B63 /* bgHome.png in Resources */,
+				84B66CF31E848BA500CBDB7D /* defaultProfilePic.png in Resources */,
 				841585331E7A7A8000B263BE /* upArrow.png in Resources */,
 				84B5EEE31E65393A00311B63 /* securityQuetionArrow.png in Resources */,
 				845D3D591E7FA56700955A44 /* bg2.png in Resources */,
@@ -649,10 +653,10 @@
 			files = (
 				845D3D511E7F3C2F00955A44 /* TextField.swift in Sources */,
 				96362C351E7D1A31006C585E /* FacebookLogin.swift in Sources */,
-				84B5EE9F1E65313400311B63 /* HomeViewController.swift in Sources */,
 				842E3C5B1E84746B00B5E5A5 /* Constaints.swift in Sources */,
 				845D3D4F1E7F3BD800955A44 /* SignUpView.swift in Sources */,
 				84B5EE9D1E65313400311B63 /* AppDelegate.swift in Sources */,
+				84B66CF11E8481EF00CBDB7D /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

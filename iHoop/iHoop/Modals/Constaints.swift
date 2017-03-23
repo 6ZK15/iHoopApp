@@ -48,7 +48,7 @@ class Constraints: NSObject {
         }
     }
     
-    func adjustSubmitButton(_ menuBtn: UIButton) {
+    func adjustSubmitButton(_ submitBtn: UIButton) {
         let mainScreenHeight = UIScreen.main.bounds.size.height
         let mainScreenWidth = UIScreen.main.bounds.size.width
         
@@ -56,14 +56,48 @@ class Constraints: NSObject {
             print("iPhone 6/7 Plus")
         } else if ((mainScreenHeight == 667) && (mainScreenWidth == 375)) {
             print("iPhone 6/7")
-            menuBtn.frame.origin = CGPoint.init(x: UIScreen.main.bounds.size.width/2 - 40, y: 393)
-            menuBtn.translatesAutoresizingMaskIntoConstraints = true
-            menuBtn.updateConstraints()
+            submitBtn.frame.origin = CGPoint.init(x: UIScreen.main.bounds.size.width/2 - 40, y: 393)
+            submitBtn.translatesAutoresizingMaskIntoConstraints = true
+            submitBtn.updateConstraints()
         } else if ((mainScreenHeight == 568) && (mainScreenWidth == 320)) {
             print("iPhone 5/SE")
-            menuBtn.frame.origin = CGPoint.init(x: 121, y: 369)
-            menuBtn.translatesAutoresizingMaskIntoConstraints = true
-            menuBtn.updateConstraints()
+            submitBtn.frame.origin = CGPoint.init(x: 121, y: 369)
+            submitBtn.translatesAutoresizingMaskIntoConstraints = true
+            submitBtn.updateConstraints()
+        }
+    }
+    
+    func adjustSignUpSumbitButton(_ submitBtn: UIButton) {
+        let mainScreenHeight = UIScreen.main.bounds.size.height
+        let mainScreenWidth = UIScreen.main.bounds.size.width
+        
+        if ((mainScreenHeight == 736) && (mainScreenWidth == 414)) {
+            print("iPhone 6/7 Plus")
+        } else if ((mainScreenHeight == 667) && (mainScreenWidth == 375)) {
+            print("iPhone 6/7")
+            submitBtn.frame.origin = CGPoint.init(x: UIScreen.main.bounds.size.width/2 - 40, y: 404)
+            submitBtn.translatesAutoresizingMaskIntoConstraints = true
+            submitBtn.updateConstraints()
+        } else if ((mainScreenHeight == 568) && (mainScreenWidth == 320)) {
+            print("iPhone 5/SE")
+            submitBtn.translatesAutoresizingMaskIntoConstraints = true
+            submitBtn.updateConstraints()
+        }
+    }
+    
+    func adjustForgotEmailSubmitButton(_ submitBtn: UIButton) {
+        let mainScreenHeight = UIScreen.main.bounds.size.height
+        let mainScreenWidth = UIScreen.main.bounds.size.width
+        
+        if ((mainScreenHeight == 736) && (mainScreenWidth == 414)) {
+            print("iPhone 6/7 Plus")
+            
+        } else if ((mainScreenHeight == 667) && (mainScreenWidth == 375)) {
+            print("iPhone 6/7")
+            
+        } else if ((mainScreenHeight == 568) && (mainScreenWidth == 320)) {
+            print("iPhone 5/SE")
+            
         }
     }
     

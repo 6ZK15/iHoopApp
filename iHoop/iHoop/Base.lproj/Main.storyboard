@@ -376,7 +376,7 @@
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FDX-pg-pLO" userLabel="setProfileImageView">
                                 <rect key="frame" x="414" y="188" width="414" height="360"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kid-1J-6sI" userLabel="profileImageView">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfilePic.png" translatesAutoresizingMaskIntoConstraints="NO" id="kid-1J-6sI" userLabel="profileImageView">
                                         <rect key="frame" x="87" y="20" width="240" height="240"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -628,6 +628,8 @@
                         <outlet property="setProfileImageView" destination="FDX-pg-pLO" id="1qG-K3-A6H"/>
                         <outlet property="signUpScrollView" destination="S8P-sg-o6q" id="Oeb-YV-4SS"/>
                         <outlet property="submitBtn" destination="lIw-68-HBs" id="Fu1-bj-HQH"/>
+                        <outlet property="submitForgotEmailBtn" destination="upt-0p-F1l" id="bW0-gu-MRL"/>
+                        <outlet property="submitSignUpBtn" destination="7jp-QE-l7c" id="BRc-Yb-VIr"/>
                         <outlet property="suemailTextField" destination="uWd-qH-Ulw" id="Wsj-uD-2da"/>
                         <outlet property="sufirstNameTextField" destination="qx4-q1-cKl" id="ho8-kA-s6I"/>
                         <outlet property="sulastNameTextField" destination="OAg-cQ-FhH" id="zwh-Ld-l9G"/>
@@ -740,7 +742,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="2JF-Sv-J85" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aae-hQ-kLa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aae-hQ-kLa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -756,6 +758,7 @@
     </scenes>
     <resources>
         <image name="bg.png" width="750" height="1334"/>
+        <image name="defaultProfilePic.png" width="240" height="240"/>
         <image name="downArrow.png" width="72" height="72"/>
         <image name="facebookBtn.png" width="72" height="72"/>
         <image name="forgotPasswordBtn.png" width="72" height="72"/>
