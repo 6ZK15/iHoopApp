@@ -29,6 +29,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var chooseImageBtn: UIButton!
     @IBOutlet weak var setProfileImageBtn: UIButton!
+    @IBOutlet weak var submitProfileImageBtn: UIButton!
     
     //Forgot Password Outlets
     @IBOutlet weak var forgotPasswordView: UIView!
@@ -64,7 +65,9 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         
         textField.setTextFieldDesign(textField: usernameTextField, placeHolderString: "Username (Email)")
         textField.setTextFieldDesign(textField: passwordTextField, placeHolderString: "Password")
@@ -77,6 +80,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
         constraintsClass.adjustLoginBottomMenuButton(arrowBtnB)
         constraintsClass.adjustSubmitButton(submitBtn)
         constraintsClass.adjustSignUpSumbitButton(submitSignUpBtn)
+        constraintsClass.adjustSetProfileImageSubmitBtn(submitProfileImageBtn)
         
         profileImageView.layer.cornerRadius = profileImageView.frame.width/2
         profileImageView.layer.borderWidth = 2
@@ -496,6 +500,10 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
      */
     func radians(_ degrees: Double) -> CGFloat {
         return CGFloat(degrees * .pi / degrees)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     
