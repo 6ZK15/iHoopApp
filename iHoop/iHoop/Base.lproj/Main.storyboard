@@ -85,7 +85,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="DIe-H1-Bbq"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7H-ak-Zno">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="p7H-ak-Zno">
                                 <rect key="frame" x="70" y="348" width="189" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="p7H-ak-Zno" secondAttribute="height" multiplier="21:5" id="GHY-Jb-1pk"/>
@@ -219,7 +219,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fjw-JB-S5A" userLabel="signUpView" customClass="SignUpView" customModule="iHoop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="524"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xtk-sk-HEc">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Xtk-sk-HEc">
                                                 <rect key="frame" x="152" y="8" width="110" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Xtk-sk-HEc" secondAttribute="height" multiplier="5:2" id="04d-wp-smP"/>
@@ -317,7 +317,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="7jp-QE-l7c" secondAttribute="height" multiplier="4:3" id="n2o-Tl-2Dl"/>
                                                 </constraints>
-                                                <state key="normal" image="submitBtn.png"/>
+                                                <state key="normal" image="nextBtn.png"/>
                                                 <connections>
                                                     <action selector="submitSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5VP-ta-T7E"/>
                                                 </connections>
@@ -373,10 +373,58 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="pUB-NL-cuz"/>
                                 </connections>
                             </scrollView>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FDX-pg-pLO" userLabel="setProfileImageView">
+                                <rect key="frame" x="414" y="188" width="414" height="360"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfilePic.png" translatesAutoresizingMaskIntoConstraints="NO" id="kid-1J-6sI" userLabel="profileImageView">
+                                        <rect key="frame" x="87" y="20" width="240" height="240"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="kid-1J-6sI" secondAttribute="height" multiplier="1:1" id="PZE-Jh-S0N"/>
+                                            <constraint firstAttribute="width" secondItem="kid-1J-6sI" secondAttribute="height" multiplier="1:1" id="ft4-oP-moH"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bv9-jD-EM7" userLabel="chooseImageBtn">
+                                        <rect key="frame" x="117" y="125" width="180" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="bv9-jD-EM7" secondAttribute="height" multiplier="6:1" id="gFS-Cf-cOS"/>
+                                            <constraint firstAttribute="width" secondItem="bv9-jD-EM7" secondAttribute="height" multiplier="6:1" id="saC-Vj-WdC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="24"/>
+                                        <state key="normal" title="Set Profile Image">
+                                            <color key="titleColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8L-tA-aZX" userLabel="setProfileImageBtn">
+                                        <rect key="frame" x="167" y="280" width="80" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="3hf-5V-nlU"/>
+                                        </constraints>
+                                        <state key="normal" image="submitBtn.png"/>
+                                        <connections>
+                                            <action selector="submitProfileImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tcq-kh-ZmP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="bv9-jD-EM7" firstAttribute="leading" secondItem="FDX-pg-pLO" secondAttribute="leading" constant="117" id="ALg-J6-Wms"/>
+                                    <constraint firstItem="bv9-jD-EM7" firstAttribute="top" secondItem="FDX-pg-pLO" secondAttribute="top" constant="125" id="Fwd-4g-WQ1"/>
+                                    <constraint firstAttribute="bottom" secondItem="M8L-tA-aZX" secondAttribute="bottom" constant="20" id="Twn-vn-2nw"/>
+                                    <constraint firstAttribute="trailing" secondItem="kid-1J-6sI" secondAttribute="trailing" constant="87" id="YXT-F9-yfI"/>
+                                    <constraint firstItem="M8L-tA-aZX" firstAttribute="top" secondItem="kid-1J-6sI" secondAttribute="bottom" constant="20" id="Yst-za-kwk"/>
+                                    <constraint firstAttribute="trailing" secondItem="bv9-jD-EM7" secondAttribute="trailing" constant="117" id="ipb-Nn-dia"/>
+                                    <constraint firstItem="M8L-tA-aZX" firstAttribute="centerX" secondItem="bv9-jD-EM7" secondAttribute="centerX" id="kUh-1S-L8u"/>
+                                    <constraint firstAttribute="width" secondItem="FDX-pg-pLO" secondAttribute="height" multiplier="23:20" id="lgq-md-GVo"/>
+                                    <constraint firstItem="kid-1J-6sI" firstAttribute="top" secondItem="FDX-pg-pLO" secondAttribute="top" constant="20" id="nGc-aJ-hYd"/>
+                                    <constraint firstItem="kid-1J-6sI" firstAttribute="leading" secondItem="FDX-pg-pLO" secondAttribute="leading" constant="87" id="wlL-bw-JMp"/>
+                                </constraints>
+                            </view>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTO-ZW-hb9" userLabel="forgortPasswordView">
                                 <rect key="frame" x="0.0" y="168" width="414" height="228"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JdO-rT-Kfr">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JdO-rT-Kfr">
                                         <rect key="frame" x="92" y="20" width="230" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="JdO-rT-Kfr" secondAttribute="height" multiplier="115:22" id="Oyb-44-J9R"/>
@@ -423,7 +471,7 @@
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IVQ-6J-2Yo" userLabel="forgotEmailView">
                                 <rect key="frame" x="0.0" y="168" width="414" height="356"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RE4-Yn-Xy9">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RE4-Yn-Xy9">
                                         <rect key="frame" x="92" y="20" width="230" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="RE4-Yn-Xy9" secondAttribute="height" multiplier="115:22" id="PP1-BG-yfk"/>
@@ -505,6 +553,7 @@
                             <constraint firstItem="UTO-ZW-hb9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-86" id="2wx-Pj-L5i"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dOV-wj-1KI" secondAttribute="bottom" id="4wr-cD-dfy"/>
                             <constraint firstItem="dOV-wj-1KI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="5rI-pu-6zt"/>
+                            <constraint firstItem="FDX-pg-pLO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="188" id="9g4-FK-zf0"/>
                             <constraint firstItem="UTO-ZW-hb9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CS1-1D-cQL"/>
                             <constraint firstItem="O9z-Fh-MQm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="87" id="CSV-Yz-HwK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dOV-wj-1KI" secondAttribute="trailing" constant="-20" id="Ccd-fx-aVZ"/>
@@ -530,6 +579,7 @@
                             <constraint firstItem="oLJ-s7-Fgp" firstAttribute="top" secondItem="AMI-po-oc7" secondAttribute="bottom" constant="-40" id="bph-Ge-sVS"/>
                             <constraint firstItem="AMI-po-oc7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="165" id="cR7-nr-6wo"/>
                             <constraint firstItem="lIw-68-HBs" firstAttribute="top" secondItem="p7H-ak-Zno" secondAttribute="bottom" constant="20" id="cW4-ma-yPY"/>
+                            <constraint firstItem="FDX-pg-pLO" firstAttribute="leading" secondItem="IVQ-6J-2Yo" secondAttribute="trailing" id="ctF-cs-dqh"/>
                             <constraint firstItem="p7H-ak-Zno" firstAttribute="top" secondItem="etf-wL-dNQ" secondAttribute="bottom" constant="20" id="dUb-FM-1iN"/>
                             <constraint firstItem="BCm-wy-1k7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="165" id="eXF-f4-F8h"/>
                             <constraint firstAttribute="trailing" secondItem="wam-24-Vzo" secondAttribute="trailing" id="esU-0g-hM1"/>
@@ -538,10 +588,12 @@
                             <constraint firstItem="etf-wL-dNQ" firstAttribute="top" secondItem="uVD-Q6-k3p" secondAttribute="bottom" constant="20" id="gO1-kR-NlL"/>
                             <constraint firstItem="UTO-ZW-hb9" firstAttribute="top" secondItem="AMI-po-oc7" secondAttribute="bottom" constant="8" id="hpm-hc-Ekz"/>
                             <constraint firstItem="UTO-ZW-hb9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="i9Z-iN-fAL"/>
+                            <constraint firstAttribute="bottom" secondItem="FDX-pg-pLO" secondAttribute="bottom" constant="188" id="iOi-Rd-rfI"/>
                             <constraint firstItem="S8P-sg-o6q" firstAttribute="leading" secondItem="UTO-ZW-hb9" secondAttribute="leading" id="l6J-jX-Nks"/>
                             <constraint firstItem="UBW-BY-qMw" firstAttribute="trailing" secondItem="oLJ-s7-Fgp" secondAttribute="trailing" id="leQ-Vv-H0O"/>
                             <constraint firstItem="dOV-wj-1KI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mZc-1X-vL4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uVD-Q6-k3p" secondAttribute="trailing" constant="50" id="ng3-lh-KrY"/>
+                            <constraint firstAttribute="trailing" secondItem="FDX-pg-pLO" secondAttribute="trailing" constant="-414" id="pav-4O-Jjm"/>
                             <constraint firstItem="hII-GP-x9A" firstAttribute="leading" secondItem="p7H-ak-Zno" secondAttribute="trailing" constant="36" id="phT-Jt-Mhg"/>
                             <constraint firstItem="IVQ-6J-2Yo" firstAttribute="top" secondItem="AMI-po-oc7" secondAttribute="bottom" constant="8" id="srY-Wv-EaD"/>
                             <constraint firstItem="wam-24-Vzo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ubV-bt-ZhT"/>
@@ -557,6 +609,7 @@
                     <connections>
                         <outlet property="arrowBtn" destination="AMI-po-oc7" id="oFu-CA-ed8"/>
                         <outlet property="arrowBtnB" destination="BCm-wy-1k7" id="KxQ-sf-e29"/>
+                        <outlet property="chooseImageBtn" destination="bv9-jD-EM7" id="GMd-8b-5sE"/>
                         <outlet property="disableView" destination="UBW-BY-qMw" id="LYW-hz-b6p"/>
                         <outlet property="errorLabel" destination="jlF-7M-7Qg" id="wt2-Z9-ALt"/>
                         <outlet property="errorMessageView" destination="wam-24-Vzo" id="hur-iu-332"/>
@@ -568,10 +621,15 @@
                         <outlet property="fpemailTextField" destination="9i0-Ja-VA2" id="qyU-ot-evf"/>
                         <outlet property="menuOptionView" destination="oLJ-s7-Fgp" id="vfP-nw-tS9"/>
                         <outlet property="passwordTextField" destination="etf-wL-dNQ" id="CPN-8f-qkv"/>
+                        <outlet property="profileImageView" destination="kid-1J-6sI" id="mZz-FD-N5r"/>
                         <outlet property="rememberLabel" destination="p7H-ak-Zno" id="Mb0-yL-oZk"/>
                         <outlet property="rememberSwitch" destination="hII-GP-x9A" id="A7w-WR-LYH"/>
+                        <outlet property="setProfileImageBtn" destination="M8L-tA-aZX" id="tqb-0z-R3d"/>
+                        <outlet property="setProfileImageView" destination="FDX-pg-pLO" id="1qG-K3-A6H"/>
                         <outlet property="signUpScrollView" destination="S8P-sg-o6q" id="Oeb-YV-4SS"/>
                         <outlet property="submitBtn" destination="lIw-68-HBs" id="Fu1-bj-HQH"/>
+                        <outlet property="submitForgotEmailBtn" destination="upt-0p-F1l" id="bW0-gu-MRL"/>
+                        <outlet property="submitSignUpBtn" destination="7jp-QE-l7c" id="BRc-Yb-VIr"/>
                         <outlet property="suemailTextField" destination="uWd-qH-Ulw" id="Wsj-uD-2da"/>
                         <outlet property="sufirstNameTextField" destination="qx4-q1-cKl" id="ho8-kA-s6I"/>
                         <outlet property="sulastNameTextField" destination="OAg-cQ-FhH" id="zwh-Ld-l9G"/>
@@ -795,7 +853,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="2JF-Sv-J85" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aae-hQ-kLa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aae-hQ-kLa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -811,15 +869,20 @@
     </scenes>
     <resources>
         <image name="bg.png" width="750" height="1334"/>
+        <image name="defaultProfilePic.png" width="240" height="240"/>
         <image name="downArrow.png" width="72" height="72"/>
         <image name="facebookBtn.png" width="72" height="72"/>
         <image name="forgotPasswordBtn.png" width="72" height="72"/>
         <image name="forgotUsernameBtn.png" width="72" height="72"/>
         <image name="iHoopTitle.png" width="358" height="153"/>
         <image name="loginBtn.png" width="72" height="72"/>
+<<<<<<< HEAD
         <image name="ltbButton.png" width="56" height="64"/>
         <image name="menuBtn.png" width="109" height="89"/>
         <image name="profilePic.png" width="512" height="512"/>
+=======
+        <image name="nextBtn.png" width="144" height="87"/>
+>>>>>>> login
         <image name="signUpBtn.png" width="72" height="72"/>
         <image name="submitBtn.png" width="144" height="87"/>
     </resources>
