@@ -241,6 +241,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
                     "email":self.suemailTextField.text,
                     "username":self.suusernameTextField.text,
                     "password":self.supasswordTextField.text,
+                    "profilepic":self.profileImageView.image?.description,
                 ])
                 self.supasswordTextField.layer.borderColor = UIColor.clear.cgColor
                 self.suverifyPasswordTextField.layer.borderColor = UIColor.clear.cgColor
@@ -277,10 +278,50 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     }
     
     @IBAction func submitProfileImage(_ sender: Any) {
+        saveProfileToFirebaseStorage()
         
-        showLoginView(#imageLiteral(resourceName: "submitBtn.png"))
+        
     }
     
+    
+    func saveProfileToFirebaseStorage(){
+        let imageName = NSUUID().uuidString
+        let storageRef = FIRStorage.storage().reference()
+        
+        let storedImage = storageRef.child("profile_images").child(imageName)
+        
+        if let uploadData = UIImagePNGRepresentation(self.profileImageView.image!)
+        {
+            
+            storedImage.put(uploadData, metadata: nil, completion: { (metadata, error) in
+                if error != nil {
+                    print(error!)
+                    return
+                }
+                
+                storedImage.downloadURL(completion: { (url, error) in
+                    if error != nil {
+                        print(error!)
+                        return
+                    }
+                    if let urlText = url?.absoluteString {
+                        self.databaseReference.child("users").child((FIRAuth.auth()?.currentUser?.uid)!).updateChildValues(["profilepic": urlText], withCompletionBlock: { (error, ref) in
+                            if error != nil {
+                                print(error!)
+                                return
+                            }
+                            
+                        })
+                    }
+                })// end storageImage.downloadURL
+                
+            })// end storageImage.put
+        } // end if let uploadData
+        errorLabel.text = "Profile Picture Set Successfully. Please Log In"
+        showHideErrorMessageView()
+        showLoginView(#imageLiteral(resourceName: "submitBtn.png"))
+    }
+
     @IBAction func submitForgotPassword(_ sender: Any) {
         FIRAuth.auth()?.sendPasswordReset(withEmail: self.fpemailTextField.text!, completion: {(error) in
             if error != nil {
@@ -459,4 +500,5 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     
     
 }
+
 
