@@ -12,7 +12,7 @@ import FirebaseAuth
 import FirebaseDatabase
 import FBSDKLoginKit
 
-class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate{
+class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     //Sign Up Outlets
     @IBOutlet weak var signUpScrollView: UIScrollView!
@@ -28,11 +28,12 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     @IBOutlet weak var setProfileImageView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var chooseImageBtn: UIButton!
-    @IBOutlet weak var setProfileImageBtn: UIButton!
+    @IBOutlet weak var submitProfileImageBtn: UIButton!
     
     //Forgot Password Outlets
     @IBOutlet weak var forgotPasswordView: UIView!
     @IBOutlet weak var fpemailTextField: UITextField!
+    @IBOutlet weak var submitForgotPasswordBtn: UIButton!
     
     //Forgot Email Outlets
     @IBOutlet weak var forgotEmailView: UIView!
@@ -64,7 +65,9 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         
         textField.setTextFieldDesign(textField: usernameTextField, placeHolderString: "Username (Email)")
         textField.setTextFieldDesign(textField: passwordTextField, placeHolderString: "Password")
@@ -77,11 +80,11 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
         constraintsClass.adjustLoginBottomMenuButton(arrowBtnB)
         constraintsClass.adjustSubmitButton(submitBtn)
         constraintsClass.adjustSignUpSumbitButton(submitSignUpBtn)
-        
-        profileImageView.layer.cornerRadius = profileImageView.frame.width/2
-        profileImageView.layer.borderWidth = 2
-        profileImageView.layer.borderColor = orangeColor.cgColor
-        
+        constraintsClass.adjustSetProfileImageSubmitBtn(submitProfileImageBtn)
+        constraintsClass.adjustProfileImageView(profileImageView, chooseImageBtn)
+        constraintsClass.adjustForgotEmailSubmitButton(submitForgotEmailBtn)
+        constraintsClass.adjustForgotPasswordSubmitButton(submitForgotPasswordBtn)
+        constraintsClass.adjustMenuOptionView(menuOptionView)
     }
     
     override func viewDidLayoutSubviews() {
@@ -241,6 +244,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
                     "email":self.suemailTextField.text,
                     "username":self.suusernameTextField.text,
                     "password":self.supasswordTextField.text,
+                    "profilepic":self.profileImageView.image?.description,
                 ])
                 self.supasswordTextField.layer.borderColor = UIColor.clear.cgColor
                 self.suverifyPasswordTextField.layer.borderColor = UIColor.clear.cgColor
@@ -251,11 +255,76 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
             }
         })
     }
-    
-    @IBAction func submitProfileImage(_ sender: Any) {
-        showLoginView(#imageLiteral(resourceName: "submitBtn.png"))
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            profileImageView.image = image
+        }else{
+            print("Error. Could not load image")
+        }
+        
+        
+        dismiss(animated: true, completion: nil)
     }
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func selectProfileImage(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        self.present(picker, animated: true, completion:nil)
+    }
+    
+    @IBAction func submitProfileImage(_ sender: Any) {
+        saveProfileToFirebaseStorage()
+        
+        
+    }
+    
+    
+    func saveProfileToFirebaseStorage(){
+        let imageName = NSUUID().uuidString
+        let storageRef = FIRStorage.storage().reference()
+        
+        let storedImage = storageRef.child("profile_images").child(imageName)
+        
+        if let uploadData = UIImagePNGRepresentation(self.profileImageView.image!)
+        {
+            
+            storedImage.put(uploadData, metadata: nil, completion: { (metadata, error) in
+                if error != nil {
+                    print(error!)
+                    return
+                }
+                
+                storedImage.downloadURL(completion: { (url, error) in
+                    if error != nil {
+                        print(error!)
+                        return
+                    }
+                    if let urlText = url?.absoluteString {
+                        self.databaseReference.child("users").child((FIRAuth.auth()?.currentUser?.uid)!).updateChildValues(["profilepic": urlText], withCompletionBlock: { (error, ref) in
+                            if error != nil {
+                                print(error!)
+                                return
+                            }
+                            
+                        })
+                    }
+                })// end storageImage.downloadURL
+                
+            })// end storageImage.put
+        } // end if let uploadData
+        errorLabel.text = "Profile Picture Set Successfully. Please Log In"
+        showHideErrorMessageView()
+        showLoginView(#imageLiteral(resourceName: "submitBtn.png"))
+    }
+
     @IBAction func submitForgotPassword(_ sender: Any) {
         FIRAuth.auth()?.sendPasswordReset(withEmail: self.fpemailTextField.text!, completion: {(error) in
             if error != nil {
@@ -352,7 +421,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
             }) { (true) in
                 UIView.animate(withDuration: 1, animations: {
                     self.signUpScrollView.alpha = 1
-                })
+               })
             }
         } else {
             UIView.animate(withDuration: 1, animations: {
@@ -432,6 +501,11 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
         return CGFloat(degrees * .pi / degrees)
     }
     
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     
 }
+
 
