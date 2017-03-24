@@ -631,6 +631,7 @@
                         <outlet property="signUpScrollView" destination="S8P-sg-o6q" id="Oeb-YV-4SS"/>
                         <outlet property="submitBtn" destination="lIw-68-HBs" id="Fu1-bj-HQH"/>
                         <outlet property="submitForgotEmailBtn" destination="upt-0p-F1l" id="bW0-gu-MRL"/>
+                        <outlet property="submitForgotPasswordBtn" destination="kGS-nc-xfj" id="Z5G-Ij-PnI"/>
                         <outlet property="submitProfileImageBtn" destination="M8L-tA-aZX" id="IJU-yN-usy"/>
                         <outlet property="submitSignUpBtn" destination="7jp-QE-l7c" id="BRc-Yb-VIr"/>
                         <outlet property="suemailTextField" destination="uWd-qH-Ulw" id="Wsj-uD-2da"/>

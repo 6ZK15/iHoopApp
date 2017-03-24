@@ -33,6 +33,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     //Forgot Password Outlets
     @IBOutlet weak var forgotPasswordView: UIView!
     @IBOutlet weak var fpemailTextField: UITextField!
+    @IBOutlet weak var submitForgotPasswordBtn: UIButton!
     
     //Forgot Email Outlets
     @IBOutlet weak var forgotEmailView: UIView!
@@ -81,6 +82,9 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
         constraintsClass.adjustSignUpSumbitButton(submitSignUpBtn)
         constraintsClass.adjustSetProfileImageSubmitBtn(submitProfileImageBtn)
         constraintsClass.adjustProfileImageView(profileImageView, chooseImageBtn)
+        constraintsClass.adjustForgotEmailSubmitButton(submitForgotEmailBtn)
+        constraintsClass.adjustForgotPasswordSubmitButton(submitForgotPasswordBtn)
+        constraintsClass.adjustMenuOptionView(menuOptionView)
     }
     
     override func viewDidLayoutSubviews() {

@@ -127,10 +127,41 @@ class Constraints: NSObject {
             
         } else if ((mainScreenHeight == 667) && (mainScreenWidth == 375)) {
             print("iPhone 6/7")
-            
+            submitBtn.frame.origin = CGPoint.init(x: UIScreen.main.bounds.size.width/2 - 40, y: 260)
+            submitBtn.translatesAutoresizingMaskIntoConstraints = true
+            submitBtn.updateConstraints()
         } else if ((mainScreenHeight == 568) && (mainScreenWidth == 320)) {
             print("iPhone 5/SE")
 
+        }
+    }
+    
+    func adjustForgotPasswordSubmitButton(_ submitBtn: UIButton) {
+        
+        if ((mainScreenHeight == 736) && (mainScreenWidth == 414)) {
+            print("iPhone 6/7 Plus")
+            
+        } else if ((mainScreenHeight == 667) && (mainScreenWidth == 375)) {
+            print("iPhone 6/7")
+            submitBtn.frame.origin = CGPoint.init(x: mainScreenWidth/2 - 40, y: 140)
+            submitBtn.translatesAutoresizingMaskIntoConstraints = true
+            submitBtn.updateConstraints()
+        } else if ((mainScreenHeight == 568) && (mainScreenWidth == 320)) {
+            print("iPhone 5/SE")
+            
+        }
+    }
+    
+    func adjustMenuOptionView(_ menuView: UIView) {
+        
+        if ((mainScreenHeight == 736) && (mainScreenWidth == 414)) {
+            print("iPhone 6/7 Plus")
+            
+        } else if ((mainScreenHeight == 667) && (mainScreenWidth == 375)) {
+            print("iPhone 6/7")
+            
+        } else if ((mainScreenHeight == 568) && (mainScreenWidth == 320)) {
+            print("iPhone 5/SE")
         }
     }
     
