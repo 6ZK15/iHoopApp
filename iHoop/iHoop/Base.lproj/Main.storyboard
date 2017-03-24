@@ -399,7 +399,7 @@
                                             <action selector="selectProfileImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P2R-Z7-GYf"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8L-tA-aZX" userLabel="setProfileImageBtn">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8L-tA-aZX" userLabel="submitProfileImageBtn">
                                         <rect key="frame" x="167" y="280" width="80" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="3hf-5V-nlU"/>
@@ -627,7 +627,6 @@
                         <outlet property="profileImageView" destination="kid-1J-6sI" id="mZz-FD-N5r"/>
                         <outlet property="rememberLabel" destination="p7H-ak-Zno" id="Mb0-yL-oZk"/>
                         <outlet property="rememberSwitch" destination="hII-GP-x9A" id="A7w-WR-LYH"/>
-                        <outlet property="setProfileImageBtn" destination="M8L-tA-aZX" id="tqb-0z-R3d"/>
                         <outlet property="setProfileImageView" destination="FDX-pg-pLO" id="1qG-K3-A6H"/>
                         <outlet property="signUpScrollView" destination="S8P-sg-o6q" id="Oeb-YV-4SS"/>
                         <outlet property="submitBtn" destination="lIw-68-HBs" id="Fu1-bj-HQH"/>
