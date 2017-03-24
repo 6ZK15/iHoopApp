@@ -12,7 +12,7 @@ import FirebaseAuth
 import FirebaseDatabase
 import FBSDKLoginKit
 
-class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate{
+class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     //Sign Up Outlets
     @IBOutlet weak var signUpScrollView: UIScrollView!
@@ -251,8 +251,33 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
             }
         })
     }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            profileImageView.image = image
+        }else{
+            print("Error. Could not load image")
+        }
+        
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func selectProfileImage(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        self.present(picker, animated: true, completion:nil)
+    }
     
     @IBAction func submitProfileImage(_ sender: Any) {
+        
         showLoginView(#imageLiteral(resourceName: "submitBtn.png"))
     }
     
@@ -352,7 +377,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
             }) { (true) in
                 UIView.animate(withDuration: 1, animations: {
                     self.signUpScrollView.alpha = 1
-                })
+               })
             }
         } else {
             UIView.animate(withDuration: 1, animations: {
