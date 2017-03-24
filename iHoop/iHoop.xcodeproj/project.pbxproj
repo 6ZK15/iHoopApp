@@ -53,6 +53,7 @@
 		963A653B1E67AAC700A9447C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963A653A1E67AAC700A9447C /* GoogleService-Info.plist */; };
 		963A653C1E67AAC700A9447C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963A653A1E67AAC700A9447C /* GoogleService-Info.plist */; };
 		963A653D1E67AAC700A9447C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963A653A1E67AAC700A9447C /* GoogleService-Info.plist */; };
+		967E26761E85E5A5002208D8 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967E26751E85E5A5002208D8 /* Posts.swift */; };
 		E1FC6081A5573DBE6308E082 /* Pods_iHoopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843FCCF3C60FAEC7D17147AD /* Pods_iHoopTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +130,7 @@
 		96362C341E7D1A31006C585E /* FacebookLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookLogin.swift; sourceTree = "<group>"; };
 		96362C361E7D25F5006C585E /* iHoop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iHoop.entitlements; sourceTree = "<group>"; };
 		963A653A1E67AAC700A9447C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		967E26751E85E5A5002208D8 /* Posts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
 		B3FFE4916276F6D558EA1EE3 /* Pods-iHoopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoopUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iHoopUITests/Pods-iHoopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B970F1F16A3300875E4BFBE4 /* Pods-iHoop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoop.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHoop/Pods-iHoop.release.xcconfig"; sourceTree = "<group>"; };
 		BF73FE929EA8B39847648C7B /* Pods-iHoop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iHoop/Pods-iHoop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				845D3D501E7F3C2F00955A44 /* TextField.swift */,
 				84C805351E838309000F9BE2 /* ProfileImageView.swift */,
 				842E3C5A1E84746B00B5E5A5 /* Constaints.swift */,
+				967E26751E85E5A5002208D8 /* Posts.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -672,6 +675,7 @@
 				842E3C5B1E84746B00B5E5A5 /* Constaints.swift in Sources */,
 				845D3D4F1E7F3BD800955A44 /* SignUpView.swift in Sources */,
 				84B5EE9D1E65313400311B63 /* AppDelegate.swift in Sources */,
+				967E26761E85E5A5002208D8 /* Posts.swift in Sources */,
 				84B66CF11E8481EF00CBDB7D /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
