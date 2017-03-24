@@ -9,9 +9,13 @@
 import UIKit
 
 class ProfileImageView: UIImageView {
+    
+    let orangeColor = UIColor.init(red: 0.796, green: 0.345, blue: 0.090, alpha: 1.000)
 
     func setProfileImageDesign(_ profileImageView: UIImageView) {
         profileImageView.layer.cornerRadius = profileImageView.frame.height/2
+        profileImageView.layer.borderWidth = 2
+        profileImageView.layer.borderColor = orangeColor.cgColor
     }
     
     /*
