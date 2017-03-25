@@ -13,6 +13,7 @@ import FirebaseDatabase
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var profileImage: ProfileImageView!
+    @IBOutlet weak var welcomeUserLabel: UILabel!
     @IBOutlet weak var ltbTableView: UITableView!
     @IBOutlet weak var ltbButton: UIButton!
     @IBOutlet weak var ltbSubmitButton: UIButton!
@@ -31,6 +32,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         getCurrentUserInfo()
         setProfilePic()
+        setProfileUsername()
         
         profileImageClass.setProfileImageDesign(profileImage)
         textFieldClass.setProfileTextField(textField: msgTextField)
@@ -45,6 +47,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -75,6 +81,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 UserDefaults.standard.set(snapshot.value as Any, forKey: "profileImageURL")
                 print("Profile Image URL", snapshot.value as Any)
             })
+            queryRef.child(userID as! String + "/username").observe(FIRDataEventType.value, with: {
+                (snapshot) in
+                UserDefaults.standard.set(snapshot.value as Any, forKey: "profileUsername")
+            })
         })
     }
     
@@ -89,6 +99,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             let image = UIImage(data: data! as Data)
             self.profileImage.image = image
         }
+    }
+    
+    func setProfileUsername() {
+        let profileUsername = UserDefaults.standard.value(forKey: "profileUsername") as! String
+        welcomeUserLabel.text = "Welcome " + profileUsername + "!"
     }
 
     /*

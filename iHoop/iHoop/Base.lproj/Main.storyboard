@@ -771,34 +771,59 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OFR-yv-vtX" userLabel="postProfileImage">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OFR-yv-vtX" userLabel="postProfileImage">
                                                     <rect key="frame" x="8" y="8" width="44" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="OFR-yv-vtX" secondAttribute="height" multiplier="1:1" id="UP1-EL-OTQ"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OjF-wt-gTT" userLabel="timeStampLabel">
-                                                    <rect key="frame" x="8" y="51" width="44" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="16"/>
-                                                    <color key="textColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rSn-O9-8GJ" userLabel="postMessageLabel">
-                                                    <rect key="frame" x="79" y="8" width="287" height="35"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rSn-O9-8GJ" userLabel="postMessageLabel">
+                                                    <rect key="frame" x="60" y="8" width="306" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="rSn-O9-8GJ" secondAttribute="height" multiplier="306:35" id="Yub-BI-nG7"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmI-di-B6K" userLabel="attachmentLinkLabel">
-                                                    <rect key="frame" x="79" y="51" width="287" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmI-di-B6K" userLabel="attachmentLinkLabel">
+                                                    <rect key="frame" x="60" y="51" width="306" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="rmI-di-B6K" secondAttribute="height" multiplier="153:10" id="yKZ-s7-pyV"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="14"/>
+                                                    <color key="textColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OjF-wt-gTT" userLabel="timeStampLabel">
+                                                    <rect key="frame" x="8" y="55" width="44" height="12"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="12" id="MHP-Kh-2Qk"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="16"/>
                                                     <color key="textColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="OFR-yv-vtX" firstAttribute="leading" secondItem="sJn-KT-Hqx" secondAttribute="leadingMargin" id="0nd-GS-Twh"/>
+                                                <constraint firstItem="OjF-wt-gTT" firstAttribute="leading" secondItem="OFR-yv-vtX" secondAttribute="leading" id="9zY-tg-raS"/>
+                                                <constraint firstItem="rmI-di-B6K" firstAttribute="trailing" secondItem="sJn-KT-Hqx" secondAttribute="trailingMargin" id="FEh-aA-sJt"/>
+                                                <constraint firstItem="rmI-di-B6K" firstAttribute="bottom" secondItem="sJn-KT-Hqx" secondAttribute="bottomMargin" id="QUY-oI-bIk"/>
+                                                <constraint firstItem="rmI-di-B6K" firstAttribute="top" secondItem="rSn-O9-8GJ" secondAttribute="bottom" constant="8" id="Sjj-c5-9bV"/>
+                                                <constraint firstItem="rSn-O9-8GJ" firstAttribute="top" secondItem="sJn-KT-Hqx" secondAttribute="topMargin" id="Sq3-u9-IUq"/>
+                                                <constraint firstItem="OjF-wt-gTT" firstAttribute="trailing" secondItem="OFR-yv-vtX" secondAttribute="trailing" id="VC2-2d-SVg"/>
+                                                <constraint firstItem="rmI-di-B6K" firstAttribute="leading" secondItem="OjF-wt-gTT" secondAttribute="trailing" constant="8" id="VUr-k7-9lf"/>
+                                                <constraint firstItem="rSn-O9-8GJ" firstAttribute="leading" secondItem="OFR-yv-vtX" secondAttribute="trailing" constant="8" id="ZEq-VI-lm2"/>
+                                                <constraint firstItem="rSn-O9-8GJ" firstAttribute="trailing" secondItem="sJn-KT-Hqx" secondAttribute="trailingMargin" id="doz-HU-mXQ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="OjF-wt-gTT" secondAttribute="bottom" constant="4" id="oAX-is-iXd"/>
+                                                <constraint firstItem="OjF-wt-gTT" firstAttribute="centerY" secondItem="rmI-di-B6K" secondAttribute="centerY" id="p7F-sD-avl"/>
+                                                <constraint firstItem="rmI-di-B6K" firstAttribute="leading" secondItem="OjF-wt-gTT" secondAttribute="trailing" constant="8" symbolic="YES" id="sV0-oc-9WK"/>
+                                                <constraint firstItem="OjF-wt-gTT" firstAttribute="top" secondItem="OFR-yv-vtX" secondAttribute="bottom" constant="3" id="tzg-wA-Lrb"/>
+                                                <constraint firstItem="OFR-yv-vtX" firstAttribute="top" secondItem="sJn-KT-Hqx" secondAttribute="topMargin" id="zZX-sM-o6S"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
@@ -858,6 +883,7 @@
                         <outlet property="messageView" destination="EZU-2b-vid" id="GnP-e1-UHQ"/>
                         <outlet property="msgTextField" destination="xdY-hE-jkM" id="TV6-nc-bUO"/>
                         <outlet property="profileImage" destination="ePB-pR-tl6" id="Fu2-MU-Ijn"/>
+                        <outlet property="welcomeUserLabel" destination="WZP-w9-CUb" id="VDe-sQ-Ni9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="toQ-d1-4fN" userLabel="First Responder" sceneMemberID="firstResponder"/>
