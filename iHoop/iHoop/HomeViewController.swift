@@ -185,14 +185,18 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
             FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: {
                 (user, error) in
                 if error == nil {
+                    
                     print("User Authenticated successfully")
                     self.usernameTextField.layer.borderWidth = 0
                     self.passwordTextField.layer.borderWidth = 0
-                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                     
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                     let profileVC = storyBoard.instantiateViewController(withIdentifier: "TabBarController")
                     self.show(profileVC, sender: self)
+                    
+                    UserDefaults.standard.set(FIRAuth.auth()?.currentUser?.uid, forKey: "currentUserUID")
                     print("%@", user?.email  as Any)
+                    print("%@", FIRAuth.auth()?.currentUser?.uid as Any)
                 } else {
                     FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: {
                         (user, error) in

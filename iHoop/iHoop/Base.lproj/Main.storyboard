@@ -729,29 +729,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ema-3C-csI">
-                                <rect key="frame" x="20" y="186" width="374" height="501"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" rowHeight="72" id="a2p-Yz-o5X">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="72"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a2p-Yz-o5X" id="sJn-KT-Hqx">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="71"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
-                                </prototypes>
-                                <sections/>
-                                <connections>
-                                    <outlet property="dataSource" destination="dD8-zl-ewt" id="C6g-qc-zow"/>
-                                    <outlet property="delegate" destination="dD8-zl-ewt" id="jiJ-Cy-oHA"/>
-                                </connections>
-                            </tableView>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZU-2b-vid" userLabel="msgView">
                                 <rect key="frame" x="0.0" y="82" width="414" height="96"/>
                                 <subviews>
@@ -781,6 +758,63 @@
                                     <constraint firstItem="xdY-hE-jkM" firstAttribute="trailing" secondItem="nnW-aA-bBf" secondAttribute="trailing" id="rsH-Ym-HnS"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ema-3C-csI">
+                                <rect key="frame" x="20" y="186" width="374" height="501"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" rowHeight="80" id="a2p-Yz-o5X" customClass="PostsTableViewCell" customModule="iHoop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a2p-Yz-o5X" id="sJn-KT-Hqx">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OFR-yv-vtX" userLabel="postProfileImage">
+                                                    <rect key="frame" x="8" y="8" width="44" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OjF-wt-gTT" userLabel="timeStampLabel">
+                                                    <rect key="frame" x="8" y="51" width="44" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="16"/>
+                                                    <color key="textColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rSn-O9-8GJ" userLabel="postMessageLabel">
+                                                    <rect key="frame" x="79" y="8" width="287" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmI-di-B6K" userLabel="attachmentLinkLabel">
+                                                    <rect key="frame" x="79" y="51" width="287" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="14"/>
+                                                    <color key="textColor" red="0.79693967099999996" green="0.34453982109999998" blue="0.090358667079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="attachmentLinkLabel" destination="rmI-di-B6K" id="y5r-hX-Urp"/>
+                                            <outlet property="postMessageLabel" destination="rSn-O9-8GJ" id="Ca4-5g-GIg"/>
+                                            <outlet property="postProfileImage" destination="OFR-yv-vtX" id="Fv6-1c-Bgk"/>
+                                            <outlet property="timeStampLabel" destination="OjF-wt-gTT" id="cEU-56-Xyv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="dD8-zl-ewt" id="C6g-qc-zow"/>
+                                    <outlet property="delegate" destination="dD8-zl-ewt" id="jiJ-Cy-oHA"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -816,7 +850,7 @@
                             <constraint firstAttribute="bottom" secondItem="S3I-EN-bhN" secondAttribute="bottom" id="wDu-3d-Aev"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="W5h-uV-aVa"/>
+                    <tabBarItem key="tabBarItem" title="LTB" id="W5h-uV-aVa"/>
                     <connections>
                         <outlet property="ltbButton" destination="Ul4-6L-B2C" id="wLN-Bc-h50"/>
                         <outlet property="ltbSubmitButton" destination="nnW-aA-bBf" id="Sxw-VT-HAn"/>

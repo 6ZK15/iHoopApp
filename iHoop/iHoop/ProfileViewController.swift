@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -17,14 +19,20 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var messageView: UIView!
     @IBOutlet weak var msgTextField: UITextField!
     
+    
+    
     let profileImageClass = ProfileImageView()
     let textFieldClass = TextField()
+    
+    let databaseReference = FIRDatabase.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        profileImageClass.setProfileImageDesign(profileImage)
+        getCurrentUserInfo()
+        setProfilePic()
         
+        profileImageClass.setProfileImageDesign(profileImage)
         textFieldClass.setProfileTextField(textField: msgTextField)
 
         // Do any additional setup after loading the view.
@@ -53,6 +61,34 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.ltbButton.alpha = 0
             self.messageView.alpha = 1
         })
+    }
+    
+    func getCurrentUserInfo() {
+        let userID = UserDefaults.standard.value(forKey: "currentUserUID")
+        print("current user: %@", userID as Any)
+        let queryRef = databaseReference.child("users")
+        queryRef.child(userID as! String).observeSingleEvent(of: FIRDataEventType.value, with: {
+            (snapshot) in
+            print("Current User Info:\n", snapshot.value as! NSDictionary)
+            queryRef.child(userID as! String + "/profilepic").observe(FIRDataEventType.value, with: {
+                (snapshot) in
+                UserDefaults.standard.set(snapshot.value as Any, forKey: "profileImageURL")
+                print("Profile Image URL", snapshot.value as Any)
+            })
+        })
+    }
+    
+    func setProfilePic() {
+        let profileImageURL = UserDefaults.standard.value(forKey: "profileImageURL")
+        
+        let storage = FIRStorage.storage()
+        var reference: FIRStorageReference!
+        reference = storage.reference(forURL:profileImageURL as! String)
+        reference.downloadURL { (url, error) in
+            let data = NSData(contentsOf: url!)
+            let image = UIImage(data: data! as Data)
+            self.profileImage.image = image
+        }
     }
 
     /*
