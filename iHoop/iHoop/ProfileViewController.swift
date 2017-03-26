@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITabBarDelegate {
 
     @IBOutlet weak var profileImage: ProfileImageView!
     @IBOutlet weak var welcomeUserLabel: UILabel!
@@ -30,9 +30,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getCurrentUserInfo()
-        setProfilePic()
-        setProfileUsername()
+//        getCurrentUserInfo()
+//        setProfilePic()
+//        setProfileUsername()
         
         profileImageClass.setProfileImageDesign(profileImage)
         textFieldClass.setProfileTextField(textField: msgTextField)
