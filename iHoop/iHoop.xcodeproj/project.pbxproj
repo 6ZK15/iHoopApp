@@ -28,6 +28,12 @@
 		846A725D1E87B7D30083969E /* findGymsTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A725B1E87B7D30083969E /* findGymsTitle.png */; };
 		846A725E1E87B7D30083969E /* gearTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A725C1E87B7D30083969E /* gearTitle.png */; };
 		846A72601E87B85B0083969E /* postBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A725F1E87B85B0083969E /* postBtn.png */; };
+		846A72621E88524C0083969E /* searchBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A72611E88524C0083969E /* searchBtn.png */; };
+		846A72691E885C220083969E /* addGymBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A72641E885C220083969E /* addGymBtn.png */; };
+		846A726A1E885C220083969E /* homeBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A72651E885C220083969E /* homeBtn.png */; };
+		846A726B1E885C220083969E /* logoutBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A72661E885C220083969E /* logoutBtn.png */; };
+		846A726C1E885C220083969E /* myGroupsBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A72671E885C220083969E /* myGroupsBtn.png */; };
+		846A726D1E885C220083969E /* settingsBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A72681E885C220083969E /* settingsBtn.png */; };
 		84B44EDD1E67B6B400AABF92 /* Carrington.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EECF1E6532C200311B63 /* Carrington.ttf */; };
 		84B44EDE1E67B6B400AABF92 /* DrSugiyama-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED01E6532C200311B63 /* DrSugiyama-Regular.ttf */; };
 		84B44EDF1E67B6B400AABF92 /* FNL_DEMO-KCFonts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED11E6532C200311B63 /* FNL_DEMO-KCFonts.ttf */; };
@@ -107,6 +113,12 @@
 		846A725B1E87B7D30083969E /* findGymsTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = findGymsTitle.png; path = Images/Titles/findGymsTitle.png; sourceTree = "<group>"; };
 		846A725C1E87B7D30083969E /* gearTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gearTitle.png; path = Images/Titles/gearTitle.png; sourceTree = "<group>"; };
 		846A725F1E87B85B0083969E /* postBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = postBtn.png; path = Images/Buttons/postBtn.png; sourceTree = "<group>"; };
+		846A72611E88524C0083969E /* searchBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = searchBtn.png; path = Images/Buttons/searchBtn.png; sourceTree = "<group>"; };
+		846A72641E885C220083969E /* addGymBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addGymBtn.png; path = "Images/Buttons/Menu Buttons/addGymBtn.png"; sourceTree = "<group>"; };
+		846A72651E885C220083969E /* homeBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = homeBtn.png; path = "Images/Buttons/Menu Buttons/homeBtn.png"; sourceTree = "<group>"; };
+		846A72661E885C220083969E /* logoutBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoutBtn.png; path = "Images/Buttons/Menu Buttons/logoutBtn.png"; sourceTree = "<group>"; };
+		846A72671E885C220083969E /* myGroupsBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = myGroupsBtn.png; path = "Images/Buttons/Menu Buttons/myGroupsBtn.png"; sourceTree = "<group>"; };
+		846A72681E885C220083969E /* settingsBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settingsBtn.png; path = "Images/Buttons/Menu Buttons/settingsBtn.png"; sourceTree = "<group>"; };
 		84B5EE991E65313400311B63 /* iHoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B5EE9C1E65313400311B63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84B5EEA11E65313400311B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -242,6 +254,18 @@
 			name = "Menu Buttons";
 			sourceTree = "<group>";
 		};
+		846A72631E885BF20083969E /* slideMenuButtons */ = {
+			isa = PBXGroup;
+			children = (
+				846A72641E885C220083969E /* addGymBtn.png */,
+				846A72651E885C220083969E /* homeBtn.png */,
+				846A72661E885C220083969E /* logoutBtn.png */,
+				846A72671E885C220083969E /* myGroupsBtn.png */,
+				846A72681E885C220083969E /* settingsBtn.png */,
+			);
+			name = slideMenuButtons;
+			sourceTree = "<group>";
+		};
 		84B5EE901E65313400311B63 = {
 			isa = PBXGroup;
 			children = (
@@ -344,10 +368,12 @@
 			children = (
 				846A724F1E879E1D0083969E /* Tab Buttons */,
 				846A72501E879E790083969E /* Menu Buttons */,
+				846A72631E885BF20083969E /* slideMenuButtons */,
 				84C805311E8381D5000F9BE2 /* ltbButton.png */,
 				84C805371E838E1B000F9BE2 /* nextBtn.png */,
 				84B5EEDA1E65393A00311B63 /* menuBtn.png */,
 				846A725F1E87B85B0083969E /* postBtn.png */,
+				846A72611E88524C0083969E /* searchBtn.png */,
 				84B5EEDD1E65393A00311B63 /* submitBtn.png */,
 			);
 			name = Buttons;
@@ -509,6 +535,7 @@
 				846A72601E87B85B0083969E /* postBtn.png in Resources */,
 				846A724E1E8744750083969E /* findGyms@3x.png in Resources */,
 				846A72581E879F630083969E /* notificationsTab@3x.png in Resources */,
+				846A726D1E885C220083969E /* settingsBtn.png in Resources */,
 				846A72561E879F630083969E /* gearTab@3x.png in Resources */,
 				841585351E7A7C8700B263BE /* Playball.ttf in Resources */,
 				84B44EDD1E67B6B400AABF92 /* Carrington.ttf in Resources */,
@@ -518,6 +545,7 @@
 				84B44EDF1E67B6B400AABF92 /* FNL_DEMO-KCFonts.ttf in Resources */,
 				846A725D1E87B7D30083969E /* findGymsTitle.png in Resources */,
 				84C805381E838E1B000F9BE2 /* nextBtn.png in Resources */,
+				846A72621E88524C0083969E /* searchBtn.png in Resources */,
 				84B5EEA71E65313400311B63 /* LaunchScreen.storyboard in Resources */,
 				963A653B1E67AAC700A9447C /* GoogleService-Info.plist in Resources */,
 				846A72571E879F630083969E /* ltbTab@3x.png in Resources */,
@@ -525,14 +553,18 @@
 				846A725E1E87B7D30083969E /* gearTitle.png in Resources */,
 				84B5EEE41E65393A00311B63 /* signUpBtn.png in Resources */,
 				845D3D541E7FA06700955A44 /* bball.png in Resources */,
+				846A726A1E885C220083969E /* homeBtn.png in Resources */,
 				84B5EEA41E65313400311B63 /* Assets.xcassets in Resources */,
 				84B5EED41E65393000311B63 /* bg.png in Resources */,
 				846A724A1E873D400083969E /* tabBar@2x.png in Resources */,
 				846A72551E879F630083969E /* espnTab@3x.png in Resources */,
 				84B5EEE01E65393A00311B63 /* forgotUsernameBtn.png in Resources */,
 				84B66CF31E848BA500CBDB7D /* defaultProfilePic.png in Resources */,
+				846A72691E885C220083969E /* addGymBtn.png in Resources */,
 				841585331E7A7A8000B263BE /* upArrow.png in Resources */,
 				845D3D591E7FA56700955A44 /* bg2.png in Resources */,
+				846A726B1E885C220083969E /* logoutBtn.png in Resources */,
+				846A726C1E885C220083969E /* myGroupsBtn.png in Resources */,
 				841585321E7A7A8000B263BE /* downArrow.png in Resources */,
 				84B5EEE21E65393A00311B63 /* menuBtn.png in Resources */,
 				845D3D551E7FA06700955A44 /* bballShadow.png in Resources */,

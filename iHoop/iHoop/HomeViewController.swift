@@ -190,9 +190,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
                     self.usernameTextField.layer.borderWidth = 0
                     self.passwordTextField.layer.borderWidth = 0
                     
-                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                    let profileVC = storyBoard.instantiateViewController(withIdentifier: "TabBarController")
-                    self.show(profileVC, sender: self)
+                    self.performSegue(withIdentifier: "loginSegue", sender: nil)
                     
                     UserDefaults.standard.set(FIRAuth.auth()?.currentUser?.uid, forKey: "currentUserUID")
                     print("%@", user?.email  as Any)
@@ -246,13 +244,24 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
                 self.errorLabel.text = "Passwords do not match"
                 self.showHideErrorMessageView()
             } else {
+                
+                let postID = self.databaseReference.child("users").child(NSUUID().uuidString)
                 self.databaseReference.child("users").child(user!.uid).setValue([
-                    "firstname":self.sufirstNameTextField.text,
-                    "lastname:":self.sulastNameTextField.text,
-                    "email":self.suemailTextField.text,
-                    "username":self.suusernameTextField.text,
-                    "password":self.supasswordTextField.text,
-                    "profilepic":self.profileImageView.image?.description,
+                    "firstname":self.sufirstNameTextField.text as Any,
+                    "lastname":self.sulastNameTextField.text as Any,
+                    "email":self.suemailTextField.text as Any,
+                    "username":self.suusernameTextField.text as Any,
+                    "password":self.supasswordTextField.text as Any,
+                    "profilepic":self.profileImageView.image?.description as Any,
+                    "rememberState":self.rememberSwitch.isOn,
+                    "posts":[
+                        postID.key: [
+                            "username":self.suusernameTextField.text as Any,
+                            "post":"",
+                            "postAttachmentURL":"",
+                            "timeStamp":"",
+                        ]
+                    ]
                 ])
                 self.supasswordTextField.layer.borderColor = UIColor.clear.cgColor
                 self.suverifyPasswordTextField.layer.borderColor = UIColor.clear.cgColor
