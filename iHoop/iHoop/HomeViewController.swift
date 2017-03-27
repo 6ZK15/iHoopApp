@@ -262,6 +262,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
             }
         })
     }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
@@ -289,8 +290,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     
     @IBAction func submitProfileImage(_ sender: Any) {
         saveProfileToFirebaseStorage()
-        
-        
     }
     
     

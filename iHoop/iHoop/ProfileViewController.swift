@@ -20,7 +20,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var messageView: UIView!
     @IBOutlet weak var msgTextView: UITextView!
     
-    
+    @IBOutlet weak var menuBtn: UIButton!
     
     let profileImageClass = ProfileImageView()
     let textFieldClass = TextField()
@@ -37,6 +37,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         setProfileTextViewDesign()
         
         profileImageClass.setProfileImageDesign(profileImage)
+        
+        if revealViewController() != nil {
+            menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControlEvents.touchUpInside)
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -96,7 +101,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = "hh:mm"
-        let currentTime = Calendar.current.dateComponents([.hour, .minute], from: date)
         
         let timeStamp = dateFormatter.string(from: date)
         
