@@ -244,8 +244,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
                 self.errorLabel.text = "Passwords do not match"
                 self.showHideErrorMessageView()
             } else {
-                
-                let postID = self.databaseReference.child("users").child(NSUUID().uuidString)
                 self.databaseReference.child("users").child(user!.uid).setValue([
                     "firstname":self.sufirstNameTextField.text as Any,
                     "lastname":self.sulastNameTextField.text as Any,
@@ -254,14 +252,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
                     "password":self.supasswordTextField.text as Any,
                     "profilepic":self.profileImageView.image?.description as Any,
                     "rememberState":self.rememberSwitch.isOn,
-                    "posts":[
-                        postID.key: [
-                            "username":self.suusernameTextField.text as Any,
-                            "post":"",
-                            "postAttachmentURL":"",
-                            "timeStamp":"",
-                        ]
-                    ]
                 ])
                 self.supasswordTextField.layer.borderColor = UIColor.clear.cgColor
                 self.suverifyPasswordTextField.layer.borderColor = UIColor.clear.cgColor
