@@ -26,7 +26,7 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate ,UIIm
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-//        setProfilePic()
+        setProfilePic()
         setProfileUsername()
         
         profileImageClass.setProfileImageDesign(profileImageView)

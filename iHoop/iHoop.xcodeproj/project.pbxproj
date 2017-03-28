@@ -37,6 +37,7 @@
 		846A72721E88DCA40083969E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846A72711E88DCA40083969E /* SWRevealViewController.m */; };
 		846A72741E88E6B30083969E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A72731E88E6B30083969E /* MenuViewController.swift */; };
 		846A72761E8977570083969E /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A72751E8977570083969E /* MenuCell.swift */; };
+		846A72781E8999660083969E /* cancelBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A72771E8999660083969E /* cancelBtn.png */; };
 		84B44EDD1E67B6B400AABF92 /* Carrington.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EECF1E6532C200311B63 /* Carrington.ttf */; };
 		84B44EDE1E67B6B400AABF92 /* DrSugiyama-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED01E6532C200311B63 /* DrSugiyama-Regular.ttf */; };
 		84B44EDF1E67B6B400AABF92 /* FNL_DEMO-KCFonts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED11E6532C200311B63 /* FNL_DEMO-KCFonts.ttf */; };
@@ -127,6 +128,7 @@
 		846A72711E88DCA40083969E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWReveal/SWRevealViewController.m; sourceTree = "<group>"; };
 		846A72731E88E6B30083969E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		846A72751E8977570083969E /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCell.swift; path = Models/MenuCell.swift; sourceTree = "<group>"; };
+		846A72771E8999660083969E /* cancelBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cancelBtn.png; path = Images/Buttons/cancelBtn.png; sourceTree = "<group>"; };
 		84B5EE991E65313400311B63 /* iHoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B5EE9C1E65313400311B63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84B5EEA11E65313400311B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 		84B5EECD1E65323F00311B63 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				846A72771E8999660083969E /* cancelBtn.png */,
 				846A724F1E879E1D0083969E /* Tab Buttons */,
 				846A72501E879E790083969E /* Menu Buttons */,
 				846A72631E885BF20083969E /* slideMenuButtons */,
@@ -591,6 +594,7 @@
 				84B5EEE21E65393A00311B63 /* menuBtn.png in Resources */,
 				845D3D551E7FA06700955A44 /* bballShadow.png in Resources */,
 				84C805341E8382AA000F9BE2 /* profilePic.png in Resources */,
+				846A72781E8999660083969E /* cancelBtn.png in Resources */,
 				84B5EEA21E65313400311B63 /* Main.storyboard in Resources */,
 				84B5EEE11E65393A00311B63 /* loginBtn.png in Resources */,
 				84B5EEE91E65394200311B63 /* iHoopTitle.png in Resources */,

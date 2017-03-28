@@ -841,13 +841,24 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ul4-6L-B2C" userLabel="ltbButton">
-                                <rect key="frame" x="362" y="140" width="32" height="38"/>
+                                <rect key="frame" x="362" y="140" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="dwz-b7-t5m"/>
                                 </constraints>
                                 <state key="normal" image="ltbButton.png"/>
                                 <connections>
                                     <action selector="letsTalkBballBtn:" destination="dD8-zl-ewt" eventType="touchUpInside" id="8VA-el-pNF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x0w-JL-4jq" userLabel="cancelPostBtn">
+                                <rect key="frame" x="362" y="140" width="32" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="x0w-JL-4jq" secondAttribute="height" multiplier="1:1" id="Ue0-gP-blw"/>
+                                </constraints>
+                                <state key="normal" image="cancelBtn.png"/>
+                                <connections>
+                                    <action selector="cancelPost:" destination="dD8-zl-ewt" eventType="touchUpInside" id="7pU-1n-uBu"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Talk Basketball" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wJi-TO-JSA">
@@ -982,14 +993,18 @@
                             <constraint firstItem="WZP-w9-CUb" firstAttribute="leading" secondItem="ePB-pR-tl6" secondAttribute="trailing" constant="24" id="6CN-B9-L90"/>
                             <constraint firstItem="Ema-3C-csI" firstAttribute="top" secondItem="ePB-pR-tl6" secondAttribute="bottom" constant="8" symbolic="YES" id="AGZ-FP-hzY"/>
                             <constraint firstItem="S3I-EN-bhN" firstAttribute="leading" secondItem="EZU-2b-vid" secondAttribute="leading" id="AIC-Mx-1az"/>
+                            <constraint firstItem="x0w-JL-4jq" firstAttribute="top" secondItem="Ul4-6L-B2C" secondAttribute="top" id="Bg7-o0-gfv"/>
+                            <constraint firstItem="x0w-JL-4jq" firstAttribute="trailing" secondItem="Ul4-6L-B2C" secondAttribute="trailing" id="DfQ-yo-kgz"/>
                             <constraint firstItem="83W-wF-XIj" firstAttribute="leading" secondItem="aec-be-WRW" secondAttribute="leadingMargin" id="DqO-Ld-sv4"/>
                             <constraint firstItem="Ema-3C-csI" firstAttribute="top" secondItem="EZU-2b-vid" secondAttribute="bottom" constant="8" symbolic="YES" id="HPc-WB-C5x"/>
                             <constraint firstItem="S3I-EN-bhN" firstAttribute="leading" secondItem="aec-be-WRW" secondAttribute="leading" id="KpX-2H-8EC"/>
                             <constraint firstItem="Ul4-6L-B2C" firstAttribute="leading" secondItem="wJi-TO-JSA" secondAttribute="trailing" constant="8" symbolic="YES" id="QaJ-8t-xFi"/>
+                            <constraint firstItem="x0w-JL-4jq" firstAttribute="trailing" secondItem="aec-be-WRW" secondAttribute="trailingMargin" id="RAJ-Kk-SmW"/>
+                            <constraint firstItem="x0w-JL-4jq" firstAttribute="leading" secondItem="wJi-TO-JSA" secondAttribute="trailing" constant="8" id="Run-az-yNo"/>
                             <constraint firstItem="ePB-pR-tl6" firstAttribute="leading" secondItem="Ema-3C-csI" secondAttribute="leading" id="T52-yI-h76"/>
                             <constraint firstItem="Ema-3C-csI" firstAttribute="top" secondItem="wJi-TO-JSA" secondAttribute="bottom" constant="8" symbolic="YES" id="VBG-d1-VZ4"/>
                             <constraint firstItem="Ema-3C-csI" firstAttribute="bottom" secondItem="dPw-H2-wg8" secondAttribute="top" id="Vld-cT-bGv"/>
-                            <constraint firstItem="Ema-3C-csI" firstAttribute="top" secondItem="Ul4-6L-B2C" secondAttribute="bottom" constant="8" symbolic="YES" id="YDs-b0-cOq"/>
+                            <constraint firstItem="Ema-3C-csI" firstAttribute="top" secondItem="Ul4-6L-B2C" secondAttribute="bottom" constant="14" id="YDs-b0-cOq"/>
                             <constraint firstItem="83W-wF-XIj" firstAttribute="top" secondItem="pc6-Pd-Kp2" secondAttribute="top" id="ZH5-8b-FpH"/>
                             <constraint firstAttribute="trailing" secondItem="S3I-EN-bhN" secondAttribute="trailing" id="Zy8-Yz-YJd"/>
                             <constraint firstItem="83W-wF-XIj" firstAttribute="top" secondItem="1fF-SD-iJQ" secondAttribute="bottom" id="b2T-Zs-wdT"/>
@@ -1002,17 +1017,20 @@
                             <constraint firstItem="WZP-w9-CUb" firstAttribute="top" secondItem="pc6-Pd-Kp2" secondAttribute="bottom" constant="8" symbolic="YES" id="h3X-xX-3Zf"/>
                             <constraint firstItem="S3I-EN-bhN" firstAttribute="trailing" secondItem="EZU-2b-vid" secondAttribute="trailing" id="hjM-Ly-fzH"/>
                             <constraint firstItem="wJi-TO-JSA" firstAttribute="top" secondItem="WZP-w9-CUb" secondAttribute="bottom" constant="8" symbolic="YES" id="jJK-U7-LiO"/>
+                            <constraint firstItem="x0w-JL-4jq" firstAttribute="leading" secondItem="Ul4-6L-B2C" secondAttribute="leading" id="kPp-2I-NgS"/>
                             <constraint firstItem="wJi-TO-JSA" firstAttribute="top" secondItem="Ul4-6L-B2C" secondAttribute="top" id="keN-b0-LS3"/>
                             <constraint firstItem="EZU-2b-vid" firstAttribute="top" secondItem="pc6-Pd-Kp2" secondAttribute="bottom" constant="2" id="rbj-Lv-oTc"/>
                             <constraint firstItem="pc6-Pd-Kp2" firstAttribute="leading" secondItem="83W-wF-XIj" secondAttribute="trailing" constant="68" id="tHI-yy-qQg"/>
                             <constraint firstItem="EZU-2b-vid" firstAttribute="top" secondItem="83W-wF-XIj" secondAttribute="bottom" constant="18" id="w8R-ac-6Tw"/>
                             <constraint firstAttribute="bottom" secondItem="S3I-EN-bhN" secondAttribute="bottom" id="wDu-3d-Aev"/>
+                            <constraint firstItem="Ema-3C-csI" firstAttribute="top" secondItem="x0w-JL-4jq" secondAttribute="bottom" constant="14" id="zdJ-In-gee"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="LTB" image="ltbTab.png" selectedImage="ltbTab.png" id="W5h-uV-aVa">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="cancelPostBtn" destination="x0w-JL-4jq" id="UCB-NR-QgR"/>
                         <outlet property="ltbButton" destination="Ul4-6L-B2C" id="wLN-Bc-h50"/>
                         <outlet property="ltbSubmitButton" destination="nnW-aA-bBf" id="Sxw-VT-HAn"/>
                         <outlet property="ltbTableView" destination="Ema-3C-csI" id="xME-hk-HyT"/>
@@ -1257,6 +1275,7 @@
     <resources>
         <image name="bg.png" width="750" height="1334"/>
         <image name="bg2.png" width="750" height="1334"/>
+        <image name="cancelBtn.png" width="93" height="94"/>
         <image name="defaultProfilePic.png" width="240" height="240"/>
         <image name="downArrow.png" width="72" height="72"/>
         <image name="espnTab.png" width="17" height="19"/>
@@ -1271,7 +1290,7 @@
         <image name="homeBtn.png" width="91" height="90"/>
         <image name="iHoopTitle.png" width="358" height="153"/>
         <image name="loginBtn.png" width="72" height="72"/>
-        <image name="ltbButton.png" width="56" height="64"/>
+        <image name="ltbButton.png" width="93" height="90"/>
         <image name="ltbTab.png" width="29" height="20"/>
         <image name="menuBtn.png" width="90" height="90"/>
         <image name="nextBtn.png" width="144" height="87"/>

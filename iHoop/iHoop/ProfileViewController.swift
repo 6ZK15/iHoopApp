@@ -16,6 +16,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var welcomeUserLabel: UILabel!
     @IBOutlet weak var ltbTableView: UITableView!
     @IBOutlet weak var ltbButton: UIButton!
+    @IBOutlet weak var cancelPostBtn: UIButton!
     @IBOutlet weak var ltbSubmitButton: UIButton!
     @IBOutlet weak var messageView: UIView!
     @IBOutlet weak var msgTextView: UITextView!
@@ -32,7 +33,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         
         getCurrentUserInfo()
-//        setProfilePic()
+        setProfilePic()
         setProfileUsername()
         setProfileTextViewDesign()
         
@@ -60,13 +61,30 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let reuseIdentifier = "cellIdentifier"
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier)!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! PostsTableViewCell
+        
+        let profileImageURL = UserDefaults.standard.value(forKey: "profileImageURL")
+        
+        let storage = FIRStorage.storage()
+        var reference: FIRStorageReference!
+        reference = storage.reference(forURL:profileImageURL as! String)
+        reference.downloadURL { (url, error) in
+            let data = NSData(contentsOf: url!)
+            let image = UIImage(data: data! as Data)
+            cell.postProfileImage.image = image
+        }
+        
+        cell.postMessageLabel.text = UserDefaults.standard.value(forKey: "postMessage") as! String?
+        cell.timeStampLabel.text = UserDefaults.standard.value(forKey: "timeStamp") as! String?
         
         return cell
     }
     
     @IBAction func letsTalkBballBtn(_ sender: Any) {
+        showHidePostMsgView()
+    }
+    
+    @IBAction func cancelPost(_ sender: Any) {
         showHidePostMsgView()
     }
     
@@ -81,6 +99,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.ltbTableView.transform = CGAffineTransform.init(translationX: 0, y: self.messageView.frame.height)
                 self.messageView.transform = CGAffineTransform.init(translationX: 0, y: self.messageView.frame.height)
                 self.ltbButton.alpha = 0
+                self.cancelPostBtn.alpha = 1
                 self.messageView.alpha = 1
             })
         } else {
@@ -88,6 +107,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.ltbTableView.transform = .identity
                 self.messageView.transform = .identity
                 self.messageView.alpha = 0
+                self.cancelPostBtn.alpha = 0
                 self.ltbButton.alpha = 1
             })
         }
@@ -96,6 +116,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func storePostForUser() {
         let userID = UserDefaults.standard.value(forKey: "currentUserUID")
         let postID = self.databaseReference.child("users").child(NSUUID().uuidString)
+        UserDefaults.standard.set(postID.key, forKey: "postID")
         
         let date = Date()
         let dateFormatter = DateFormatter()
