@@ -85,7 +85,16 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate ,UIIm
             print("Settings Tapped")
             
         } else if cell.cellNameLabel.text! == "Logout" {
-            
+            if FIRAuth.auth()?.currentUser != nil {
+                do {
+                    try FIRAuth.auth()?.signOut()
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController")
+                    present(vc, animated: true, completion: nil)
+                    print("User successfully logged out")
+                }catch let error as NSError {
+                    print(error.localizedDescription)
+                }
+            }
             print("Logout Tapped")
             
         }
