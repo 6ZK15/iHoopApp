@@ -24,18 +24,17 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate ,UIIm
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
 //        setProfilePic()
         setProfileUsername()
         
         profileImageClass.setProfileImageDesign(profileImageView)
         
-        menuImages = [UIImage(named:"homeBtn")!,UIImage(named:"myGroupsBtn")!,UIImage(named:"addGymBtn")!,UIImage(named:"settingsBtn")!,UIImage(named:"loginBtn")!]
-        menuNames = ["Home","My Groups","Add A Gym","Settings","Logout"]
+        menuImages = [UIImage(named:"homeBtn")!,UIImage(named:"friendsBtn")!,UIImage(named:"myGroupsBtn")!,UIImage(named:"addGymBtn")!,UIImage(named:"settingsBtn")!,UIImage(named:"loginBtn")!]
+        menuNames = ["Home", "Friends", "My Groups","Add A Gym","Settings","Logout"]
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -54,7 +53,7 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate ,UIIm
         
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let revealviewcontroller:SWRevealViewController = self.revealViewController()
@@ -69,12 +68,15 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate ,UIIm
             revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
             newFrontController.navigationBar.isHidden = true
             
+        } else if cell.cellNameLabel.text! == "Friends" {
+            
+            print("Friends Tapped")
+            
         } else if cell.cellNameLabel.text! == "My Groups" {
             print("My Groups Tapped")
-//            let mainstoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 //            let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "MessageViewController") as! MessageViewController
 //            let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
-//            
+//
 //            revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
         } else if cell.cellNameLabel.text! == "Add A Gym" {
             
@@ -85,6 +87,7 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate ,UIIm
             print("Settings Tapped")
             
         } else if cell.cellNameLabel.text! == "Logout" {
+            print("Logout Tapped")
             if FIRAuth.auth()?.currentUser != nil {
                 do {
                     try FIRAuth.auth()?.signOut()
@@ -95,7 +98,6 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate ,UIIm
                     print(error.localizedDescription)
                 }
             }
-            print("Logout Tapped")
             
         }
     }

@@ -41,6 +41,7 @@
 		846A72F31E8B7DAE0083969E /* GearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A72F21E8B7DAE0083969E /* GearViewController.swift */; };
 		846A72F51E8B7DC30083969E /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A72F41E8B7DC30083969E /* NotificationsViewController.swift */; };
 		846A72F71E8B7E0F0083969E /* FindGymsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A72F61E8B7E0F0083969E /* FindGymsViewController.swift */; };
+		846A72F91E8B88110083969E /* friendsBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A72F81E8B88110083969E /* friendsBtn.png */; };
 		84B44EDD1E67B6B400AABF92 /* Carrington.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EECF1E6532C200311B63 /* Carrington.ttf */; };
 		84B44EDE1E67B6B400AABF92 /* DrSugiyama-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED01E6532C200311B63 /* DrSugiyama-Regular.ttf */; };
 		84B44EDF1E67B6B400AABF92 /* FNL_DEMO-KCFonts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED11E6532C200311B63 /* FNL_DEMO-KCFonts.ttf */; };
@@ -135,6 +136,7 @@
 		846A72F21E8B7DAE0083969E /* GearViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GearViewController.swift; sourceTree = "<group>"; };
 		846A72F41E8B7DC30083969E /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		846A72F61E8B7E0F0083969E /* FindGymsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindGymsViewController.swift; sourceTree = "<group>"; };
+		846A72F81E8B88110083969E /* friendsBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = friendsBtn.png; path = "Images/Buttons/Menu Buttons/friendsBtn.png"; sourceTree = "<group>"; };
 		84B5EE991E65313400311B63 /* iHoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B5EE9C1E65313400311B63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84B5EEA11E65313400311B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				846A72641E885C220083969E /* addGymBtn.png */,
+				846A72F81E8B88110083969E /* friendsBtn.png */,
 				846A72651E885C220083969E /* homeBtn.png */,
 				846A72661E885C220083969E /* logoutBtn.png */,
 				846A72671E885C220083969E /* myGroupsBtn.png */,
@@ -606,6 +609,7 @@
 				846A72781E8999660083969E /* cancelBtn.png in Resources */,
 				84B5EEA21E65313400311B63 /* Main.storyboard in Resources */,
 				84B5EEE11E65393A00311B63 /* loginBtn.png in Resources */,
+				846A72F91E8B88110083969E /* friendsBtn.png in Resources */,
 				84B5EEE91E65394200311B63 /* iHoopTitle.png in Resources */,
 				84B5EEE51E65393A00311B63 /* submitBtn.png in Resources */,
 				8415853B1E7BB8FB00B263BE /* facebookBtn.png in Resources */,
