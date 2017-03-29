@@ -25,6 +25,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     let profileImageClass = ProfileImageView()
     let textFieldClass = TextField()
+    var posts = [Posts]()
     
     let databaseReference = FIRDatabase.database().reference()
     let orangeColor = UIColor.init(red: 0.796, green: 0.345, blue: 0.090, alpha: 1.000)
@@ -33,9 +34,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         
         getCurrentUserInfo()
-        setProfilePic()
+//        setProfilePic()
         setProfileUsername()
         setProfileTextViewDesign()
+        callPostsForUser()
         
         profileImageClass.setProfileImageDesign(profileImage)
         
@@ -53,7 +55,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -62,20 +64,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! PostsTableViewCell
+        let post = posts[indexPath.row]
         
-        let profileImageURL = UserDefaults.standard.value(forKey: "profileImageURL")
-        
-        let storage = FIRStorage.storage()
-        var reference: FIRStorageReference!
-        reference = storage.reference(forURL:profileImageURL as! String)
-        reference.downloadURL { (url, error) in
-            let data = NSData(contentsOf: url!)
-            let image = UIImage(data: data! as Data)
-            cell.postProfileImage.image = image
-        }
-        
-        cell.postMessageLabel.text = UserDefaults.standard.value(forKey: "postMessage") as! String?
-        cell.timeStampLabel.text = UserDefaults.standard.value(forKey: "timeStamp") as! String?
+        cell.configureCell(post)
         
         return cell
     }
@@ -91,6 +82,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func postMessage(_ sender: Any) {
         showHidePostMsgView()
         storePostForUser()
+        setProfileTextViewDesign()
     }
     
     func showHidePostMsgView() {
@@ -136,6 +128,31 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             "timeStamp":timeStamp,
         ])
         
+    }
+    
+    func callPostsForUser() {
+        let userID = UserDefaults.standard.value(forKey: "currentUserUID")
+        
+        databaseReference.child(userID as! String).child("posts").observe(FIRDataEventType.value, with: {
+            (snapshot) in
+            
+            self.posts = []
+            
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
+                for snap in snapshots {
+                    if let postDictionary = snap.value as? Dictionary<String, AnyObject> {
+                        let key = snap.key
+                        let post = Posts(key: key, dictionary: postDictionary)
+                        
+                        self.posts.insert(post, at: 0)
+                    }
+                }
+                
+            }
+            
+            self.ltbTableView.reloadData()
+        })
     }
     
     func getCurrentUserInfo() {
@@ -199,7 +216,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             textView.textColor = UIColor.lightGray
         }
     }
-
+    
     /*
     // MARK: - Navigation
 

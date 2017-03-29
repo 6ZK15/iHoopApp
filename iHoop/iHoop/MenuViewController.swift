@@ -26,7 +26,7 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate ,UIIm
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        setProfilePic()
+//        setProfilePic()
         setProfileUsername()
         
         profileImageClass.setProfileImageDesign(profileImageView)
@@ -42,7 +42,7 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate ,UIIm
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return menuNames.count
         
     }
     
