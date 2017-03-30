@@ -30,7 +30,14 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate ,UIIm
         
         profileImageClass.setProfileImageDesign(profileImageView)
         
-        menuImages = [UIImage(named:"homeBtn")!,UIImage(named:"friendsBtn")!,UIImage(named:"myGroupsBtn")!,UIImage(named:"addGymBtn")!,UIImage(named:"settingsBtn")!,UIImage(named:"loginBtn")!]
+        menuImages = [
+            UIImage(named:"homeBtn")!,
+            UIImage(named:"friendsBtn")!,
+            UIImage(named:"myGroupsBtn")!,
+            UIImage(named:"addGymBtn")!,
+            UIImage(named:"settingsBtn")!,
+            UIImage(named:"loginBtn")!
+        ]
         menuNames = ["Home", "Friends", "My Groups","Add A Gym","Settings","Logout"]
         
     }
@@ -69,8 +76,11 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate ,UIIm
             newFrontController.navigationBar.isHidden = true
             
         } else if cell.cellNameLabel.text! == "Friends" {
-            
             print("Friends Tapped")
+            let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "FriendsViewController") as! FriendsViewController
+            let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
+            revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
+            newFrontController.navigationBar.isHidden = true
             
         } else if cell.cellNameLabel.text! == "My Groups" {
             print("My Groups Tapped")
@@ -91,10 +101,9 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate ,UIIm
             if FIRAuth.auth()?.currentUser != nil {
                 do {
                     try FIRAuth.auth()?.signOut()
-                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController")
-                    present(vc, animated: true, completion: nil)
+                    self.navigationController?.popToRootViewController(animated: true)
                     print("User successfully logged out")
-                }catch let error as NSError {
+                } catch let error as NSError {
                     print(error.localizedDescription)
                 }
             }

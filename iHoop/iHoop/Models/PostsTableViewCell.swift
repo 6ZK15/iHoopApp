@@ -35,6 +35,7 @@ class PostsTableViewCell: UITableViewCell {
         self.posts = post
         
 //        setPostProfilePic()
+        profileImageClass.setProfileImageDesign(postProfileImage)
         postMessageLabel.text = posts.postMessage
         timeStampLabel.text = posts.postTimeStamp
     }
@@ -50,7 +51,6 @@ class PostsTableViewCell: UITableViewCell {
             let image = UIImage(data: data! as Data)
             self.postProfileImage.image = image
         }
-        profileImageClass.setProfileImageDesign(postProfileImage)
     }
 
 }

@@ -11,7 +11,7 @@
 		841585331E7A7A8000B263BE /* upArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 841585311E7A7A8000B263BE /* upArrow.png */; };
 		841585351E7A7C8700B263BE /* Playball.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 841585341E7A7C6900B263BE /* Playball.ttf */; };
 		8415853B1E7BB8FB00B263BE /* facebookBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8415853A1E7BB8FB00B263BE /* facebookBtn.png */; };
-		842E3C5B1E84746B00B5E5A5 /* Constaints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E3C5A1E84746B00B5E5A5 /* Constaints.swift */; };
+		842E3C5B1E84746B00B5E5A5 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E3C5A1E84746B00B5E5A5 /* Constraints.swift */; };
 		845D3D4F1E7F3BD800955A44 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D4E1E7F3BD800955A44 /* SignUpView.swift */; };
 		845D3D511E7F3C2F00955A44 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D501E7F3C2F00955A44 /* TextField.swift */; };
 		845D3D541E7FA06700955A44 /* bball.png in Resources */ = {isa = PBXBuildFile; fileRef = 845D3D521E7FA06700955A44 /* bball.png */; };
@@ -42,6 +42,8 @@
 		846A72F51E8B7DC30083969E /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A72F41E8B7DC30083969E /* NotificationsViewController.swift */; };
 		846A72F71E8B7E0F0083969E /* FindGymsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A72F61E8B7E0F0083969E /* FindGymsViewController.swift */; };
 		846A72F91E8B88110083969E /* friendsBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A72F81E8B88110083969E /* friendsBtn.png */; };
+		846A72FD1E8C1FB60083969E /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A72FC1E8C1FB60083969E /* FriendsViewController.swift */; };
+		846A73001E8C88D30083969E /* FriendsSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A72FF1E8C88D30083969E /* FriendsSearchBar.swift */; };
 		84B44EDD1E67B6B400AABF92 /* Carrington.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EECF1E6532C200311B63 /* Carrington.ttf */; };
 		84B44EDE1E67B6B400AABF92 /* DrSugiyama-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED01E6532C200311B63 /* DrSugiyama-Regular.ttf */; };
 		84B44EDF1E67B6B400AABF92 /* FNL_DEMO-KCFonts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED11E6532C200311B63 /* FNL_DEMO-KCFonts.ttf */; };
@@ -103,7 +105,7 @@
 		841585311E7A7A8000B263BE /* upArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = upArrow.png; path = Images/Buttons/upArrow.png; sourceTree = "<group>"; };
 		841585341E7A7C6900B263BE /* Playball.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Playball.ttf; path = Fonts/Playball.ttf; sourceTree = "<group>"; };
 		8415853A1E7BB8FB00B263BE /* facebookBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebookBtn.png; path = Images/Buttons/facebookBtn.png; sourceTree = "<group>"; };
-		842E3C5A1E84746B00B5E5A5 /* Constaints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constaints.swift; path = Models/Constaints.swift; sourceTree = "<group>"; };
+		842E3C5A1E84746B00B5E5A5 /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constraints.swift; path = Models/Constraints.swift; sourceTree = "<group>"; };
 		843FCCF3C60FAEC7D17147AD /* Pods_iHoopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHoopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		845D3D4E1E7F3BD800955A44 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpView.swift; path = Models/SignUpView.swift; sourceTree = "<group>"; };
 		845D3D501E7F3C2F00955A44 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextField.swift; path = Models/TextField.swift; sourceTree = "<group>"; };
@@ -137,6 +139,8 @@
 		846A72F41E8B7DC30083969E /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		846A72F61E8B7E0F0083969E /* FindGymsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindGymsViewController.swift; sourceTree = "<group>"; };
 		846A72F81E8B88110083969E /* friendsBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = friendsBtn.png; path = "Images/Buttons/Menu Buttons/friendsBtn.png"; sourceTree = "<group>"; };
+		846A72FC1E8C1FB60083969E /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		846A72FF1E8C88D30083969E /* FriendsSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsSearchBar.swift; path = Models/FriendsSearchBar.swift; sourceTree = "<group>"; };
 		84B5EE991E65313400311B63 /* iHoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B5EE9C1E65313400311B63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84B5EEA11E65313400311B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -219,12 +223,14 @@
 		841585361E7BB07700B263BE /* UIViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				846A724B1E8740550083969E /* TabBarController.swift */,
+				846A72F61E8B7E0F0083969E /* FindGymsViewController.swift */,
+				846A72FC1E8C1FB60083969E /* FriendsViewController.swift */,
+				846A72F21E8B7DAE0083969E /* GearViewController.swift */,
 				84B66CF01E8481EF00CBDB7D /* HomeViewController.swift */,
 				846A72731E88E6B30083969E /* MenuViewController.swift */,
-				84C8052F1E8361BC000F9BE2 /* ProfileViewController.swift */,
-				846A72F21E8B7DAE0083969E /* GearViewController.swift */,
 				846A72F41E8B7DC30083969E /* NotificationsViewController.swift */,
-				846A72F61E8B7E0F0083969E /* FindGymsViewController.swift */,
+				84C8052F1E8361BC000F9BE2 /* ProfileViewController.swift */,
 			);
 			name = UIViewControllers;
 			sourceTree = "<group>";
@@ -232,14 +238,8 @@
 		841585371E7BB08600B263BE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				842E3C5A1E84746B00B5E5A5 /* Constaints.swift */,
-				846A72751E8977570083969E /* MenuCell.swift */,
+				842E3C5A1E84746B00B5E5A5 /* Constraints.swift */,
 				967E26751E85E5A5002208D8 /* Posts.swift */,
-				84B66CF61E861D6D00CBDB7D /* PostsTableViewCell.swift */,
-				84C805351E838309000F9BE2 /* ProfileImageView.swift */,
-				845D3D4E1E7F3BD800955A44 /* SignUpView.swift */,
-				846A724B1E8740550083969E /* TabBarController.swift */,
-				845D3D501E7F3C2F00955A44 /* TextField.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -299,6 +299,19 @@
 			name = SWReveal;
 			sourceTree = "<group>";
 		};
+		846A72FE1E8C30D40083969E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				846A72751E8977570083969E /* MenuCell.swift */,
+				84B66CF61E861D6D00CBDB7D /* PostsTableViewCell.swift */,
+				84C805351E838309000F9BE2 /* ProfileImageView.swift */,
+				845D3D4E1E7F3BD800955A44 /* SignUpView.swift */,
+				845D3D501E7F3C2F00955A44 /* TextField.swift */,
+				846A72FF1E8C88D30083969E /* FriendsSearchBar.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		84B5EE901E65313400311B63 = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +345,7 @@
 				8420991E1E81CDC300D18290 /* Operations */,
 				846A726E1E88DC720083969E /* SWReveal */,
 				841585361E7BB07700B263BE /* UIViewControllers */,
+				846A72FE1E8C30D40083969E /* Views */,
 				84B5EEA01E65313400311B63 /* Main.storyboard */,
 				84B5EEA31E65313400311B63 /* Assets.xcassets */,
 				84B5EEA51E65313400311B63 /* LaunchScreen.storyboard */,
@@ -783,10 +797,12 @@
 				845D3D511E7F3C2F00955A44 /* TextField.swift in Sources */,
 				846A72F71E8B7E0F0083969E /* FindGymsViewController.swift in Sources */,
 				96362C351E7D1A31006C585E /* FacebookLogin.swift in Sources */,
-				842E3C5B1E84746B00B5E5A5 /* Constaints.swift in Sources */,
+				842E3C5B1E84746B00B5E5A5 /* Constraints.swift in Sources */,
+				846A73001E8C88D30083969E /* FriendsSearchBar.swift in Sources */,
 				845D3D4F1E7F3BD800955A44 /* SignUpView.swift in Sources */,
 				846A724C1E8740550083969E /* TabBarController.swift in Sources */,
 				846A72741E88E6B30083969E /* MenuViewController.swift in Sources */,
+				846A72FD1E8C1FB60083969E /* FriendsViewController.swift in Sources */,
 				84B5EE9D1E65313400311B63 /* AppDelegate.swift in Sources */,
 				84B66CF71E861D6D00CBDB7D /* PostsTableViewCell.swift in Sources */,
 				967E26761E85E5A5002208D8 /* Posts.swift in Sources */,

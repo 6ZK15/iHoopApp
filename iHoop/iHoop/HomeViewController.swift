@@ -256,9 +256,9 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
                 self.supasswordTextField.layer.borderColor = UIColor.clear.cgColor
                 self.suverifyPasswordTextField.layer.borderColor = UIColor.clear.cgColor
                 self.errorLabel.text = "User Successfully Signed Up"
+                user?.sendEmailVerification(completion: nil)
                 self.showHideErrorMessageView()
                 self.showProfileImageView()
-//                self.showLoginView(#imageLiteral(resourceName: "submitBtn.png"))
             }
         })
     }

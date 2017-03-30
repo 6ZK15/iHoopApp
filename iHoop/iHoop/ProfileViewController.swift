@@ -45,8 +45,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControlEvents.touchUpInside)
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,6 +67,18 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.configureCell(post)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let repost = UITableViewRowAction(style: UITableViewRowActionStyle.normal,
+                                         title: "Repost",
+                                         handler: {
+                                            (action, index) in
+                                            print("Repost Button Tapped")
+        })
+        repost.backgroundColor = UIColor.lightGray
+        
+        return [repost]
     }
     
     @IBAction func letsTalkBballBtn(_ sender: Any) {
