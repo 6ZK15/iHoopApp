@@ -815,7 +815,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bj-Pq-TPu">
-                                                    <rect key="frame" x="91" y="8" width="45" height="18"/>
+                                                    <rect key="frame" x="91" y="8" width="59.333333333333343" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18" id="syx-gI-8Tr"/>
                                                     </constraints>
@@ -824,10 +824,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6s-jl-Pbz">
-                                                    <rect key="frame" x="91" y="34" width="46" height="17"/>
-                                                    <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="12"/>
-                                                    <color key="textColor" red="0.79607843140000001" green="0.34509803919999998" blue="0.090196078430000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="91" y="34" width="60.333333333333343" height="17"/>
+                                                    <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <size key="shadowOffset" width="0.0" height="0.0"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rww-7X-nSG" userLabel="addBtn">
                                                     <rect key="frame" x="311" y="8" width="43" height="43"/>
@@ -838,6 +839,7 @@
                                                     <state key="normal" image="addGymBtn.png"/>
                                                 </button>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="e6s-jl-Pbz" firstAttribute="leading" secondItem="8bj-Pq-TPu" secondAttribute="leading" id="35z-Hb-7q1"/>
                                                 <constraint firstItem="e6s-jl-Pbz" firstAttribute="top" secondItem="8bj-Pq-TPu" secondAttribute="bottom" constant="8" symbolic="YES" id="4FF-Mg-cfm"/>
@@ -867,7 +869,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="BwG-Fr-glP" firstAttribute="centerY" secondItem="RBv-Tg-bW5" secondAttribute="centerY" id="2Or-vQ-6V9"/>
                             <constraint firstItem="C8x-1x-mrU" firstAttribute="leading" secondItem="RBv-Tg-bW5" secondAttribute="leadingMargin" id="5T6-DB-XQM"/>
@@ -1380,7 +1382,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="2JF-Sv-J85" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aae-hQ-kLa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aae-hQ-kLa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -16,6 +16,7 @@ class FriendsViewController: UIViewController, UISearchControllerDelegate, UISea
     @IBOutlet weak var friendsTableView: UITableView!
     
     var friends = [Friends]()
+    var filteredFriends = [Friends]()
     let searchController = UISearchController(searchResultsController: nil)
     
     let databaseReference = FIRDatabase.database().reference()
@@ -25,6 +26,7 @@ class FriendsViewController: UIViewController, UISearchControllerDelegate, UISea
         super.viewDidLoad()
         
         getListOfFriends()
+        setSearchController()
 
         if revealViewController() != nil {
             menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControlEvents.touchUpInside)
@@ -53,6 +55,11 @@ class FriendsViewController: UIViewController, UISearchControllerDelegate, UISea
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! FriendsTableViewCell
         let friend = friends[indexPath.row]
         
+//        if searchController.isActive && searchController.searchBar.text != "" {
+//            friend = filteredFriends[indexPath.row]
+//        } else {
+//            friend = friends[indexPath.row]
+//        }
         cell.configureCell(friend)
         
         return cell
@@ -68,9 +75,9 @@ class FriendsViewController: UIViewController, UISearchControllerDelegate, UISea
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 
                 for snap in snapshots {
-                    if let postDictionary = snap.value as? Dictionary<String, AnyObject> {
+                    if let friendDictionary = snap.value as? Dictionary<String, AnyObject> {
                         let key = snap.key
-                        let friend = Friends(key: key, dictionary: postDictionary)
+                        let friend = Friends(key: key, dictionary: friendDictionary)
                         
                         self.friends.insert(friend, at: 0)
                     }
@@ -80,6 +87,44 @@ class FriendsViewController: UIViewController, UISearchControllerDelegate, UISea
             self.friendsTableView.reloadData()
         })
         
+    }
+    
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        filteredFriends = friends.filter({( friend : Friends) -> Bool in
+            let categoryMatch = (scope == "All") || (friend.key == scope)
+            return categoryMatch && friend.username.lowercased().contains(searchText.lowercased())
+        })
+        friendsTableView.reloadData()
+    }
+    
+    func setSearchController() {
+        // Setup the Search Controller
+        searchController.searchBar.delegate = self
+        definesPresentationContext = true
+        searchController.dimsBackgroundDuringPresentation = false
+        
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.searchBarStyle = UISearchBarStyle.prominent
+        searchController.view.backgroundColor = UIColor.clear
+        searchController.searchBar.barTintColor = UIColor.clear
+        searchController.searchBar.tintColor = UIColor.white
+        
+        
+        // Setup the Scope Bar
+        searchController.searchBar.scopeButtonTitles = ["All", "Name", "Username"]
+        friendsTableView.tableHeaderView = searchController.searchBar
+        
+        searchController.searchBar.keyboardAppearance = UIKeyboardAppearance.dark
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
     }
 
     /*
