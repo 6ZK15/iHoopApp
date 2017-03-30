@@ -43,7 +43,8 @@
 		846A72F71E8B7E0F0083969E /* FindGymsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A72F61E8B7E0F0083969E /* FindGymsViewController.swift */; };
 		846A72F91E8B88110083969E /* friendsBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A72F81E8B88110083969E /* friendsBtn.png */; };
 		846A72FD1E8C1FB60083969E /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A72FC1E8C1FB60083969E /* FriendsViewController.swift */; };
-		846A73001E8C88D30083969E /* FriendsSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A72FF1E8C88D30083969E /* FriendsSearchBar.swift */; };
+		846A73061E8CCBCF0083969E /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A73051E8CCBCF0083969E /* Friends.swift */; };
+		846A73081E8CCE430083969E /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A73071E8CCE430083969E /* FriendsTableViewCell.swift */; };
 		84B44EDD1E67B6B400AABF92 /* Carrington.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EECF1E6532C200311B63 /* Carrington.ttf */; };
 		84B44EDE1E67B6B400AABF92 /* DrSugiyama-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED01E6532C200311B63 /* DrSugiyama-Regular.ttf */; };
 		84B44EDF1E67B6B400AABF92 /* FNL_DEMO-KCFonts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED11E6532C200311B63 /* FNL_DEMO-KCFonts.ttf */; };
@@ -140,7 +141,8 @@
 		846A72F61E8B7E0F0083969E /* FindGymsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindGymsViewController.swift; sourceTree = "<group>"; };
 		846A72F81E8B88110083969E /* friendsBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = friendsBtn.png; path = "Images/Buttons/Menu Buttons/friendsBtn.png"; sourceTree = "<group>"; };
 		846A72FC1E8C1FB60083969E /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
-		846A72FF1E8C88D30083969E /* FriendsSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsSearchBar.swift; path = Models/FriendsSearchBar.swift; sourceTree = "<group>"; };
+		846A73051E8CCBCF0083969E /* Friends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Friends.swift; path = Models/Friends.swift; sourceTree = "<group>"; };
+		846A73071E8CCE430083969E /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsTableViewCell.swift; path = Models/FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		84B5EE991E65313400311B63 /* iHoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B5EE9C1E65313400311B63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84B5EEA11E65313400311B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 			children = (
 				842E3C5A1E84746B00B5E5A5 /* Constraints.swift */,
 				967E26751E85E5A5002208D8 /* Posts.swift */,
+				846A73051E8CCBCF0083969E /* Friends.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -302,12 +305,12 @@
 		846A72FE1E8C30D40083969E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				846A73071E8CCE430083969E /* FriendsTableViewCell.swift */,
 				846A72751E8977570083969E /* MenuCell.swift */,
 				84B66CF61E861D6D00CBDB7D /* PostsTableViewCell.swift */,
 				84C805351E838309000F9BE2 /* ProfileImageView.swift */,
 				845D3D4E1E7F3BD800955A44 /* SignUpView.swift */,
 				845D3D501E7F3C2F00955A44 /* TextField.swift */,
-				846A72FF1E8C88D30083969E /* FriendsSearchBar.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -794,11 +797,12 @@
 				846A72761E8977570083969E /* MenuCell.swift in Sources */,
 				84C805301E8361BC000F9BE2 /* ProfileViewController.swift in Sources */,
 				84C805361E838309000F9BE2 /* ProfileImageView.swift in Sources */,
+				846A73081E8CCE430083969E /* FriendsTableViewCell.swift in Sources */,
+				846A73061E8CCBCF0083969E /* Friends.swift in Sources */,
 				845D3D511E7F3C2F00955A44 /* TextField.swift in Sources */,
 				846A72F71E8B7E0F0083969E /* FindGymsViewController.swift in Sources */,
 				96362C351E7D1A31006C585E /* FacebookLogin.swift in Sources */,
 				842E3C5B1E84746B00B5E5A5 /* Constraints.swift in Sources */,
-				846A73001E8C88D30083969E /* FriendsSearchBar.swift in Sources */,
 				845D3D4F1E7F3BD800955A44 /* SignUpView.swift in Sources */,
 				846A724C1E8740550083969E /* TabBarController.swift in Sources */,
 				846A72741E88E6B30083969E /* MenuViewController.swift in Sources */,

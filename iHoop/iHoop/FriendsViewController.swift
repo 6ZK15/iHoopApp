@@ -13,12 +13,18 @@ import FirebaseDatabase
 class FriendsViewController: UIViewController, UISearchControllerDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var menuBtn: UIButton!
+    @IBOutlet weak var friendsTableView: UITableView!
+    
+    var friends = [Friends]()
+    let searchController = UISearchController(searchResultsController: nil)
     
     let databaseReference = FIRDatabase.database().reference()
     let orangeColor = UIColor.init(red: 0.796, green: 0.345, blue: 0.090, alpha: 1.000)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getListOfFriends()
 
         if revealViewController() != nil {
             menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControlEvents.touchUpInside)
@@ -36,7 +42,7 @@ class FriendsViewController: UIViewController, UISearchControllerDelegate, UISea
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return friends.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -44,9 +50,36 @@ class FriendsViewController: UIViewController, UISearchControllerDelegate, UISea
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! FriendsTableViewCell
+        let friend = friends[indexPath.row]
+        
+        cell.configureCell(friend)
         
         return cell
+    }
+    
+    func getListOfFriends() {
+        
+        databaseReference.child("users").observe(FIRDataEventType.value, with: {
+            (snapshot) in
+            
+            self.friends = []
+            
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
+                for snap in snapshots {
+                    if let postDictionary = snap.value as? Dictionary<String, AnyObject> {
+                        let key = snap.key
+                        let friend = Friends(key: key, dictionary: postDictionary)
+                        
+                        self.friends.insert(friend, at: 0)
+                    }
+                }
+                
+            }
+            self.friendsTableView.reloadData()
+        })
+        
     }
 
     /*

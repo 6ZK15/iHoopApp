@@ -796,18 +796,18 @@
                                 <state key="normal" image="menuBtn.png"/>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0zw-IH-n4D">
-                                <rect key="frame" x="20" y="128" width="374" height="608"/>
+                                <rect key="frame" x="20" y="84" width="374" height="652"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.79607843140000001" green="0.34509803919999998" blue="0.090196078430000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" rowHeight="60" id="ODU-Qb-I6a">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" rowHeight="60" id="ODU-Qb-I6a" customClass="FriendsTableViewCell" customModule="iHoop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ODU-Qb-I6a" id="mb4-UC-cWp">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfilePic.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZBo-6k-VRm">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfilePic.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZBo-6k-VRm" userLabel="profilePic">
                                                     <rect key="frame" x="28" y="8" width="43" height="43"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="43" id="8df-AI-iru"/>
@@ -829,7 +829,7 @@
                                                     <color key="textColor" red="0.79607843140000001" green="0.34509803919999998" blue="0.090196078430000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rww-7X-nSG">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rww-7X-nSG" userLabel="addBtn">
                                                     <rect key="frame" x="311" y="8" width="43" height="43"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="43" id="9eK-0b-170"/>
@@ -854,6 +854,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="friendsProfilePic" destination="ZBo-6k-VRm" id="YBr-O6-aoD"/>
+                                            <outlet property="fullName" destination="8bj-Pq-TPu" id="rDZ-4r-EGv"/>
+                                            <outlet property="username" destination="e6s-jl-Pbz" id="p9H-Rk-rCu"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -873,12 +878,13 @@
                             <constraint firstItem="BwG-Fr-glP" firstAttribute="leading" secondItem="RBv-Tg-bW5" secondAttribute="leadingMargin" constant="-20" id="Xa9-ho-V0R"/>
                             <constraint firstItem="0zw-IH-n4D" firstAttribute="leading" secondItem="C8x-1x-mrU" secondAttribute="leading" id="YPx-2D-p25"/>
                             <constraint firstItem="C8x-1x-mrU" firstAttribute="top" secondItem="GLc-Ve-nV6" secondAttribute="bottom" id="fAI-eb-vcb"/>
-                            <constraint firstItem="0zw-IH-n4D" firstAttribute="top" secondItem="C8x-1x-mrU" secondAttribute="bottom" constant="64" id="iiF-og-l8h"/>
+                            <constraint firstItem="0zw-IH-n4D" firstAttribute="top" secondItem="C8x-1x-mrU" secondAttribute="bottom" constant="20" id="iiF-og-l8h"/>
                             <constraint firstItem="g0z-xB-Kpw" firstAttribute="top" secondItem="BwG-Fr-glP" secondAttribute="bottom" id="was-Zp-6z0"/>
                             <constraint firstItem="BwG-Fr-glP" firstAttribute="centerX" secondItem="RBv-Tg-bW5" secondAttribute="centerX" id="wbd-ky-KIq"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="friendsTableView" destination="0zw-IH-n4D" id="8zL-q0-3F6"/>
                         <outlet property="menuBtn" destination="C8x-1x-mrU" id="OGX-Q4-IRv"/>
                     </connections>
                 </viewController>
@@ -1374,7 +1380,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="2JF-Sv-J85" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aae-hQ-kLa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aae-hQ-kLa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
