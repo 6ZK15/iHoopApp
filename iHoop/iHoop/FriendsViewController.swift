@@ -10,9 +10,8 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class FriendsViewController: UIViewController, UISearchControllerDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
+class FriendsViewController: UIViewController, UISearchResultsUpdating, UISearchControllerDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var friendsTableView: UITableView!
     
     var friends = [Friends]()
@@ -27,7 +26,18 @@ class FriendsViewController: UIViewController, UISearchControllerDelegate, UISea
         
         getListOfFriends()
         setSearchController()
-
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.barStyle = UIBarStyle.black
+        let menuBtn = UIButton.init(type: UIButtonType.custom)
+        menuBtn.setImage(UIImage(named: "menuBtn.png"), for: UIControlState.normal)
+        menuBtn.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
+        let leftBarButton = UIBarButtonItem(customView: menuBtn)
+        navigationItem.setLeftBarButton(leftBarButton, animated: true)
+        
         if revealViewController() != nil {
             menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControlEvents.touchUpInside)
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
@@ -44,7 +54,7 @@ class FriendsViewController: UIViewController, UISearchControllerDelegate, UISea
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friends.count
+        return filteredFriends.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -53,14 +63,25 @@ class FriendsViewController: UIViewController, UISearchControllerDelegate, UISea
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! FriendsTableViewCell
-        let friend = friends[indexPath.row]
+        let friend: Friends
         
-//        if searchController.isActive && searchController.searchBar.text != "" {
-//            friend = filteredFriends[indexPath.row]
-//        } else {
-//            friend = friends[indexPath.row]
-//        }
+        if searchController.isActive && searchController.searchBar.text != "" {
+            friend = filteredFriends[indexPath.row]
+        } else {
+            friend = friends[indexPath.row]
+        }
         cell.configureCell(friend)
+        
+        cell.setFunction {
+            let userID = UserDefaults.standard.value(forKey: "currentUserUID") as! String
+            self.databaseReference.child("requests").child(self.filteredFriends[indexPath.row].key).setValue([
+                "requests":[
+                    userID:true,
+                    "username": self.filteredFriends[indexPath.row].username,
+                    "fullname": self.filteredFriends[indexPath.row].firstname + " " + self.filteredFriends[indexPath.row].lastname
+                ]
+            ])
+        }
         
         return cell
     }
@@ -84,7 +105,6 @@ class FriendsViewController: UIViewController, UISearchControllerDelegate, UISea
                 }
                 
             }
-            self.friendsTableView.reloadData()
         })
         
     }
@@ -100,10 +120,11 @@ class FriendsViewController: UIViewController, UISearchControllerDelegate, UISea
     func setSearchController() {
         // Setup the Search Controller
         searchController.searchBar.delegate = self
+        searchController.searchResultsUpdater = self
         definesPresentationContext = true
         searchController.dimsBackgroundDuringPresentation = false
         
-        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = true
         searchController.searchBar.searchBarStyle = UISearchBarStyle.prominent
         searchController.view.backgroundColor = UIColor.clear
         searchController.searchBar.barTintColor = UIColor.clear
@@ -125,6 +146,10 @@ class FriendsViewController: UIViewController, UISearchControllerDelegate, UISea
         let searchBar = searchController.searchBar
         let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
         filterContentForSearchText(searchController.searchBar.text!, scope: scope)
+    }
+    
+    func dismissKeyboard() {
+        searchController.searchBar.resignFirstResponder()
     }
 
     /*

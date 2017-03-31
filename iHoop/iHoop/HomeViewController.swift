@@ -66,7 +66,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
         
         textField.setTextFieldDesign(textField: usernameTextField, placeHolderString: "Username (Email)")

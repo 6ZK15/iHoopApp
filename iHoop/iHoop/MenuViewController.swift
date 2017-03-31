@@ -25,6 +25,8 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate ,UIIm
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UserDefaults.standard.synchronize()
+        
 //        setProfilePic()
         setProfileUsername()
         

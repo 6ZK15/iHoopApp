@@ -33,6 +33,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UserDefaults.standard.synchronize()
+        
         getCurrentUserInfo()
 //        setProfilePic()
         setProfileUsername()
@@ -129,8 +131,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         
         print("current user: %@", userID as Any)
-        let queryRef = databaseReference.child(userID as! String)
-        queryRef.child("posts").child(postID.key).setValue([
+        let queryRef = databaseReference.child("posts").child(userID as! String)
+        queryRef.child(postID.key).setValue([
             "username": UserDefaults.standard.value(forKey: "profileUsername") as! String,
             "profileImage": UserDefaults.standard.value(forKey: "profileImageURL") as! String,
             "post":self.msgTextView.text as Any,
@@ -143,7 +145,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func callPostsForUser() {
         let userID = UserDefaults.standard.value(forKey: "currentUserUID")
         
-        databaseReference.child(userID as! String).child("posts").observe(FIRDataEventType.value, with: {
+        databaseReference.child("posts").child(userID as! String).observe(FIRDataEventType.value, with: {
             (snapshot) in
             
             self.posts = []
