@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class TabBarController: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,20 +23,16 @@ class TabBarController: UITabBarController {
                                    height: 50)
         view.addSubview(bgView)
         
-        //TabBarItem Font
-        let attributes = [
-            NSFontAttributeName : UIFont(name: "Playball", size: 10)!
-        ]
+        //TabBarItem Setting
+        let attributes = [ NSFontAttributeName : UIFont(name: "Playball", size: 10)! ]
         UITabBarItem.appearance().setTitleTextAttributes(attributes, for: UIControlState.normal)
         
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

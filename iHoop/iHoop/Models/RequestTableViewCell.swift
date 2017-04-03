@@ -38,7 +38,7 @@ class RequestTableViewCell: UITableViewCell {
         
 //        setPostProfilePic()
         profileImageClass.setProfileImageDesign(requestProfilePic)
-        requestFullName.text = requests.firstname + " " + requests.lastname
+        requestFullName.text = requests.fullname
         requestUsername.text = requests.username
     }
     

@@ -26,6 +26,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     let profileImageClass = ProfileImageView()
     let textFieldClass = TextField()
     var posts = [Posts]()
+    var requests = [Requests]()
     
     let databaseReference = FIRDatabase.database().reference()
     let orangeColor = UIColor.init(red: 0.796, green: 0.345, blue: 0.090, alpha: 1.000)
@@ -40,6 +41,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         setProfileUsername()
         setProfileTextViewDesign()
         callPostsForUser()
+        getListOfRequests()
         
         profileImageClass.setProfileImageDesign(profileImage)
         
@@ -183,6 +185,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 (snapshot) in
                 UserDefaults.standard.set(snapshot.value as Any, forKey: "profileUsername")
             })
+            queryRef.child(userID as! String + "/firstname").observe(FIRDataEventType.value, with: {
+                (snapshot) in
+                UserDefaults.standard.set(snapshot.value as Any, forKey: "firstname")
+            })
+            queryRef.child(userID as! String + "/lastname").observe(FIRDataEventType.value, with: {
+                (snapshot) in
+                UserDefaults.standard.set(snapshot.value as Any, forKey: "lastname")
+            })
         })
     }
     
@@ -227,6 +237,36 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             textView.text = "Enter Message"
             textView.textColor = UIColor.lightGray
         }
+    }
+    
+    func getListOfRequests() {
+        let username = UserDefaults.standard.value(forKey: "profileUsername") as! String
+        
+        databaseReference.child("requests").child(username).observe(FIRDataEventType.value, with: {
+            (snapshot) in
+            
+            self.requests = []
+            
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
+                for snap in snapshots {
+                    if let requestDictionary = snap.value as? Dictionary<String,AnyObject> {
+                        let key = snap.key
+                        let request = Requests(key: key, dictionary: requestDictionary)
+                        
+                        self.requests.insert(request, at: 0)
+                        
+                        let tabItem = self.tabBarController?.tabBar.items![4]
+                        let requestBadge = String(self.requests.count)
+                        tabItem?.badgeValue = requestBadge
+                        tabItem?.badgeColor = self.orangeColor
+                    }
+                }
+                
+            }
+            print("List of Requests: ", self.requests)
+//            self.notificationsTableView.reloadData()
+        })
     }
     
     /*

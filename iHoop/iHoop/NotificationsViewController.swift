@@ -18,6 +18,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     var requests = [Requests]()
     
     let databaseReference = FIRDatabase.database().reference()
+    let orangeColor = UIColor.init(red: 0.796, green: 0.345, blue: 0.090, alpha: 1.000)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,21 +52,28 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         
         cell.configureCell(request)
         
-//        cell.setFunction {
-//            
-//        }
+        cell.setFunction {
+            let requestID = request.key
+            let requestUsername = request.username
+            
+            if cell.requestResponse.selectedSegmentIndex == 0 {
+                self.acceptFriendRequest(requestID, requestUsername)
+                cell.requestResponse.isSelected = false
+            }
+            
+        }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 80
     }
     
     func getListOfRequests() {
-        let userID = UserDefaults.standard.value(forKey: "currentUserUID") as! String
+        let username = UserDefaults.standard.value(forKey: "profileUsername") as! String
         
-        databaseReference.child("requests").child(userID).child("requests").observe(FIRDataEventType.value, with: {
+        databaseReference.child("requests").child(username).observe(FIRDataEventType.value, with: {
             (snapshot) in
             
             self.requests = []
@@ -78,6 +86,11 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
                         let request = Requests(key: key, dictionary: requestDictionary)
                         
                         self.requests.insert(request, at: 0)
+                        
+                        let tabItem = self.tabBarController?.tabBar.items![4]
+                        let requestBadge = String(self.requests.count)
+                        tabItem?.badgeValue = requestBadge
+                        tabItem?.badgeColor = self.orangeColor
                     }
                 }
                 
@@ -85,6 +98,24 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
             print("List of Requests: ", self.requests)
             self.notificationsTableView.reloadData()
         })
+    }
+    
+    func acceptFriendRequest(_ requestID: String, _ requestUsername: String) {
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        let username = UserDefaults.standard.value(forKey: "profileUsername") as! String
+        
+        databaseReference.child("requests").child(username).child(requestID).removeValue()
+        databaseReference.child("users").child(userID!).child("friends").setValue([
+            requestUsername:true
+        ])
+        databaseReference.child("requests").child(username).child(requestID).child("uid").observe(FIRDataEventType.value, with: {
+            (snapshot) in
+            UserDefaults.standard.set(snapshot.value as Any, forKey: "requestUserID")
+        })
+        let requestUserID = UserDefaults.standard.value(forKey: "requestUserID") as! String
+        databaseReference.child("users").child(requestUserID).child("friends").setValue([
+            username:true
+        ])
     }
 
     /*

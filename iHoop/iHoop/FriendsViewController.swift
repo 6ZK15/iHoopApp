@@ -74,12 +74,13 @@ class FriendsViewController: UIViewController, UISearchResultsUpdating, UISearch
         
         cell.setFunction {
             let userID = UserDefaults.standard.value(forKey: "currentUserUID") as! String
-            self.databaseReference.child("requests").child(self.filteredFriends[indexPath.row].key).setValue([
-                "requests":[
-                    userID:true,
-                    "username": self.filteredFriends[indexPath.row].username,
-                    "fullname": self.filteredFriends[indexPath.row].firstname + " " + self.filteredFriends[indexPath.row].lastname
-                ]
+            let requestID = self.databaseReference.child("users").child(NSUUID().uuidString)
+            let firstname = UserDefaults.standard.value(forKey: "firstname") as! String
+            let lastname = UserDefaults.standard.value(forKey: "lastname") as! String
+            self.databaseReference.child("requests").child(self.filteredFriends[indexPath.row].username).child(requestID.key).setValue([
+                "uid": userID,
+                "username": UserDefaults.standard.value(forKey: "profileUsername") as! String,
+                "fullname": firstname + " " + lastname
             ])
         }
         
