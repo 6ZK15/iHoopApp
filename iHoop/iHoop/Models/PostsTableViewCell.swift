@@ -16,6 +16,7 @@ class PostsTableViewCell: UITableViewCell {
     @IBOutlet weak var timeStampLabel: UILabel!
     @IBOutlet weak var postMessageLabel: UILabel!
     @IBOutlet weak var attachmentLinkLabel: UILabel!
+    @IBOutlet weak var postUsernameLabel: UILabel!
     
     let profileImageClass = ProfileImageView()
     var posts: Posts!
@@ -38,6 +39,7 @@ class PostsTableViewCell: UITableViewCell {
         profileImageClass.setProfileImageDesign(postProfileImage)
         postMessageLabel.text = posts.postMessage
         timeStampLabel.text = posts.postTimeStamp
+        postUsernameLabel.text = posts.username
     }
     
     func setPostProfilePic() {

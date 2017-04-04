@@ -65,6 +65,9 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
             if cell.requestResponse.selectedSegmentIndex == 0 {
                 self.acceptFriendRequest(requestID, requestUserID, requestUsername)
                 cell.requestResponse.selectedSegmentIndex = -1
+            } else if cell.requestResponse.selectedSegmentIndex == 1 {
+                self.declineFriendRequest(requestID)
+                cell.requestResponse.selectedSegmentIndex = -1
             }
             
         }
@@ -120,6 +123,11 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
             "uid":userID!,
             username:true
         ])
+    }
+    
+    func declineFriendRequest(_ requestID: String) {
+        let username = UserDefaults.standard.value(forKey: "profileUsername") as! String
+        databaseReference.child("requests").child(username).child(requestID).removeValue()
     }
 
     /*

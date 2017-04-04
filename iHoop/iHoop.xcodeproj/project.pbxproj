@@ -245,9 +245,9 @@
 			isa = PBXGroup;
 			children = (
 				842E3C5A1E84746B00B5E5A5 /* Constraints.swift */,
+				846A73051E8CCBCF0083969E /* Friends.swift */,
 				967E26751E85E5A5002208D8 /* Posts.swift */,
 				846A730B1E8E2C410083969E /* Requests.swift */,
-				846A73051E8CCBCF0083969E /* Friends.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
