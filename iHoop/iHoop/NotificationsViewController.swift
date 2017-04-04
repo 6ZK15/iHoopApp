@@ -43,6 +43,11 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if requests.count == 0 {
+            let tabItem = self.tabBarController?.tabBar.items![4]
+            tabItem?.badgeValue = nil
+        }
+        
         return requests.count
     }
     
@@ -55,10 +60,11 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         cell.setFunction {
             let requestID = request.key
             let requestUsername = request.username
+            let requestUserID = request.userID
             
             if cell.requestResponse.selectedSegmentIndex == 0 {
-                self.acceptFriendRequest(requestID, requestUsername)
-                cell.requestResponse.isSelected = false
+                self.acceptFriendRequest(requestID, requestUserID, requestUsername)
+                cell.requestResponse.selectedSegmentIndex = -1
             }
             
         }
@@ -100,20 +106,18 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         })
     }
     
-    func acceptFriendRequest(_ requestID: String, _ requestUsername: String) {
+    func acceptFriendRequest(_ requestID: String, _ requestUserID: String, _ requestUsername: String) {
         let userID = FIRAuth.auth()?.currentUser?.uid
         let username = UserDefaults.standard.value(forKey: "profileUsername") as! String
+        let friendID = self.databaseReference.child("users").child("friends").child(NSUUID().uuidString)
         
         databaseReference.child("requests").child(username).child(requestID).removeValue()
-        databaseReference.child("users").child(userID!).child("friends").setValue([
+        databaseReference.child("users").child(userID!).child("friends").child(friendID.key).setValue([
+            "uid":requestUserID,
             requestUsername:true
         ])
-        databaseReference.child("requests").child(username).child(requestID).child("uid").observe(FIRDataEventType.value, with: {
-            (snapshot) in
-            UserDefaults.standard.set(snapshot.value as Any, forKey: "requestUserID")
-        })
-        let requestUserID = UserDefaults.standard.value(forKey: "requestUserID") as! String
-        databaseReference.child("users").child(requestUserID).child("friends").setValue([
+        databaseReference.child("users").child(requestUserID).child("friends").child(friendID.key).setValue([
+            "uid":userID!,
             username:true
         ])
     }
