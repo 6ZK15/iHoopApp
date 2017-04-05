@@ -479,7 +479,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
         let facebookLogin = FBSDKLoginManager()
         facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result,error) in
             if error != nil {
-                print("Unable to authenticate with Facebook - \(error)")
+                print("Unable to authenticate with Facebook - ", error)
             } else if result?.isCancelled == true {
                     print("User cancelled authentication with Facebook")
             } else {

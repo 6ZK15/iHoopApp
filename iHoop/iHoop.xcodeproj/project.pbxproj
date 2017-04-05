@@ -110,13 +110,13 @@
 		8415853A1E7BB8FB00B263BE /* facebookBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebookBtn.png; path = Images/Buttons/facebookBtn.png; sourceTree = "<group>"; };
 		842E3C5A1E84746B00B5E5A5 /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constraints.swift; path = Models/Constraints.swift; sourceTree = "<group>"; };
 		843FCCF3C60FAEC7D17147AD /* Pods_iHoopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHoopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		845D3D4E1E7F3BD800955A44 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpView.swift; path = Models/SignUpView.swift; sourceTree = "<group>"; };
-		845D3D501E7F3C2F00955A44 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextField.swift; path = Models/TextField.swift; sourceTree = "<group>"; };
+		845D3D4E1E7F3BD800955A44 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpView.swift; path = Views/SignUpView.swift; sourceTree = "<group>"; };
+		845D3D501E7F3C2F00955A44 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextField.swift; path = Views/TextField.swift; sourceTree = "<group>"; };
 		845D3D521E7FA06700955A44 /* bball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bball.png; path = Images/bball.png; sourceTree = "<group>"; };
 		845D3D531E7FA06700955A44 /* bballShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bballShadow.png; path = Images/bballShadow.png; sourceTree = "<group>"; };
 		845D3D581E7FA56700955A44 /* bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg2.png; path = Images/Backgrounds/bg2.png; sourceTree = "<group>"; };
 		846A72491E873D400083969E /* tabBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabBar@2x.png"; path = "Images/tabBar@2x.png"; sourceTree = "<group>"; };
-		846A724B1E8740550083969E /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		846A724B1E8740550083969E /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = ViewControllers/TabBarController.swift; sourceTree = "<group>"; };
 		846A724D1E8744750083969E /* findGyms@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "findGyms@3x.png"; path = "Images/Buttons/Tab Buttons/findGyms@3x.png"; sourceTree = "<group>"; };
 		846A72511E879F630083969E /* espnTab@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "espnTab@3x.png"; path = "Images/Buttons/Tab Buttons/espnTab@3x.png"; sourceTree = "<group>"; };
 		846A72521E879F630083969E /* gearTab@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gearTab@3x.png"; path = "Images/Buttons/Tab Buttons/gearTab@3x.png"; sourceTree = "<group>"; };
@@ -135,17 +135,17 @@
 		846A726F1E88DCA40083969E /* iHoop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iHoop-Bridging-Header.h"; sourceTree = "<group>"; };
 		846A72701E88DCA40083969E /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWReveal/SWRevealViewController.h; sourceTree = "<group>"; };
 		846A72711E88DCA40083969E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWReveal/SWRevealViewController.m; sourceTree = "<group>"; };
-		846A72731E88E6B30083969E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		846A72751E8977570083969E /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCell.swift; path = Models/MenuCell.swift; sourceTree = "<group>"; };
+		846A72731E88E6B30083969E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = ViewControllers/MenuViewController.swift; sourceTree = "<group>"; };
+		846A72751E8977570083969E /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCell.swift; path = Views/MenuCell.swift; sourceTree = "<group>"; };
 		846A72771E8999660083969E /* cancelBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cancelBtn.png; path = Images/Buttons/cancelBtn.png; sourceTree = "<group>"; };
-		846A72F21E8B7DAE0083969E /* GearViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GearViewController.swift; sourceTree = "<group>"; };
-		846A72F41E8B7DC30083969E /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
-		846A72F61E8B7E0F0083969E /* FindGymsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindGymsViewController.swift; sourceTree = "<group>"; };
+		846A72F21E8B7DAE0083969E /* GearViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GearViewController.swift; path = ViewControllers/GearViewController.swift; sourceTree = "<group>"; };
+		846A72F41E8B7DC30083969E /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationsViewController.swift; path = ViewControllers/NotificationsViewController.swift; sourceTree = "<group>"; };
+		846A72F61E8B7E0F0083969E /* FindGymsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindGymsViewController.swift; path = ViewControllers/FindGymsViewController.swift; sourceTree = "<group>"; };
 		846A72F81E8B88110083969E /* friendsBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = friendsBtn.png; path = "Images/Buttons/Menu Buttons/friendsBtn.png"; sourceTree = "<group>"; };
-		846A72FC1E8C1FB60083969E /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		846A72FC1E8C1FB60083969E /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsViewController.swift; path = ViewControllers/FriendsViewController.swift; sourceTree = "<group>"; };
 		846A73051E8CCBCF0083969E /* Friends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Friends.swift; path = Models/Friends.swift; sourceTree = "<group>"; };
-		846A73071E8CCE430083969E /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsTableViewCell.swift; path = Models/FriendsTableViewCell.swift; sourceTree = "<group>"; };
-		846A73091E8E26750083969E /* RequestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestTableViewCell.swift; path = Models/RequestTableViewCell.swift; sourceTree = "<group>"; };
+		846A73071E8CCE430083969E /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsTableViewCell.swift; path = Views/FriendsTableViewCell.swift; sourceTree = "<group>"; };
+		846A73091E8E26750083969E /* RequestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestTableViewCell.swift; path = Views/RequestTableViewCell.swift; sourceTree = "<group>"; };
 		846A730B1E8E2C410083969E /* Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Requests.swift; path = Models/Requests.swift; sourceTree = "<group>"; };
 		84B5EE991E65313400311B63 /* iHoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B5EE9C1E65313400311B63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -170,13 +170,13 @@
 		84B5EEDC1E65393A00311B63 /* signUpBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = signUpBtn.png; path = Images/Buttons/signUpBtn.png; sourceTree = "<group>"; };
 		84B5EEDD1E65393A00311B63 /* submitBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = submitBtn.png; path = Images/Buttons/submitBtn.png; sourceTree = "<group>"; };
 		84B5EEE61E65394200311B63 /* iHoopTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iHoopTitle.png; path = Images/Titles/iHoopTitle.png; sourceTree = "<group>"; };
-		84B66CF01E8481EF00CBDB7D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		84B66CF01E8481EF00CBDB7D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewControllers/HomeViewController.swift; sourceTree = "<group>"; };
 		84B66CF21E848BA500CBDB7D /* defaultProfilePic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = defaultProfilePic.png; path = Images/defaultProfilePic.png; sourceTree = "<group>"; };
-		84B66CF61E861D6D00CBDB7D /* PostsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsTableViewCell.swift; path = Models/PostsTableViewCell.swift; sourceTree = "<group>"; };
-		84C8052F1E8361BC000F9BE2 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		84B66CF61E861D6D00CBDB7D /* PostsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsTableViewCell.swift; path = Views/PostsTableViewCell.swift; sourceTree = "<group>"; };
+		84C8052F1E8361BC000F9BE2 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ViewControllers/ProfileViewController.swift; sourceTree = "<group>"; };
 		84C805311E8381D5000F9BE2 /* ltbButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ltbButton.png; path = Images/Buttons/ltbButton.png; sourceTree = "<group>"; };
 		84C805331E8382AA000F9BE2 /* profilePic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profilePic.png; path = Images/profilePic.png; sourceTree = "<group>"; };
-		84C805351E838309000F9BE2 /* ProfileImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileImageView.swift; path = Models/ProfileImageView.swift; sourceTree = "<group>"; };
+		84C805351E838309000F9BE2 /* ProfileImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileImageView.swift; path = Views/ProfileImageView.swift; sourceTree = "<group>"; };
 		84C805371E838E1B000F9BE2 /* nextBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nextBtn.png; path = Images/Buttons/nextBtn.png; sourceTree = "<group>"; };
 		8AF0C5F8FF1333F195A7875D /* Pods-iHoopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoopTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHoopTests/Pods-iHoopTests.release.xcconfig"; sourceTree = "<group>"; };
 		96362C341E7D1A31006C585E /* FacebookLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookLogin.swift; sourceTree = "<group>"; };
@@ -226,7 +226,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		841585361E7BB07700B263BE /* UIViewControllers */ = {
+		841585361E7BB07700B263BE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				846A724B1E8740550083969E /* TabBarController.swift */,
@@ -238,7 +238,7 @@
 				846A72F41E8B7DC30083969E /* NotificationsViewController.swift */,
 				84C8052F1E8361BC000F9BE2 /* ProfileViewController.swift */,
 			);
-			name = UIViewControllers;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		841585371E7BB08600B263BE /* Models */ = {
@@ -353,7 +353,7 @@
 				841585371E7BB08600B263BE /* Models */,
 				8420991E1E81CDC300D18290 /* Operations */,
 				846A726E1E88DC720083969E /* SWReveal */,
-				841585361E7BB07700B263BE /* UIViewControllers */,
+				841585361E7BB07700B263BE /* ViewControllers */,
 				846A72FE1E8C30D40083969E /* Views */,
 				84B5EEA01E65313400311B63 /* Main.storyboard */,
 				84B5EEA31E65313400311B63 /* Assets.xcassets */,

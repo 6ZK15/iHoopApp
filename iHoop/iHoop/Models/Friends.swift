@@ -13,6 +13,7 @@ import FirebaseDatabase
 struct Friends {
     
     fileprivate var _key: String!
+    fileprivate var _uid: String!
     fileprivate var _username: String!
     fileprivate var _firstname: String!
     fileprivate var _lastname: String!
@@ -22,6 +23,10 @@ struct Friends {
     
     var key: String {
         return _key
+    }
+    
+    var uid: String {
+        return _uid
     }
     
     var username: String {
@@ -43,7 +48,11 @@ struct Friends {
     init(key: String, dictionary: Dictionary<String, AnyObject>) {
         self._key = key
         
-        // Within the Post, or Key, the following properties are children
+        // Within the Friend, or Key, the following properties are children
+        
+        if let uid = dictionary["uid"] as? String {
+            self._uid = uid
+        }
         
         if let profilePic = dictionary["profilePic"] as? String {
             self._profilePic = profilePic
