@@ -14,6 +14,8 @@ class FriendsViewController: UIViewController, UISearchResultsUpdating, UISearch
     
     @IBOutlet weak var friendsTableView: UITableView!
     
+    let friendOperations = FriendOperations()
+    
     var friends = [Friends]()
     var filteredFriends = [Friends]()
     let searchController = UISearchController(searchResultsController: nil)
@@ -24,7 +26,7 @@ class FriendsViewController: UIViewController, UISearchResultsUpdating, UISearch
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getListOfFriends()
+        friendOperations.getListOfFriends()
         setSearchController()
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -87,29 +89,6 @@ class FriendsViewController: UIViewController, UISearchResultsUpdating, UISearch
         return cell
     }
     
-    func getListOfFriends() {
-        
-        databaseReference.child("users").observe(FIRDataEventType.value, with: {
-            (snapshot) in
-            
-            self.friends = []
-            
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                
-                for snap in snapshots {
-                    if let friendDictionary = snap.value as? Dictionary<String, AnyObject> {
-                        let key = snap.key
-                        let friend = Friends(key: key, dictionary: friendDictionary)
-                        
-                        self.friends.insert(friend, at: 0)
-                    }
-                }
-                
-            }
-        })
-        
-    }
-    
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         filteredFriends = friends.filter({( friend : Friends) -> Bool in
             let categoryMatch = (scope == "All") || (friend.key == scope)
@@ -133,7 +112,7 @@ class FriendsViewController: UIViewController, UISearchResultsUpdating, UISearch
         
         
         // Setup the Scope Bar
-        searchController.searchBar.scopeButtonTitles = ["All", "Name", "Username"]
+        searchController.searchBar.scopeButtonTitles = ["All", "Friends", "Username"]
         friendsTableView.tableHeaderView = searchController.searchBar
         
         searchController.searchBar.keyboardAppearance = UIKeyboardAppearance.dark

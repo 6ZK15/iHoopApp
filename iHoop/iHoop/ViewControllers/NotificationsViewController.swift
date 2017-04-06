@@ -15,6 +15,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var notificationsTableView: UITableView!
     
+    let requestOperations = RequestOperations()
     var requests = [Requests]()
     
     let databaseReference = FIRDatabase.database().reference()
@@ -25,7 +26,10 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         
         UserDefaults.standard.synchronize()
         
-        getListOfRequests()
+        requestOperations.getListOfRequests(tabBarController as! TabBarController)
+        notificationsTableView.reloadData()
+        
+        
         
         if revealViewController() != nil {
             menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControlEvents.touchUpInside)
@@ -59,14 +63,14 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         
         cell.setFunction {
             let requestID = request.key
-            let requestUsername = request.username
             let requestUserID = request.userID
+            let requestUsername = request.username
             
             if cell.requestResponse.selectedSegmentIndex == 0 {
-                self.acceptFriendRequest(requestID, requestUserID, requestUsername)
+                self.requestOperations.acceptFriendRequest(requestID, requestUserID, requestUsername)
                 cell.requestResponse.selectedSegmentIndex = -1
             } else if cell.requestResponse.selectedSegmentIndex == 1 {
-                self.declineFriendRequest(requestID)
+                self.requestOperations.declineFriendRequest(requestID)
                 cell.requestResponse.selectedSegmentIndex = -1
             }
             
@@ -77,57 +81,6 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
-    }
-    
-    func getListOfRequests() {
-        let username = UserDefaults.standard.value(forKey: "profileUsername") as! String
-        
-        databaseReference.child("requests").child(username).observe(FIRDataEventType.value, with: {
-            (snapshot) in
-            
-            self.requests = []
-            
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                
-                for snap in snapshots {
-                    if let requestDictionary = snap.value as? Dictionary<String,AnyObject> {
-                        let key = snap.key
-                        let request = Requests(key: key, dictionary: requestDictionary)
-                        
-                        self.requests.insert(request, at: 0)
-                        
-                        let tabItem = self.tabBarController?.tabBar.items![4]
-                        let requestBadge = String(self.requests.count)
-                        tabItem?.badgeValue = requestBadge
-                        tabItem?.badgeColor = self.orangeColor
-                    }
-                }
-                
-            }
-            print("List of Requests: ", self.requests)
-            self.notificationsTableView.reloadData()
-        })
-    }
-    
-    func acceptFriendRequest(_ requestID: String, _ requestUserID: String, _ requestUsername: String) {
-        let userID = FIRAuth.auth()?.currentUser?.uid
-        let username = UserDefaults.standard.value(forKey: "profileUsername") as! String
-        let friendID = self.databaseReference.child("users").child("friends").child(NSUUID().uuidString)
-        
-        databaseReference.child("requests").child(username).child(requestID).removeValue()
-        databaseReference.child("users").child(userID!).child("friends").child(friendID.key).setValue([
-            "uid":requestUserID,
-            requestUsername:true
-        ])
-        databaseReference.child("users").child(requestUserID).child("friends").child(friendID.key).setValue([
-            "uid":userID!,
-            username:true
-        ])
-    }
-    
-    func declineFriendRequest(_ requestID: String) {
-        let username = UserDefaults.standard.value(forKey: "profileUsername") as! String
-        databaseReference.child("requests").child(username).child(requestID).removeValue()
     }
 
     /*

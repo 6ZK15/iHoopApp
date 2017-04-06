@@ -113,6 +113,10 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate ,UIIm
         }
     }
     
+    /*
+     * @IBAction - selectProfileImage
+       Opens UIImagePickerController to select new profile pic
+     */
     @IBAction func selectProfileImage(_ sender: Any) {
         let picker = UIImagePickerController()
         picker.delegate = self
@@ -121,6 +125,10 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate ,UIIm
         self.present(picker, animated: true, completion:nil)
     }
     
+    /*
+     * setProfilePic
+       Sets Profile Pic for user
+     */
     func setProfilePic() {
         let profileImageURL = UserDefaults.standard.value(forKey: "profileImageURL")
         

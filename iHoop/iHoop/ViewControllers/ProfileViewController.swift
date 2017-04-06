@@ -12,6 +12,7 @@ import FirebaseDatabase
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITabBarDelegate, UITextViewDelegate {
 
+    //IBOutlets
     @IBOutlet weak var profileImage: ProfileImageView!
     @IBOutlet weak var welcomeUserLabel: UILabel!
     @IBOutlet weak var ltbTableView: UITableView!
@@ -20,14 +21,16 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var ltbSubmitButton: UIButton!
     @IBOutlet weak var messageView: UIView!
     @IBOutlet weak var msgTextView: UITextView!
-    
     @IBOutlet weak var menuBtn: UIButton!
     
+    //Declare class variables
     let profileImageClass = ProfileImageView()
     let textFieldClass = TextField()
+    let postOperations = PostOperations()
+    let requestOperations = RequestOperations()
+    let userOperations = UserOperations()
+    
     var posts = [Posts]()
-    var requests = [Requests]()
-    var friends = [Friends]()
     
     let databaseReference = FIRDatabase.database().reference()
     let orangeColor = UIColor.init(red: 0.796, green: 0.345, blue: 0.090, alpha: 1.000)
@@ -37,12 +40,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         UserDefaults.standard.synchronize()
         
-        getCurrentUserInfo()
+        userOperations.getCurrentUserInfo()
+        postOperations.getPostsForUser()
+        requestOperations.getListOfRequests(tabBarController as! TabBarController)
+        
 //        setProfilePic()
         setProfileUsername()
         setProfileTextViewDesign()
-        callPostsForUser()
-        getListOfRequests()
+        
         
         profileImageClass.setProfileImageDesign(profileImage)
         
@@ -86,20 +91,37 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         return [repost]
     }
     
+    /*
+     * @IBAction - letsTalkBballBtn
+       Shows and hides UITextView for posts
+     */
     @IBAction func letsTalkBballBtn(_ sender: Any) {
         showHidePostMsgView()
     }
-    
+    /*
+     * @IBAction - cancelPost
+       Shows and hides UITextView for posts
+     */
     @IBAction func cancelPost(_ sender: Any) {
         showHidePostMsgView()
     }
     
+    /*
+     * @IBAction - postMessage
+       Shows and hides UITextView for posting messages
+       Stores posts for user in database reference
+       Sets the design of UITextView for posts
+     */
     @IBAction func postMessage(_ sender: Any) {
         showHidePostMsgView()
-        storePostForUser()
+        postOperations.storePostForUser(msgTextView)
         setProfileTextViewDesign()
     }
     
+    /*
+     * showHidePostMsgView
+       Shows and hides UITextView for posting messages
+     */
     func showHidePostMsgView() {
         if messageView.transform == .identity {
             UIView.animate(withDuration: 1, animations: {
@@ -120,121 +142,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    func storePostForUser() {
-        let userID = UserDefaults.standard.value(forKey: "currentUserUID")
-        let postID = self.databaseReference.child("users").child(NSUUID().uuidString)
-        let postMessage = msgTextView.text
-        UserDefaults.standard.set(postID.key, forKey: "postID")
-        
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.dateFormat = "MMMM d h:mm a"
-        dateFormatter.amSymbol = "AM"
-        dateFormatter.pmSymbol = "PM"
-        
-        let timeStamp = dateFormatter.string(from: date)
-        
-        let dateReferenceFormatter = DateFormatter()
-        dateReferenceFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateReferenceFormatter.dateFormat = "MMMM d h:mm:ss a"
-        dateReferenceFormatter.amSymbol = "AM"
-        dateReferenceFormatter.pmSymbol = "PM"
-        
-        let timeStampRef = dateReferenceFormatter.string(from: date)
-        
-        print("current user: %@", userID as Any)
-        let userRef = databaseReference.child("users").child(userID as! String)
-        userRef.child("timeline").child(timeStampRef + " " + postID.key).setValue([
-            "username": UserDefaults.standard.value(forKey: "profileUsername") as? String,
-            "profileImage": UserDefaults.standard.value(forKey: "profileImageURL") as? String,
-            "post":postMessage,
-            "postAttachmentURL":"",
-            "timeStamp":timeStamp,
-        ])
-        
-        databaseReference.child("users").child(userID as! String + "/friends").observe(FIRDataEventType.value, with: {
-            (snapshot) in
-            
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                
-                for snap in snapshots {
-                    if let friendDictionary = snap.value as? Dictionary<String, AnyObject> {
-                        let key = snap.key
-                        let friend = Friends(key: key, dictionary: friendDictionary)
-                        let friendID = friend.uid
-                        print("Friends' UID:", friendID)
-                        
-                        let friendsRef = self.databaseReference.child("users").child(friendID)
-                        friendsRef.child("timeline").child(timeStampRef + " " + postID.key).setValue([
-                            "username": UserDefaults.standard.value(forKey: "profileUsername") as? String,
-                            "profileImage": UserDefaults.standard.value(forKey: "profileImageURL") as? String,
-                            "post":postMessage,
-                            "postAttachmentURL":"",
-                            "timeStamp":timeStamp,
-                        ])
-                        
-                    }
-                }
-            }
-        })
-        
-        
-    }
-    
-    func callPostsForUser() {
-        let userID = UserDefaults.standard.value(forKey: "currentUserUID")
-        let timelineRef = databaseReference.child("users").child(userID as! String).child("timeline")
-        
-        timelineRef.observe(FIRDataEventType.value, with: {
-            (snapshot) in
-            
-            self.posts = []
-            
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                
-                for snap in snapshots {
-                    if let postDictionary = snap.value as? Dictionary<String, AnyObject> {
-                        let key = snap.key
-                        let post = Posts(key: key, dictionary: postDictionary)
-                        
-                        self.posts.insert(post, at: 0)
-                    }
-                }
-                
-            }
-            
-            self.ltbTableView.reloadData()
-        })
-    }
-    
-    func getCurrentUserInfo() {
-        let userID = UserDefaults.standard.value(forKey: "currentUserUID")
-        print("current user: %@", userID as Any)
-        let queryRef = databaseReference.child("users")
-        queryRef.child(userID as! String).observeSingleEvent(of: FIRDataEventType.value, with: {
-            (snapshot) in
-            print("Current User Info:\n", snapshot.value as! NSDictionary)
-            queryRef.child(userID as! String + "/profilepic").observe(FIRDataEventType.value, with: {
-                (snapshot) in
-                UserDefaults.standard.set(snapshot.value as Any, forKey: "profileImageURL")
-                print("Profile Image URL", snapshot.value as Any)
-            })
-            queryRef.child(userID as! String + "/username").observe(FIRDataEventType.value, with: {
-                (snapshot) in
-                UserDefaults.standard.set(snapshot.value as Any, forKey: "profileUsername")
-            })
-            queryRef.child(userID as! String + "/firstname").observe(FIRDataEventType.value, with: {
-                (snapshot) in
-                UserDefaults.standard.set(snapshot.value as Any, forKey: "firstname")
-            })
-            queryRef.child(userID as! String + "/lastname").observe(FIRDataEventType.value, with: {
-                (snapshot) in
-                UserDefaults.standard.set(snapshot.value as Any, forKey: "lastname")
-            })
-        })
-    }
-    
+    /*
+     * setProfilePic
+       Sets Profile Pic for user
+     */
     func setProfilePic() {
         let profileImageURL = UserDefaults.standard.value(forKey: "profileImageURL")
         
@@ -248,11 +159,19 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    /*
+     * setProfileUsername
+       Sets Profile Username for user
+     */
     func setProfileUsername() {
         let profileUsername = UserDefaults.standard.string(forKey: "profileUsername") ?? "Username Not Found"
         welcomeUserLabel.text = "Welcome " + profileUsername + "!"
     }
     
+    /*
+     * setProfileTextViewDesign
+       Sets Profile UITextView design for posting messages
+     */
     func setProfileTextViewDesign() {
         msgTextView.delegate = self
         msgTextView.layer.cornerRadius = 8
@@ -264,6 +183,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         msgTextView.isUserInteractionEnabled = true
     }
     
+    /*
+     * textViewDidBeginEditing
+       Sets design when textView has begun editing
+       Input: textView as! UITextView
+     */
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
             textView.text = nil
@@ -271,41 +195,16 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    /*
+     * textViewDidEndEditing
+       Sets design when textView has ended editing
+       Input: textView as! UITextView
+     */
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = "Enter Message"
             textView.textColor = UIColor.lightGray
         }
-    }
-    
-    func getListOfRequests() {
-        let username = UserDefaults.standard.string(forKey: "profileUsername") ?? "Error"
-        
-        databaseReference.child("requests").child(username).observe(FIRDataEventType.value, with: {
-            (snapshot) in
-            
-            self.requests = []
-            
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                
-                for snap in snapshots {
-                    if let requestDictionary = snap.value as? Dictionary<String,AnyObject> {
-                        let key = snap.key
-                        let request = Requests(key: key, dictionary: requestDictionary)
-                        
-                        self.requests.insert(request, at: 0)
-                        
-                        let tabItem = self.tabBarController?.tabBar.items![4]
-                        let requestBadge = String(self.requests.count)
-                        tabItem?.badgeValue = requestBadge
-                        tabItem?.badgeColor = self.orangeColor
-                    }
-                }
-                
-            }
-            print("List of Requests: ", self.requests)
-//            self.notificationsTableView.reloadData()
-        })
     }
     
     /*

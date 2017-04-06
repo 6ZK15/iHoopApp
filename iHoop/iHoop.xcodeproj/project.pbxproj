@@ -47,6 +47,10 @@
 		846A73081E8CCE430083969E /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A73071E8CCE430083969E /* FriendsTableViewCell.swift */; };
 		846A730A1E8E26750083969E /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A73091E8E26750083969E /* RequestTableViewCell.swift */; };
 		846A730C1E8E2C410083969E /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A730B1E8E2C410083969E /* Requests.swift */; };
+		848C97EE1E952CD600A9D476 /* RequestOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C97ED1E952CD600A9D476 /* RequestOperations.swift */; };
+		848C97F01E95334F00A9D476 /* PostOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C97EF1E95334F00A9D476 /* PostOperations.swift */; };
+		848C97F21E9537AE00A9D476 /* UserOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C97F11E9537AE00A9D476 /* UserOperations.swift */; };
+		848C97F41E953A0800A9D476 /* FriendOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C97F31E953A0800A9D476 /* FriendOperations.swift */; };
 		84B44EDD1E67B6B400AABF92 /* Carrington.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EECF1E6532C200311B63 /* Carrington.ttf */; };
 		84B44EDE1E67B6B400AABF92 /* DrSugiyama-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED01E6532C200311B63 /* DrSugiyama-Regular.ttf */; };
 		84B44EDF1E67B6B400AABF92 /* FNL_DEMO-KCFonts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED11E6532C200311B63 /* FNL_DEMO-KCFonts.ttf */; };
@@ -147,6 +151,10 @@
 		846A73071E8CCE430083969E /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsTableViewCell.swift; path = Views/FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		846A73091E8E26750083969E /* RequestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestTableViewCell.swift; path = Views/RequestTableViewCell.swift; sourceTree = "<group>"; };
 		846A730B1E8E2C410083969E /* Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Requests.swift; path = Models/Requests.swift; sourceTree = "<group>"; };
+		848C97ED1E952CD600A9D476 /* RequestOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestOperations.swift; path = Operations/RequestOperations.swift; sourceTree = "<group>"; };
+		848C97EF1E95334F00A9D476 /* PostOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostOperations.swift; path = Operations/PostOperations.swift; sourceTree = "<group>"; };
+		848C97F11E9537AE00A9D476 /* UserOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserOperations.swift; path = Operations/UserOperations.swift; sourceTree = "<group>"; };
+		848C97F31E953A0800A9D476 /* FriendOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendOperations.swift; path = Operations/FriendOperations.swift; sourceTree = "<group>"; };
 		84B5EE991E65313400311B63 /* iHoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B5EE9C1E65313400311B63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84B5EEA11E65313400311B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -255,6 +263,10 @@
 		8420991E1E81CDC300D18290 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
+				848C97F31E953A0800A9D476 /* FriendOperations.swift */,
+				848C97EF1E95334F00A9D476 /* PostOperations.swift */,
+				848C97ED1E952CD600A9D476 /* RequestOperations.swift */,
+				848C97F11E9537AE00A9D476 /* UserOperations.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -805,13 +817,16 @@
 				84C805301E8361BC000F9BE2 /* ProfileViewController.swift in Sources */,
 				84C805361E838309000F9BE2 /* ProfileImageView.swift in Sources */,
 				846A73081E8CCE430083969E /* FriendsTableViewCell.swift in Sources */,
+				848C97F41E953A0800A9D476 /* FriendOperations.swift in Sources */,
 				846A73061E8CCBCF0083969E /* Friends.swift in Sources */,
 				845D3D511E7F3C2F00955A44 /* TextField.swift in Sources */,
 				846A72F71E8B7E0F0083969E /* FindGymsViewController.swift in Sources */,
 				96362C351E7D1A31006C585E /* FacebookLogin.swift in Sources */,
+				848C97F01E95334F00A9D476 /* PostOperations.swift in Sources */,
 				842E3C5B1E84746B00B5E5A5 /* Constraints.swift in Sources */,
 				845D3D4F1E7F3BD800955A44 /* SignUpView.swift in Sources */,
 				846A724C1E8740550083969E /* TabBarController.swift in Sources */,
+				848C97EE1E952CD600A9D476 /* RequestOperations.swift in Sources */,
 				846A72741E88E6B30083969E /* MenuViewController.swift in Sources */,
 				846A730C1E8E2C410083969E /* Requests.swift in Sources */,
 				846A72FD1E8C1FB60083969E /* FriendsViewController.swift in Sources */,
@@ -821,6 +836,7 @@
 				84B66CF11E8481EF00CBDB7D /* HomeViewController.swift in Sources */,
 				846A72F31E8B7DAE0083969E /* GearViewController.swift in Sources */,
 				846A72721E88DCA40083969E /* SWRevealViewController.m in Sources */,
+				848C97F21E9537AE00A9D476 /* UserOperations.swift in Sources */,
 				846A72F51E8B7DC30083969E /* NotificationsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
