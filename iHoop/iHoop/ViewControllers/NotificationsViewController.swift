@@ -26,10 +26,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         
         UserDefaults.standard.synchronize()
         
-        requestOperations.getListOfRequests(tabBarController as! TabBarController)
-        notificationsTableView.reloadData()
-        
-        
+        getListOfRequests()
         
         if revealViewController() != nil {
             menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControlEvents.touchUpInside)
@@ -81,6 +78,39 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    /*
+     * getListOfRequests
+       Returns the list of friend requests for each user and displays the badgeValue for the total of requests
+     */
+    func getListOfRequests() {
+        let username = UserDefaults.standard.string(forKey: "profileUsername") ?? "Error"
+        
+        databaseReference.child("requests").child(username).observe(FIRDataEventType.value, with: {
+            (snapshot) in
+            
+            self.requests = []
+            
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
+                for snap in snapshots {
+                    if let requestDictionary = snap.value as? Dictionary<String,AnyObject> {
+                        let key = snap.key
+                        let request = Requests(key: key, dictionary: requestDictionary)
+                        
+                        self.requests.insert(request, at: 0)
+                        
+                        let tabItem = self.tabBarController?.tabBar.items![4]
+                        let requestBadge = String(self.requests.count)
+                        tabItem?.badgeValue = requestBadge
+                        tabItem?.badgeColor = self.orangeColor
+                    }
+                }
+            }
+            self.notificationsTableView.reloadData()
+            print("List of Requests: ", self.requests)
+        })
     }
 
     /*

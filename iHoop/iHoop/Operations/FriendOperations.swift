@@ -16,25 +16,4 @@ class FriendOperations: NSObject {
     
     let databaseReference = FIRDatabase.database().reference()
     
-    /*
-     * getListOfRequests
-       Returns the list of friends for each user
-     */
-    func getListOfFriends() {
-        databaseReference.child("users").observe(FIRDataEventType.value, with: {
-            (snapshot) in
-            self.friends = []
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                for snap in snapshots {
-                    if let friendDictionary = snap.value as? Dictionary<String, AnyObject> {
-                        let key = snap.key
-                        let friend = Friends(key: key, dictionary: friendDictionary)
-                        
-                        self.friends.insert(friend, at: 0)
-                    }
-                }
-            }
-        })
-    }
-    
 }

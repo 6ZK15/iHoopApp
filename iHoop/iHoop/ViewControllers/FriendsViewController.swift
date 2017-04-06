@@ -26,7 +26,7 @@ class FriendsViewController: UIViewController, UISearchResultsUpdating, UISearch
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        friendOperations.getListOfFriends()
+        getListOfFriends()
         setSearchController()
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -88,6 +88,24 @@ class FriendsViewController: UIViewController, UISearchResultsUpdating, UISearch
         
         return cell
     }
+    
+    func getListOfFriends() {
+        
+        databaseReference.child("users").observe(FIRDataEventType.value, with: {
+            (snapshot) in
+            self.friends = []
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshots {
+                    if let friendDictionary = snap.value as? Dictionary<String, AnyObject> {
+                        let key = snap.key
+                        let friend = Friends(key: key, dictionary: friendDictionary)
+                        self.friends.insert(friend, at: 0)
+                    }
+                }
+            }
+        })
+    }
+
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         filteredFriends = friends.filter({( friend : Friends) -> Bool in
