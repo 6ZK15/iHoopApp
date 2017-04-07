@@ -24,7 +24,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     @IBOutlet weak var suverifyPasswordTextField: UITextField!
     @IBOutlet weak var submitSignUpBtn: UIButton!
     
-    //Profile Image Outlet
+    //Profile Image Outlets
     @IBOutlet weak var setProfileImageView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var chooseImageBtn: UIButton!

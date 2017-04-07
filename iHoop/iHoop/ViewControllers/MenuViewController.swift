@@ -86,10 +86,10 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate ,UIIm
             
         } else if cell.cellNameLabel.text! == "My Groups" {
             print("My Groups Tapped")
-//            let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "MessageViewController") as! MessageViewController
-//            let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
-//
-//            revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
+            let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "MyGroupsViewController") as! MyGroupsViewController
+            let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
+            revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
+            newFrontController.navigationBar.isHidden = true
         } else if cell.cellNameLabel.text! == "Add A Gym" {
             
             print("Add A Gym Tapped")

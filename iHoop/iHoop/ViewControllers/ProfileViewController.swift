@@ -157,23 +157,22 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let postMessage = msgTextView.text
         UserDefaults.standard.set(postID.key, forKey: "postID")
         
+        //Date Post Format
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = "MMMM d h:mm a"
         dateFormatter.amSymbol = "AM"
         dateFormatter.pmSymbol = "PM"
-        
         let timeStamp = dateFormatter.string(from: date)
         
+        //Date Database Format
         let dateReferenceFormatter = DateFormatter()
         dateReferenceFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateReferenceFormatter.dateFormat = "MMMM d h:mm:ss a"
-        dateReferenceFormatter.amSymbol = "AM"
-        dateReferenceFormatter.pmSymbol = "PM"
-        
+        dateReferenceFormatter.dateFormat = "MMMM d h:mm:ss"
         let timeStampRef = dateReferenceFormatter.string(from: date)
         
+        //Store Post for current user
         print("current user: %@", userID as Any)
         let userRef = databaseReference.child("users").child(userID as! String)
         userRef.child("timeline").child(timeStampRef + " " + postID.key).setValue([
@@ -184,6 +183,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             "timeStamp":timeStamp,
         ])
         
+        //Store Post for friends
         databaseReference.child("users").child(userID as! String + "/friends").observe(FIRDataEventType.value, with: {
             (snapshot) in
             
