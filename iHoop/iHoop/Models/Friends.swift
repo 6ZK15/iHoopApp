@@ -19,8 +19,6 @@ struct Friends {
     fileprivate var _lastname: String!
     fileprivate var _profilePic: String!
     
-    let databaseReference = FIRDatabase.database().reference()
-    
     var key: String {
         return _key
     }

@@ -1040,6 +1040,22 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vt8-Mi-diV" userLabel="createGroupView">
                                 <rect key="frame" x="20" y="736" width="374" height="389"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Group" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3mR-G3-m3d">
+                                        <rect key="frame" x="78" y="20" width="218.33333333333331" height="32.333333333333371"/>
+                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="36"/>
+                                        <color key="textColor" red="0.7969396710395813" green="0.3445398211479187" blue="0.090358667075634003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKX-Sj-GCt" userLabel="cancelBtn">
+                                        <rect key="frame" x="321" y="20" width="33" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="CKX-Sj-GCt" secondAttribute="height" multiplier="1:1" id="C4u-XS-0Th"/>
+                                        </constraints>
+                                        <state key="normal" image="cancelBtn.png"/>
+                                        <connections>
+                                            <action selector="cancelCreateGroup:" destination="Zb5-lH-Uuh" eventType="touchUpInside" id="w0L-Hg-nc3"/>
+                                        </connections>
+                                    </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Name of Group" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aVn-R3-RZ4">
                                         <rect key="frame" x="20" y="73" width="334" height="44"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -1144,17 +1160,7 @@
                                             <outlet property="delegate" destination="Zb5-lH-Uuh" id="BUp-2n-8zX"/>
                                         </connections>
                                     </scrollView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKX-Sj-GCt" userLabel="cancelBtn">
-                                        <rect key="frame" x="321" y="20" width="33" height="33"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="CKX-Sj-GCt" secondAttribute="height" multiplier="1:1" id="C4u-XS-0Th"/>
-                                        </constraints>
-                                        <state key="normal" image="cancelBtn.png"/>
-                                        <connections>
-                                            <action selector="cancelCreateGroup:" destination="Zb5-lH-Uuh" eventType="touchUpInside" id="w0L-Hg-nc3"/>
-                                        </connections>
-                                    </button>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UhZ-pC-hqD">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="UhZ-pC-hqD">
                                         <rect key="frame" x="107" y="137" width="160" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="CrG-7L-fnD"/>
@@ -1171,13 +1177,10 @@
                                             <constraint firstAttribute="width" secondItem="qAk-IM-lLK" secondAttribute="height" multiplier="4:3" id="OM3-dJ-Soi"/>
                                         </constraints>
                                         <state key="normal" image="doneBtn.png"/>
+                                        <connections>
+                                            <action selector="createGroup:" destination="Zb5-lH-Uuh" eventType="touchUpInside" id="uEN-Ze-Shw"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Group" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3mR-G3-m3d">
-                                        <rect key="frame" x="78.333333333333314" y="20" width="218.33333333333337" height="32.333333333333371"/>
-                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="36"/>
-                                        <color key="textColor" red="0.7969396710395813" green="0.3445398211479187" blue="0.090358667075634003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1240,6 +1243,9 @@
                     <connections>
                         <outlet property="createGroupView" destination="vt8-Mi-diV" id="eOb-o4-JBr"/>
                         <outlet property="gradientView" destination="ADO-AS-WuE" id="WKo-7g-1tw"/>
+                        <outlet property="groupImageScrollView" destination="deX-Sq-BKf" id="0nF-Dt-y9b"/>
+                        <outlet property="groupNameTextField" destination="aVn-R3-RZ4" id="Zpo-tH-cJG"/>
+                        <outlet property="groupPrivacySegControl" destination="UhZ-pC-hqD" id="7A3-h9-Gsn"/>
                         <outlet property="groupsTableView" destination="jxu-fX-0Wm" id="FIH-4a-k6z"/>
                         <outlet property="menuBtn" destination="59s-7g-sjh" id="3s8-ev-DCK"/>
                     </connections>
@@ -1866,7 +1872,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="2JF-Sv-J85" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aae-hQ-kLa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aae-hQ-kLa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

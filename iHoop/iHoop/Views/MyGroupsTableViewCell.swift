@@ -15,7 +15,7 @@ class MyGroupsTableViewCell: UITableViewCell {
     @IBOutlet weak var groupLocation: UILabel!
     @IBOutlet weak var groupNotifications: UILabel!
     
-    let orangeColor = UIColor.init(red: 0.796, green: 0.345, blue: 0.090, alpha: 1.000)
+    var groups: Groups!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,8 +28,11 @@ class MyGroupsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell() {
+    func configureCell(_ group: Groups) {
+        self.groups = group
         
+        groupName.text = groups.groupName
+        groupLocation.text = groups.groupLocation
     }
 
 }

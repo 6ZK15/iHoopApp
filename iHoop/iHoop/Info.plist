@@ -42,6 +42,8 @@
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Load Profile photose </string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Playball.ttf</string>

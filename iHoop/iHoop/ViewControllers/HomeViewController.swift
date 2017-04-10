@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import CoreLocation
+
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 import FBSDKLoginKit
 
-class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
     
     //Sign Up Outlets
     @IBOutlet weak var signUpScrollView: UIScrollView!
@@ -46,6 +48,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    //More Outlets
     @IBOutlet weak var submitBtn: UIButton!
     @IBOutlet weak var errorMessageView: UIView!
     @IBOutlet weak var errorLabel: UILabel!
@@ -56,11 +59,12 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     @IBOutlet weak var rememberSwitch: UISwitch!
     @IBOutlet weak var menuOptionView: UIView!
     
-    
+    //
     var databaseReference = FIRDatabaseReference.init()
     let facebookLogin = FacebookLogin()
     let textField = TextField()
     let constraintsClass = Constraints()
+    var locationManager = CLLocationManager()
     let orangeColor = UIColor.init(red: 0.796, green: 0.345, blue: 0.090, alpha: 1.000)
     
     override func viewDidLoad() {
@@ -69,22 +73,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
         
-        textField.setTextFieldDesign(textField: usernameTextField, placeHolderString: "Username (Email)")
-        textField.setTextFieldDesign(textField: passwordTextField, placeHolderString: "Password")
-        textField.setTextFieldDesign(textField: fpemailTextField, placeHolderString: "Email")
-        textField.setTextFieldDesign(textField: fefirstNameTextField, placeHolderString: "First Name")
-        textField.setTextFieldDesign(textField: felastNameTextField, placeHolderString: "Last Name")
-        textField.setTextFieldDesign(textField: feusernameTextField, placeHolderString: "Username")
-        
-        constraintsClass.adjustLoginTopMenuButton(arrowBtn)
-        constraintsClass.adjustLoginBottomMenuButton(arrowBtnB)
-        constraintsClass.adjustSubmitButton(submitBtn)
-        constraintsClass.adjustSignUpSumbitButton(submitSignUpBtn)
-        constraintsClass.adjustSetProfileImageSubmitBtn(submitProfileImageBtn)
-        constraintsClass.adjustProfileImageView(profileImageView, chooseImageBtn)
-        constraintsClass.adjustForgotEmailSubmitButton(submitForgotEmailBtn)
-        constraintsClass.adjustForgotPasswordSubmitButton(submitForgotPasswordBtn)
-        constraintsClass.adjustMenuOptionView(menuOptionView)
+        setTextFields()
+        setConstraints()
     }
     
     override func viewDidLayoutSubviews() {
@@ -192,6 +182,12 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
                     
                     self.performSegue(withIdentifier: "loginSegue", sender: nil)
                     
+                    //Request Access to use Current Location
+                    self.locationManager.delegate = self
+                    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                    self.locationManager.requestWhenInUseAuthorization()
+                    self.locationManager.startUpdatingLocation()
+                    
                     UserDefaults.standard.set(FIRAuth.auth()?.currentUser?.uid, forKey: "currentUserUID")
                     print("%@", user?.email  as Any)
                     print("%@", FIRAuth.auth()?.currentUser?.uid as Any)
@@ -279,7 +275,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
         dismiss(animated: true, completion: nil)
     }
     
-    
     @IBAction func selectProfileImage(_ sender: Any) {
         let picker = UIImagePickerController()
         picker.delegate = self
@@ -291,7 +286,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     @IBAction func submitProfileImage(_ sender: Any) {
         saveProfileToFirebaseStorage()
     }
-    
     
     func saveProfileToFirebaseStorage(){
         let imageName = NSUUID().uuidString
@@ -500,6 +494,27 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
         })
     }
     
+    func setConstraints() {
+        constraintsClass.adjustLoginTopMenuButton(arrowBtn)
+        constraintsClass.adjustLoginBottomMenuButton(arrowBtnB)
+        constraintsClass.adjustSubmitButton(submitBtn)
+        constraintsClass.adjustSignUpSumbitButton(submitSignUpBtn)
+        constraintsClass.adjustSetProfileImageSubmitBtn(submitProfileImageBtn)
+        constraintsClass.adjustProfileImageView(profileImageView, chooseImageBtn)
+        constraintsClass.adjustForgotEmailSubmitButton(submitForgotEmailBtn)
+        constraintsClass.adjustForgotPasswordSubmitButton(submitForgotPasswordBtn)
+        constraintsClass.adjustMenuOptionView(menuOptionView)
+    }
+    
+    func setTextFields() {
+        textField.setTextFieldDesign(textField: usernameTextField, placeHolderString: "Username (Email)")
+        textField.setTextFieldDesign(textField: passwordTextField, placeHolderString: "Password")
+        textField.setTextFieldDesign(textField: fpemailTextField, placeHolderString: "Email")
+        textField.setTextFieldDesign(textField: fefirstNameTextField, placeHolderString: "First Name")
+        textField.setTextFieldDesign(textField: felastNameTextField, placeHolderString: "Last Name")
+        textField.setTextFieldDesign(textField: feusernameTextField, placeHolderString: "Username")
+    }
+    
     /*
      * CGFloat: Degrees to Radians
      */
@@ -511,6 +526,38 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
         view.endEditing(true)
     }
     
+//    pragma mark - CLLocationManagerDelegate
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("didFailWithError", error)
+        let alertController = UIAlertController.init(title: "Error", message: "Failed to Get Your Location", preferredStyle: .alert)
+        
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("didUpdateToLocation", locations)
+        let currentLocation = locations
+    }
+    
+//    - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+//        NSLog(@"didFailWithError: %@", error);
+//        UIAlertView *errorAlert = [[UIAlertView alloc]
+//        initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//        [errorAlert show];
+//    }
+//    
+//    - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+//        NSLog(@"didUpdateToLocation: %@", newLocation);
+//        CLLocation *currentLocation = newLocation;
+//    
+//        if (currentLocation != nil) {
+//            longitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
+//            latitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
+//        }
+//    }
     
 }
 
