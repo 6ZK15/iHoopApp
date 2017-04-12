@@ -539,7 +539,11 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("didUpdateToLocation", locations)
-        let currentLocation = locations
+        let currentlongitude = locationManager.location?.coordinate.longitude
+        let currentlatitude = locationManager.location?.coordinate.latitude
+        
+        UserDefaults.standard.set(currentlongitude, forKey: "currentlongitude")
+        UserDefaults.standard.set(currentlatitude, forKey: "currentlatitude")
     }
     
 //    - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
