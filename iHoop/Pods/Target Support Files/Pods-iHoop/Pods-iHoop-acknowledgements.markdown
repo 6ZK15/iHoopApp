@@ -314,6 +314,18 @@ Copyright 2016 Google
 
 Copyright 2016 Google
 
+## GoogleMaps
+
+Copyright 2017 Google
+
+## GooglePlacePicker
+
+Copyright 2017 Google
+
+## GooglePlaces
+
+Copyright 2017 Google
+
 ## GoogleSymbolUtilities
 
 Copyright 2016 Google
