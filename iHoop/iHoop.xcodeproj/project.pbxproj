@@ -1,0 +1,1169 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		841585321E7A7A8000B263BE /* downArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 841585301E7A7A7F00B263BE /* downArrow.png */; };
+		841585331E7A7A8000B263BE /* upArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 841585311E7A7A8000B263BE /* upArrow.png */; };
+		841585351E7A7C8700B263BE /* Playball.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 841585341E7A7C6900B263BE /* Playball.ttf */; };
+		8415853B1E7BB8FB00B263BE /* facebookBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8415853A1E7BB8FB00B263BE /* facebookBtn.png */; };
+		842E3C5B1E84746B00B5E5A5 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E3C5A1E84746B00B5E5A5 /* Constraints.swift */; };
+		845D3D4F1E7F3BD800955A44 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D4E1E7F3BD800955A44 /* SignUpView.swift */; };
+		845D3D511E7F3C2F00955A44 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D501E7F3C2F00955A44 /* TextField.swift */; };
+		845D3D541E7FA06700955A44 /* bball.png in Resources */ = {isa = PBXBuildFile; fileRef = 845D3D521E7FA06700955A44 /* bball.png */; };
+		845D3D551E7FA06700955A44 /* bballShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 845D3D531E7FA06700955A44 /* bballShadow.png */; };
+		845D3D591E7FA56700955A44 /* bg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 845D3D581E7FA56700955A44 /* bg2.png */; };
+		846A724A1E873D400083969E /* tabBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A72491E873D400083969E /* tabBar@2x.png */; };
+		846A724C1E8740550083969E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A724B1E8740550083969E /* TabBarController.swift */; };
+		846A724E1E8744750083969E /* findGyms@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A724D1E8744750083969E /* findGyms@3x.png */; };
+		846A72551E879F630083969E /* espnTab@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A72511E879F630083969E /* espnTab@3x.png */; };
+		846A72561E879F630083969E /* gearTab@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A72521E879F630083969E /* gearTab@3x.png */; };
+		846A72571E879F630083969E /* ltbTab@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A72531E879F630083969E /* ltbTab@3x.png */; };
+		846A72581E879F630083969E /* notificationsTab@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A72541E879F630083969E /* notificationsTab@3x.png */; };
+		846A725A1E87B3C00083969E /* espnTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A72591E87B3C00083969E /* espnTitle.png */; };
+		846A725D1E87B7D30083969E /* findGymsTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A725B1E87B7D30083969E /* findGymsTitle.png */; };
+		846A725E1E87B7D30083969E /* gearTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A725C1E87B7D30083969E /* gearTitle.png */; };
+		846A72601E87B85B0083969E /* postBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A725F1E87B85B0083969E /* postBtn.png */; };
+		846A72621E88524C0083969E /* searchBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A72611E88524C0083969E /* searchBtn.png */; };
+		846A72691E885C220083969E /* addGymBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A72641E885C220083969E /* addGymBtn.png */; };
+		846A726A1E885C220083969E /* homeBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A72651E885C220083969E /* homeBtn.png */; };
+		846A726B1E885C220083969E /* logoutBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A72661E885C220083969E /* logoutBtn.png */; };
+		846A726C1E885C220083969E /* myGroupsBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A72671E885C220083969E /* myGroupsBtn.png */; };
+		846A726D1E885C220083969E /* settingsBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A72681E885C220083969E /* settingsBtn.png */; };
+		846A72721E88DCA40083969E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846A72711E88DCA40083969E /* SWRevealViewController.m */; };
+		846A72741E88E6B30083969E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A72731E88E6B30083969E /* MenuViewController.swift */; };
+		846A72761E8977570083969E /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A72751E8977570083969E /* MenuCell.swift */; };
+		846A72781E8999660083969E /* cancelBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A72771E8999660083969E /* cancelBtn.png */; };
+		846A72F31E8B7DAE0083969E /* GearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A72F21E8B7DAE0083969E /* GearViewController.swift */; };
+		846A72F51E8B7DC30083969E /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A72F41E8B7DC30083969E /* NotificationsViewController.swift */; };
+		846A72F71E8B7E0F0083969E /* FindGymsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A72F61E8B7E0F0083969E /* FindGymsViewController.swift */; };
+		846A72F91E8B88110083969E /* friendsBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 846A72F81E8B88110083969E /* friendsBtn.png */; };
+		846A72FD1E8C1FB60083969E /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A72FC1E8C1FB60083969E /* FriendsViewController.swift */; };
+		846A73061E8CCBCF0083969E /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A73051E8CCBCF0083969E /* Friends.swift */; };
+		846A73081E8CCE430083969E /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A73071E8CCE430083969E /* FriendsTableViewCell.swift */; };
+		846A730A1E8E26750083969E /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A73091E8E26750083969E /* RequestTableViewCell.swift */; };
+		846A730C1E8E2C410083969E /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A730B1E8E2C410083969E /* Requests.swift */; };
+		847B99E01E95F79F003BA309 /* MyGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B99DF1E95F79F003BA309 /* MyGroupsViewController.swift */; };
+		847B99E21E95FE1F003BA309 /* myGroupsTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 847B99E11E95FE1F003BA309 /* myGroupsTitle.png */; };
+		847B99E41E9610E9003BA309 /* MyGroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B99E31E9610E9003BA309 /* MyGroupsTableViewCell.swift */; };
+		847B99EC1E96B031003BA309 /* groupPic1.png in Resources */ = {isa = PBXBuildFile; fileRef = 847B99EB1E96B031003BA309 /* groupPic1.png */; };
+		847B99EF1E96C300003BA309 /* groupPic2.png in Resources */ = {isa = PBXBuildFile; fileRef = 847B99EE1E96C300003BA309 /* groupPic2.png */; };
+		847B99F11E96C737003BA309 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B99F01E96C737003BA309 /* Groups.swift */; };
+		847B99F31E9732E2003BA309 /* doneBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 847B99F21E9732E2003BA309 /* doneBtn.png */; };
+		848C97EE1E952CD600A9D476 /* RequestOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C97ED1E952CD600A9D476 /* RequestOperations.swift */; };
+		848C97F01E95334F00A9D476 /* PostOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C97EF1E95334F00A9D476 /* PostOperations.swift */; };
+		848C97F21E9537AE00A9D476 /* UserOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C97F11E9537AE00A9D476 /* UserOperations.swift */; };
+		848C97F41E953A0800A9D476 /* FriendOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C97F31E953A0800A9D476 /* FriendOperations.swift */; };
+		84B44EDD1E67B6B400AABF92 /* Carrington.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EECF1E6532C200311B63 /* Carrington.ttf */; };
+		84B44EDE1E67B6B400AABF92 /* DrSugiyama-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED01E6532C200311B63 /* DrSugiyama-Regular.ttf */; };
+		84B44EDF1E67B6B400AABF92 /* FNL_DEMO-KCFonts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED11E6532C200311B63 /* FNL_DEMO-KCFonts.ttf */; };
+		84B5EE9D1E65313400311B63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5EE9C1E65313400311B63 /* AppDelegate.swift */; };
+		84B5EEA21E65313400311B63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEA01E65313400311B63 /* Main.storyboard */; };
+		84B5EEA41E65313400311B63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEA31E65313400311B63 /* Assets.xcassets */; };
+		84B5EEA71E65313400311B63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEA51E65313400311B63 /* LaunchScreen.storyboard */; };
+		84B5EEB21E65313400311B63 /* iHoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5EEB11E65313400311B63 /* iHoopTests.swift */; };
+		84B5EEBD1E65313400311B63 /* iHoopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5EEBC1E65313400311B63 /* iHoopUITests.swift */; };
+		84B5EED41E65393000311B63 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED21E65393000311B63 /* bg.png */; };
+		84B5EEDF1E65393A00311B63 /* forgotPasswordBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED71E65393A00311B63 /* forgotPasswordBtn.png */; };
+		84B5EEE01E65393A00311B63 /* forgotUsernameBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED81E65393A00311B63 /* forgotUsernameBtn.png */; };
+		84B5EEE11E65393A00311B63 /* loginBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED91E65393A00311B63 /* loginBtn.png */; };
+		84B5EEE21E65393A00311B63 /* menuBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEDA1E65393A00311B63 /* menuBtn.png */; };
+		84B5EEE41E65393A00311B63 /* signUpBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEDC1E65393A00311B63 /* signUpBtn.png */; };
+		84B5EEE51E65393A00311B63 /* submitBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEDD1E65393A00311B63 /* submitBtn.png */; };
+		84B5EEE91E65394200311B63 /* iHoopTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EEE61E65394200311B63 /* iHoopTitle.png */; };
+		84B66CF11E8481EF00CBDB7D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B66CF01E8481EF00CBDB7D /* HomeViewController.swift */; };
+		84B66CF31E848BA500CBDB7D /* defaultProfilePic.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B66CF21E848BA500CBDB7D /* defaultProfilePic.png */; };
+		84B66CF71E861D6D00CBDB7D /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B66CF61E861D6D00CBDB7D /* PostsTableViewCell.swift */; };
+		84C805301E8361BC000F9BE2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8052F1E8361BC000F9BE2 /* ProfileViewController.swift */; };
+		84C805321E8381D5000F9BE2 /* ltbButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C805311E8381D5000F9BE2 /* ltbButton.png */; };
+		84C805341E8382AA000F9BE2 /* profilePic.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C805331E8382AA000F9BE2 /* profilePic.png */; };
+		84C805361E838309000F9BE2 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C805351E838309000F9BE2 /* ProfileImageView.swift */; };
+		84C805381E838E1B000F9BE2 /* nextBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C805371E838E1B000F9BE2 /* nextBtn.png */; };
+		84C81B2B1E980F9F00962484 /* groupPic3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C81B2A1E980F9F00962484 /* groupPic3.png */; };
+		84C81B2D1E98115A00962484 /* groupPic4.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C81B2C1E98115A00962484 /* groupPic4.png */; };
+		84C81B2F1E9D7B1900962484 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = 84C81B2E1E9D7B1900962484 /* style.json */; };
+		8F776294E56F607355097E28 /* Pods_iHoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56CA6631D6767A06E04B5714 /* Pods_iHoop.framework */; };
+		90BE9E005F0A430597EA1B6A /* Pods_iHoopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7886AA4E4529624A643E0891 /* Pods_iHoopUITests.framework */; };
+		96362C351E7D1A31006C585E /* FacebookLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96362C341E7D1A31006C585E /* FacebookLogin.swift */; };
+		963A653B1E67AAC700A9447C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963A653A1E67AAC700A9447C /* GoogleService-Info.plist */; };
+		963A653C1E67AAC700A9447C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963A653A1E67AAC700A9447C /* GoogleService-Info.plist */; };
+		963A653D1E67AAC700A9447C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963A653A1E67AAC700A9447C /* GoogleService-Info.plist */; };
+		967E26761E85E5A5002208D8 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967E26751E85E5A5002208D8 /* Posts.swift */; };
+		E1FC6081A5573DBE6308E082 /* Pods_iHoopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843FCCF3C60FAEC7D17147AD /* Pods_iHoopTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84B5EEAE1E65313400311B63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84B5EE911E65313400311B63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84B5EE981E65313400311B63;
+			remoteInfo = iHoop;
+		};
+		84B5EEB91E65313400311B63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84B5EE911E65313400311B63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84B5EE981E65313400311B63;
+			remoteInfo = iHoop;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0BCFAD6B8A6DB1F0898036EF /* Pods-iHoopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoopTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iHoopTests/Pods-iHoopTests.debug.xcconfig"; sourceTree = "<group>"; };
+		207B5FBD0B3245C67C60F638 /* Pods-iHoopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoopUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHoopUITests/Pods-iHoopUITests.release.xcconfig"; sourceTree = "<group>"; };
+		56CA6631D6767A06E04B5714 /* Pods_iHoop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHoop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7886AA4E4529624A643E0891 /* Pods_iHoopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHoopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		841585301E7A7A7F00B263BE /* downArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = downArrow.png; path = Images/Buttons/downArrow.png; sourceTree = "<group>"; };
+		841585311E7A7A8000B263BE /* upArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = upArrow.png; path = Images/Buttons/upArrow.png; sourceTree = "<group>"; };
+		841585341E7A7C6900B263BE /* Playball.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Playball.ttf; path = Fonts/Playball.ttf; sourceTree = "<group>"; };
+		8415853A1E7BB8FB00B263BE /* facebookBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebookBtn.png; path = Images/Buttons/facebookBtn.png; sourceTree = "<group>"; };
+		842E3C5A1E84746B00B5E5A5 /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constraints.swift; path = Models/Constraints.swift; sourceTree = "<group>"; };
+		843FCCF3C60FAEC7D17147AD /* Pods_iHoopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHoopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		845D3D4E1E7F3BD800955A44 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpView.swift; path = Views/SignUpView.swift; sourceTree = "<group>"; };
+		845D3D501E7F3C2F00955A44 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextField.swift; path = Views/TextField.swift; sourceTree = "<group>"; };
+		845D3D521E7FA06700955A44 /* bball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bball.png; path = Images/bball.png; sourceTree = "<group>"; };
+		845D3D531E7FA06700955A44 /* bballShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bballShadow.png; path = Images/bballShadow.png; sourceTree = "<group>"; };
+		845D3D581E7FA56700955A44 /* bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg2.png; path = Images/Backgrounds/bg2.png; sourceTree = "<group>"; };
+		846A72491E873D400083969E /* tabBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabBar@2x.png"; path = "Images/tabBar@2x.png"; sourceTree = "<group>"; };
+		846A724B1E8740550083969E /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = ViewControllers/TabBarController.swift; sourceTree = "<group>"; };
+		846A724D1E8744750083969E /* findGyms@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "findGyms@3x.png"; path = "Images/Buttons/Tab Buttons/findGyms@3x.png"; sourceTree = "<group>"; };
+		846A72511E879F630083969E /* espnTab@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "espnTab@3x.png"; path = "Images/Buttons/Tab Buttons/espnTab@3x.png"; sourceTree = "<group>"; };
+		846A72521E879F630083969E /* gearTab@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gearTab@3x.png"; path = "Images/Buttons/Tab Buttons/gearTab@3x.png"; sourceTree = "<group>"; };
+		846A72531E879F630083969E /* ltbTab@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ltbTab@3x.png"; path = "Images/Buttons/Tab Buttons/ltbTab@3x.png"; sourceTree = "<group>"; };
+		846A72541E879F630083969E /* notificationsTab@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "notificationsTab@3x.png"; path = "Images/Buttons/Tab Buttons/notificationsTab@3x.png"; sourceTree = "<group>"; };
+		846A72591E87B3C00083969E /* espnTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = espnTitle.png; path = Images/Titles/espnTitle.png; sourceTree = "<group>"; };
+		846A725B1E87B7D30083969E /* findGymsTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = findGymsTitle.png; path = Images/Titles/findGymsTitle.png; sourceTree = "<group>"; };
+		846A725C1E87B7D30083969E /* gearTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gearTitle.png; path = Images/Titles/gearTitle.png; sourceTree = "<group>"; };
+		846A725F1E87B85B0083969E /* postBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = postBtn.png; path = Images/Buttons/postBtn.png; sourceTree = "<group>"; };
+		846A72611E88524C0083969E /* searchBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = searchBtn.png; path = Images/Buttons/searchBtn.png; sourceTree = "<group>"; };
+		846A72641E885C220083969E /* addGymBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addGymBtn.png; path = "Images/Buttons/Menu Buttons/addGymBtn.png"; sourceTree = "<group>"; };
+		846A72651E885C220083969E /* homeBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = homeBtn.png; path = "Images/Buttons/Menu Buttons/homeBtn.png"; sourceTree = "<group>"; };
+		846A72661E885C220083969E /* logoutBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoutBtn.png; path = "Images/Buttons/Menu Buttons/logoutBtn.png"; sourceTree = "<group>"; };
+		846A72671E885C220083969E /* myGroupsBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = myGroupsBtn.png; path = "Images/Buttons/Menu Buttons/myGroupsBtn.png"; sourceTree = "<group>"; };
+		846A72681E885C220083969E /* settingsBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settingsBtn.png; path = "Images/Buttons/Menu Buttons/settingsBtn.png"; sourceTree = "<group>"; };
+		846A726F1E88DCA40083969E /* iHoop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iHoop-Bridging-Header.h"; sourceTree = "<group>"; };
+		846A72701E88DCA40083969E /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWReveal/SWRevealViewController.h; sourceTree = "<group>"; };
+		846A72711E88DCA40083969E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWReveal/SWRevealViewController.m; sourceTree = "<group>"; };
+		846A72731E88E6B30083969E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = ViewControllers/MenuViewController.swift; sourceTree = "<group>"; };
+		846A72751E8977570083969E /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCell.swift; path = Views/MenuCell.swift; sourceTree = "<group>"; };
+		846A72771E8999660083969E /* cancelBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cancelBtn.png; path = Images/Buttons/cancelBtn.png; sourceTree = "<group>"; };
+		846A72F21E8B7DAE0083969E /* GearViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GearViewController.swift; path = ViewControllers/GearViewController.swift; sourceTree = "<group>"; };
+		846A72F41E8B7DC30083969E /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationsViewController.swift; path = ViewControllers/NotificationsViewController.swift; sourceTree = "<group>"; };
+		846A72F61E8B7E0F0083969E /* FindGymsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindGymsViewController.swift; path = ViewControllers/FindGymsViewController.swift; sourceTree = "<group>"; };
+		846A72F81E8B88110083969E /* friendsBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = friendsBtn.png; path = "Images/Buttons/Menu Buttons/friendsBtn.png"; sourceTree = "<group>"; };
+		846A72FC1E8C1FB60083969E /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsViewController.swift; path = ViewControllers/FriendsViewController.swift; sourceTree = "<group>"; };
+		846A73051E8CCBCF0083969E /* Friends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Friends.swift; path = Models/Friends.swift; sourceTree = "<group>"; };
+		846A73071E8CCE430083969E /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsTableViewCell.swift; path = Views/FriendsTableViewCell.swift; sourceTree = "<group>"; };
+		846A73091E8E26750083969E /* RequestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestTableViewCell.swift; path = Views/RequestTableViewCell.swift; sourceTree = "<group>"; };
+		846A730B1E8E2C410083969E /* Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Requests.swift; path = Models/Requests.swift; sourceTree = "<group>"; };
+		847B99DF1E95F79F003BA309 /* MyGroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyGroupsViewController.swift; path = ViewControllers/MyGroupsViewController.swift; sourceTree = "<group>"; };
+		847B99E11E95FE1F003BA309 /* myGroupsTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = myGroupsTitle.png; path = Images/Titles/myGroupsTitle.png; sourceTree = "<group>"; };
+		847B99E31E9610E9003BA309 /* MyGroupsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyGroupsTableViewCell.swift; path = Views/MyGroupsTableViewCell.swift; sourceTree = "<group>"; };
+		847B99EB1E96B031003BA309 /* groupPic1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = groupPic1.png; path = Images/MyGroups/groupPic1.png; sourceTree = "<group>"; };
+		847B99EE1E96C300003BA309 /* groupPic2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = groupPic2.png; path = Images/MyGroups/groupPic2.png; sourceTree = "<group>"; };
+		847B99F01E96C737003BA309 /* Groups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Groups.swift; path = Models/Groups.swift; sourceTree = "<group>"; };
+		847B99F21E9732E2003BA309 /* doneBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = doneBtn.png; path = Images/Buttons/doneBtn.png; sourceTree = "<group>"; };
+		848C97ED1E952CD600A9D476 /* RequestOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestOperations.swift; path = Operations/RequestOperations.swift; sourceTree = "<group>"; };
+		848C97EF1E95334F00A9D476 /* PostOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostOperations.swift; path = Operations/PostOperations.swift; sourceTree = "<group>"; };
+		848C97F11E9537AE00A9D476 /* UserOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserOperations.swift; path = Operations/UserOperations.swift; sourceTree = "<group>"; };
+		848C97F31E953A0800A9D476 /* FriendOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendOperations.swift; path = Operations/FriendOperations.swift; sourceTree = "<group>"; };
+		84B5EE991E65313400311B63 /* iHoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B5EE9C1E65313400311B63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84B5EEA11E65313400311B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84B5EEA31E65313400311B63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84B5EEA61E65313400311B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84B5EEA81E65313400311B63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84B5EEAD1E65313400311B63 /* iHoopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iHoopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B5EEB11E65313400311B63 /* iHoopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iHoopTests.swift; sourceTree = "<group>"; };
+		84B5EEB31E65313400311B63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84B5EEB81E65313400311B63 /* iHoopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iHoopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B5EEBC1E65313400311B63 /* iHoopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iHoopUITests.swift; sourceTree = "<group>"; };
+		84B5EEBE1E65313400311B63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84B5EECF1E6532C200311B63 /* Carrington.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Carrington.ttf; path = Fonts/Carrington.ttf; sourceTree = "<group>"; };
+		84B5EED01E6532C200311B63 /* DrSugiyama-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DrSugiyama-Regular.ttf"; path = "Fonts/DrSugiyama-Regular.ttf"; sourceTree = "<group>"; };
+		84B5EED11E6532C200311B63 /* FNL_DEMO-KCFonts.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FNL_DEMO-KCFonts.ttf"; path = "Fonts/FNL_DEMO-KCFonts.ttf"; sourceTree = "<group>"; };
+		84B5EED21E65393000311B63 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg.png; path = Images/Backgrounds/bg.png; sourceTree = "<group>"; };
+		84B5EED71E65393A00311B63 /* forgotPasswordBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = forgotPasswordBtn.png; path = Images/Buttons/forgotPasswordBtn.png; sourceTree = "<group>"; };
+		84B5EED81E65393A00311B63 /* forgotUsernameBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = forgotUsernameBtn.png; path = Images/Buttons/forgotUsernameBtn.png; sourceTree = "<group>"; };
+		84B5EED91E65393A00311B63 /* loginBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loginBtn.png; path = Images/Buttons/loginBtn.png; sourceTree = "<group>"; };
+		84B5EEDA1E65393A00311B63 /* menuBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menuBtn.png; path = Images/Buttons/menuBtn.png; sourceTree = "<group>"; };
+		84B5EEDC1E65393A00311B63 /* signUpBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = signUpBtn.png; path = Images/Buttons/signUpBtn.png; sourceTree = "<group>"; };
+		84B5EEDD1E65393A00311B63 /* submitBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = submitBtn.png; path = Images/Buttons/submitBtn.png; sourceTree = "<group>"; };
+		84B5EEE61E65394200311B63 /* iHoopTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iHoopTitle.png; path = Images/Titles/iHoopTitle.png; sourceTree = "<group>"; };
+		84B66CF01E8481EF00CBDB7D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewControllers/HomeViewController.swift; sourceTree = "<group>"; };
+		84B66CF21E848BA500CBDB7D /* defaultProfilePic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = defaultProfilePic.png; path = Images/defaultProfilePic.png; sourceTree = "<group>"; };
+		84B66CF61E861D6D00CBDB7D /* PostsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsTableViewCell.swift; path = Views/PostsTableViewCell.swift; sourceTree = "<group>"; };
+		84C8052F1E8361BC000F9BE2 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ViewControllers/ProfileViewController.swift; sourceTree = "<group>"; };
+		84C805311E8381D5000F9BE2 /* ltbButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ltbButton.png; path = Images/Buttons/ltbButton.png; sourceTree = "<group>"; };
+		84C805331E8382AA000F9BE2 /* profilePic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profilePic.png; path = Images/profilePic.png; sourceTree = "<group>"; };
+		84C805351E838309000F9BE2 /* ProfileImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileImageView.swift; path = Views/ProfileImageView.swift; sourceTree = "<group>"; };
+		84C805371E838E1B000F9BE2 /* nextBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nextBtn.png; path = Images/Buttons/nextBtn.png; sourceTree = "<group>"; };
+		84C81B2A1E980F9F00962484 /* groupPic3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = groupPic3.png; path = Images/MyGroups/groupPic3.png; sourceTree = "<group>"; };
+		84C81B2C1E98115A00962484 /* groupPic4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = groupPic4.png; path = Images/MyGroups/groupPic4.png; sourceTree = "<group>"; };
+		84C81B2E1E9D7B1900962484 /* style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
+		8AF0C5F8FF1333F195A7875D /* Pods-iHoopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoopTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHoopTests/Pods-iHoopTests.release.xcconfig"; sourceTree = "<group>"; };
+		96362C341E7D1A31006C585E /* FacebookLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookLogin.swift; sourceTree = "<group>"; };
+		96362C361E7D25F5006C585E /* iHoop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iHoop.entitlements; sourceTree = "<group>"; };
+		963A653A1E67AAC700A9447C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		967E26751E85E5A5002208D8 /* Posts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Posts.swift; path = Models/Posts.swift; sourceTree = "<group>"; };
+		B3FFE4916276F6D558EA1EE3 /* Pods-iHoopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoopUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iHoopUITests/Pods-iHoopUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B970F1F16A3300875E4BFBE4 /* Pods-iHoop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoop.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHoop/Pods-iHoop.release.xcconfig"; sourceTree = "<group>"; };
+		BF73FE929EA8B39847648C7B /* Pods-iHoop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iHoop/Pods-iHoop.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84B5EE961E65313400311B63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F776294E56F607355097E28 /* Pods_iHoop.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84B5EEAA1E65313400311B63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1FC6081A5573DBE6308E082 /* Pods_iHoopTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84B5EEB51E65313400311B63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90BE9E005F0A430597EA1B6A /* Pods_iHoopUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		202F2E585C3E66CB2C57A632 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56CA6631D6767A06E04B5714 /* Pods_iHoop.framework */,
+				843FCCF3C60FAEC7D17147AD /* Pods_iHoopTests.framework */,
+				7886AA4E4529624A643E0891 /* Pods_iHoopUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		841585361E7BB07700B263BE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				846A724B1E8740550083969E /* TabBarController.swift */,
+				846A72F61E8B7E0F0083969E /* FindGymsViewController.swift */,
+				846A72FC1E8C1FB60083969E /* FriendsViewController.swift */,
+				846A72F21E8B7DAE0083969E /* GearViewController.swift */,
+				84B66CF01E8481EF00CBDB7D /* HomeViewController.swift */,
+				846A72731E88E6B30083969E /* MenuViewController.swift */,
+				847B99DF1E95F79F003BA309 /* MyGroupsViewController.swift */,
+				846A72F41E8B7DC30083969E /* NotificationsViewController.swift */,
+				84C8052F1E8361BC000F9BE2 /* ProfileViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		841585371E7BB08600B263BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				842E3C5A1E84746B00B5E5A5 /* Constraints.swift */,
+				846A73051E8CCBCF0083969E /* Friends.swift */,
+				847B99F01E96C737003BA309 /* Groups.swift */,
+				967E26751E85E5A5002208D8 /* Posts.swift */,
+				846A730B1E8E2C410083969E /* Requests.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		8420991E1E81CDC300D18290 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				848C97F31E953A0800A9D476 /* FriendOperations.swift */,
+				848C97EF1E95334F00A9D476 /* PostOperations.swift */,
+				848C97ED1E952CD600A9D476 /* RequestOperations.swift */,
+				848C97F11E9537AE00A9D476 /* UserOperations.swift */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
+		846A724F1E879E1D0083969E /* Tab Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				846A72511E879F630083969E /* espnTab@3x.png */,
+				846A724D1E8744750083969E /* findGyms@3x.png */,
+				846A72521E879F630083969E /* gearTab@3x.png */,
+				846A72531E879F630083969E /* ltbTab@3x.png */,
+				846A72541E879F630083969E /* notificationsTab@3x.png */,
+			);
+			name = "Tab Buttons";
+			sourceTree = "<group>";
+		};
+		846A72501E879E790083969E /* Menu Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				84B5EED91E65393A00311B63 /* loginBtn.png */,
+				8415853A1E7BB8FB00B263BE /* facebookBtn.png */,
+				841585301E7A7A7F00B263BE /* downArrow.png */,
+				841585311E7A7A8000B263BE /* upArrow.png */,
+				84B5EED71E65393A00311B63 /* forgotPasswordBtn.png */,
+				84B5EED81E65393A00311B63 /* forgotUsernameBtn.png */,
+				84B5EEDC1E65393A00311B63 /* signUpBtn.png */,
+			);
+			name = "Menu Buttons";
+			sourceTree = "<group>";
+		};
+		846A72631E885BF20083969E /* slideMenuButtons */ = {
+			isa = PBXGroup;
+			children = (
+				846A72641E885C220083969E /* addGymBtn.png */,
+				846A72F81E8B88110083969E /* friendsBtn.png */,
+				846A72651E885C220083969E /* homeBtn.png */,
+				846A72661E885C220083969E /* logoutBtn.png */,
+				846A72671E885C220083969E /* myGroupsBtn.png */,
+				846A72681E885C220083969E /* settingsBtn.png */,
+			);
+			name = slideMenuButtons;
+			sourceTree = "<group>";
+		};
+		846A726E1E88DC720083969E /* SWReveal */ = {
+			isa = PBXGroup;
+			children = (
+				846A72701E88DCA40083969E /* SWRevealViewController.h */,
+				846A72711E88DCA40083969E /* SWRevealViewController.m */,
+			);
+			name = SWReveal;
+			sourceTree = "<group>";
+		};
+		846A72FE1E8C30D40083969E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				846A73071E8CCE430083969E /* FriendsTableViewCell.swift */,
+				847B99E31E9610E9003BA309 /* MyGroupsTableViewCell.swift */,
+				846A72751E8977570083969E /* MenuCell.swift */,
+				846A73091E8E26750083969E /* RequestTableViewCell.swift */,
+				84B66CF61E861D6D00CBDB7D /* PostsTableViewCell.swift */,
+				84C805351E838309000F9BE2 /* ProfileImageView.swift */,
+				845D3D4E1E7F3BD800955A44 /* SignUpView.swift */,
+				845D3D501E7F3C2F00955A44 /* TextField.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		847B99ED1E96B040003BA309 /* MyGroups */ = {
+			isa = PBXGroup;
+			children = (
+				847B99EE1E96C300003BA309 /* groupPic2.png */,
+				847B99EB1E96B031003BA309 /* groupPic1.png */,
+				84C81B2A1E980F9F00962484 /* groupPic3.png */,
+				84C81B2C1E98115A00962484 /* groupPic4.png */,
+			);
+			name = MyGroups;
+			sourceTree = "<group>";
+		};
+		84B5EE901E65313400311B63 = {
+			isa = PBXGroup;
+			children = (
+				84B5EE9B1E65313400311B63 /* iHoop */,
+				96362C331E7D1999006C585E /* Utilities */,
+				84B5EEB01E65313400311B63 /* iHoopTests */,
+				84B5EEBB1E65313400311B63 /* iHoopUITests */,
+				84B5EE9A1E65313400311B63 /* Products */,
+				C2349C1A3773A3D27E89CA39 /* Pods */,
+				202F2E585C3E66CB2C57A632 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		84B5EE9A1E65313400311B63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84B5EE991E65313400311B63 /* iHoop.app */,
+				84B5EEAD1E65313400311B63 /* iHoopTests.xctest */,
+				84B5EEB81E65313400311B63 /* iHoopUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84B5EE9B1E65313400311B63 /* iHoop */ = {
+			isa = PBXGroup;
+			children = (
+				96362C361E7D25F5006C585E /* iHoop.entitlements */,
+				84B5EE9C1E65313400311B63 /* AppDelegate.swift */,
+				846A726F1E88DCA40083969E /* iHoop-Bridging-Header.h */,
+				841585371E7BB08600B263BE /* Models */,
+				8420991E1E81CDC300D18290 /* Operations */,
+				846A726E1E88DC720083969E /* SWReveal */,
+				841585361E7BB07700B263BE /* ViewControllers */,
+				846A72FE1E8C30D40083969E /* Views */,
+				84B5EEA01E65313400311B63 /* Main.storyboard */,
+				84B5EEA31E65313400311B63 /* Assets.xcassets */,
+				84B5EEA51E65313400311B63 /* LaunchScreen.storyboard */,
+				84B5EEA81E65313400311B63 /* Info.plist */,
+				963A653A1E67AAC700A9447C /* GoogleService-Info.plist */,
+				84C81B2E1E9D7B1900962484 /* style.json */,
+				84B5EECB1E65323200311B63 /* Fonts */,
+				84B5EECA1E65322C00311B63 /* Images */,
+			);
+			path = iHoop;
+			sourceTree = "<group>";
+		};
+		84B5EEB01E65313400311B63 /* iHoopTests */ = {
+			isa = PBXGroup;
+			children = (
+				84B5EEB11E65313400311B63 /* iHoopTests.swift */,
+				84B5EEB31E65313400311B63 /* Info.plist */,
+			);
+			path = iHoopTests;
+			sourceTree = "<group>";
+		};
+		84B5EEBB1E65313400311B63 /* iHoopUITests */ = {
+			isa = PBXGroup;
+			children = (
+				84B5EEBC1E65313400311B63 /* iHoopUITests.swift */,
+				84B5EEBE1E65313400311B63 /* Info.plist */,
+			);
+			path = iHoopUITests;
+			sourceTree = "<group>";
+		};
+		84B5EECA1E65322C00311B63 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				846A72491E873D400083969E /* tabBar@2x.png */,
+				84B66CF21E848BA500CBDB7D /* defaultProfilePic.png */,
+				845D3D521E7FA06700955A44 /* bball.png */,
+				845D3D531E7FA06700955A44 /* bballShadow.png */,
+				84C805331E8382AA000F9BE2 /* profilePic.png */,
+				84B5EECE1E65324900311B63 /* Backgrounds */,
+				84B5EECD1E65323F00311B63 /* Buttons */,
+				847B99ED1E96B040003BA309 /* MyGroups */,
+				84B5EECC1E65323900311B63 /* Titles */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		84B5EECB1E65323200311B63 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				841585341E7A7C6900B263BE /* Playball.ttf */,
+				84B5EECF1E6532C200311B63 /* Carrington.ttf */,
+				84B5EED01E6532C200311B63 /* DrSugiyama-Regular.ttf */,
+				84B5EED11E6532C200311B63 /* FNL_DEMO-KCFonts.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		84B5EECC1E65323900311B63 /* Titles */ = {
+			isa = PBXGroup;
+			children = (
+				846A72591E87B3C00083969E /* espnTitle.png */,
+				846A725B1E87B7D30083969E /* findGymsTitle.png */,
+				846A725C1E87B7D30083969E /* gearTitle.png */,
+				84B5EEE61E65394200311B63 /* iHoopTitle.png */,
+				847B99E11E95FE1F003BA309 /* myGroupsTitle.png */,
+			);
+			name = Titles;
+			sourceTree = "<group>";
+		};
+		84B5EECD1E65323F00311B63 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				846A72771E8999660083969E /* cancelBtn.png */,
+				847B99F21E9732E2003BA309 /* doneBtn.png */,
+				846A724F1E879E1D0083969E /* Tab Buttons */,
+				846A72501E879E790083969E /* Menu Buttons */,
+				846A72631E885BF20083969E /* slideMenuButtons */,
+				84C805311E8381D5000F9BE2 /* ltbButton.png */,
+				84C805371E838E1B000F9BE2 /* nextBtn.png */,
+				84B5EEDA1E65393A00311B63 /* menuBtn.png */,
+				846A725F1E87B85B0083969E /* postBtn.png */,
+				846A72611E88524C0083969E /* searchBtn.png */,
+				84B5EEDD1E65393A00311B63 /* submitBtn.png */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
+		84B5EECE1E65324900311B63 /* Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				84B5EED21E65393000311B63 /* bg.png */,
+				845D3D581E7FA56700955A44 /* bg2.png */,
+			);
+			name = Backgrounds;
+			sourceTree = "<group>";
+		};
+		96362C331E7D1999006C585E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				96362C341E7D1A31006C585E /* FacebookLogin.swift */,
+			);
+			name = Utilities;
+			path = iHoop;
+			sourceTree = "<group>";
+		};
+		C2349C1A3773A3D27E89CA39 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BF73FE929EA8B39847648C7B /* Pods-iHoop.debug.xcconfig */,
+				B970F1F16A3300875E4BFBE4 /* Pods-iHoop.release.xcconfig */,
+				0BCFAD6B8A6DB1F0898036EF /* Pods-iHoopTests.debug.xcconfig */,
+				8AF0C5F8FF1333F195A7875D /* Pods-iHoopTests.release.xcconfig */,
+				B3FFE4916276F6D558EA1EE3 /* Pods-iHoopUITests.debug.xcconfig */,
+				207B5FBD0B3245C67C60F638 /* Pods-iHoopUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84B5EE981E65313400311B63 /* iHoop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84B5EEC11E65313400311B63 /* Build configuration list for PBXNativeTarget "iHoop" */;
+			buildPhases = (
+				9680D5BFD88F37F8703BE6DA /* [CP] Check Pods Manifest.lock */,
+				84B5EE951E65313400311B63 /* Sources */,
+				84B5EE961E65313400311B63 /* Frameworks */,
+				84B5EE971E65313400311B63 /* Resources */,
+				28C26B2E3963A092ABCF959F /* [CP] Embed Pods Frameworks */,
+				4A1395A12E9A91FC47ABC029 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iHoop;
+			productName = iHoop;
+			productReference = 84B5EE991E65313400311B63 /* iHoop.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84B5EEAC1E65313400311B63 /* iHoopTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84B5EEC41E65313400311B63 /* Build configuration list for PBXNativeTarget "iHoopTests" */;
+			buildPhases = (
+				CB9EF86328A4C613F84197DD /* [CP] Check Pods Manifest.lock */,
+				84B5EEA91E65313400311B63 /* Sources */,
+				84B5EEAA1E65313400311B63 /* Frameworks */,
+				84B5EEAB1E65313400311B63 /* Resources */,
+				A3A79762F3170666D9587DD6 /* [CP] Embed Pods Frameworks */,
+				E8F3C55161EBE552DCF2BDA3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84B5EEAF1E65313400311B63 /* PBXTargetDependency */,
+			);
+			name = iHoopTests;
+			productName = iHoopTests;
+			productReference = 84B5EEAD1E65313400311B63 /* iHoopTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		84B5EEB71E65313400311B63 /* iHoopUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84B5EEC71E65313400311B63 /* Build configuration list for PBXNativeTarget "iHoopUITests" */;
+			buildPhases = (
+				8AB684ACA3159B50DDA4D49C /* [CP] Check Pods Manifest.lock */,
+				84B5EEB41E65313400311B63 /* Sources */,
+				84B5EEB51E65313400311B63 /* Frameworks */,
+				84B5EEB61E65313400311B63 /* Resources */,
+				C9608014A28DC0970FDC3F81 /* [CP] Embed Pods Frameworks */,
+				370902A2AA05BF0934CF9FFB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84B5EEBA1E65313400311B63 /* PBXTargetDependency */,
+			);
+			name = iHoopUITests;
+			productName = iHoopUITests;
+			productReference = 84B5EEB81E65313400311B63 /* iHoopUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84B5EE911E65313400311B63 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Nehemiah Horace";
+				TargetAttributes = {
+					84B5EE981E65313400311B63 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = WAHTQEJFLW;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
+					84B5EEAC1E65313400311B63 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 84B5EE981E65313400311B63;
+					};
+					84B5EEB71E65313400311B63 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 84B5EE981E65313400311B63;
+					};
+				};
+			};
+			buildConfigurationList = 84B5EE941E65313400311B63 /* Build configuration list for PBXProject "iHoop" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84B5EE901E65313400311B63;
+			productRefGroup = 84B5EE9A1E65313400311B63 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84B5EE981E65313400311B63 /* iHoop */,
+				84B5EEAC1E65313400311B63 /* iHoopTests */,
+				84B5EEB71E65313400311B63 /* iHoopUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84B5EE971E65313400311B63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				846A72601E87B85B0083969E /* postBtn.png in Resources */,
+				846A724E1E8744750083969E /* findGyms@3x.png in Resources */,
+				846A72581E879F630083969E /* notificationsTab@3x.png in Resources */,
+				846A726D1E885C220083969E /* settingsBtn.png in Resources */,
+				846A72561E879F630083969E /* gearTab@3x.png in Resources */,
+				841585351E7A7C8700B263BE /* Playball.ttf in Resources */,
+				84B44EDD1E67B6B400AABF92 /* Carrington.ttf in Resources */,
+				84C805321E8381D5000F9BE2 /* ltbButton.png in Resources */,
+				84B44EDE1E67B6B400AABF92 /* DrSugiyama-Regular.ttf in Resources */,
+				846A725A1E87B3C00083969E /* espnTitle.png in Resources */,
+				84B44EDF1E67B6B400AABF92 /* FNL_DEMO-KCFonts.ttf in Resources */,
+				846A725D1E87B7D30083969E /* findGymsTitle.png in Resources */,
+				84C805381E838E1B000F9BE2 /* nextBtn.png in Resources */,
+				846A72621E88524C0083969E /* searchBtn.png in Resources */,
+				84B5EEA71E65313400311B63 /* LaunchScreen.storyboard in Resources */,
+				84C81B2F1E9D7B1900962484 /* style.json in Resources */,
+				963A653B1E67AAC700A9447C /* GoogleService-Info.plist in Resources */,
+				846A72571E879F630083969E /* ltbTab@3x.png in Resources */,
+				84B5EEDF1E65393A00311B63 /* forgotPasswordBtn.png in Resources */,
+				846A725E1E87B7D30083969E /* gearTitle.png in Resources */,
+				84B5EEE41E65393A00311B63 /* signUpBtn.png in Resources */,
+				845D3D541E7FA06700955A44 /* bball.png in Resources */,
+				846A726A1E885C220083969E /* homeBtn.png in Resources */,
+				84C81B2B1E980F9F00962484 /* groupPic3.png in Resources */,
+				847B99EC1E96B031003BA309 /* groupPic1.png in Resources */,
+				84B5EEA41E65313400311B63 /* Assets.xcassets in Resources */,
+				84B5EED41E65393000311B63 /* bg.png in Resources */,
+				846A724A1E873D400083969E /* tabBar@2x.png in Resources */,
+				846A72551E879F630083969E /* espnTab@3x.png in Resources */,
+				84B5EEE01E65393A00311B63 /* forgotUsernameBtn.png in Resources */,
+				847B99E21E95FE1F003BA309 /* myGroupsTitle.png in Resources */,
+				847B99EF1E96C300003BA309 /* groupPic2.png in Resources */,
+				84B66CF31E848BA500CBDB7D /* defaultProfilePic.png in Resources */,
+				846A72691E885C220083969E /* addGymBtn.png in Resources */,
+				841585331E7A7A8000B263BE /* upArrow.png in Resources */,
+				845D3D591E7FA56700955A44 /* bg2.png in Resources */,
+				846A726B1E885C220083969E /* logoutBtn.png in Resources */,
+				846A726C1E885C220083969E /* myGroupsBtn.png in Resources */,
+				841585321E7A7A8000B263BE /* downArrow.png in Resources */,
+				84B5EEE21E65393A00311B63 /* menuBtn.png in Resources */,
+				84C81B2D1E98115A00962484 /* groupPic4.png in Resources */,
+				845D3D551E7FA06700955A44 /* bballShadow.png in Resources */,
+				84C805341E8382AA000F9BE2 /* profilePic.png in Resources */,
+				847B99F31E9732E2003BA309 /* doneBtn.png in Resources */,
+				846A72781E8999660083969E /* cancelBtn.png in Resources */,
+				84B5EEA21E65313400311B63 /* Main.storyboard in Resources */,
+				84B5EEE11E65393A00311B63 /* loginBtn.png in Resources */,
+				846A72F91E8B88110083969E /* friendsBtn.png in Resources */,
+				84B5EEE91E65394200311B63 /* iHoopTitle.png in Resources */,
+				84B5EEE51E65393A00311B63 /* submitBtn.png in Resources */,
+				8415853B1E7BB8FB00B263BE /* facebookBtn.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84B5EEAB1E65313400311B63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				963A653C1E67AAC700A9447C /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84B5EEB61E65313400311B63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				963A653D1E67AAC700A9447C /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28C26B2E3963A092ABCF959F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iHoop/Pods-iHoop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		370902A2AA05BF0934CF9FFB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iHoopUITests/Pods-iHoopUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A1395A12E9A91FC47ABC029 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iHoop/Pods-iHoop-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AB684ACA3159B50DDA4D49C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9680D5BFD88F37F8703BE6DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A3A79762F3170666D9587DD6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iHoopTests/Pods-iHoopTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9608014A28DC0970FDC3F81 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iHoopUITests/Pods-iHoopUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB9EF86328A4C613F84197DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E8F3C55161EBE552DCF2BDA3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iHoopTests/Pods-iHoopTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84B5EE951E65313400311B63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				847B99F11E96C737003BA309 /* Groups.swift in Sources */,
+				846A730A1E8E26750083969E /* RequestTableViewCell.swift in Sources */,
+				846A72761E8977570083969E /* MenuCell.swift in Sources */,
+				84C805301E8361BC000F9BE2 /* ProfileViewController.swift in Sources */,
+				84C805361E838309000F9BE2 /* ProfileImageView.swift in Sources */,
+				846A73081E8CCE430083969E /* FriendsTableViewCell.swift in Sources */,
+				848C97F41E953A0800A9D476 /* FriendOperations.swift in Sources */,
+				847B99E01E95F79F003BA309 /* MyGroupsViewController.swift in Sources */,
+				846A73061E8CCBCF0083969E /* Friends.swift in Sources */,
+				845D3D511E7F3C2F00955A44 /* TextField.swift in Sources */,
+				846A72F71E8B7E0F0083969E /* FindGymsViewController.swift in Sources */,
+				96362C351E7D1A31006C585E /* FacebookLogin.swift in Sources */,
+				848C97F01E95334F00A9D476 /* PostOperations.swift in Sources */,
+				842E3C5B1E84746B00B5E5A5 /* Constraints.swift in Sources */,
+				845D3D4F1E7F3BD800955A44 /* SignUpView.swift in Sources */,
+				846A724C1E8740550083969E /* TabBarController.swift in Sources */,
+				848C97EE1E952CD600A9D476 /* RequestOperations.swift in Sources */,
+				846A72741E88E6B30083969E /* MenuViewController.swift in Sources */,
+				846A730C1E8E2C410083969E /* Requests.swift in Sources */,
+				846A72FD1E8C1FB60083969E /* FriendsViewController.swift in Sources */,
+				84B5EE9D1E65313400311B63 /* AppDelegate.swift in Sources */,
+				84B66CF71E861D6D00CBDB7D /* PostsTableViewCell.swift in Sources */,
+				967E26761E85E5A5002208D8 /* Posts.swift in Sources */,
+				84B66CF11E8481EF00CBDB7D /* HomeViewController.swift in Sources */,
+				846A72F31E8B7DAE0083969E /* GearViewController.swift in Sources */,
+				846A72721E88DCA40083969E /* SWRevealViewController.m in Sources */,
+				848C97F21E9537AE00A9D476 /* UserOperations.swift in Sources */,
+				846A72F51E8B7DC30083969E /* NotificationsViewController.swift in Sources */,
+				847B99E41E9610E9003BA309 /* MyGroupsTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84B5EEA91E65313400311B63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84B5EEB21E65313400311B63 /* iHoopTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84B5EEB41E65313400311B63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84B5EEBD1E65313400311B63 /* iHoopUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84B5EEAF1E65313400311B63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84B5EE981E65313400311B63 /* iHoop */;
+			targetProxy = 84B5EEAE1E65313400311B63 /* PBXContainerItemProxy */;
+		};
+		84B5EEBA1E65313400311B63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84B5EE981E65313400311B63 /* iHoop */;
+			targetProxy = 84B5EEB91E65313400311B63 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		84B5EEA01E65313400311B63 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84B5EEA11E65313400311B63 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84B5EEA51E65313400311B63 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84B5EEA61E65313400311B63 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84B5EEBF1E65313400311B63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84B5EEC01E65313400311B63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84B5EEC21E65313400311B63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF73FE929EA8B39847648C7B /* Pods-iHoop.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = iHoop/iHoop.entitlements;
+				DEVELOPMENT_TEAM = WAHTQEJFLW;
+				INFOPLIST_FILE = iHoop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MrHorace.iHoop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iHoop/iHoop-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		84B5EEC31E65313400311B63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B970F1F16A3300875E4BFBE4 /* Pods-iHoop.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = iHoop/iHoop.entitlements;
+				DEVELOPMENT_TEAM = WAHTQEJFLW;
+				INFOPLIST_FILE = iHoop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MrHorace.iHoop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iHoop/iHoop-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		84B5EEC51E65313400311B63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BCFAD6B8A6DB1F0898036EF /* Pods-iHoopTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = iHoopTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MrHorace.iHoopTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iHoop.app/iHoop";
+			};
+			name = Debug;
+		};
+		84B5EEC61E65313400311B63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AF0C5F8FF1333F195A7875D /* Pods-iHoopTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = iHoopTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MrHorace.iHoopTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iHoop.app/iHoop";
+			};
+			name = Release;
+		};
+		84B5EEC81E65313400311B63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3FFE4916276F6D558EA1EE3 /* Pods-iHoopUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = iHoopUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MrHorace.iHoopUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = iHoop;
+			};
+			name = Debug;
+		};
+		84B5EEC91E65313400311B63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 207B5FBD0B3245C67C60F638 /* Pods-iHoopUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = iHoopUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MrHorace.iHoopUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = iHoop;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84B5EE941E65313400311B63 /* Build configuration list for PBXProject "iHoop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84B5EEBF1E65313400311B63 /* Debug */,
+				84B5EEC01E65313400311B63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84B5EEC11E65313400311B63 /* Build configuration list for PBXNativeTarget "iHoop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84B5EEC21E65313400311B63 /* Debug */,
+				84B5EEC31E65313400311B63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84B5EEC41E65313400311B63 /* Build configuration list for PBXNativeTarget "iHoopTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84B5EEC51E65313400311B63 /* Debug */,
+				84B5EEC61E65313400311B63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84B5EEC71E65313400311B63 /* Build configuration list for PBXNativeTarget "iHoopUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84B5EEC81E65313400311B63 /* Debug */,
+				84B5EEC91E65313400311B63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84B5EE911E65313400311B63 /* Project object */;
+}
