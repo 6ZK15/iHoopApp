@@ -8,15 +8,45 @@
 
 import UIKit
 import CoreLocation
+import MapKit
 import GoogleMaps
 
-class FindGymsViewController: UIViewController {
+class FindGymsViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var menuBtn: UIButton!
+    var locationManager: CLLocationManager!
+    var geocoder = CLGeocoder()
+    var fingGymOperations = FindGymsOperations()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fingGymOperations.gymURLRequest()
+        displayGoogleMapView()
+        
+        if revealViewController() != nil {
+            menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControlEvents.touchUpInside)
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+    
+    func displayGoogleMapView() {
         let currentlongitude = UserDefaults.standard.double(forKey: "currentlongitude")
         let currentlatitude = UserDefaults.standard.double(forKey: "currentlatitude")
         
@@ -41,34 +71,22 @@ class FindGymsViewController: UIViewController {
             NSLog("One or more of the map styles failed to load. \(error)")
         }
         view.addSubview(mapView)
-        // Creates a marker in the center of the map.
-//        let marker = GMSMarker()
-//        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-//        marker.title = "Me"
-//        marker.map = mapView
         
-        menuBtn.bringSubview(toFront: mapView)
-
-        if revealViewController() != nil {
-            menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControlEvents.touchUpInside)
-            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
+        // Creates a marker in the center of the map.
+        let markerOne = GMSMarker()
+        markerOne.position = CLLocationCoordinate2D(latitude: 37.78655, longitude: -122.404334)
+        markerOne.title = "Equinox Sports Club San Francisco"
+        markerOne.map = mapView
+        
+        let markerTwo = GMSMarker()
+        markerTwo.position = CLLocationCoordinate2D(latitude: 37.7898776, longitude: -122.4022919)
+        markerTwo.title = "24 Hour Fitness Sutter-Montgomery"
+        markerTwo.map = mapView
+        
+        let markerThree = GMSMarker()
+        markerThree.position = CLLocationCoordinate2D(latitude: 37.7880708, longitude: -122.4010473)
+        markerThree.title = "Crunch - New Montgomery"
+        markerThree.map = mapView
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
