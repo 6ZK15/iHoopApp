@@ -88,6 +88,7 @@
 		84C81B2F1E9D7B1900962484 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = 84C81B2E1E9D7B1900962484 /* style.json */; };
 		84C81B311E9EFA6400962484 /* FindGymsOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C81B301E9EFA6400962484 /* FindGymsOperations.swift */; };
 		84C81B331EA1543B00962484 /* Gyms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C81B321EA1543B00962484 /* Gyms.swift */; };
+		84C81B351EA4323500962484 /* refreshBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C81B341EA4323500962484 /* refreshBtn.png */; };
 		8F776294E56F607355097E28 /* Pods_iHoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56CA6631D6767A06E04B5714 /* Pods_iHoop.framework */; };
 		90BE9E005F0A430597EA1B6A /* Pods_iHoopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7886AA4E4529624A643E0891 /* Pods_iHoopUITests.framework */; };
 		96362C351E7D1A31006C585E /* FacebookLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96362C341E7D1A31006C585E /* FacebookLogin.swift */; };
@@ -211,6 +212,7 @@
 		84C81B2E1E9D7B1900962484 /* style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
 		84C81B301E9EFA6400962484 /* FindGymsOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindGymsOperations.swift; path = Operations/FindGymsOperations.swift; sourceTree = "<group>"; };
 		84C81B321EA1543B00962484 /* Gyms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gyms.swift; path = Models/Gyms.swift; sourceTree = "<group>"; };
+		84C81B341EA4323500962484 /* refreshBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = refreshBtn.png; path = Images/Buttons/refreshBtn.png; sourceTree = "<group>"; };
 		8AF0C5F8FF1333F195A7875D /* Pods-iHoopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoopTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHoopTests/Pods-iHoopTests.release.xcconfig"; sourceTree = "<group>"; };
 		96362C341E7D1A31006C585E /* FacebookLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookLogin.swift; sourceTree = "<group>"; };
 		96362C361E7D25F5006C585E /* iHoop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iHoop.entitlements; sourceTree = "<group>"; };
@@ -491,6 +493,7 @@
 				84C805371E838E1B000F9BE2 /* nextBtn.png */,
 				84B5EEDA1E65393A00311B63 /* menuBtn.png */,
 				846A725F1E87B85B0083969E /* postBtn.png */,
+				84C81B341EA4323500962484 /* refreshBtn.png */,
 				846A72611E88524C0083969E /* searchBtn.png */,
 				84B5EEDD1E65393A00311B63 /* submitBtn.png */,
 			);
@@ -659,6 +662,7 @@
 				841585351E7A7C8700B263BE /* Playball.ttf in Resources */,
 				84B44EDD1E67B6B400AABF92 /* Carrington.ttf in Resources */,
 				84C805321E8381D5000F9BE2 /* ltbButton.png in Resources */,
+				84C81B351EA4323500962484 /* refreshBtn.png in Resources */,
 				84B44EDE1E67B6B400AABF92 /* DrSugiyama-Regular.ttf in Resources */,
 				846A725A1E87B3C00083969E /* espnTitle.png in Resources */,
 				84B44EDF1E67B6B400AABF92 /* FNL_DEMO-KCFonts.ttf in Resources */,

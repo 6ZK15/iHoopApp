@@ -8,20 +8,40 @@
 
 import UIKit
 
-class ESPNViewController: UIViewController {
+class ESPNViewController: UIViewController, UIWebViewDelegate {
+    
+    @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet var webView: UIWebView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let url = URL(string: "http://www.espn.com/nba/")
         let urlRequest = URLRequest(url: url!)
         webView.loadRequest(urlRequest)
+        
+        if revealViewController() != nil {
+            menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControlEvents.touchUpInside)
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        activityIndicator.startAnimating()
+    }
+    
+    @IBAction func refreshWebView(_ sender: Any) {
+        viewDidLoad()
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        activityIndicator.stopAnimating()
     }
     
 
