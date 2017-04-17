@@ -32,12 +32,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var posts = [Posts]()
     var requests = [Requests]()
+    var timer = Timer()
     
     let databaseReference = FIRDatabase.database().reference()
     let orangeColor = UIColor.init(red: 0.796, green: 0.345, blue: 0.090, alpha: 1.000)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        timerRemoval()
         
         UserDefaults.standard.synchronize()
         
@@ -146,6 +148,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         })
     }
     
+    
+    
     /*
      * storePostForUser
      Stores the post information to users database reference
@@ -166,11 +170,22 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         dateFormatter.pmSymbol = "PM"
         let timeStamp = dateFormatter.string(from: date)
         
+    
+        var removeTimeStamp = dateFormatter.string(from:date)
+        let curr = NSDate(timeIntervalSinceNow: 86400)
+        removeTimeStamp = dateFormatter.string(from:curr as Date)
+        print(removeTimeStamp)
+        
+        
+    
+        
         //Date Database Format
         let dateReferenceFormatter = DateFormatter()
         dateReferenceFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateReferenceFormatter.dateFormat = "MMMM d h:mm:ss"
         let timeStampRef = dateReferenceFormatter.string(from: date)
+       
+   
         
         //Store Post for current user
         print("current user: %@", userID as Any)
@@ -181,6 +196,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             "post":postMessage,
             "postAttachmentURL":"",
             "timeStamp":timeStamp,
+            "deleteTimeStamp": removeTimeStamp
         ])
         
         //Store Post for friends
@@ -203,6 +219,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                             "post":postMessage,
                             "postAttachmentURL":"",
                             "timeStamp":timeStamp,
+                            "deleteTimeStamp": removeTimeStamp
+
                         ])
                     }
                 }
@@ -210,6 +228,48 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         })
     }
     
+    
+    func postCheck(){
+        let userID = UserDefaults.standard.value(forKey: "currentUserUID")
+        databaseReference.child("users").child(userID as! String).child("timeline").observe(FIRDataEventType.value, with: {
+            (snapshot) in
+            //everything in time line
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshots {
+                    if let PostDictionary = snap.value as? Dictionary<String, AnyObject> {
+                        let key = snap.key
+                        let posts = Posts(key: key, dictionary: PostDictionary)
+                        let postStamp = posts.postTimeStamp
+                        let deleteStamp = posts.deleteTimeStamp
+                        print("Timestamp:", postStamp)
+                        print("Delete Stamp:", deleteStamp)
+                      
+                        if postStamp >= deleteStamp {
+                             self.databaseReference.child("users").child(userID as! String).child("timeline").removeValue()
+                            
+                        }
+                        
+                
+                    
+
+                    }
+                    
+                }
+        }
+        })
+    
+    }
+  
+    func timerRemoval() {
+        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(ProfileViewController.postCheck), userInfo: nil, repeats: true)
+    }
+    
+    func removeOldPosts(){
+        let userID = UserDefaults.standard.value(forKey: "currentUserUID")
+        databaseReference.child("users").child(userID as! String).child("timeline").removeValue()
+        }
+    
+
     /*
      * getListOfRequests
        Returns the list of friend requests for each user and displays the badgeValue for the total of requests
@@ -282,6 +342,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+ 
     /*
      * setProfileUsername
        Sets Profile Username for user
@@ -339,5 +400,5 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Pass the selected object to the new view controller.
     }
     */
-
 }
+

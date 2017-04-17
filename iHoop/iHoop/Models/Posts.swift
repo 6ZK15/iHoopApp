@@ -15,6 +15,7 @@ struct Posts {
     fileprivate var _postKey: String!
     fileprivate var _postMessage: String!
     fileprivate var _postTimeStamp: String!
+    fileprivate var _deleteTimeStamp: String!
     fileprivate var _username: String!
     
     let databaseReference = FIRDatabase.database().reference()
@@ -30,6 +31,10 @@ struct Posts {
     var postTimeStamp: String {
         return _postTimeStamp
     }
+    var deleteTimeStamp: String {
+        return _deleteTimeStamp
+    }
+    
     
     var username: String {
         return _username
@@ -46,6 +51,9 @@ struct Posts {
             self._postTimeStamp = timeStamp
         }
         
+        if let deleteTimeStamp = dictionary["deleteTimeStamp"] as? String {
+            self._deleteTimeStamp = deleteTimeStamp
+        }
         if let post = dictionary["post"] as? String {
             self._postMessage = post
         }
