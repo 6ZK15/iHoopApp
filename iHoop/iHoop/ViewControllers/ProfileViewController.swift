@@ -231,10 +231,31 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func postCheck(){
         let userID = UserDefaults.standard.value(forKey: "currentUserUID")
+        let postID = self.databaseReference.child("users").child(NSUUID().uuidString)
+        UserDefaults.standard.set(postID.key, forKey: "postID")
+
+        
+        //Date Post Format
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "MMMM d h:mm a"
+        dateFormatter.amSymbol = "AM"
+        dateFormatter.pmSymbol = "PM"
+        let timeStamp = dateFormatter.string(from: date)
+        
+        //Date Database Format
+        let dateReferenceFormatter = DateFormatter()
+        dateReferenceFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateReferenceFormatter.dateFormat = "MMMM d h:mm:ss"
+        let timeStampRef = dateReferenceFormatter.string(from: date)
+        
+
         databaseReference.child("users").child(userID as! String).child("timeline").observe(FIRDataEventType.value, with: {
             (snapshot) in
             //everything in time line
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                //all information in each post
                 for snap in snapshots {
                     if let PostDictionary = snap.value as? Dictionary<String, AnyObject> {
                         let key = snap.key
@@ -243,9 +264,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                         let deleteStamp = posts.deleteTimeStamp
                         print("Timestamp:", postStamp)
                         print("Delete Stamp:", deleteStamp)
+                        print(posts.postKey)
                       
-                        if postStamp >= deleteStamp {
-                             self.databaseReference.child("users").child(userID as! String).child("timeline").removeValue()
+                        if postStamp <= deleteStamp {
+                             self.databaseReference.child("users").child(userID as! String).child("timeline").child(posts.postKey).removeValue()
                             
                         }
                         
@@ -261,7 +283,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
   
     func timerRemoval() {
-        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(ProfileViewController.postCheck), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 86400, target: self, selector: #selector(ProfileViewController.postCheck), userInfo: nil, repeats: true)
     }
     
     func removeOldPosts(){
