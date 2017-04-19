@@ -7,17 +7,42 @@
 //
 
 import UIKit
+import CoreLocation
+import Firebase
+import FirebaseDatabase
 
 class FindGymsOperations: NSObject {
     
+    var gyms = [Gyms]()
     var names: [String] = []
-    var addresses: [String] = []
+    var latitudes: [CLLocationDegrees] = []
+    var longitudes: [CLLocationDegrees] = []
     
-    let currentlongitude = UserDefaults.standard.string(forKey: "currentlongitude")
-    let currentlatitude = UserDefaults.standard.string(forKey: "currentlatitude")
+    let databaseReference = FIRDatabase.database().reference()
+    let currentlongitude = UserDefaults.standard.string(forKey: "currentlongitude")!
+    let currentlatitude = UserDefaults.standard.string(forKey: "currentlatitude")!
+    
+    func getGymNames() {
+        let userID = UserDefaults.standard.value(forKey: "currentUserUID")
+        self.databaseReference.child("users").child(userID as! String).child("nearby").child("results").observe(FIRDataEventType.value, with: {
+            (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshots {
+                    if let gymDictionary = snap.value as? Dictionary<String, AnyObject> {
+                        let key = snap.key
+                        let gym = Gyms.init(key: key, dictionary: gymDictionary)
+                        self.names.append(gym.gymName)
+                        UserDefaults.standard.set(self.names, forKey: "gymNames")
+                    }
+                }
+            }
+        })
+    }
     
     func gymURLRequest() {
-        let url = URL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + "+37.78735890" + "," + "-122.40822700" +  "&radius=500&type=gym&keyword=basketball+gyms&key=AIzaSyC4cyENm7AyJFVyV6GZwgrFbg4d1epEOoo")
+        let userID = UserDefaults.standard.value(forKey: "currentUserUID")
+        let url = URL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + currentlatitude + "," + currentlongitude +  "&radius=66000&type=gym&keyword=basketball+recreation+centers&key=AIzaSyC4cyENm7AyJFVyV6GZwgrFbg4d1epEOoo")
+        print(url as Any)
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
         
@@ -33,19 +58,46 @@ class FindGymsOperations: NSObject {
                 return
             }
             
-            let json = try! JSONSerialization.jsonObject(with: responseData, options: []) as! [String : AnyObject]
-            print("Gym Request URL: ", json)
-            if let gymArray = json["results"] {
-                for index in 0...gymArray.count-1 {
-                    
-                    let aObject = gymArray[index] as! [String : AnyObject]
-                    self.names.append(aObject["name"] as! String)
-                    self.addresses.append(aObject["vicinity"] as! String)
-                    
+            let json = try! JSONSerialization.jsonObject(with: responseData, options: []) as? Dictionary<String, AnyObject>
+            print("Gym Response Dictionary: ", json!)
+            
+            self.databaseReference.child("users").child(userID as! String).child("nearby").setValue(json)
+            
+            self.databaseReference.child("users").child(userID as! String).child("nearby").child("results").observe(FIRDataEventType.value, with: {
+                (snapshot) in
+                
+                if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                    for snap in snapshots {
+                        if let gymDictionary = snap.value as? Dictionary<String, AnyObject> {
+                            let key = snap.key
+                            let gym = Gyms.init(key: key, dictionary: gymDictionary)
+                            self.gyms.insert(gym, at: 0)
+                            self.names.append(gym.gymName)
+                            
+                            let locationRef = self.databaseReference.child("users").child(userID as! String).child("nearby").child("results").child(key).child("geometry").child("location")
+                            
+                            locationRef.child("lat").observeSingleEvent(of: FIRDataEventType.value, with: {
+                                (snapshot) in
+                                if let latitude = snapshot.value {
+                                    self.latitudes.append(latitude as! CLLocationDegrees)
+                                }
+                                UserDefaults.standard.set(self.latitudes, forKey: "latitudes")
+                            })
+                            
+                            locationRef.child("lng").observeSingleEvent(of: FIRDataEventType.value, with: {
+                                (snapshot) in
+                                if let longitude = snapshot.value {
+                                    self.longitudes.append(longitude as! CLLocationDegrees)
+                                }
+                                UserDefaults.standard.set(self.longitudes, forKey: "longitudes")
+                            })
+                        }
+                    }
                 }
-                print("Gym names: ", self.names)
-                print("Gym addresses: ", self.addresses)
-            }
+                print("gymList: ", self.gyms)
+                print("gymNames: ", self.names)
+            })
+            
         }
         task.resume()
     }

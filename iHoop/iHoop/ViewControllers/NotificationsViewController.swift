@@ -89,11 +89,8 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         
         databaseReference.child("requests").child(username).observe(FIRDataEventType.value, with: {
             (snapshot) in
-            
             self.requests = []
-            
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                
                 for snap in snapshots {
                     if let requestDictionary = snap.value as? Dictionary<String,AnyObject> {
                         let key = snap.key

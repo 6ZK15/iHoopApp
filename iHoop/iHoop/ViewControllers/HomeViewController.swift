@@ -473,11 +473,11 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
         let facebookLogin = FBSDKLoginManager()
         facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result,error) in
             if error != nil {
-                print("Unable to authenticate with Facebook - ", error)
+                print("Unable to authenticate with Facebook - ", error ?? "error" as! Error)
             } else if result?.isCancelled == true {
                     print("User cancelled authentication with Facebook")
             } else {
-                print("Successfully authenticaed with Facebook - \(error)")
+                print("Successfully authenticaed with Facebook - \(error ?? "error" as! Error)")
                 let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 self.firebaseAuth(credential)
             }
@@ -487,7 +487,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     func firebaseAuth(_ credential: FIRAuthCredential) {
         FIRAuth.auth()?.signIn(with: credential, completion: { (user,error) in
             if error != nil {
-                print("Unable to authenticate with firebase - \(error)")
+                print("Unable to authenticate with firebase - \(error ?? "error" as! Error)")
             } else {
                 print("Successfully authenticated with firebase")
             }

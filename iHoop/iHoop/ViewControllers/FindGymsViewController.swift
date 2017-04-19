@@ -10,18 +10,27 @@ import UIKit
 import CoreLocation
 import MapKit
 import GoogleMaps
+import Firebase
+import FirebaseDatabase
 
-class FindGymsViewController: UIViewController, CLLocationManagerDelegate {
+class FindGymsViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
 
     @IBOutlet weak var menuBtn: UIButton!
     var locationManager: CLLocationManager!
     var geocoder = CLGeocoder()
-    var fingGymOperations = FindGymsOperations()
+    var findGymOperations = FindGymsOperations()
+    var gyms = [Gyms]()
+    var names: [String] = []
+    var addresses: [String] = []
+    var latitudes: [CLLocationDegrees] = []
+    var longitudes: [CLLocationDegrees] = []
+    
+    let databaseReference = FIRDatabase.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fingGymOperations.gymURLRequest()
+        gymURLRequest()
         displayGoogleMapView()
         
         if revealViewController() != nil {
@@ -33,6 +42,12 @@ class FindGymsViewController: UIViewController, CLLocationManagerDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func getCurrentLocation(_ sender: Any) {
+        gymURLRequest()
+        viewDidLoad()
     }
     
 
@@ -51,8 +66,8 @@ class FindGymsViewController: UIViewController, CLLocationManagerDelegate {
         let currentlatitude = UserDefaults.standard.double(forKey: "currentlatitude")
         
         // Create a GMSCameraPosition that tells the map to display the
-        // coordinate current location at zoom level 12.
-        let camera = GMSCameraPosition.camera(withLatitude: CLLocationDegrees(currentlatitude), longitude: CLLocationDegrees(currentlongitude), zoom: 12.0)
+        // coordinate current location at zoom level 10.
+        let camera = GMSCameraPosition.camera(withLatitude: CLLocationDegrees(currentlatitude), longitude: CLLocationDegrees(currentlongitude), zoom: 9.0)
         let mapView = GMSMapView.map(withFrame: CGRect.init(x: 0,
                                                             y: 72,
                                                             width: view.frame.size.width,
@@ -72,21 +87,115 @@ class FindGymsViewController: UIViewController, CLLocationManagerDelegate {
         }
         view.addSubview(mapView)
         
-        // Creates a marker in the center of the map.
-        let markerOne = GMSMarker()
-        markerOne.position = CLLocationCoordinate2D(latitude: 37.78655, longitude: -122.404334)
-        markerOne.title = "Equinox Sports Club San Francisco"
-        markerOne.map = mapView
+        setMarkers(mapView)
         
-        let markerTwo = GMSMarker()
-        markerTwo.position = CLLocationCoordinate2D(latitude: 37.7898776, longitude: -122.4022919)
-        markerTwo.title = "24 Hour Fitness Sutter-Montgomery"
-        markerTwo.map = mapView
+    }
+    
+    func setMarkers(_ mapView: GMSMapView ) {
+        let latitudes = UserDefaults.standard.value(forKey: "latitudes") as! Array<Any>
+        let longitudes = UserDefaults.standard.value(forKey: "longitudes") as! Array<Any>
+        let gymNames = UserDefaults.standard.value(forKey: "gymNames") as! Array<Any>
+        let addresses = UserDefaults.standard.value(forKey: "addresses") as! Array<Any>
         
-        let markerThree = GMSMarker()
-        markerThree.position = CLLocationCoordinate2D(latitude: 37.7880708, longitude: -122.4010473)
-        markerThree.title = "Crunch - New Montgomery"
-        markerThree.map = mapView
+        var markers = [GMSMarker]()
+        for i in 0...latitudes.count-1 {
+            print("gym names: ", self.names)
+            markers.append(GMSMarker.init())
+            markers[i].position = CLLocationCoordinate2DMake(latitudes[i] as! CLLocationDegrees, longitudes[i] as! CLLocationDegrees)
+            markers[i].title = gymNames[i] as? String
+            markers[i].snippet = addresses[i] as? String
+            markers[i].map = mapView
+        }
+    }
+    
+    func gymURLRequest() {
+        let userID = UserDefaults.standard.value(forKey: "currentUserUID")
+        let currentlongitude = UserDefaults.standard.string(forKey: "currentlongitude")!
+        let currentlatitude = UserDefaults.standard.string(forKey: "currentlatitude")!
+        
+        let url = URL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + currentlatitude + "," + currentlongitude +  "&radius=66000&type=gym&keyword=basketball+recreation+centers&key=AIzaSyC4cyENm7AyJFVyV6GZwgrFbg4d1epEOoo")
+        print(url as Any)
+        var request = URLRequest(url: url!)
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            guard let responseData = data else {
+                print("Data is empty")
+                return
+            }
+            
+            let json = try! JSONSerialization.jsonObject(with: responseData, options: []) as? Dictionary<String, AnyObject>
+            print("Gym Response Dictionary: ", json!)
+            
+            self.databaseReference.child("users").child(userID as! String).child("nearby").setValue(json)
+            
+            self.databaseReference.child("users").child(userID as! String).child("nearby").child("results").observe(FIRDataEventType.value, with: {
+                (snapshot) in
+                
+                if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                    for snap in snapshots {
+                        if let gymDictionary = snap.value as? Dictionary<String, AnyObject> {
+                            let key = snap.key
+                            let gym = Gyms.init(key: key, dictionary: gymDictionary)
+                            self.gyms.insert(gym, at: 0)
+                            
+                            self.databaseReference.child("users").child(userID as! String).child("nearby").child("results").child(key).child("name").observeSingleEvent(of: FIRDataEventType.value, with: {
+                                (snapshot) in
+                                if let name = snapshot.value {
+                                    self.names.append(name as! String)
+                                }
+                                UserDefaults.standard.set(self.names, forKey: "gymNames")
+                            })
+                            
+                            self.databaseReference.child("users").child(userID as! String).child("nearby").child("results").child(key).child("vicinity").observeSingleEvent(of: FIRDataEventType.value, with: {
+                                (snapshot) in
+                                if let address = snapshot.value {
+                                    self.addresses.append(address as! String)
+                                }
+                                UserDefaults.standard.set(self.addresses, forKey: "addresses")
+                            })
+                            
+                            let locationRef = self.databaseReference.child("users").child(userID as! String).child("nearby").child("results").child(key).child("geometry").child("location")
+                            
+                            locationRef.child("lat").observeSingleEvent(of: FIRDataEventType.value, with: {
+                                (snapshot) in
+                                if let latitude = snapshot.value {
+                                    self.latitudes.append(latitude as! CLLocationDegrees)
+                                }
+                                UserDefaults.standard.set(self.latitudes, forKey: "latitudes")
+                            })
+                            
+                            locationRef.child("lng").observeSingleEvent(of: FIRDataEventType.value, with: {
+                                (snapshot) in
+                                if let longitude = snapshot.value {
+                                    self.longitudes.append(longitude as! CLLocationDegrees)
+                                }
+                                UserDefaults.standard.set(self.longitudes, forKey: "longitudes")
+                            })
+                        }
+                    }
+                }
+                print("gymList: ", self.gyms)
+                print("gymNames: ", self.names)
+            })
+            
+        }
+        task.resume()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("didUpdateToLocation", locations)
+        let currentlongitude = locationManager.location?.coordinate.longitude
+        let currentlatitude = locationManager.location?.coordinate.latitude
+        
+        UserDefaults.standard.set(currentlongitude, forKey: "currentlongitude")
+        UserDefaults.standard.set(currentlatitude, forKey: "currentlatitude")
     }
 
 }

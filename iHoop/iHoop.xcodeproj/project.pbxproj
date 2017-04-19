@@ -58,6 +58,7 @@
 		848C97F01E95334F00A9D476 /* PostOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C97EF1E95334F00A9D476 /* PostOperations.swift */; };
 		848C97F21E9537AE00A9D476 /* UserOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C97F11E9537AE00A9D476 /* UserOperations.swift */; };
 		848C97F41E953A0800A9D476 /* FriendOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C97F31E953A0800A9D476 /* FriendOperations.swift */; };
+		849F21C11EA6966100F8DE0B /* locationBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 849F21C01EA6966100F8DE0B /* locationBtn.png */; };
 		84B44EDD1E67B6B400AABF92 /* Carrington.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EECF1E6532C200311B63 /* Carrington.ttf */; };
 		84B44EDE1E67B6B400AABF92 /* DrSugiyama-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED01E6532C200311B63 /* DrSugiyama-Regular.ttf */; };
 		84B44EDF1E67B6B400AABF92 /* FNL_DEMO-KCFonts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B5EED11E6532C200311B63 /* FNL_DEMO-KCFonts.ttf */; };
@@ -89,6 +90,7 @@
 		84C81B311E9EFA6400962484 /* FindGymsOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C81B301E9EFA6400962484 /* FindGymsOperations.swift */; };
 		84C81B331EA1543B00962484 /* Gyms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C81B321EA1543B00962484 /* Gyms.swift */; };
 		84C81B351EA4323500962484 /* refreshBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C81B341EA4323500962484 /* refreshBtn.png */; };
+		84C81B371EA43FA400962484 /* goBackBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C81B361EA43FA400962484 /* goBackBtn.png */; };
 		8F776294E56F607355097E28 /* Pods_iHoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56CA6631D6767A06E04B5714 /* Pods_iHoop.framework */; };
 		90BE9E005F0A430597EA1B6A /* Pods_iHoopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7886AA4E4529624A643E0891 /* Pods_iHoopUITests.framework */; };
 		96362C351E7D1A31006C585E /* FacebookLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96362C341E7D1A31006C585E /* FacebookLogin.swift */; };
@@ -176,6 +178,7 @@
 		848C97EF1E95334F00A9D476 /* PostOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostOperations.swift; path = Operations/PostOperations.swift; sourceTree = "<group>"; };
 		848C97F11E9537AE00A9D476 /* UserOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserOperations.swift; path = Operations/UserOperations.swift; sourceTree = "<group>"; };
 		848C97F31E953A0800A9D476 /* FriendOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendOperations.swift; path = Operations/FriendOperations.swift; sourceTree = "<group>"; };
+		849F21C01EA6966100F8DE0B /* locationBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = locationBtn.png; path = Images/Buttons/locationBtn.png; sourceTree = "<group>"; };
 		84B5EE991E65313400311B63 /* iHoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B5EE9C1E65313400311B63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84B5EEA11E65313400311B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -213,6 +216,7 @@
 		84C81B301E9EFA6400962484 /* FindGymsOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindGymsOperations.swift; path = Operations/FindGymsOperations.swift; sourceTree = "<group>"; };
 		84C81B321EA1543B00962484 /* Gyms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gyms.swift; path = Models/Gyms.swift; sourceTree = "<group>"; };
 		84C81B341EA4323500962484 /* refreshBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = refreshBtn.png; path = Images/Buttons/refreshBtn.png; sourceTree = "<group>"; };
+		84C81B361EA43FA400962484 /* goBackBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goBackBtn.png; path = Images/Buttons/goBackBtn.png; sourceTree = "<group>"; };
 		8AF0C5F8FF1333F195A7875D /* Pods-iHoopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHoopTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHoopTests/Pods-iHoopTests.release.xcconfig"; sourceTree = "<group>"; };
 		96362C341E7D1A31006C585E /* FacebookLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookLogin.swift; sourceTree = "<group>"; };
 		96362C361E7D25F5006C585E /* iHoop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iHoop.entitlements; sourceTree = "<group>"; };
@@ -486,9 +490,11 @@
 			children = (
 				846A72771E8999660083969E /* cancelBtn.png */,
 				847B99F21E9732E2003BA309 /* doneBtn.png */,
+				84C81B361EA43FA400962484 /* goBackBtn.png */,
 				846A724F1E879E1D0083969E /* Tab Buttons */,
 				846A72501E879E790083969E /* Menu Buttons */,
 				846A72631E885BF20083969E /* slideMenuButtons */,
+				849F21C01EA6966100F8DE0B /* locationBtn.png */,
 				84C805311E8381D5000F9BE2 /* ltbButton.png */,
 				84C805371E838E1B000F9BE2 /* nextBtn.png */,
 				84B5EEDA1E65393A00311B63 /* menuBtn.png */,
@@ -680,6 +686,7 @@
 				846A726A1E885C220083969E /* homeBtn.png in Resources */,
 				84C81B2B1E980F9F00962484 /* groupPic3.png in Resources */,
 				847B99EC1E96B031003BA309 /* groupPic1.png in Resources */,
+				84C81B371EA43FA400962484 /* goBackBtn.png in Resources */,
 				84B5EEA41E65313400311B63 /* Assets.xcassets in Resources */,
 				84B5EED41E65393000311B63 /* bg.png in Resources */,
 				846A724A1E873D400083969E /* tabBar@2x.png in Resources */,
@@ -694,6 +701,7 @@
 				846A726B1E885C220083969E /* logoutBtn.png in Resources */,
 				846A726C1E885C220083969E /* myGroupsBtn.png in Resources */,
 				841585321E7A7A8000B263BE /* downArrow.png in Resources */,
+				849F21C11EA6966100F8DE0B /* locationBtn.png in Resources */,
 				84B5EEE21E65393A00311B63 /* menuBtn.png in Resources */,
 				84C81B2D1E98115A00962484 /* groupPic4.png in Resources */,
 				845D3D551E7FA06700955A44 /* bballShadow.png in Resources */,

@@ -13,6 +13,7 @@ class ESPNViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet var webView: UIWebView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var goBackBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,15 +33,24 @@ class ESPNViewController: UIViewController, UIWebViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func webViewDidStartLoad(_ webView: UIWebView) {
-        activityIndicator.startAnimating()
-    }
-    
     @IBAction func refreshWebView(_ sender: Any) {
         viewDidLoad()
     }
     
+    @IBAction func goBackWebView(_ sender: Any) {
+        webView.goBack()
+    }
+    
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        activityIndicator.startAnimating()
+    }
+    
     func webViewDidFinishLoad(_ webView: UIWebView) {
+        if webView.canGoBack {
+            goBackBtn.alpha = 1
+        } else {
+            goBackBtn.alpha = 0
+        }
         activityIndicator.stopAnimating()
     }
     
