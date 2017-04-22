@@ -47,6 +47,8 @@
 		846A73081E8CCE430083969E /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A73071E8CCE430083969E /* FriendsTableViewCell.swift */; };
 		846A730A1E8E26750083969E /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A73091E8E26750083969E /* RequestTableViewCell.swift */; };
 		846A730C1E8E2C410083969E /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A730B1E8E2C410083969E /* Requests.swift */; };
+		846FAFD81EA9D9CE00A97031 /* InfoWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FAFD71EA9D9CE00A97031 /* InfoWindowView.swift */; };
+		846FAFDA1EA9DD0800A97031 /* directionsBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 846FAFD91EA9DD0800A97031 /* directionsBtn.png */; };
 		847B99E01E95F79F003BA309 /* MyGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B99DF1E95F79F003BA309 /* MyGroupsViewController.swift */; };
 		847B99E21E95FE1F003BA309 /* myGroupsTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 847B99E11E95FE1F003BA309 /* myGroupsTitle.png */; };
 		847B99E41E9610E9003BA309 /* MyGroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B99E31E9610E9003BA309 /* MyGroupsTableViewCell.swift */; };
@@ -167,6 +169,8 @@
 		846A73071E8CCE430083969E /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsTableViewCell.swift; path = Views/FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		846A73091E8E26750083969E /* RequestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestTableViewCell.swift; path = Views/RequestTableViewCell.swift; sourceTree = "<group>"; };
 		846A730B1E8E2C410083969E /* Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Requests.swift; path = Models/Requests.swift; sourceTree = "<group>"; };
+		846FAFD71EA9D9CE00A97031 /* InfoWindowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoWindowView.swift; path = Views/InfoWindowView.swift; sourceTree = "<group>"; };
+		846FAFD91EA9DD0800A97031 /* directionsBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = directionsBtn.png; path = Images/Buttons/directionsBtn.png; sourceTree = "<group>"; };
 		847B99DF1E95F79F003BA309 /* MyGroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyGroupsViewController.swift; path = ViewControllers/MyGroupsViewController.swift; sourceTree = "<group>"; };
 		847B99E11E95FE1F003BA309 /* myGroupsTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = myGroupsTitle.png; path = Images/Titles/myGroupsTitle.png; sourceTree = "<group>"; };
 		847B99E31E9610E9003BA309 /* MyGroupsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyGroupsTableViewCell.swift; path = Views/MyGroupsTableViewCell.swift; sourceTree = "<group>"; };
@@ -360,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				846A73071E8CCE430083969E /* FriendsTableViewCell.swift */,
+				846FAFD71EA9D9CE00A97031 /* InfoWindowView.swift */,
 				847B99E31E9610E9003BA309 /* MyGroupsTableViewCell.swift */,
 				846A72751E8977570083969E /* MenuCell.swift */,
 				846A73091E8E26750083969E /* RequestTableViewCell.swift */,
@@ -489,6 +494,7 @@
 			isa = PBXGroup;
 			children = (
 				846A72771E8999660083969E /* cancelBtn.png */,
+				846FAFD91EA9DD0800A97031 /* directionsBtn.png */,
 				847B99F21E9732E2003BA309 /* doneBtn.png */,
 				84C81B361EA43FA400962484 /* goBackBtn.png */,
 				846A724F1E879E1D0083969E /* Tab Buttons */,
@@ -711,6 +717,7 @@
 				84B5EEA21E65313400311B63 /* Main.storyboard in Resources */,
 				84B5EEE11E65393A00311B63 /* loginBtn.png in Resources */,
 				846A72F91E8B88110083969E /* friendsBtn.png in Resources */,
+				846FAFDA1EA9DD0800A97031 /* directionsBtn.png in Resources */,
 				84B5EEE91E65394200311B63 /* iHoopTitle.png in Resources */,
 				84B5EEE51E65393A00311B63 /* submitBtn.png in Resources */,
 				8415853B1E7BB8FB00B263BE /* facebookBtn.png in Resources */,
@@ -903,6 +910,7 @@
 				967E26761E85E5A5002208D8 /* Posts.swift in Sources */,
 				84B66CF11E8481EF00CBDB7D /* HomeViewController.swift in Sources */,
 				96B7D3F21EA407360065715A /* ESPNViewController.swift in Sources */,
+				846FAFD81EA9D9CE00A97031 /* InfoWindowView.swift in Sources */,
 				846A72F31E8B7DAE0083969E /* GearViewController.swift in Sources */,
 				846A72721E88DCA40083969E /* SWRevealViewController.m in Sources */,
 				848C97F21E9537AE00A9D476 /* UserOperations.swift in Sources */,

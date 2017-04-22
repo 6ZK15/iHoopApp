@@ -16,9 +16,12 @@ import FirebaseDatabase
 class FindGymsViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
 
     @IBOutlet weak var menuBtn: UIButton!
+    
     var locationManager: CLLocationManager!
     var geocoder = CLGeocoder()
+    var mapView = GMSMapView()
     var findGymOperations = FindGymsOperations()
+    var infoWindowView = InfoWindowView()
     var gyms = [Gyms]()
     var names: [String] = []
     var addresses: [String] = []
@@ -85,6 +88,7 @@ class FindGymsViewController: UIViewController, CLLocationManagerDelegate, GMSMa
         } catch {
             NSLog("One or more of the map styles failed to load. \(error)")
         }
+        mapView.delegate = self
         view.addSubview(mapView)
         
         setMarkers(mapView)
@@ -187,6 +191,67 @@ class FindGymsViewController: UIViewController, CLLocationManagerDelegate, GMSMa
             
         }
         task.resume()
+    }
+    
+    func getPolylineRoute(from source: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D) {
+        let userID = UserDefaults.standard.value(forKey: "currentUserUID")
+        
+        let url = URL(string: "http://maps.googleapis.com/maps/api/directions/json?origin=\(source.latitude),\(source.longitude)&destination=\(destination.latitude),\(destination.longitude)&sensor=false&mode=driving")
+        print("route url ", url as Any)
+        print(url as Any)
+        var request = URLRequest(url: url!)
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            guard let responseData = data else {
+                print("Data is empty")
+                return
+            }
+            
+            let json = try! JSONSerialization.jsonObject(with: responseData, options: []) as? Dictionary<String, AnyObject>
+            self.databaseReference.child("users").child(userID as! String).child("directions").setValue(json)
+            self.databaseReference.child("users").child(userID as! String).child("directions").child("routes").child("0").child("overview_polyline").child("points").observeSingleEvent(of: FIRDataEventType.value, with: {
+                (snapshot) in
+                
+                let polyString = snapshot.value
+                self.showPath(polyStr: polyString as! String)
+            })
+        }
+        task.resume()
+    }
+    
+    func showPath(polyStr :String){
+        let path = GMSPath(fromEncodedPath: polyStr)
+        let polyline = GMSPolyline(path: path)
+        polyline.strokeWidth = 3.0
+        polyline.strokeColor = UIColor.brown
+        polyline.map = mapView
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        print("Info View Tapped")
+        infoWindowView.showHideInfoWindoView()
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        print("Marker Tapped")
+        let currentlongitude = UserDefaults.standard.object(forKey: "currentlongitude")
+        let currentlatitude = UserDefaults.standard.object(forKey: "currentlatitude")
+        let originLocation = CLLocationCoordinate2DMake(currentlatitude as! CLLocationDegrees, currentlongitude as! CLLocationDegrees)
+        let destinationLocation = CLLocationCoordinate2DMake(marker.position.latitude, marker.position.longitude)
+        UserDefaults.standard.set(marker.position.latitude, forKey: "markerLat")
+        UserDefaults.standard.set(marker.position.longitude, forKey: "markerLng")
+        UserDefaults.standard.set(marker.title, forKey: "markerTitle")
+        
+        getPolylineRoute(from: originLocation, to: destinationLocation)
+        infoWindowView.createInfoWindowView(mapView)
+        return false
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
