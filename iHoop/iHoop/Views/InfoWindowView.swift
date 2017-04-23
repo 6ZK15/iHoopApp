@@ -21,6 +21,15 @@ class InfoWindowView: UIView {
     var distanceLabel = UILabel()
     var durationLabel = UILabel()
     var summaryLabel = UILabel()
+    var addGroupBtn = UIButton()
+    var addGroupLabel = UILabel()
+    var callBtn = UIButton()
+    var webBtn = UIButton()
+    var starOne = UIImageView()
+    var starTwo = UIImageView()
+    var starThree = UIImageView()
+    var starFour = UIImageView()
+    var starFive = UIImageView()
 
     let databaseReference = FIRDatabase.database().reference()
     let orangeColor = UIColor.init(red: 0.796, green: 0.345, blue: 0.090, alpha: 1.000)
@@ -49,7 +58,10 @@ class InfoWindowView: UIView {
         
         mapView.addSubview(infoWindowView)
         addInfoLabels(infoWindowView)
+        addActionButtons(infoWindowView)
         addDirectionsBtn(infoWindowView)
+        addGroupButton(infoWindowView)
+        addRatings(infoWindowView)
     }
     
     func showHideInfoWindoView() {
@@ -64,8 +76,8 @@ class InfoWindowView: UIView {
         }
     }
     
-    func addDirectionsBtn(_ infoWindowView: UIView) {
-        directionsBtn.frame = CGRect.init(x: infoWindowView.frame.size.width - 60,
+    func addDirectionsBtn(_ infoWindow: UIView) {
+        directionsBtn.frame = CGRect.init(x: infoWindow.frame.size.width - 60,
                                           y: 20,
                                           width: 40,
                                           height: 44)
@@ -80,11 +92,11 @@ class InfoWindowView: UIView {
         directionsLabel.font = UIFont(name: "Bodoni 72 Smallcaps", size: 18)
         directionsLabel.textColor = UIColor.white
         directionsLabel.adjustsFontSizeToFitWidth = true
-        infoWindowView.addSubview(directionsLabel)
-        infoWindowView.addSubview(directionsBtn)
+        infoWindow.addSubview(directionsLabel)
+        infoWindow.addSubview(directionsBtn)
     }
     
-    func addInfoLabels(_ infoWindowView: UIView) {
+    func addInfoLabels(_ infoWindow: UIView) {
         
         self.databaseReference.child("users").child(userID as! String).child("directions/routes/0/legs/0/distance/text").observeSingleEvent(of: FIRDataEventType.value, with: {
             (snapshot) in
@@ -101,34 +113,130 @@ class InfoWindowView: UIView {
             self.summaryLabel.text = "Summary: \(snapshot.value as! String)"
         })
         
-        distanceLabel.frame = CGRect.init(x: infoWindowView.frame.origin.x + 20,
+        distanceLabel.frame = CGRect.init(x: infoWindow.frame.origin.x + 8,
                                           y: 20,
-                                          width: infoWindowView.frame.size.width - 40,
+                                          width: infoWindow.frame.size.width - 40,
                                           height: 40)
         distanceLabel.font = UIFont(name: "Bodoni 72 Smallcaps", size: 20)
         distanceLabel.textColor = orangeColor
         distanceLabel.adjustsFontSizeToFitWidth = true
         
-        durationLabel.frame = CGRect.init(x: infoWindowView.frame.origin.x + 20,
+        durationLabel.frame = CGRect.init(x: infoWindow.frame.origin.x + 8,
                                           y: distanceLabel.frame.origin.y + 36,
-                                          width: infoWindowView.frame.size.width - 40,
+                                          width: infoWindow.frame.size.width - 40,
                                           height: 40)
         durationLabel.font = UIFont(name: "Bodoni 72 Smallcaps", size: 20)
         durationLabel.textColor = orangeColor
         durationLabel.adjustsFontSizeToFitWidth = true
         
-        summaryLabel.frame = CGRect.init(x: infoWindowView.frame.origin.x + 20,
+        summaryLabel.frame = CGRect.init(x: infoWindow.frame.origin.x + 8,
                                          y: durationLabel.frame.origin.y + 36,
-                                         width: infoWindowView.frame.size.width - 40,
+                                         width: infoWindow.frame.size.width - 40,
                                          height: 40)
         summaryLabel.font = UIFont(name: "Bodoni 72 Smallcaps", size: 20)
         summaryLabel.textColor = orangeColor
         summaryLabel.adjustsFontSizeToFitWidth = true
         
-        infoWindowView.addSubview(distanceLabel)
-        infoWindowView.addSubview(durationLabel)
-        infoWindowView.addSubview(summaryLabel)
+        infoWindow.addSubview(distanceLabel)
+        infoWindow.addSubview(durationLabel)
+        infoWindow.addSubview(summaryLabel)
         
+    }
+    
+    func addGroupButton(_ infoWindow: UIView) {
+        addGroupBtn.frame = CGRect.init(x: infoWindow.frame.origin.x + 8,
+                                           y: infoWindow.frame.size.height - 56,
+                                           width: 30,
+                                           height: 30)
+        addGroupBtn.setImage(UIImage.init(named: "addGymBtn.png"), for: UIControlState.normal)
+        
+        addGroupLabel.frame = CGRect.init(x: addGroupBtn.frame.origin.x + 38,
+                                          y: addGroupBtn.frame.origin.y,
+                                          width: infoWindow.frame.size.width - 58,
+                                          height: 30)
+        addGroupLabel.font = UIFont(name: "Bodoni 72 Smallcaps", size: 20)
+        addGroupLabel.textColor = orangeColor
+        addGroupLabel.adjustsFontSizeToFitWidth = true
+        addGroupLabel.text = "Add Gym's Public Group"
+        
+        infoWindow.addSubview(addGroupLabel)
+        infoWindow.addSubview(addGroupBtn)
+    }
+    
+    func addActionButtons(_ infoWindow: UIView) {
+        callBtn.frame = CGRect.init(x: infoWindow.frame.origin.x + 8,
+                                    y: summaryLabel.frame.origin.y + 50,
+                                    width: 30,
+                                    height: 30)
+        callBtn.setImage(UIImage.init(named: "callBtn.png"), for: UIControlState.normal)
+        callBtn.addTarget(self, action: #selector(dialGymNumber(_:)), for: UIControlEvents.touchUpInside)
+        
+        webBtn.frame = CGRect.init(x: callBtn.frame.origin.x + 50,
+                                    y: summaryLabel.frame.origin.y + 50,
+                                    width: 30,
+                                    height: 30)
+        let website = UserDefaults.standard.url(forKey: "website")
+        if website == nil {
+            webBtn.setImage(UIImage.init(named: "websiteBtnB.png"), for: UIControlState.disabled)
+//            webBtn.isEnabled = false
+        } else {
+            webBtn.setImage(UIImage.init(named: "websiteBtn.png"), for: UIControlState.normal)
+//            webBtn.isEnabled = true
+        }
+        webBtn.addTarget(self, action: #selector(clickWebsite(_:)), for: UIControlEvents.touchUpInside)
+        
+        infoWindow.addSubview(callBtn)
+        infoWindow.addSubview(webBtn)
+    }
+    
+    func addRatings(_ infoWindow: UIView) {
+        starOne.frame = CGRect.init(x: webBtn.frame.origin.x + 50,
+                                    y: summaryLabel.frame.origin.y + 50,
+                                    width: 30,
+                                    height: 30)
+        starOne.image = UIImage.init(named: "star.png")
+        
+        starTwo.frame = CGRect.init(x: starOne.frame.origin.x + 38,
+                                    y: summaryLabel.frame.origin.y + 50,
+                                    width: 30,
+                                    height: 30)
+        starTwo.image = UIImage.init(named: "star.png")
+        
+        starThree.frame = CGRect.init(x: starTwo.frame.origin.x + 38,
+                                    y: summaryLabel.frame.origin.y + 50,
+                                    width: 30,
+                                    height: 30)
+        starThree.image = UIImage.init(named: "star.png")
+        
+        starFour.frame = CGRect.init(x: starThree.frame.origin.x + 38,
+                                    y: summaryLabel.frame.origin.y + 50,
+                                    width: 30,
+                                    height: 30)
+        starFour.image = UIImage.init(named: "star.png")
+        
+        starFive.frame = CGRect.init(x: starFour.frame.origin.x + 38,
+                                    y: summaryLabel.frame.origin.y + 50,
+                                    width: 30,
+                                    height: 30)
+        starFive.image = UIImage.init(named: "star.png")
+        
+        let ratings = UserDefaults.standard.float(forKey: "starRatings")
+        if ratings < 5 {
+            starFive.image = starFive.image!.withRenderingMode(.alwaysTemplate)
+            starFive.tintColor = UIColor.lightGray
+        } else if ratings < 4 {
+            starFive.image = starFive.image!.withRenderingMode(.alwaysTemplate)
+            starFive.tintColor = UIColor.lightGray
+            
+            starFour.image = starFour.image!.withRenderingMode(.alwaysTemplate)
+            starFour.tintColor = UIColor.lightGray
+        }
+        
+        infoWindow.addSubview(starOne)
+        infoWindow.addSubview(starTwo)
+        infoWindow.addSubview(starThree)
+        infoWindow.addSubview(starFour)
+        infoWindow.addSubview(starFive)
     }
     
     @IBAction func getDirections(_ sender:UIButton!) {
@@ -137,8 +245,9 @@ class InfoWindowView: UIView {
         
         let markerLat = UserDefaults.standard.object(forKey: "markerLat")
         let markerLng = UserDefaults.standard.object(forKey: "markerLng")
-        var markerTitle = String()
-        markerTitle = UserDefaults.standard.object(forKey: "markerTitle") as! String
+        guard let markerTitle = UserDefaults.standard.object(forKey: "markerTitle") else { return }
+        guard let markerPhoneNumber = UserDefaults.standard.object(forKey: "phoneNumber") else { return }
+        guard let markerWebsite = UserDefaults.standard.object(forKey: "website") else { return }
         
         let regionDistance:CLLocationDistance = 10000
         let coordinates = CLLocationCoordinate2DMake(markerLat as! CLLocationDegrees, markerLng as! CLLocationDegrees)
@@ -149,8 +258,23 @@ class InfoWindowView: UIView {
         ]
         let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
         let mapItem = MKMapItem(placemark: placemark)
-        mapItem.name = markerTitle
+        mapItem.name = markerTitle as? String
+        mapItem.phoneNumber = markerPhoneNumber as? String
+        mapItem.url = markerWebsite as? URL
         mapItem.openInMaps(launchOptions: options)
     }
-
+    
+    @IBAction func dialGymNumber(_ sender:UIButton!) {
+        print("Dial Number")
+        if let phoneNumber = UserDefaults.standard.url(forKey: "phoneNumber") {
+            UIApplication.shared.open(phoneNumber, options: [:], completionHandler: nil)
+        }
+    }
+    
+    @IBAction func clickWebsite(_ sender:UIButton) {
+        print("Website Clicked")
+        if let website = UserDefaults.standard.url(forKey: "website") {
+            UIApplication.shared.open(website, options: [:], completionHandler: nil)
+        }
+    }
 }

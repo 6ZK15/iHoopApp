@@ -14,8 +14,7 @@ struct Gyms {
     fileprivate var _gymKey: String!
     fileprivate var _gymName: String!
     fileprivate var _address: String!
-    fileprivate var _geometry: Dictionary<String, AnyObject>!
-    fileprivate var _location: Dictionary<String, AnyObject>!
+    fileprivate var _placeID: String!
     
     var gymKey: String {
         return _gymKey
@@ -29,12 +28,8 @@ struct Gyms {
         return _address
     }
     
-    var geometry: Dictionary<String, AnyObject> {
-        return _geometry
-    }
-    
-    var location: Dictionary<String, AnyObject> {
-        return _location
+    var placeID: String {
+        return _placeID
     }
     
     // Initialize the new Post
@@ -52,8 +47,8 @@ struct Gyms {
             self._address = address
         }
         
-        if let geometry = dictionary["geometry"] as? Dictionary<String, AnyObject> {
-            self._geometry = geometry
+        if let placeID = dictionary["place_id"] as? String {
+            self._placeID = placeID
         }
     }
     

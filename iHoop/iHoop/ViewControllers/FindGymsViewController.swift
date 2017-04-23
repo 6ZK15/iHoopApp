@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import MapKit
 import GoogleMaps
+import GooglePlaces
 import Firebase
 import FirebaseDatabase
 
@@ -25,6 +26,7 @@ class FindGymsViewController: UIViewController, CLLocationManagerDelegate, GMSMa
     var gyms = [Gyms]()
     var names: [String] = []
     var addresses: [String] = []
+    var placeIDs: [String] = []
     var latitudes: [CLLocationDegrees] = []
     var longitudes: [CLLocationDegrees] = []
     
@@ -96,10 +98,11 @@ class FindGymsViewController: UIViewController, CLLocationManagerDelegate, GMSMa
     }
     
     func setMarkers(_ mapView: GMSMapView ) {
-        let latitudes = UserDefaults.standard.value(forKey: "latitudes") as! Array<Any>
+        guard let latitudes = UserDefaults.standard.value(forKey: "latitudes") as? Array<Any> else { return }
         let longitudes = UserDefaults.standard.value(forKey: "longitudes") as! Array<Any>
         let gymNames = UserDefaults.standard.value(forKey: "gymNames") as! Array<Any>
         let addresses = UserDefaults.standard.value(forKey: "addresses") as! Array<Any>
+        let placeIDs = UserDefaults.standard.value(forKey: "placeIDs") as! Array<Any>
         
         var markers = [GMSMarker]()
         for i in 0...latitudes.count-1 {
@@ -108,6 +111,7 @@ class FindGymsViewController: UIViewController, CLLocationManagerDelegate, GMSMa
             markers[i].position = CLLocationCoordinate2DMake(latitudes[i] as! CLLocationDegrees, longitudes[i] as! CLLocationDegrees)
             markers[i].title = gymNames[i] as? String
             markers[i].snippet = addresses[i] as? String
+            markers[i].userData = placeIDs[i] as Any
             markers[i].map = mapView
         }
     }
@@ -165,6 +169,14 @@ class FindGymsViewController: UIViewController, CLLocationManagerDelegate, GMSMa
                                 UserDefaults.standard.set(self.addresses, forKey: "addresses")
                             })
                             
+                            self.databaseReference.child("users").child(userID as! String).child("nearby").child("results").child(key).child("place_id").observeSingleEvent(of: FIRDataEventType.value, with: {
+                                (snapshot) in
+                                if let placeID = snapshot.value {
+                                    self.placeIDs.append(placeID as! String)
+                                }
+                                UserDefaults.standard.set(self.placeIDs, forKey: "placeIDs")
+                            })
+                            
                             let locationRef = self.databaseReference.child("users").child(userID as! String).child("nearby").child("results").child(key).child("geometry").child("location")
                             
                             locationRef.child("lat").observeSingleEvent(of: FIRDataEventType.value, with: {
@@ -186,7 +198,6 @@ class FindGymsViewController: UIViewController, CLLocationManagerDelegate, GMSMa
                     }
                 }
                 print("gymList: ", self.gyms)
-                print("gymNames: ", self.names)
             })
             
         }
@@ -248,6 +259,28 @@ class FindGymsViewController: UIViewController, CLLocationManagerDelegate, GMSMa
         UserDefaults.standard.set(marker.position.latitude, forKey: "markerLat")
         UserDefaults.standard.set(marker.position.longitude, forKey: "markerLng")
         UserDefaults.standard.set(marker.title, forKey: "markerTitle")
+        
+        let placeID = marker.userData as! String
+        let placesClient = GMSPlacesClient()
+        
+        placesClient.lookUpPlaceID(placeID, callback: { (place, error) -> Void in
+            if let error = error {
+                print("lookup place id query error: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let place = place else {
+                print("No place details for \(placeID)")
+                return
+            }
+            
+            print(place.phoneNumber as Any)
+            print(place.website as Any)
+            print(place.rating)
+            UserDefaults.standard.set(place.phoneNumber, forKey: "phoneNumber")
+            UserDefaults.standard.set(place.website, forKey: "website")
+            UserDefaults.standard.set(place.rating, forKey: "starRatings")
+        })
         
         getPolylineRoute(from: originLocation, to: destinationLocation)
         infoWindowView.createInfoWindowView(mapView)

@@ -12,6 +12,10 @@
 		841585351E7A7C8700B263BE /* Playball.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 841585341E7A7C6900B263BE /* Playball.ttf */; };
 		8415853B1E7BB8FB00B263BE /* facebookBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8415853A1E7BB8FB00B263BE /* facebookBtn.png */; };
 		842E3C5B1E84746B00B5E5A5 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E3C5A1E84746B00B5E5A5 /* Constraints.swift */; };
+		84438B231EAC0FCC008B7540 /* websiteBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84438B221EAC0FCC008B7540 /* websiteBtn.png */; };
+		84438B251EAC1028008B7540 /* callBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84438B241EAC1028008B7540 /* callBtn.png */; };
+		84438B271EAC3488008B7540 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 84438B261EAC3488008B7540 /* star.png */; };
+		84438B291EACC56A008B7540 /* websiteBtnB.png in Resources */ = {isa = PBXBuildFile; fileRef = 84438B281EACC56A008B7540 /* websiteBtnB.png */; };
 		845D3D4F1E7F3BD800955A44 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D4E1E7F3BD800955A44 /* SignUpView.swift */; };
 		845D3D511E7F3C2F00955A44 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D501E7F3C2F00955A44 /* TextField.swift */; };
 		845D3D541E7FA06700955A44 /* bball.png in Resources */ = {isa = PBXBuildFile; fileRef = 845D3D521E7FA06700955A44 /* bball.png */; };
@@ -132,6 +136,10 @@
 		8415853A1E7BB8FB00B263BE /* facebookBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebookBtn.png; path = Images/Buttons/facebookBtn.png; sourceTree = "<group>"; };
 		842E3C5A1E84746B00B5E5A5 /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constraints.swift; path = Models/Constraints.swift; sourceTree = "<group>"; };
 		843FCCF3C60FAEC7D17147AD /* Pods_iHoopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHoopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84438B221EAC0FCC008B7540 /* websiteBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = websiteBtn.png; path = Images/Buttons/websiteBtn.png; sourceTree = "<group>"; };
+		84438B241EAC1028008B7540 /* callBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = callBtn.png; path = Images/Buttons/callBtn.png; sourceTree = "<group>"; };
+		84438B261EAC3488008B7540 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star.png; path = Images/star.png; sourceTree = "<group>"; };
+		84438B281EACC56A008B7540 /* websiteBtnB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = websiteBtnB.png; path = Images/Buttons/websiteBtnB.png; sourceTree = "<group>"; };
 		845D3D4E1E7F3BD800955A44 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpView.swift; path = Views/SignUpView.swift; sourceTree = "<group>"; };
 		845D3D501E7F3C2F00955A44 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextField.swift; path = Views/TextField.swift; sourceTree = "<group>"; };
 		845D3D521E7FA06700955A44 /* bball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bball.png; path = Images/bball.png; sourceTree = "<group>"; };
@@ -454,6 +462,7 @@
 		84B5EECA1E65322C00311B63 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				84438B261EAC3488008B7540 /* star.png */,
 				846A72491E873D400083969E /* tabBar@2x.png */,
 				84B66CF21E848BA500CBDB7D /* defaultProfilePic.png */,
 				845D3D521E7FA06700955A44 /* bball.png */,
@@ -493,6 +502,7 @@
 		84B5EECD1E65323F00311B63 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				84438B241EAC1028008B7540 /* callBtn.png */,
 				846A72771E8999660083969E /* cancelBtn.png */,
 				846FAFD91EA9DD0800A97031 /* directionsBtn.png */,
 				847B99F21E9732E2003BA309 /* doneBtn.png */,
@@ -508,6 +518,8 @@
 				84C81B341EA4323500962484 /* refreshBtn.png */,
 				846A72611E88524C0083969E /* searchBtn.png */,
 				84B5EEDD1E65393A00311B63 /* submitBtn.png */,
+				84438B221EAC0FCC008B7540 /* websiteBtn.png */,
+				84438B281EACC56A008B7540 /* websiteBtnB.png */,
 			);
 			name = Buttons;
 			sourceTree = "<group>";
@@ -690,6 +702,7 @@
 				84B5EEE41E65393A00311B63 /* signUpBtn.png in Resources */,
 				845D3D541E7FA06700955A44 /* bball.png in Resources */,
 				846A726A1E885C220083969E /* homeBtn.png in Resources */,
+				84438B231EAC0FCC008B7540 /* websiteBtn.png in Resources */,
 				84C81B2B1E980F9F00962484 /* groupPic3.png in Resources */,
 				847B99EC1E96B031003BA309 /* groupPic1.png in Resources */,
 				84C81B371EA43FA400962484 /* goBackBtn.png in Resources */,
@@ -714,10 +727,13 @@
 				84C805341E8382AA000F9BE2 /* profilePic.png in Resources */,
 				847B99F31E9732E2003BA309 /* doneBtn.png in Resources */,
 				846A72781E8999660083969E /* cancelBtn.png in Resources */,
+				84438B291EACC56A008B7540 /* websiteBtnB.png in Resources */,
 				84B5EEA21E65313400311B63 /* Main.storyboard in Resources */,
 				84B5EEE11E65393A00311B63 /* loginBtn.png in Resources */,
 				846A72F91E8B88110083969E /* friendsBtn.png in Resources */,
 				846FAFDA1EA9DD0800A97031 /* directionsBtn.png in Resources */,
+				84438B271EAC3488008B7540 /* star.png in Resources */,
+				84438B251EAC1028008B7540 /* callBtn.png in Resources */,
 				84B5EEE91E65394200311B63 /* iHoopTitle.png in Resources */,
 				84B5EEE51E65393A00311B63 /* submitBtn.png in Resources */,
 				8415853B1E7BB8FB00B263BE /* facebookBtn.png in Resources */,
