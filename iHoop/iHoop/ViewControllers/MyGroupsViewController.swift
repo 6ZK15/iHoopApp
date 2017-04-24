@@ -24,6 +24,7 @@ class MyGroupsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var groupPrivacySegControl: UISegmentedControl!
     
     var groups = [Groups]()
+    var publicGroups = [Groups]()
     let textFieldClass = TextField()
     let databaseReference = FIRDatabase.database().reference()
     let orangeColor = UIColor.init(red: 0.796, green: 0.345, blue: 0.090, alpha: 1.000)
@@ -57,10 +58,10 @@ class MyGroupsViewController: UIViewController, UITableViewDelegate, UITableView
         let sectionHeaderTitles = ["Public","Private"]
         
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.size.width, height: 30))
-        headerView.backgroundColor = UIColor.darkGray
+        headerView.backgroundColor = UIColor.clear
         
         let titleLabel = UILabel.init(frame: CGRect.init(x: 8, y: 8, width: tableView.frame.size.width - 8, height: 22))
-        titleLabel.textColor = orangeColor
+        titleLabel.textColor = UIColor.white
         titleLabel.font = UIFont.init(name: "Bodoni 72 Smallcaps", size: 24)
         titleLabel.text = sectionHeaderTitles[section]
         headerView.addSubview(titleLabel)
@@ -69,7 +70,11 @@ class MyGroupsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return groups.count
+        if section == 0 {
+            return publicGroups.count
+        } else {
+            return groups.count
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -77,10 +82,16 @@ class MyGroupsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! MyGroupsTableViewCell
-        let group = groups[indexPath.row]
-        
-        cell.configureCell(group)
+        var cell = MyGroupsTableViewCell()
+        if indexPath.section == 0 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! MyGroupsTableViewCell
+            let group = publicGroups[indexPath.row]
+            cell.configureCell(group)
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifierTwo", for: indexPath) as! MyGroupsTableViewCell
+            let group = groups[indexPath.row]
+            cell.configureCell(group)
+        }
         
         return cell
     }
@@ -116,23 +127,30 @@ class MyGroupsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func storeGroupInfo() {
-        let userID = UserDefaults.standard.value(forKey: "currentUserUID")
+        guard let userID = UserDefaults.standard.value(forKey: "currentUserUID") else { return }
         let groupName = groupNameTextField.text
         
         // Store Private Group Info
         if groupPrivacySegControl.selectedSegmentIndex == 0 {
-            databaseReference.child("users").child(userID as! String).child("groups").child(NSUUID().uuidString).setValue([
+            databaseReference.child("users").child(userID as! String).child("groups").child("private").child(NSUUID().uuidString).setValue([
                 "groupName": groupName,
                 "groupPrivacy": "private",
                 "groupLocation": "nothing as of now",
                 "groupPic": "nothing as of now"
-                ])
+            ])
             groupPrivacySegControl.selectedSegmentIndex = -1
         }
             
         // Store Public Group Info
         else if groupPrivacySegControl.selectedSegmentIndex == 1 {
             databaseReference.child("groups").child(NSUUID().uuidString).setValue([
+                "groupName": groupName,
+                "groupPrivacy": "public",
+                "groupLocation": "nothing as of now",
+                "groupPic": "nothing as of now"
+            ])
+            
+            databaseReference.child("users").child(userID as! String).child("groups").child("public").child(NSUUID().uuidString).setValue([
                 "groupName": groupName,
                 "groupPrivacy": "public",
                 "groupLocation": "nothing as of now",
@@ -149,10 +167,10 @@ class MyGroupsViewController: UIViewController, UITableViewDelegate, UITableView
     func getGroupsForUser() {
         let userID = UserDefaults.standard.value(forKey: "currentUserUID")
         // Get Public Groups
-        databaseReference.child("groups").observe(FIRDataEventType.value, with: {
+        databaseReference.child("users").child(userID as! String).child("groups").child("public").observe(FIRDataEventType.value, with: {
             (snapshot) in
             
-            self.groups = []
+            self.publicGroups = []
             
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 
@@ -160,7 +178,25 @@ class MyGroupsViewController: UIViewController, UITableViewDelegate, UITableView
                     if let groupDictionary = snap.value as? Dictionary<String, AnyObject> {
                         let key = snap.key
                         let group = Groups(key: key, dictionary: groupDictionary)
-                        self.groups.insert(group, at: 0)
+                        self.publicGroups.insert(group, at: 0)
+                    }
+                }
+            }
+            self.groupsTableView.reloadData()
+        })
+        
+        databaseReference.child("users").child(userID as! String).child("groups").child("public").observe(FIRDataEventType.value, with: {
+            (snapshot) in
+            
+            self.publicGroups = []
+            
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
+                for snap in snapshots {
+                    if let groupDictionary = snap.value as? Dictionary<String, AnyObject> {
+                        let key = snap.key
+                        let group = Groups(key: key, dictionary: groupDictionary)
+                        self.publicGroups.insert(group, at: 0)
                     }
                 }
             }
@@ -168,7 +204,7 @@ class MyGroupsViewController: UIViewController, UITableViewDelegate, UITableView
         })
         
         // Get Private Groups
-        databaseReference.child("users").child(userID as! String).child("groups").observe(FIRDataEventType.value, with: {
+        databaseReference.child("users").child(userID as! String).child("groups").child("private").observe(FIRDataEventType.value, with: {
             (snapshot) in
             
             self.groups = []

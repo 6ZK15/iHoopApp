@@ -149,6 +149,7 @@ class InfoWindowView: UIView {
                                            width: 30,
                                            height: 30)
         addGroupBtn.setImage(UIImage.init(named: "addGymBtn.png"), for: UIControlState.normal)
+        addGroupBtn.addTarget(self, action: #selector(addPublicGymGroup(_ :)), for: UIControlEvents.touchUpInside)
         
         addGroupLabel.frame = CGRect.init(x: addGroupBtn.frame.origin.x + 38,
                                           y: addGroupBtn.frame.origin.y,
@@ -243,8 +244,8 @@ class InfoWindowView: UIView {
         print("Get Directions")
         showHideInfoWindoView()
         
-        let markerLat = UserDefaults.standard.object(forKey: "markerLat")
-        let markerLng = UserDefaults.standard.object(forKey: "markerLng")
+        guard let markerLat = UserDefaults.standard.object(forKey: "markerLat") else { return }
+        guard let markerLng = UserDefaults.standard.object(forKey: "markerLng") else { return }
         guard let markerTitle = UserDefaults.standard.object(forKey: "markerTitle") else { return }
         guard let markerPhoneNumber = UserDefaults.standard.object(forKey: "phoneNumber") else { return }
         guard let markerWebsite = UserDefaults.standard.object(forKey: "website") else { return }
@@ -276,5 +277,24 @@ class InfoWindowView: UIView {
         if let website = UserDefaults.standard.url(forKey: "website") {
             UIApplication.shared.open(website, options: [:], completionHandler: nil)
         }
+    }
+    
+    @IBAction func addPublicGymGroup(_ sender:UIButton) {
+        print("Add Gym Button Clicked")
+        guard let markerTitle = UserDefaults.standard.object(forKey: "markerTitle") else { return }
+        
+        self.databaseReference.child("users").child(userID as! String).child("groups").child("public").child(markerTitle as! String).setValue([
+            "groupName": markerTitle,
+            "groupPrivacy": "public",
+            "groupLocation": "nothing as of now",
+            "groupPic": "nothing as of now"
+        ])
+        
+        self.databaseReference.child("groups").child(markerTitle as! String).setValue([
+            "groupName": markerTitle,
+            "groupPrivacy": "public",
+            "groupLocation": "nothing as of now",
+            "groupPic": "nothing as of now"
+        ])
     }
 }
