@@ -19,7 +19,7 @@ class UserOperations: NSObject {
        Gets user information from database reference and stores value as UserDefaults key
      */
     func getCurrentUserInfo() {
-        let userID = UserDefaults.standard.value(forKey: "currentUserUID")
+        guard let userID = UserDefaults.standard.value(forKey: "currentUserUID") else { return }
         print("current user: %@", userID as Any)
         let queryRef = databaseReference.child("users")
         queryRef.child(userID as! String).observeSingleEvent(of: FIRDataEventType.value, with: {

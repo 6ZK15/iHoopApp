@@ -83,9 +83,12 @@ class MyGroupsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = MyGroupsTableViewCell()
+        
         if indexPath.section == 0 {
             cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! MyGroupsTableViewCell
             let group = publicGroups[indexPath.row]
+            print("This group is locked: ", group.locked)
+            cell.lockedGroup(group)
             cell.configureCell(group)
         } else {
             cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifierTwo", for: indexPath) as! MyGroupsTableViewCell
@@ -94,6 +97,48 @@ class MyGroupsViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "groupSegue", sender: indexPath)
+        
+        if indexPath.section == 0 {
+            let group = publicGroups[indexPath.row]
+            UserDefaults.standard.set(group.groupName, forKey: "groupName")
+            print("Group Name: ", group.groupName)
+        } else {
+            let group = groups[indexPath.row]
+            UserDefaults.standard.set(group.groupName, forKey: "groupName")
+            print("Group Name: ", group.groupName)
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        var bool = Bool()
+        if indexPath.section == 0 {
+            if publicGroups[indexPath.row].locked {
+                bool = false
+            } else {
+                bool = true
+            }
+        } else {
+            bool =  true
+        }
+        
+        return bool
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let edit = UITableViewRowAction(style: UITableViewRowActionStyle.normal,
+                                        title: "Edit",
+                                        handler: {
+                                            (action, index) in
+                                            print("Repost Button Tapped")
+        })
+        edit.backgroundColor = orangeColor
+        
+        return [edit]
     }
     
     @IBAction func addGroup(_ sender: Any) {
@@ -133,10 +178,11 @@ class MyGroupsViewController: UIViewController, UITableViewDelegate, UITableView
         // Store Private Group Info
         if groupPrivacySegControl.selectedSegmentIndex == 0 {
             databaseReference.child("users").child(userID as! String).child("groups").child("private").child(NSUUID().uuidString).setValue([
-                "groupName": groupName,
+                "groupName": groupName!,
                 "groupPrivacy": "private",
                 "groupLocation": "nothing as of now",
-                "groupPic": "nothing as of now"
+                "groupPic": "nothing as of now",
+                "locked": false
             ])
             groupPrivacySegControl.selectedSegmentIndex = -1
         }
@@ -144,17 +190,19 @@ class MyGroupsViewController: UIViewController, UITableViewDelegate, UITableView
         // Store Public Group Info
         else if groupPrivacySegControl.selectedSegmentIndex == 1 {
             databaseReference.child("groups").child(NSUUID().uuidString).setValue([
-                "groupName": groupName,
+                "groupName": groupName!,
                 "groupPrivacy": "public",
                 "groupLocation": "nothing as of now",
-                "groupPic": "nothing as of now"
+                "groupPic": "nothing as of now",
+                "locked": false
             ])
             
             databaseReference.child("users").child(userID as! String).child("groups").child("public").child(NSUUID().uuidString).setValue([
-                "groupName": groupName,
+                "groupName": groupName!,
                 "groupPrivacy": "public",
                 "groupLocation": "nothing as of now",
-                "groupPic": "nothing as of now"
+                "groupPic": "nothing as of now",
+                "locked": false
             ])
             groupPrivacySegControl.selectedSegmentIndex = -1
         }

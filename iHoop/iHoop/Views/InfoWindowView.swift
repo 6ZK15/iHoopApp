@@ -287,14 +287,16 @@ class InfoWindowView: UIView {
             "groupName": markerTitle,
             "groupPrivacy": "public",
             "groupLocation": "nothing as of now",
-            "groupPic": "nothing as of now"
+            "groupPic": "nothing as of now",
+            "locked": true
         ])
         
         self.databaseReference.child("groups").child(markerTitle as! String).setValue([
             "groupName": markerTitle,
             "groupPrivacy": "public",
             "groupLocation": "nothing as of now",
-            "groupPic": "nothing as of now"
+            "groupPic": "nothing as of now",
+            "locked": true
         ])
     }
 }

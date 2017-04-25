@@ -18,6 +18,7 @@ struct Groups {
     fileprivate var _groupPrivacy: String!
     fileprivate var _groupLocation: String!
     fileprivate var _groupImage: String!
+    fileprivate var _locked: Bool!
     
     var key: String {
         return _key
@@ -43,6 +44,10 @@ struct Groups {
         return _groupImage
     }
     
+    var locked: Bool {
+        return _locked
+    }
+    
     init(key: String, dictionary: Dictionary<String,AnyObject>) {
         self._key = key
         
@@ -64,6 +69,10 @@ struct Groups {
         
         if let groupImage = dictionary["groupPic"] as? String {
             self._groupImage = groupImage
+        }
+        
+        if let locked = dictionary["locked"] as? Bool {
+            self._locked = locked
         }
     }
     

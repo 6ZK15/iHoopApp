@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class MyGroupsTableViewCell: UITableViewCell {
     
@@ -14,8 +16,11 @@ class MyGroupsTableViewCell: UITableViewCell {
     @IBOutlet weak var groupName: UILabel!
     @IBOutlet weak var groupLocation: UILabel!
     @IBOutlet weak var groupNotifications: UILabel!
+    @IBOutlet weak var lockedGroupImage: UIImageView!
     
     var groups: Groups!
+    
+    let databaseReference = FIRDatabase.database().reference()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,6 +38,14 @@ class MyGroupsTableViewCell: UITableViewCell {
         
         groupName.text = groups.groupName
         groupLocation.text = groups.groupLocation
+    }
+    
+    func lockedGroup(_ group: Groups) {
+        if group.locked {
+            lockedGroupImage.alpha = 1.0
+        } else {
+            lockedGroupImage.alpha = 0.0
+        }
     }
 
 }
