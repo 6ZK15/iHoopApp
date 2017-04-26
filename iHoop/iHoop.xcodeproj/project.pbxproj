@@ -18,6 +18,8 @@
 		84438B291EACC56A008B7540 /* websiteBtnB.png in Resources */ = {isa = PBXBuildFile; fileRef = 84438B281EACC56A008B7540 /* websiteBtnB.png */; };
 		84438B2B1EADB425008B7540 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84438B2A1EADB425008B7540 /* GroupViewController.swift */; };
 		84438B2D1EAE49FF008B7540 /* backBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84438B2C1EAE49FF008B7540 /* backBtn.png */; };
+		84438B2F1EB11BDA008B7540 /* editBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84438B2E1EB11BDA008B7540 /* editBtn.png */; };
+		84438B311EB125AD008B7540 /* GroupMembersTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84438B301EB125AD008B7540 /* GroupMembersTableView.swift */; };
 		845D3D4F1E7F3BD800955A44 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D4E1E7F3BD800955A44 /* SignUpView.swift */; };
 		845D3D511E7F3C2F00955A44 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D501E7F3C2F00955A44 /* TextField.swift */; };
 		845D3D541E7FA06700955A44 /* bball.png in Resources */ = {isa = PBXBuildFile; fileRef = 845D3D521E7FA06700955A44 /* bball.png */; };
@@ -144,6 +146,8 @@
 		84438B281EACC56A008B7540 /* websiteBtnB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = websiteBtnB.png; path = Images/Buttons/websiteBtnB.png; sourceTree = "<group>"; };
 		84438B2A1EADB425008B7540 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupViewController.swift; path = ViewControllers/GroupViewController.swift; sourceTree = "<group>"; };
 		84438B2C1EAE49FF008B7540 /* backBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backBtn.png; path = Images/Buttons/backBtn.png; sourceTree = "<group>"; };
+		84438B2E1EB11BDA008B7540 /* editBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = editBtn.png; path = Images/Buttons/editBtn.png; sourceTree = "<group>"; };
+		84438B301EB125AD008B7540 /* GroupMembersTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupMembersTableView.swift; path = Views/GroupMembersTableView.swift; sourceTree = "<group>"; };
 		845D3D4E1E7F3BD800955A44 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpView.swift; path = Views/SignUpView.swift; sourceTree = "<group>"; };
 		845D3D501E7F3C2F00955A44 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextField.swift; path = Views/TextField.swift; sourceTree = "<group>"; };
 		845D3D521E7FA06700955A44 /* bball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bball.png; path = Images/bball.png; sourceTree = "<group>"; };
@@ -378,6 +382,7 @@
 			children = (
 				846A73071E8CCE430083969E /* FriendsTableViewCell.swift */,
 				846FAFD71EA9D9CE00A97031 /* InfoWindowView.swift */,
+				84438B301EB125AD008B7540 /* GroupMembersTableView.swift */,
 				847B99E31E9610E9003BA309 /* MyGroupsTableViewCell.swift */,
 				846A72751E8977570083969E /* MenuCell.swift */,
 				846A73091E8E26750083969E /* RequestTableViewCell.swift */,
@@ -512,6 +517,7 @@
 				846A72771E8999660083969E /* cancelBtn.png */,
 				846FAFD91EA9DD0800A97031 /* directionsBtn.png */,
 				847B99F21E9732E2003BA309 /* doneBtn.png */,
+				84438B2E1EB11BDA008B7540 /* editBtn.png */,
 				84C81B361EA43FA400962484 /* goBackBtn.png */,
 				846A724F1E879E1D0083969E /* Tab Buttons */,
 				846A72501E879E790083969E /* Menu Buttons */,
@@ -737,6 +743,7 @@
 				84438B291EACC56A008B7540 /* websiteBtnB.png in Resources */,
 				84B5EEA21E65313400311B63 /* Main.storyboard in Resources */,
 				84B5EEE11E65393A00311B63 /* loginBtn.png in Resources */,
+				84438B2F1EB11BDA008B7540 /* editBtn.png in Resources */,
 				846A72F91E8B88110083969E /* friendsBtn.png in Resources */,
 				846FAFDA1EA9DD0800A97031 /* directionsBtn.png in Resources */,
 				84438B271EAC3488008B7540 /* star.png in Resources */,
@@ -935,6 +942,7 @@
 				84B66CF11E8481EF00CBDB7D /* HomeViewController.swift in Sources */,
 				96B7D3F21EA407360065715A /* ESPNViewController.swift in Sources */,
 				846FAFD81EA9D9CE00A97031 /* InfoWindowView.swift in Sources */,
+				84438B311EB125AD008B7540 /* GroupMembersTableView.swift in Sources */,
 				846A72F31E8B7DAE0083969E /* GearViewController.swift in Sources */,
 				846A72721E88DCA40083969E /* SWRevealViewController.m in Sources */,
 				848C97F21E9537AE00A9D476 /* UserOperations.swift in Sources */,

@@ -282,11 +282,12 @@ class InfoWindowView: UIView {
     @IBAction func addPublicGymGroup(_ sender:UIButton) {
         print("Add Gym Button Clicked")
         guard let markerTitle = UserDefaults.standard.object(forKey: "markerTitle") else { return }
+        guard let groupLocation = UserDefaults.standard.object(forKey: "locationName") else { return }
         
         self.databaseReference.child("users").child(userID as! String).child("groups").child("public").child(markerTitle as! String).setValue([
             "groupName": markerTitle,
             "groupPrivacy": "public",
-            "groupLocation": "nothing as of now",
+            "groupLocation": groupLocation,
             "groupPic": "nothing as of now",
             "locked": true
         ])
@@ -294,7 +295,7 @@ class InfoWindowView: UIView {
         self.databaseReference.child("groups").child(markerTitle as! String).setValue([
             "groupName": markerTitle,
             "groupPrivacy": "public",
-            "groupLocation": "nothing as of now",
+            "groupLocation": groupLocation,
             "groupPic": "nothing as of now",
             "locked": true
         ])

@@ -274,6 +274,27 @@ class FindGymsViewController: UIViewController, CLLocationManagerDelegate, GMSMa
                 return
             }
             
+            var state = String()
+            var city = String()
+            let arrays : NSArray = place.addressComponents! as NSArray
+            for i in 0..<arrays.count{
+                let dics : GMSAddressComponent = arrays[i] as! GMSAddressComponent
+                let str : NSString = dics.type as NSString
+                
+                if (str == "administrative_area_level_1") {
+                    print("State: \(dics.name)")
+                    state = dics.name
+                }
+                else if (str == "locality") {
+                    print("City: \(dics.name)")
+                    city = dics.name
+                }
+            }
+            
+            let locationName = "\(city), \(state)"
+            print(locationName)
+            UserDefaults.standard.set(locationName, forKey: "locationName")
+            
             print(place.phoneNumber as Any)
             print(place.website as Any)
             print(place.rating)

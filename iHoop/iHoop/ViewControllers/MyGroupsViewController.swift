@@ -62,7 +62,7 @@ class MyGroupsViewController: UIViewController, UITableViewDelegate, UITableView
         
         let titleLabel = UILabel.init(frame: CGRect.init(x: 8, y: 8, width: tableView.frame.size.width - 8, height: 22))
         titleLabel.textColor = UIColor.white
-        titleLabel.font = UIFont.init(name: "Bodoni 72 Smallcaps", size: 24)
+        titleLabel.font = UIFont.init(name: UIFontTextStyle.title2.rawValue, size: 24)
         titleLabel.text = sectionHeaderTitles[section]
         headerView.addSubview(titleLabel)
         
@@ -105,11 +105,25 @@ class MyGroupsViewController: UIViewController, UITableViewDelegate, UITableView
         if indexPath.section == 0 {
             let group = publicGroups[indexPath.row]
             UserDefaults.standard.set(group.groupName, forKey: "groupName")
+            UserDefaults.standard.set(group.locked, forKey: "groupLocked")
+            UserDefaults.standard.set(group.groupPrivacy, forKey: "groupPrivacy")
+            print("Group Privacy: ", group.groupPrivacy)
             print("Group Name: ", group.groupName)
+            print("Group Locked: ", group.locked)
+            
+            if !group.locked {
+                UserDefaults.standard.set(group.key, forKey: "groupID")
+                print("Group Key:", group.key)
+            }
         } else {
             let group = groups[indexPath.row]
             UserDefaults.standard.set(group.groupName, forKey: "groupName")
+            UserDefaults.standard.set(group.locked, forKey: "groupLocked")
+            UserDefaults.standard.set(group.groupPrivacy, forKey: "groupPrivacy")
+            print("Group Privacy: ", group.groupPrivacy)
+            UserDefaults.standard.set(group.key, forKey: "groupID")
             print("Group Name: ", group.groupName)
+            print("Group Key:", group.key)
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
