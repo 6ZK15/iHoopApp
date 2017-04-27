@@ -39,7 +39,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timerRemoval()
+//        timerRemoval()
+        postCheck()
         
         UserDefaults.standard.synchronize()
         
@@ -89,7 +90,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                                             (action, index) in
                                             print("Repost Button Tapped")
         })
-        repost.backgroundColor = UIColor.lightGray
+        repost.backgroundColor = orangeColor
         
         return [repost]
     }
@@ -101,6 +102,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func letsTalkBballBtn(_ sender: Any) {
         showHidePostMsgView()
     }
+    
     /*
      * @IBAction - cancelPost
        Shows and hides UITextView for posts
@@ -126,7 +128,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
      Retrieves the user's post information
      */
     func getPostsForUser() {
-        let userID = UserDefaults.standard.value(forKey: "currentUserUID")
+        guard let userID = UserDefaults.standard.value(forKey: "currentUserUID") else { return }
         let timelineRef = databaseReference.child("users").child(userID as! String).child("timeline")
         
         timelineRef.observe(FIRDataEventType.value, with: {
@@ -156,7 +158,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
      Input: msgTextView as! UITextView
      */
     func storePostForUser() {
-        let userID = UserDefaults.standard.value(forKey: "currentUserUID")
+        guard let userID = UserDefaults.standard.value(forKey: "currentUserUID") else { return }
         let postID = self.databaseReference.child("users").child(NSUUID().uuidString)
         let postMessage = msgTextView.text
         UserDefaults.standard.set(postID.key, forKey: "postID")
@@ -170,14 +172,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         dateFormatter.pmSymbol = "PM"
         let timeStamp = dateFormatter.string(from: date)
         
-    
+        //Date to remove post
         var removeTimeStamp = dateFormatter.string(from:date)
         let curr = NSDate(timeIntervalSinceNow: 86400)
         removeTimeStamp = dateFormatter.string(from:curr as Date)
         print(removeTimeStamp)
-        
-        
-    
         
         //Date Database Format
         let dateReferenceFormatter = DateFormatter()
@@ -229,26 +228,18 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     
-    func postCheck(){
+    func postCheck() {
         let userID = UserDefaults.standard.value(forKey: "currentUserUID")
         let postID = self.databaseReference.child("users").child(NSUUID().uuidString)
         UserDefaults.standard.set(postID.key, forKey: "postID")
-
-        
-        //Date Post Format
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.dateFormat = "MMMM d h:mm a"
-        dateFormatter.amSymbol = "AM"
-        dateFormatter.pmSymbol = "PM"
-        let timeStamp = dateFormatter.string(from: date)
         
         //Date Database Format
+        let date = Date()
         let dateReferenceFormatter = DateFormatter()
         dateReferenceFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateReferenceFormatter.dateFormat = "MMMM d h:mm:ss"
         let timeStampRef = dateReferenceFormatter.string(from: date)
+        print("timeStampRef: ", timeStampRef)
         
 
         databaseReference.child("users").child(userID as! String).child("timeline").observe(FIRDataEventType.value, with: {
@@ -266,31 +257,24 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                         print("Delete Stamp:", deleteStamp)
                         print(posts.postKey)
                       
-                        if postStamp <= deleteStamp {
+                        if timeStampRef >= deleteStamp {
                              self.databaseReference.child("users").child(userID as! String).child("timeline").child(posts.postKey).removeValue()
-                            
                         }
-                        
-                
-                    
-
                     }
-                    
                 }
-        }
+            }
         })
     
     }
   
-    func timerRemoval() {
-        timer = Timer.scheduledTimer(timeInterval: 86400, target: self, selector: #selector(ProfileViewController.postCheck), userInfo: nil, repeats: true)
-    }
-    
-    func removeOldPosts(){
-        let userID = UserDefaults.standard.value(forKey: "currentUserUID")
-        databaseReference.child("users").child(userID as! String).child("timeline").removeValue()
-        }
-    
+//    func timerRemoval() {
+//        timer = Timer.scheduledTimer(timeInterval: 86400, target: self, selector: #selector(ProfileViewController.postCheck), userInfo: nil, repeats: true)
+//    }
+//    
+//    func removeOldPosts() {
+//        guard let userID = UserDefaults.standard.value(forKey: "currentUserUID") else { return }
+//        databaseReference.child("users").child(userID as! String).child("timeline").removeValue()
+//    }
 
     /*
      * getListOfRequests
@@ -352,7 +336,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
        Sets Profile Pic for user
      */
     func setProfilePic() {
-        let profileImageURL = UserDefaults.standard.value(forKey: "profileImageURL")
+        guard let profileImageURL = UserDefaults.standard.value(forKey: "profileImageURL") else { return }
         
         let storage = FIRStorage.storage()
         var reference: FIRStorageReference!
