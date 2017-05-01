@@ -62,9 +62,12 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
             let requestID = request.key
             let requestUserID = request.userID
             let requestUsername = request.username
+            let requestFirstname = request.firstname
+            let requestLastname = request.lastname
+            let requestProfilePic = request.profilePic
             
             if cell.requestResponse.selectedSegmentIndex == 0 {
-                self.requestOperations.acceptFriendRequest(requestID, requestUserID, requestUsername)
+                self.requestOperations.acceptFriendRequest(requestID, requestUserID, requestUsername, requestFirstname, requestLastname, requestProfilePic)
                 cell.requestResponse.selectedSegmentIndex = -1
             } else if cell.requestResponse.selectedSegmentIndex == 1 {
                 self.requestOperations.declineFriendRequest(requestID)
@@ -85,7 +88,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
        Returns the list of friend requests for each user and displays the badgeValue for the total of requests
      */
     func getListOfRequests() {
-        let username = UserDefaults.standard.string(forKey: "profileUsername") ?? "Error"
+        guard let username = UserDefaults.standard.string(forKey: "profileUsername") else { return }
         
         databaseReference.child("requests").child(username).observe(FIRDataEventType.value, with: {
             (snapshot) in

@@ -82,7 +82,10 @@ class FriendsViewController: UIViewController, UISearchResultsUpdating, UISearch
             self.databaseReference.child("requests").child(self.filteredFriends[indexPath.row].username).child(requestID.key).setValue([
                 "uid": userID,
                 "username": UserDefaults.standard.value(forKey: "profileUsername") as! String,
-                "fullname": firstname + " " + lastname
+                "fullname": firstname + " " + lastname,
+                "firstname":firstname,
+                "lastname": lastname,
+                "profilePic": UserDefaults.standard.value(forKey: "profileImageURL") as! String
             ])
         }
         

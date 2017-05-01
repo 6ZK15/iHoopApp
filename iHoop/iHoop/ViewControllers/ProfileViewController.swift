@@ -39,7 +39,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        timerRemoval()
+        
         postCheck()
         
         UserDefaults.standard.synchronize()
@@ -48,7 +48,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         getPostsForUser()
         getListOfRequests()
         
-//        setProfilePic()
+        setProfilePic()
         setProfileUsername()
         setProfileTextViewDesign()
         
@@ -266,15 +266,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         })
     
     }
-  
-//    func timerRemoval() {
-//        timer = Timer.scheduledTimer(timeInterval: 86400, target: self, selector: #selector(ProfileViewController.postCheck), userInfo: nil, repeats: true)
-//    }
-//    
-//    func removeOldPosts() {
-//        guard let userID = UserDefaults.standard.value(forKey: "currentUserUID") else { return }
-//        databaseReference.child("users").child(userID as! String).child("timeline").removeValue()
-//    }
 
     /*
      * getListOfRequests

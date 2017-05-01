@@ -293,8 +293,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
         
         let storedImage = storageRef.child("profile_images").child(imageName)
         
-        if let uploadData = UIImagePNGRepresentation(self.profileImageView.image!)
-        {
+        if let uploadData = profileImageView.image?.jpeg(.lowest) {
             
             storedImage.put(uploadData, metadata: nil, completion: { (metadata, error) in
                 if error != nil {
@@ -565,4 +564,19 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     
 }
 
-
+extension UIImage {
+    enum JPEGQuality: CGFloat {
+        case lowest  = 0
+        case low     = 0.25
+        case medium  = 0.5
+        case high    = 0.75
+        case highest = 1
+    }
+    
+    var png: Data? { return UIImagePNGRepresentation(self) }
+    
+    func jpeg(_ quality: JPEGQuality) -> Data? {
+        return UIImageJPEGRepresentation(self, quality.rawValue)
+    }
+    
+}

@@ -43,7 +43,7 @@ class PostsTableViewCell: UITableViewCell {
     }
     
     func setPostProfilePic() {
-        let profileImageURL = UserDefaults.standard.value(forKey: "profileImageURL")
+        guard let profileImageURL = UserDefaults.standard.value(forKey: "profileImageURL") else { return }
         
         let storage = FIRStorage.storage()
         var reference: FIRStorageReference!

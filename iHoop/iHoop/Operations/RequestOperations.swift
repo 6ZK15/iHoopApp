@@ -22,19 +22,34 @@ class RequestOperations: NSObject {
        Accepts and stores the friend's request information to users database reference
        Input: requestID or key; requestUserID; requestUsername
      */
-    func acceptFriendRequest(_ requestID: String, _ requestUserID: String, _ requestUsername: String) {
+    func acceptFriendRequest(_ requestID: String,
+                             _ requestUserID: String,
+                             _ requestUsername: String,
+                             _ requestFirstname: String,
+                             _ requestLastname: String,
+                             _ requestProfilePic: String) {
+        
         let userID = FIRAuth.auth()?.currentUser?.uid
         let username = UserDefaults.standard.value(forKey: "profileUsername") as! String
+        let firstname = UserDefaults.standard.value(forKey: "firstname") as! String
+        let lastname = UserDefaults.standard.value(forKey: "lastname") as! String
+        let profilePic = UserDefaults.standard.value(forKey: "profileImageURL") as! String
         let friendID = self.databaseReference.child("users").child("friends").child(NSUUID().uuidString)
         
         databaseReference.child("requests").child(username).child(requestID).removeValue()
         databaseReference.child("users").child(userID!).child("friends").child(friendID.key).setValue([
             "uid":requestUserID,
-            requestUsername:true
+            "username":requestUsername,
+            "firstname":requestFirstname,
+            "lastname":requestLastname,
+            "profilePic": requestProfilePic
         ])
         databaseReference.child("users").child(requestUserID).child("friends").child(friendID.key).setValue([
             "uid":userID!,
-            username:true
+            "username":username,
+            "firstname":firstname,
+            "lastname":lastname,
+            "profilePic":profilePic
         ])
     }
     

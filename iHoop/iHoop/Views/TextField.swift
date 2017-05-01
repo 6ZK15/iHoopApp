@@ -16,15 +16,14 @@ class TextField: UITextField {
      * UITextField: Style
      */
     func setTextFieldDesign(textField: UITextField, placeHolderString: String) {
-        let font = UIFont(name: "Bodoni 72 Smallcaps", size: 24)!
+//        let font = UIFont.init(name: UIFontTextStyle.headline.rawValue, size: 24)
         let attributes = [
-            NSForegroundColorAttributeName: orangeColor,
-            NSFontAttributeName : font
+            NSForegroundColorAttributeName: orangeColor
         ]
         textField.layer.cornerRadius = 8
         textField.borderStyle = UITextBorderStyle.roundedRect
         textField.textColor = orangeColor
-        textField.font = font
+        textField.font = UIFont.init(name: UIFontTextStyle.headline.rawValue, size: 24)
         textField.attributedPlaceholder = NSAttributedString(string: placeHolderString, attributes: attributes)
     }
     

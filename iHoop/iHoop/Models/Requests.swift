@@ -15,8 +15,10 @@ struct Requests {
     fileprivate var _key: String!
     fileprivate var _username: String!
     fileprivate var _fullname: String!
+    fileprivate var _firstname: String!
+    fileprivate var _lastname: String!
     fileprivate var _userID: String!
-//    fileprivate var _profilePic: String!
+    fileprivate var _profilePic: String!
     
     let databaseReference = FIRDatabase.database().reference()
     
@@ -32,25 +34,41 @@ struct Requests {
         return _fullname
     }
     
+    var firstname: String {
+        return _firstname
+    }
+    
+    var lastname: String {
+        return _lastname
+    }
+    
     var userID: String {
         return _userID
     }
     
-//    var profilePic: String {
-//        return _profilePic
-//    }
+    var profilePic: String {
+        return _profilePic
+    }
     
     init(key: String, dictionary: Dictionary<String, AnyObject>) {
         self._key = key
         
         // Within the Request, or Key, the following properties are children
         
-//        if let profilePic = dictionary["profilePic"] as? String {
-//            self._profilePic = profilePic
-//        }
+        if let profilePic = dictionary["profilePic"] as? String {
+            self._profilePic = profilePic
+        }
         
         if let fullname = dictionary["fullname"] as? String {
             self._fullname = fullname
+        }
+        
+        if let firstname = dictionary["firstname"] as? String {
+            self._firstname = firstname
+        }
+        
+        if let lastname = dictionary["lastname"] as? String {
+            self._lastname = lastname
         }
         
         if let username = dictionary["username"] as? String {

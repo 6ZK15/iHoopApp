@@ -27,7 +27,7 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate ,UIIm
         
         UserDefaults.standard.synchronize()
         
-//        setProfilePic()
+        setProfilePic()
         setProfileUsername()
         
         profileImageClass.setProfileImageDesign(profileImageView)
@@ -170,8 +170,7 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate ,UIIm
         
         let storedImage = storageRef.child("profile_images").child(imageName)
         
-        if let uploadData = UIImagePNGRepresentation(self.profileImageView.image!)
-        {
+        if let uploadData = profileImageView.image?.jpeg(.lowest) {
             
             storedImage.put(uploadData, metadata: nil, completion: { (metadata, error) in
                 if error != nil {
