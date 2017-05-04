@@ -20,6 +20,19 @@
 		84438B2D1EAE49FF008B7540 /* backBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84438B2C1EAE49FF008B7540 /* backBtn.png */; };
 		84438B2F1EB11BDA008B7540 /* editBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84438B2E1EB11BDA008B7540 /* editBtn.png */; };
 		845CC5FC1EB298DF0049D330 /* MembersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CC5FB1EB298DF0049D330 /* MembersTableViewCell.swift */; };
+		845CC5FF1EB79E5C0049D330 /* ballGBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 845CC5FE1EB79E5C0049D330 /* ballGBtn.png */; };
+		845CC6011EB998310049D330 /* GearCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CC6001EB998310049D330 /* GearCollectionViewCell.swift */; };
+		845CC6031EB99A2C0049D330 /* GearCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CC6021EB99A2C0049D330 /* GearCollectionReusableView.swift */; };
+		845CC6071EBA5D7B0049D330 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CC6061EBA5D7B0049D330 /* Items.swift */; };
+		845CC6131EBAEA9B0049D330 /* bagsGBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 845CC60A1EBAEA9B0049D330 /* bagsGBtn.png */; };
+		845CC6141EBAEA9B0049D330 /* bandsGBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 845CC60B1EBAEA9B0049D330 /* bandsGBtn.png */; };
+		845CC6151EBAEA9B0049D330 /* jacketsGBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 845CC60C1EBAEA9B0049D330 /* jacketsGBtn.png */; };
+		845CC6161EBAEA9B0049D330 /* pantsGBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 845CC60D1EBAEA9B0049D330 /* pantsGBtn.png */; };
+		845CC6171EBAEA9B0049D330 /* shirtsGBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 845CC60E1EBAEA9B0049D330 /* shirtsGBtn.png */; };
+		845CC6181EBAEA9B0049D330 /* shoesGBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 845CC60F1EBAEA9B0049D330 /* shoesGBtn.png */; };
+		845CC6191EBAEA9B0049D330 /* shortsGBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 845CC6101EBAEA9B0049D330 /* shortsGBtn.png */; };
+		845CC61A1EBAEA9B0049D330 /* sleeveGBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 845CC6111EBAEA9B0049D330 /* sleeveGBtn.png */; };
+		845CC61B1EBAEA9B0049D330 /* socksGBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 845CC6121EBAEA9B0049D330 /* socksGBtn.png */; };
 		845D3D4F1E7F3BD800955A44 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D4E1E7F3BD800955A44 /* SignUpView.swift */; };
 		845D3D511E7F3C2F00955A44 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D501E7F3C2F00955A44 /* TextField.swift */; };
 		845D3D541E7FA06700955A44 /* bball.png in Resources */ = {isa = PBXBuildFile; fileRef = 845D3D521E7FA06700955A44 /* bball.png */; };
@@ -148,6 +161,19 @@
 		84438B2C1EAE49FF008B7540 /* backBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backBtn.png; path = Images/Buttons/backBtn.png; sourceTree = "<group>"; };
 		84438B2E1EB11BDA008B7540 /* editBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = editBtn.png; path = Images/Buttons/editBtn.png; sourceTree = "<group>"; };
 		845CC5FB1EB298DF0049D330 /* MembersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MembersTableViewCell.swift; path = Views/MembersTableViewCell.swift; sourceTree = "<group>"; };
+		845CC5FE1EB79E5C0049D330 /* ballGBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ballGBtn.png; path = "Images/Buttons/Gear Buttons/ballGBtn.png"; sourceTree = "<group>"; };
+		845CC6001EB998310049D330 /* GearCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GearCollectionViewCell.swift; path = Views/GearCollectionViewCell.swift; sourceTree = "<group>"; };
+		845CC6021EB99A2C0049D330 /* GearCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GearCollectionReusableView.swift; path = Views/GearCollectionReusableView.swift; sourceTree = "<group>"; };
+		845CC6061EBA5D7B0049D330 /* Items.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Items.swift; path = Models/Items.swift; sourceTree = "<group>"; };
+		845CC60A1EBAEA9B0049D330 /* bagsGBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bagsGBtn.png; path = "Images/Buttons/Gear Buttons/bagsGBtn.png"; sourceTree = "<group>"; };
+		845CC60B1EBAEA9B0049D330 /* bandsGBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bandsGBtn.png; path = "Images/Buttons/Gear Buttons/bandsGBtn.png"; sourceTree = "<group>"; };
+		845CC60C1EBAEA9B0049D330 /* jacketsGBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jacketsGBtn.png; path = "Images/Buttons/Gear Buttons/jacketsGBtn.png"; sourceTree = "<group>"; };
+		845CC60D1EBAEA9B0049D330 /* pantsGBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pantsGBtn.png; path = "Images/Buttons/Gear Buttons/pantsGBtn.png"; sourceTree = "<group>"; };
+		845CC60E1EBAEA9B0049D330 /* shirtsGBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shirtsGBtn.png; path = "Images/Buttons/Gear Buttons/shirtsGBtn.png"; sourceTree = "<group>"; };
+		845CC60F1EBAEA9B0049D330 /* shoesGBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shoesGBtn.png; path = "Images/Buttons/Gear Buttons/shoesGBtn.png"; sourceTree = "<group>"; };
+		845CC6101EBAEA9B0049D330 /* shortsGBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shortsGBtn.png; path = "Images/Buttons/Gear Buttons/shortsGBtn.png"; sourceTree = "<group>"; };
+		845CC6111EBAEA9B0049D330 /* sleeveGBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sleeveGBtn.png; path = "Images/Buttons/Gear Buttons/sleeveGBtn.png"; sourceTree = "<group>"; };
+		845CC6121EBAEA9B0049D330 /* socksGBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = socksGBtn.png; path = "Images/Buttons/Gear Buttons/socksGBtn.png"; sourceTree = "<group>"; };
 		845D3D4E1E7F3BD800955A44 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpView.swift; path = Views/SignUpView.swift; sourceTree = "<group>"; };
 		845D3D501E7F3C2F00955A44 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextField.swift; path = Views/TextField.swift; sourceTree = "<group>"; };
 		845D3D521E7FA06700955A44 /* bball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bball.png; path = Images/bball.png; sourceTree = "<group>"; };
@@ -307,6 +333,7 @@
 		841585371E7BB08600B263BE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				845CC6061EBA5D7B0049D330 /* Items.swift */,
 				842E3C5A1E84746B00B5E5A5 /* Constraints.swift */,
 				846A73051E8CCBCF0083969E /* Friends.swift */,
 				847B99F01E96C737003BA309 /* Groups.swift */,
@@ -327,6 +354,23 @@
 				84C81B301E9EFA6400962484 /* FindGymsOperations.swift */,
 			);
 			name = Operations;
+			sourceTree = "<group>";
+		};
+		845CC5FD1EB79E2C0049D330 /* Gear Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				845CC60A1EBAEA9B0049D330 /* bagsGBtn.png */,
+				845CC5FE1EB79E5C0049D330 /* ballGBtn.png */,
+				845CC60B1EBAEA9B0049D330 /* bandsGBtn.png */,
+				845CC60C1EBAEA9B0049D330 /* jacketsGBtn.png */,
+				845CC60D1EBAEA9B0049D330 /* pantsGBtn.png */,
+				845CC60E1EBAEA9B0049D330 /* shirtsGBtn.png */,
+				845CC60F1EBAEA9B0049D330 /* shoesGBtn.png */,
+				845CC6101EBAEA9B0049D330 /* shortsGBtn.png */,
+				845CC6111EBAEA9B0049D330 /* sleeveGBtn.png */,
+				845CC6121EBAEA9B0049D330 /* socksGBtn.png */,
+			);
+			name = "Gear Buttons";
 			sourceTree = "<group>";
 		};
 		846A724F1E879E1D0083969E /* Tab Buttons */ = {
@@ -381,13 +425,15 @@
 			isa = PBXGroup;
 			children = (
 				846A73071E8CCE430083969E /* FriendsTableViewCell.swift */,
+				845CC6021EB99A2C0049D330 /* GearCollectionReusableView.swift */,
+				845CC6001EB998310049D330 /* GearCollectionViewCell.swift */,
 				846FAFD71EA9D9CE00A97031 /* InfoWindowView.swift */,
 				845CC5FB1EB298DF0049D330 /* MembersTableViewCell.swift */,
-				847B99E31E9610E9003BA309 /* MyGroupsTableViewCell.swift */,
 				846A72751E8977570083969E /* MenuCell.swift */,
-				846A73091E8E26750083969E /* RequestTableViewCell.swift */,
+				847B99E31E9610E9003BA309 /* MyGroupsTableViewCell.swift */,
 				84B66CF61E861D6D00CBDB7D /* PostsTableViewCell.swift */,
 				84C805351E838309000F9BE2 /* ProfileImageView.swift */,
+				846A73091E8E26750083969E /* RequestTableViewCell.swift */,
 				845D3D4E1E7F3BD800955A44 /* SignUpView.swift */,
 				845D3D501E7F3C2F00955A44 /* TextField.swift */,
 			);
@@ -512,6 +558,10 @@
 		84B5EECD1E65323F00311B63 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				845CC5FD1EB79E2C0049D330 /* Gear Buttons */,
+				846A72501E879E790083969E /* Menu Buttons */,
+				846A72631E885BF20083969E /* slideMenuButtons */,
+				846A724F1E879E1D0083969E /* Tab Buttons */,
 				84438B2C1EAE49FF008B7540 /* backBtn.png */,
 				84438B241EAC1028008B7540 /* callBtn.png */,
 				846A72771E8999660083969E /* cancelBtn.png */,
@@ -519,9 +569,6 @@
 				847B99F21E9732E2003BA309 /* doneBtn.png */,
 				84438B2E1EB11BDA008B7540 /* editBtn.png */,
 				84C81B361EA43FA400962484 /* goBackBtn.png */,
-				846A724F1E879E1D0083969E /* Tab Buttons */,
-				846A72501E879E790083969E /* Menu Buttons */,
-				846A72631E885BF20083969E /* slideMenuButtons */,
 				849F21C01EA6966100F8DE0B /* locationBtn.png */,
 				84C805311E8381D5000F9BE2 /* ltbButton.png */,
 				84C805371E838E1B000F9BE2 /* nextBtn.png */,
@@ -692,8 +739,11 @@
 			files = (
 				846A72601E87B85B0083969E /* postBtn.png in Resources */,
 				846A724E1E8744750083969E /* findGyms@3x.png in Resources */,
+				845CC61A1EBAEA9B0049D330 /* sleeveGBtn.png in Resources */,
+				845CC61B1EBAEA9B0049D330 /* socksGBtn.png in Resources */,
 				846A72581E879F630083969E /* notificationsTab@3x.png in Resources */,
 				846A726D1E885C220083969E /* settingsBtn.png in Resources */,
+				845CC6191EBAEA9B0049D330 /* shortsGBtn.png in Resources */,
 				846A72561E879F630083969E /* gearTab@3x.png in Resources */,
 				841585351E7A7C8700B263BE /* Playball.ttf in Resources */,
 				84B44EDD1E67B6B400AABF92 /* Carrington.ttf in Resources */,
@@ -706,13 +756,17 @@
 				84C805381E838E1B000F9BE2 /* nextBtn.png in Resources */,
 				846A72621E88524C0083969E /* searchBtn.png in Resources */,
 				84B5EEA71E65313400311B63 /* LaunchScreen.storyboard in Resources */,
+				845CC6151EBAEA9B0049D330 /* jacketsGBtn.png in Resources */,
+				845CC6171EBAEA9B0049D330 /* shirtsGBtn.png in Resources */,
 				84C81B2F1E9D7B1900962484 /* style.json in Resources */,
 				963A653B1E67AAC700A9447C /* GoogleService-Info.plist in Resources */,
 				846A72571E879F630083969E /* ltbTab@3x.png in Resources */,
+				845CC6181EBAEA9B0049D330 /* shoesGBtn.png in Resources */,
 				84B5EEDF1E65393A00311B63 /* forgotPasswordBtn.png in Resources */,
 				846A725E1E87B7D30083969E /* gearTitle.png in Resources */,
 				84B5EEE41E65393A00311B63 /* signUpBtn.png in Resources */,
 				845D3D541E7FA06700955A44 /* bball.png in Resources */,
+				845CC5FF1EB79E5C0049D330 /* ballGBtn.png in Resources */,
 				846A726A1E885C220083969E /* homeBtn.png in Resources */,
 				84438B231EAC0FCC008B7540 /* websiteBtn.png in Resources */,
 				84C81B2B1E980F9F00962484 /* groupPic3.png in Resources */,
@@ -725,6 +779,7 @@
 				84B5EEE01E65393A00311B63 /* forgotUsernameBtn.png in Resources */,
 				847B99E21E95FE1F003BA309 /* myGroupsTitle.png in Resources */,
 				847B99EF1E96C300003BA309 /* groupPic2.png in Resources */,
+				845CC6161EBAEA9B0049D330 /* pantsGBtn.png in Resources */,
 				84B66CF31E848BA500CBDB7D /* defaultProfilePic.png in Resources */,
 				846A72691E885C220083969E /* addGymBtn.png in Resources */,
 				841585331E7A7A8000B263BE /* upArrow.png in Resources */,
@@ -740,6 +795,8 @@
 				84438B2D1EAE49FF008B7540 /* backBtn.png in Resources */,
 				847B99F31E9732E2003BA309 /* doneBtn.png in Resources */,
 				846A72781E8999660083969E /* cancelBtn.png in Resources */,
+				845CC6141EBAEA9B0049D330 /* bandsGBtn.png in Resources */,
+				845CC6131EBAEA9B0049D330 /* bagsGBtn.png in Resources */,
 				84438B291EACC56A008B7540 /* websiteBtnB.png in Resources */,
 				84B5EEA21E65313400311B63 /* Main.storyboard in Resources */,
 				84B5EEE11E65393A00311B63 /* loginBtn.png in Resources */,
@@ -915,12 +972,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845CC6031EB99A2C0049D330 /* GearCollectionReusableView.swift in Sources */,
 				847B99F11E96C737003BA309 /* Groups.swift in Sources */,
 				846A730A1E8E26750083969E /* RequestTableViewCell.swift in Sources */,
 				846A72761E8977570083969E /* MenuCell.swift in Sources */,
 				84C805301E8361BC000F9BE2 /* ProfileViewController.swift in Sources */,
 				84C805361E838309000F9BE2 /* ProfileImageView.swift in Sources */,
+				845CC6011EB998310049D330 /* GearCollectionViewCell.swift in Sources */,
 				846A73081E8CCE430083969E /* FriendsTableViewCell.swift in Sources */,
+				845CC6071EBA5D7B0049D330 /* Items.swift in Sources */,
 				84438B2B1EADB425008B7540 /* GroupViewController.swift in Sources */,
 				848C97F41E953A0800A9D476 /* FriendOperations.swift in Sources */,
 				847B99E01E95F79F003BA309 /* MyGroupsViewController.swift in Sources */,
