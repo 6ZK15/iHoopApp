@@ -33,6 +33,7 @@
 		845CC6191EBAEA9B0049D330 /* shortsGBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 845CC6101EBAEA9B0049D330 /* shortsGBtn.png */; };
 		845CC61A1EBAEA9B0049D330 /* sleeveGBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 845CC6111EBAEA9B0049D330 /* sleeveGBtn.png */; };
 		845CC61B1EBAEA9B0049D330 /* socksGBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 845CC6121EBAEA9B0049D330 /* socksGBtn.png */; };
+		845CC61D1EBB9BB40049D330 /* fwdBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 845CC61C1EBB9BB40049D330 /* fwdBtn.png */; };
 		845D3D4F1E7F3BD800955A44 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D4E1E7F3BD800955A44 /* SignUpView.swift */; };
 		845D3D511E7F3C2F00955A44 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D501E7F3C2F00955A44 /* TextField.swift */; };
 		845D3D541E7FA06700955A44 /* bball.png in Resources */ = {isa = PBXBuildFile; fileRef = 845D3D521E7FA06700955A44 /* bball.png */; };
@@ -174,6 +175,7 @@
 		845CC6101EBAEA9B0049D330 /* shortsGBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shortsGBtn.png; path = "Images/Buttons/Gear Buttons/shortsGBtn.png"; sourceTree = "<group>"; };
 		845CC6111EBAEA9B0049D330 /* sleeveGBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sleeveGBtn.png; path = "Images/Buttons/Gear Buttons/sleeveGBtn.png"; sourceTree = "<group>"; };
 		845CC6121EBAEA9B0049D330 /* socksGBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = socksGBtn.png; path = "Images/Buttons/Gear Buttons/socksGBtn.png"; sourceTree = "<group>"; };
+		845CC61C1EBB9BB40049D330 /* fwdBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fwdBtn.png; path = Images/Buttons/fwdBtn.png; sourceTree = "<group>"; };
 		845D3D4E1E7F3BD800955A44 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpView.swift; path = Views/SignUpView.swift; sourceTree = "<group>"; };
 		845D3D501E7F3C2F00955A44 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextField.swift; path = Views/TextField.swift; sourceTree = "<group>"; };
 		845D3D521E7FA06700955A44 /* bball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bball.png; path = Images/bball.png; sourceTree = "<group>"; };
@@ -568,6 +570,7 @@
 				846FAFD91EA9DD0800A97031 /* directionsBtn.png */,
 				847B99F21E9732E2003BA309 /* doneBtn.png */,
 				84438B2E1EB11BDA008B7540 /* editBtn.png */,
+				845CC61C1EBB9BB40049D330 /* fwdBtn.png */,
 				84C81B361EA43FA400962484 /* goBackBtn.png */,
 				849F21C01EA6966100F8DE0B /* locationBtn.png */,
 				84C805311E8381D5000F9BE2 /* ltbButton.png */,
@@ -771,6 +774,7 @@
 				84438B231EAC0FCC008B7540 /* websiteBtn.png in Resources */,
 				84C81B2B1E980F9F00962484 /* groupPic3.png in Resources */,
 				847B99EC1E96B031003BA309 /* groupPic1.png in Resources */,
+				845CC61D1EBB9BB40049D330 /* fwdBtn.png in Resources */,
 				84C81B371EA43FA400962484 /* goBackBtn.png in Resources */,
 				84B5EEA41E65313400311B63 /* Assets.xcassets in Resources */,
 				84B5EED41E65393000311B63 /* bg.png in Resources */,

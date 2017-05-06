@@ -99,10 +99,10 @@ class FindGymsViewController: UIViewController, CLLocationManagerDelegate, GMSMa
     
     func setMarkers(_ mapView: GMSMapView ) {
         guard let latitudes = UserDefaults.standard.value(forKey: "latitudes") as? Array<Any> else { return }
-        let longitudes = UserDefaults.standard.value(forKey: "longitudes") as! Array<Any>
-        let gymNames = UserDefaults.standard.value(forKey: "gymNames") as! Array<Any>
-        let addresses = UserDefaults.standard.value(forKey: "addresses") as! Array<Any>
-        let placeIDs = UserDefaults.standard.value(forKey: "placeIDs") as! Array<Any>
+        guard let longitudes = UserDefaults.standard.value(forKey: "longitudes") as? Array<Any> else { return }
+        guard let gymNames = UserDefaults.standard.value(forKey: "gymNames") as? Array<Any> else { return }
+        guard let addresses = UserDefaults.standard.value(forKey: "addresses") as? Array<Any> else { return }
+        guard let placeIDs = UserDefaults.standard.value(forKey: "placeIDs") as? Array<Any> else { return }
         
         var markers = [GMSMarker]()
         for i in 0...latitudes.count-1 {
@@ -205,7 +205,7 @@ class FindGymsViewController: UIViewController, CLLocationManagerDelegate, GMSMa
     }
     
     func getPolylineRoute(from source: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D) {
-        let userID = UserDefaults.standard.value(forKey: "currentUserUID")
+        guard let userID = UserDefaults.standard.value(forKey: "currentUserUID") else { return }
         
         let url = URL(string: "http://maps.googleapis.com/maps/api/directions/json?origin=\(source.latitude),\(source.longitude)&destination=\(destination.latitude),\(destination.longitude)&sensor=false&mode=driving")
         print("route url ", url as Any)
@@ -252,9 +252,9 @@ class FindGymsViewController: UIViewController, CLLocationManagerDelegate, GMSMa
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         print("Marker Tapped")
-        let currentlongitude = UserDefaults.standard.object(forKey: "currentlongitude")
-        let currentlatitude = UserDefaults.standard.object(forKey: "currentlatitude")
-        let originLocation = CLLocationCoordinate2DMake(currentlatitude as! CLLocationDegrees, currentlongitude as! CLLocationDegrees)
+        guard let currentlongitude = UserDefaults.standard.object(forKey: "currentlongitude") as? CLLocationDegrees else { return false }
+        guard let currentlatitude = UserDefaults.standard.object(forKey: "currentlatitude")  as? CLLocationDegrees else { return false }
+        let originLocation = CLLocationCoordinate2DMake(currentlatitude, currentlongitude)
         let destinationLocation = CLLocationCoordinate2DMake(marker.position.latitude, marker.position.longitude)
         UserDefaults.standard.set(marker.position.latitude, forKey: "markerLat")
         UserDefaults.standard.set(marker.position.longitude, forKey: "markerLng")
