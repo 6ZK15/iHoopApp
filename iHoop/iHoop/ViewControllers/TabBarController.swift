@@ -24,7 +24,7 @@ class TabBarController: UITabBarController {
         view.addSubview(bgView)
         
         //TabBarItem Setting
-        let attributes = [ NSFontAttributeName : UIFont(name: "Playball", size: 10)! ]
+        let attributes = [ NSFontAttributeName : UIFont.systemFont(ofSize: 10.0) ]
         UITabBarItem.appearance().setTitleTextAttributes(attributes, for: UIControlState.normal)
         
     }

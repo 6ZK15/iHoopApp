@@ -299,5 +299,20 @@ class InfoWindowView: UIView {
             "groupPic": "nothing as of now",
             "locked": true
         ])
+        
+        guard let firstname = UserDefaults.standard.value(forKey: "firstname") else { return }
+        guard let lastname = UserDefaults.standard.value(forKey: "lastname") else { return }
+        guard let username = UserDefaults.standard.value(forKey: "profileUsername") else { return }
+        guard let profilePic = UserDefaults.standard.value(forKey: "profileImageURL") else { return }
+        let memberID = self.databaseReference.child(NSUUID().uuidString)
+        
+        self.databaseReference.child("users").child(userID as! String).child("groups").child("public").child(markerTitle as! String).child("members").child(memberID.key).setValue([
+            "uid": userID as! String,
+            "username": username,
+            "fullname": "\(firstname) \(lastname)",
+            "firstname": firstname,
+            "lastname": lastname,
+            "profilePic": profilePic
+        ])
     }
 }

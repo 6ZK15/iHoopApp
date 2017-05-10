@@ -121,7 +121,7 @@ class FindGymsViewController: UIViewController, CLLocationManagerDelegate, GMSMa
         guard let currentlongitude = UserDefaults.standard.value(forKey: "currentlongitude") else { return }
         guard let currentlatitude = UserDefaults.standard.value(forKey: "currentlatitude") else { return }
         
-        let url = URL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(currentlatitude),\(currentlongitude)&radius=66000&type=gym&keyword=basketball+recreation+centers&key=AIzaSyC4cyENm7AyJFVyV6GZwgrFbg4d1epEOoo")
+        let url = URL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(currentlatitude),\(currentlongitude)&radius=66000&type=gym&keyword=recreation+centers&key=AIzaSyC4cyENm7AyJFVyV6GZwgrFbg4d1epEOoo")
         print(url as Any)
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"

@@ -161,7 +161,11 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate ,UIIm
     
     func setProfileUsername() {
         let profileUsername = UserDefaults.standard.value(forKey: "profileUsername") as! String
+        let firstName = UserDefaults.standard.value(forKey: "firstname") as! String
+        let lastName = UserDefaults.standard.value(forKey: "lastname") as! String
+        let name = "\(firstName) \(lastName)"
         usernameLabel.text = profileUsername
+        nameLabel.text = name
     }
     
     func saveProfileToFirebaseStorage() {

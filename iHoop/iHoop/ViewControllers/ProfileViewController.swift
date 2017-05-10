@@ -167,7 +167,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.dateFormat = "MMMM d h:mm a"
+        dateFormatter.dateFormat = "MMMM dd h:mm a"
         dateFormatter.amSymbol = "AM"
         dateFormatter.pmSymbol = "PM"
         let timeStamp = dateFormatter.string(from: date)
@@ -181,7 +181,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         //Date Database Format
         let dateReferenceFormatter = DateFormatter()
         dateReferenceFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateReferenceFormatter.dateFormat = "MMMM d h:mm:ss"
+        dateReferenceFormatter.dateFormat = "MMMM dd h:mm:ss"
         let timeStampRef = dateReferenceFormatter.string(from: date)
        
    
@@ -232,15 +232,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let userID = UserDefaults.standard.value(forKey: "currentUserUID")
         let postID = self.databaseReference.child("users").child(NSUUID().uuidString)
         UserDefaults.standard.set(postID.key, forKey: "postID")
-        
-        //Date Database Format
-        let date = Date()
-        let dateReferenceFormatter = DateFormatter()
-        dateReferenceFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateReferenceFormatter.dateFormat = "MMMM d h:mm:ss"
-        let timeStampRef = dateReferenceFormatter.string(from: date)
-        print("timeStampRef: ", timeStampRef)
-        
 
         databaseReference.child("users").child(userID as! String).child("timeline").observe(FIRDataEventType.value, with: {
             (snapshot) in
@@ -256,8 +247,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                         print("Timestamp:", postStamp)
                         print("Delete Stamp:", deleteStamp)
                         print(posts.postKey)
-                      
-                        if timeStampRef >= deleteStamp {
+                        
+                        if postStamp >= deleteStamp {
                              self.databaseReference.child("users").child(userID as! String).child("timeline").child(posts.postKey).removeValue()
                         }
                     }

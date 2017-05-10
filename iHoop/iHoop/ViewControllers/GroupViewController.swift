@@ -87,8 +87,8 @@ class GroupViewController: UIViewController, UISearchResultsUpdating, UISearchCo
         var cellReturn = UITableViewCell()
         
         if tableView == groupTableView {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! PostsTableViewCell
-            let post = posts[indexPath.row]
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! GroupPostsTableViewCell
+            let post: Posts = posts[indexPath.row]
             cell.configureCell(post)
             cellReturn = cell 
         } else if tableView == addMemberTableView {
@@ -133,6 +133,31 @@ class GroupViewController: UIViewController, UISearchResultsUpdating, UISearchCo
                         "groupPic": "nothing as of now",
                         "locked": true
                     ])
+                    
+                    groupRef.child("public").child(self.groupName.text!).child("members").observe(FIRDataEventType.value, with: {
+                        (snapshot) in
+                        
+                        if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                            
+                            for snap in snapshots {
+                                if let memberDictionary = snap.value as? Dictionary<String, AnyObject> {
+                                    let key = snap.key
+                                    let member = Friends(key: key, dictionary: memberDictionary)
+                                    print("Members' UID:", member.uid)
+                                    
+                                    membersGroupRef.child("members").child(memberID.key).setValue([
+                                        "uid": member.uid,
+                                        "username": member.username,
+                                        "fullname": "\(member.firstname) \(member.lastname)",
+                                        "firstname": member.firstname,
+                                        "lastname": member.lastname,
+                                        "profilePic": member.profilePic
+                                    ])
+                                }
+                            }
+                        }
+                    })
+                    
                 } else {
                     if (groupPrivacy as! String) == "private" {
                         groupRef.child("private").child(groupID as! String).child("members").child(memberID.key).setValue([
@@ -152,6 +177,31 @@ class GroupViewController: UIViewController, UISearchResultsUpdating, UISearchCo
                             "groupPic": "nothing as of now",
                             "locked": true
                         ])
+                        
+                        groupRef.child("private").child(groupID as! String).child("members").observe(FIRDataEventType.value, with: {
+                            (snapshot) in
+                            
+                            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                                
+                                for snap in snapshots {
+                                    if let memberDictionary = snap.value as? Dictionary<String, AnyObject> {
+                                        let key = snap.key
+                                        let member = Friends(key: key, dictionary: memberDictionary)
+                                        print("Members' UID:", member.uid)
+                                        
+                                        membersGroupRef.child("members").child(memberID.key).setValue([
+                                            "uid": member.uid,
+                                            "username": member.username,
+                                            "fullname": "\(member.firstname) \(member.lastname)",
+                                            "firstname": member.firstname,
+                                            "lastname": member.lastname,
+                                            "profilePic": member.profilePic
+                                        ])
+                                    }
+                                }
+                            }
+                        })
+                        
                     } else if (groupPrivacy as! String) == "public" {
                         groupRef.child("public").child(groupID as! String).child("members").child(memberID.key).setValue([
                             "uid": addMemberIndex.uid,
@@ -170,6 +220,30 @@ class GroupViewController: UIViewController, UISearchResultsUpdating, UISearchCo
                             "groupPic": "nothing as of now",
                             "locked": true
                         ])
+                        
+                        groupRef.child("public").child(groupID as! String).child("members").observe(FIRDataEventType.value, with: {
+                            (snapshot) in
+                            
+                            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                                
+                                for snap in snapshots {
+                                    if let memberDictionary = snap.value as? Dictionary<String, AnyObject> {
+                                        let key = snap.key
+                                        let member = Friends(key: key, dictionary: memberDictionary)
+                                        print("Members' UID:", member.uid)
+                                        
+                                        membersGroupRef.child("members").child(memberID.key).setValue([
+                                            "uid": member.uid,
+                                            "username": member.username,
+                                            "fullname": "\(member.firstname) \(member.lastname)",
+                                            "firstname": member.firstname,
+                                            "lastname": member.lastname,
+                                            "profilePic": member.profilePic
+                                        ])
+                                    }
+                                }
+                            }
+                        })
                     }
                 }
             }
@@ -221,7 +295,7 @@ class GroupViewController: UIViewController, UISearchResultsUpdating, UISearchCo
     
     @IBAction func postMessage(_ sender: Any) {
         showHidePostMsgView()
-        storePublicPostForUser()
+        storePostForUser()
         setProfileTextViewDesign()
     }
     
@@ -303,11 +377,11 @@ class GroupViewController: UIViewController, UISearchResultsUpdating, UISearchCo
     }
     
     /*
-     * storePublicPostForUser
+     * storePostForUser
        Stores the post information to groups database reference
        Input: msgTextView as! UITextView
      */
-    func storePublicPostForUser() {
+    func storePostForUser() {
         guard let userID = UserDefaults.standard.value(forKey: "currentUserUID") else { return }
         let postID = self.databaseReference.child("users").child(NSUUID().uuidString)
         let postMessage = msgTextView.text
@@ -353,10 +427,32 @@ class GroupViewController: UIViewController, UISearchResultsUpdating, UISearchCo
                 "deleteTimeStamp": removeTimeStamp
             ])
             
-//            groupRef.child("public").child(groupName.text!).child("members").observe(FIRDataEventType.value, with: {
-//                (snapshot) in
-//                
-//            })
+            groupRef.child("public").child(groupName.text!).child("members").observe(FIRDataEventType.value, with: {
+                (snapshot) in
+                
+                if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                    
+                    for snap in snapshots {
+                        if let memberDictionary = snap.value as? Dictionary<String, AnyObject> {
+                            let key = snap.key
+                            let member = Friends(key: key, dictionary: memberDictionary)
+                            let memberID = member.uid
+                            print("Members' UID:", memberID)
+                            
+                            let memberRef = self.databaseReference.child("users").child(memberID).child("groups")
+                            memberRef.child("public").child(self.groupName.text!).child("timeline").child(timeStampRef + " " + postID.key).setValue([
+                                "username": UserDefaults.standard.value(forKey: "profileUsername") as? String,
+                                "profileImage": UserDefaults.standard.value(forKey: "profileImageURL") as? String,
+                                "post":postMessage,
+                                "postAttachmentURL":"",
+                                "timeStamp":timeStamp,
+                                "deleteTimeStamp": removeTimeStamp
+                            ])
+                        }
+                    }
+                }
+            })
+            
         } else {
             
             if (groupPrivacy as! String) == "private" {
@@ -368,6 +464,33 @@ class GroupViewController: UIViewController, UISearchResultsUpdating, UISearchCo
                     "timeStamp":timeStamp,
                     "deleteTimeStamp": removeTimeStamp
                 ])
+                
+                groupRef.child("private").child(groupID as! String).child("members").observe(FIRDataEventType.value, with: {
+                    (snapshot) in
+                    
+                    if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                        
+                        for snap in snapshots {
+                            if let memberDictionary = snap.value as? Dictionary<String, AnyObject> {
+                                let key = snap.key
+                                let member = Friends(key: key, dictionary: memberDictionary)
+                                let memberID = member.uid
+                                print("Members' UID:", memberID)
+                                
+                                let memberRef = self.databaseReference.child("users").child(memberID).child("groups")
+                                memberRef.child("private").child(groupID as! String).child("timeline").child(timeStampRef + " " + postID.key).setValue([
+                                    "username": UserDefaults.standard.value(forKey: "profileUsername") as? String,
+                                    "profileImage": UserDefaults.standard.value(forKey: "profileImageURL") as? String,
+                                    "post":postMessage,
+                                    "postAttachmentURL":"",
+                                    "timeStamp":timeStamp,
+                                    "deleteTimeStamp": removeTimeStamp
+                                ])
+                            }
+                        }
+                    }
+                })
+                
             } else {
                 groupRef.child("public").child(groupID as! String).child("timeline").child(timeStampRef + " " + postID.key).setValue([
                     "username": UserDefaults.standard.value(forKey: "profileUsername") as? String,
@@ -377,36 +500,35 @@ class GroupViewController: UIViewController, UISearchResultsUpdating, UISearchCo
                     "timeStamp":timeStamp,
                     "deleteTimeStamp": removeTimeStamp
                 ])
+                
+                groupRef.child("public").child(groupID as! String).child("members").observe(FIRDataEventType.value, with: {
+                    (snapshot) in
+                    
+                    if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                        
+                        for snap in snapshots {
+                            if let memberDictionary = snap.value as? Dictionary<String, AnyObject> {
+                                let key = snap.key
+                                let member = Friends(key: key, dictionary: memberDictionary)
+                                let memberID = member.uid
+                                print("Members' UID:", memberID)
+                                
+                                let memberRef = self.databaseReference.child("users").child(memberID).child("groups")
+                                memberRef.child("public").child(groupID as! String).child("timeline").child(timeStampRef + " " + postID.key).setValue([
+                                    "username": UserDefaults.standard.value(forKey: "profileUsername") as? String,
+                                    "profileImage": UserDefaults.standard.value(forKey: "profileImageURL") as? String,
+                                    "post":postMessage,
+                                    "postAttachmentURL":"",
+                                    "timeStamp":timeStamp,
+                                    "deleteTimeStamp": removeTimeStamp
+                                ])
+                            }
+                        }
+                    }
+                })
+                
             }
         }
-        
-        
-        //Store Post for group members
-        databaseReference.child("users").child(userID as! String + "/friends").observe(FIRDataEventType.value, with: {
-            (snapshot) in
-            
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                
-                for snap in snapshots {
-                    if let friendDictionary = snap.value as? Dictionary<String, AnyObject> {
-                        let key = snap.key
-                        let friend = Friends(key: key, dictionary: friendDictionary)
-                        let friendID = friend.uid
-                        print("Friends' UID:", friendID)
-                        
-                        let friendsRef = self.databaseReference.child("users").child(friendID)
-                        friendsRef.child("timeline").child(timeStampRef + " " + postID.key).setValue([
-                            "username": UserDefaults.standard.value(forKey: "profileUsername") as? String,
-                            "profileImage": UserDefaults.standard.value(forKey: "profileImageURL") as? String,
-                            "post":postMessage,
-                            "postAttachmentURL":"",
-                            "timeStamp":timeStamp,
-                            "deleteTimeStamp": removeTimeStamp
-                        ])
-                    }
-                }
-            }
-        })
     }
     
     func postCheck() {

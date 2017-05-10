@@ -1,8 +1,8 @@
 //
-//  PostsTableViewCell.swift
+//  GroupPostsTableViewCell.swift
 //  iHoop
 //
-//  Created by Nehemiah Horace on 3/24/17.
+//  Created by Nehemiah Horace on 5/8/17.
 //  Copyright © 2017 Nehemiah Horace. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class PostsTableViewCell: UITableViewCell {
+class GroupPostsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var postProfileImage: UIImageView!
     @IBOutlet weak var timeStampLabel: UILabel!
@@ -25,10 +25,10 @@ class PostsTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     

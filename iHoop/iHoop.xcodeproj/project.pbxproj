@@ -11,6 +11,7 @@
 		841585331E7A7A8000B263BE /* upArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 841585311E7A7A8000B263BE /* upArrow.png */; };
 		841585351E7A7C8700B263BE /* Playball.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 841585341E7A7C6900B263BE /* Playball.ttf */; };
 		8415853B1E7BB8FB00B263BE /* facebookBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8415853A1E7BB8FB00B263BE /* facebookBtn.png */; };
+		842E13091EC1172200F19253 /* GroupPostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E13081EC1172200F19253 /* GroupPostsTableViewCell.swift */; };
 		842E3C5B1E84746B00B5E5A5 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E3C5A1E84746B00B5E5A5 /* Constraints.swift */; };
 		84438B231EAC0FCC008B7540 /* websiteBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84438B221EAC0FCC008B7540 /* websiteBtn.png */; };
 		84438B251EAC1028008B7540 /* callBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84438B241EAC1028008B7540 /* callBtn.png */; };
@@ -152,6 +153,7 @@
 		841585311E7A7A8000B263BE /* upArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = upArrow.png; path = Images/Buttons/upArrow.png; sourceTree = "<group>"; };
 		841585341E7A7C6900B263BE /* Playball.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Playball.ttf; path = Fonts/Playball.ttf; sourceTree = "<group>"; };
 		8415853A1E7BB8FB00B263BE /* facebookBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebookBtn.png; path = Images/Buttons/facebookBtn.png; sourceTree = "<group>"; };
+		842E13081EC1172200F19253 /* GroupPostsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupPostsTableViewCell.swift; path = Views/GroupPostsTableViewCell.swift; sourceTree = "<group>"; };
 		842E3C5A1E84746B00B5E5A5 /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constraints.swift; path = Models/Constraints.swift; sourceTree = "<group>"; };
 		843FCCF3C60FAEC7D17147AD /* Pods_iHoopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHoopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84438B221EAC0FCC008B7540 /* websiteBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = websiteBtn.png; path = Images/Buttons/websiteBtn.png; sourceTree = "<group>"; };
@@ -429,6 +431,7 @@
 				846A73071E8CCE430083969E /* FriendsTableViewCell.swift */,
 				845CC6021EB99A2C0049D330 /* GearCollectionReusableView.swift */,
 				845CC6001EB998310049D330 /* GearCollectionViewCell.swift */,
+				842E13081EC1172200F19253 /* GroupPostsTableViewCell.swift */,
 				846FAFD71EA9D9CE00A97031 /* InfoWindowView.swift */,
 				845CC5FB1EB298DF0049D330 /* MembersTableViewCell.swift */,
 				846A72751E8977570083969E /* MenuCell.swift */,
@@ -986,6 +989,7 @@
 				846A73081E8CCE430083969E /* FriendsTableViewCell.swift in Sources */,
 				845CC6071EBA5D7B0049D330 /* Items.swift in Sources */,
 				84438B2B1EADB425008B7540 /* GroupViewController.swift in Sources */,
+				842E13091EC1172200F19253 /* GroupPostsTableViewCell.swift in Sources */,
 				848C97F41E953A0800A9D476 /* FriendOperations.swift in Sources */,
 				847B99E01E95F79F003BA309 /* MyGroupsViewController.swift in Sources */,
 				846A73061E8CCBCF0083969E /* Friends.swift in Sources */,
