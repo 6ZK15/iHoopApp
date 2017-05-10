@@ -91,8 +91,12 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate ,UIIm
             revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
             newFrontController.navigationBar.isHidden = true
         } else if cell.cellNameLabel.text! == "Add A Gym" {
-            
             print("Add A Gym Tapped")
+            let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "AddAGymController") as! AddAGymController
+            let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
+            revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
+            newFrontController.navigationBar.isHidden = true
+          
             
         } else if cell.cellNameLabel.text! == "Settings" {
             
