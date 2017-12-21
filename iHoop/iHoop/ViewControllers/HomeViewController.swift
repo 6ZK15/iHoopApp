@@ -12,7 +12,6 @@ import CoreLocation
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
-import FBSDKLoginKit
 
 class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
     
@@ -466,23 +465,22 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UIScrollViewDel
     }
     
     @IBAction func loginWithFacebbok(_ sender: UIButton) {
-        facebookSignIn()
     }
     
-    func facebookSignIn(){
-        let facebookLogin = FBSDKLoginManager()
-        facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result,error) in
-            if error != nil {
-                print("Unable to authenticate with Facebook - ", error)
-            } else if result?.isCancelled == true {
-                    print("User cancelled authentication with Facebook")
-            } else {
-                print("Successfully authenticaed with Facebook - \(error)")
-                let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-                self.firebaseAuth(credential)
-            }
-        }
-    }
+//    func facebookSignIn(){
+//        let facebookLogin = FBSDKLoginManager()
+//        facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result,error) in
+//            if error != nil {
+//                print("Unable to authenticate with Facebook - ", error)
+//            } else if result?.isCancelled == true {
+//                    print("User cancelled authentication with Facebook")
+//            } else {
+//                print("Successfully authenticaed with Facebook - \(error)")
+//                let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+//                self.firebaseAuth(credential)
+//            }
+//        }
+//    }
     
     func firebaseAuth(_ credential: FIRAuthCredential) {
         FIRAuth.auth()?.signIn(with: credential, completion: { (user,error) in

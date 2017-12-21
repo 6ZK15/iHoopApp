@@ -8,8 +8,6 @@
 
 import UIKit
 import Firebase
-import FBSDKLoginKit
-
 class FacebookLogin: UIViewController {
 
     override func viewDidLoad() {
@@ -23,18 +21,18 @@ class FacebookLogin: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func facebookSignIn(){
-        let facebookLogin = FBSDKLoginManager()
-        facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result,error) in
-            if error != nil {
-                print("Unable to authenticate with Facebook - \(error)")
-            }else{
-                print("Successfully authenticaed with Facebook - \(error)")
-                let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-                self.firebaseAuth(credential)
-            }
-        }
-    }
+//    func facebookSignIn(){
+////        let facebookLogin = FBSDKLoginManager()
+//        facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result,error) in
+//            if error != nil {
+//                print("Unable to authenticate with Facebook - \(error)")
+//            }else{
+//                print("Successfully authenticaed with Facebook - \(error)")
+//                let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+//                self.firebaseAuth(credential)
+//            }
+//        }
+//    }
     
     func firebaseAuth(_ credential: FIRAuthCredential) {
         FIRAuth.auth()?.signIn(with: credential, completion: { (user,error) in

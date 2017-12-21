@@ -33,8 +33,7 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate ,UIIm
         profileImageClass.setProfileImageDesign(profileImageView)
         
         menuImages = [
-            UIImage(named:"homeBtn")!,
-            UIImage(named:"friendsBtn")!,
+            
             UIImage(named:"myGroupsBtn")!,
             UIImage(named:"addGymBtn")!,
             UIImage(named:"settingsBtn")!,

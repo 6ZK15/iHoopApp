@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import FBSDKLoginKit
 import GoogleMaps
 import GooglePlaces
 import GooglePlacePicker
@@ -23,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FIRApp.configure()
-        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         GMSPlacesClient.provideAPIKey("AIzaSyDW-9dAV99EQmM6dgg_ZpJOKcJXGcdn8Yw")
         GMSServices.provideAPIKey("AIzaSyAtFcxJJqntXGZTfrx6wb7i1UZpDSHiaVU")
         // Add any custom logic here.
@@ -31,9 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        let handled: Bool = FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+   
         // Add any custom logic here.
-        return handled
+        return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
